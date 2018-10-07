@@ -90,7 +90,6 @@ shape = SubResource( 1 )
 
 [node name="Wall_Mid1" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 60.0989, 0 )
 texture = ExtResource( 1 )
 vframes = 10
@@ -116,7 +115,6 @@ shape = SubResource( 1 )
 
 [node name="Wall_Mid2" type="Sprite" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 81.5627, 0 )
 texture = ExtResource( 1 )
 vframes = 10
@@ -142,7 +140,6 @@ shape = SubResource( 1 )
 
 [node name="Wall_Mid3" type="Sprite" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 101.31, 0 )
 texture = ExtResource( 1 )
 vframes = 10
@@ -168,7 +165,6 @@ shape = SubResource( 1 )
 
 [node name="Wall_Mid4" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 120.842, 0 )
 texture = ExtResource( 1 )
 vframes = 10
@@ -194,7 +190,6 @@ shape = SubResource( 1 )
 
 [node name="Wall_Banner" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 141.018, 0 )
 texture = ExtResource( 1 )
 vframes = 10
@@ -657,7 +652,7 @@ _sections_unfolded = [ "Animation", "Region" ]
 
 [node name="Dirt36" type="Sprite" parent="." index="45"]
 
-position = Vector2( 61.1721, 18.6736 )
+position = Vector2( 71.5252, 60.4094 )
 texture = ExtResource( 1 )
 vframes = 10
 hframes = 10
@@ -666,18 +661,7 @@ region_enabled = true
 region_rect = Rect2( 112, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt37" type="Sprite" parent="." index="46"]
-
-position = Vector2( 61.1721, 18.6736 )
-texture = ExtResource( 1 )
-vframes = 10
-hframes = 10
-frame = 2
-region_enabled = true
-region_rect = Rect2( 96, 128, 16, 0 )
-_sections_unfolded = [ "Animation", "Region" ]
-
-[node name="Dirt38" type="Sprite" parent="." index="47"]
+[node name="Dirt38" type="Sprite" parent="." index="46"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -688,7 +672,7 @@ region_enabled = true
 region_rect = Rect2( 96, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt39" type="Sprite" parent="." index="48"]
+[node name="Dirt39" type="Sprite" parent="." index="47"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -699,7 +683,7 @@ region_enabled = true
 region_rect = Rect2( 80, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt40" type="Sprite" parent="." index="49"]
+[node name="Dirt40" type="Sprite" parent="." index="48"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -710,7 +694,7 @@ region_enabled = true
 region_rect = Rect2( 64, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt41" type="Sprite" parent="." index="50"]
+[node name="Dirt41" type="Sprite" parent="." index="49"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -721,7 +705,7 @@ region_enabled = true
 region_rect = Rect2( 48, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt42" type="Sprite" parent="." index="51"]
+[node name="Dirt42" type="Sprite" parent="." index="50"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -732,7 +716,7 @@ region_enabled = true
 region_rect = Rect2( 32, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt43" type="Sprite" parent="." index="52"]
+[node name="Dirt43" type="Sprite" parent="." index="51"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -743,7 +727,7 @@ region_enabled = true
 region_rect = Rect2( 16, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt44" type="Sprite" parent="." index="53"]
+[node name="Dirt44" type="Sprite" parent="." index="52"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -754,7 +738,7 @@ region_enabled = true
 region_rect = Rect2( 0, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt45" type="Sprite" parent="." index="54"]
+[node name="Dirt45" type="Sprite" parent="." index="53"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -765,7 +749,7 @@ region_enabled = true
 region_rect = Rect2( 0, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt46" type="Sprite" parent="." index="55"]
+[node name="Dirt46" type="Sprite" parent="." index="54"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -776,7 +760,7 @@ region_enabled = true
 region_rect = Rect2( 16, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt47" type="Sprite" parent="." index="56"]
+[node name="Dirt47" type="Sprite" parent="." index="55"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -787,7 +771,7 @@ region_enabled = true
 region_rect = Rect2( 32, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt48" type="Sprite" parent="." index="57"]
+[node name="Dirt48" type="Sprite" parent="." index="56"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -798,7 +782,7 @@ region_enabled = true
 region_rect = Rect2( 32, 144, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt49" type="Sprite" parent="." index="58"]
+[node name="Dirt49" type="Sprite" parent="." index="57"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -809,7 +793,7 @@ region_enabled = true
 region_rect = Rect2( 16, 144, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt50" type="Sprite" parent="." index="59"]
+[node name="Dirt50" type="Sprite" parent="." index="58"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -820,7 +804,7 @@ region_enabled = true
 region_rect = Rect2( 0, 144, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt51" type="Sprite" parent="." index="60"]
+[node name="Dirt51" type="Sprite" parent="." index="59"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -831,7 +815,7 @@ region_enabled = true
 region_rect = Rect2( 48, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt52" type="Sprite" parent="." index="61"]
+[node name="Dirt52" type="Sprite" parent="." index="60"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -842,7 +826,7 @@ region_enabled = true
 region_rect = Rect2( 64, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt53" type="Sprite" parent="." index="62"]
+[node name="Dirt53" type="Sprite" parent="." index="61"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -853,7 +837,7 @@ region_enabled = true
 region_rect = Rect2( 80, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt54" type="Sprite" parent="." index="63"]
+[node name="Dirt54" type="Sprite" parent="." index="62"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
@@ -864,7 +848,7 @@ region_enabled = true
 region_rect = Rect2( 96, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Region" ]
 
-[node name="Dirt55" type="Sprite" parent="." index="64"]
+[node name="Dirt55" type="Sprite" parent="." index="63"]
 
 position = Vector2( 61.1721, 18.6736 )
 texture = ExtResource( 1 )
