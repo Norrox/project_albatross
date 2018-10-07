@@ -1,18 +1,3 @@
-# Lobby, Server and Player Connection
-
-_This is the first video of the series_
-
-_Outline's Pitch: Introduction to Godot 3's High Level Multiplayer API. Overview of the code to create a simple Lobby, how to create the server and client, and how to connect a player to the server._
-
-_Should we mention that this is an intermediate topic?_
-
-## Video Intro
-
- - Godot offers a High Level Networking API to help bring players together in multiplayer games
- - The engine takes care of the most technical aspects of networking and allows us to focus on the gameplay
- - This is the first video in the series. We are going to see how to create a simple multiplayer game starting with the lobby. You are going to learn how to create a server and connect players together
- - This is just an intro series. Networking is complex and there is a lot to learn on the subject. I'm here to get you started with Godot's tools. If you want to dive deeper, you'll find links to great resources in the description below
-
 ## Create a simple Lobby
  - A lobby can be used to let players start the game at the same time
  - In this case, the lobby is used to let the player create or connect to the server, which can be done at any time
