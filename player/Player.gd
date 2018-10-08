@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const MOVE_SPEED = 250.0
 const MAX_HP = 100
+const ROLL_WAIT_TIME = 0.5
 
 #enum MoveDirection { UP, DOWN, LEFT, RIGHT, NONE }
 
@@ -9,12 +10,14 @@ slave var slave_position = Vector2()
 slave var slave_movement = Vector2()
 slave var slave_mouse_pos = Vector2()
 slave var slave_animation = 'idle'
+slave var slave_rolling = false
 
 var health_points = MAX_HP
 var mouse_pos = Vector2()
 var animation = 'idle'
 var dead = false
 var rolling = false
+var can_roll = true
 
 func _ready():
 	_update_health_bar()
@@ -50,6 +53,7 @@ func _physics_process(delta):
 		rset('slave_movement', direction)
 		rset('slave_mouse_pos', mouse_pos)
 		rset('slave_animation', animation)
+		rset('slave_rolling', rolling)
 		_move(direction)
 		_rotate_gun(mouse_pos)
 		_animate(animation)
@@ -60,6 +64,7 @@ func _physics_process(delta):
 		position = slave_position
 		mouse_pos = slave_mouse_pos
 		animation = slave_animation
+		rolling = slave_rolling
 	
 	if get_tree().is_network_server():
 		var player_id = int(name)
@@ -106,9 +111,14 @@ func _update_health_bar():
 	$GUI/HealthBar.value = health_points
 
 sync func _roll():
+	if !can_roll:
+		return
 	rolling = true
+	can_roll = false
 	yield($AnimationPlayer,"animation_finished")
 	rolling = false
+	yield( get_tree().create_timer(ROLL_WAIT_TIME), "timeout" )
+	can_roll = true
 
 func damage(value):
 	health_points -= value

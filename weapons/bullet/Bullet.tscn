@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 6, 8 )
 
-[node name="Projectile" type="Area2D" index="0"]
+[node name="Projectile" type="Area2D"]
 
 z_as_relative = false
 input_pickable = true
@@ -47,7 +47,7 @@ rect = Rect2( -10, -10, 20, 20 )
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = true
+autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
