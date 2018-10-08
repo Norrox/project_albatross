@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 3.0
+const MOVE_SPEED = 250.0
 const MAX_HP = 100
 
 #enum MoveDirection { UP, DOWN, LEFT, RIGHT, NONE }
@@ -88,7 +88,7 @@ func check_flip():
 
 func _move(direction):
 	direction = direction.normalized() * MOVE_SPEED
-	move_and_collide(direction)
+	move_and_slide(direction)
 
 func _player_right():
 	$Sprite.flip_h = false

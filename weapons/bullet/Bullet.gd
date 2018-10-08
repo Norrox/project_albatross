@@ -6,6 +6,7 @@ export(float) var DAMAGE = 15
 var direction = 0
 
 func _ready():
+	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
 
 func _process(delta):
@@ -14,11 +15,10 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_a_parent_of(self):
 		return
-	if not body.is_in_group('players'):
-		return
-	else:	
+	elif body.is_in_group('players'):	
 		body.damage(DAMAGE)
 		queue_free()
+	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

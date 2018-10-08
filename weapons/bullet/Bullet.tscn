@@ -4,14 +4,13 @@
 [ext_resource path="res://weapons/bullet/bullet.png" type="Texture" id=2]
 [ext_resource path="res://weapons/bullet/gun_lazer.wav" type="AudioStream" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 5.37479
+extents = Vector2( 6, 8 )
 
 [node name="Projectile" type="Area2D" index="0"]
 
-z_index = -1
 z_as_relative = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -21,13 +20,13 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 SPEED = 750
 DAMAGE = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 28.644, 0 )
+position = Vector2( 36, 0 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
