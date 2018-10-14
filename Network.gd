@@ -1,5 +1,8 @@
 extends Node
 
+#Default IP should be the one which creates the server?
+#I use a DLink router and my phone has this IP (Check IP address in WiFi Settings>WiFi Info)
+#const DEFAULT_IP = '192.168.0.102'
 const DEFAULT_IP = '127.0.0.1'
 const DEFAULT_PORT = 31400
 const MAX_PLAYERS = 5
@@ -13,33 +16,47 @@ var gpgs = null
 #signal server_disconnected
 
 func _ready():
+<<<<<<< HEAD
 	pass
+=======
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
+>>>>>>> 1c14dd36e3c44796b1681ced2de02dd3ea855325
 	init_play_services()
 	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):
- 		gpgs = Engine.get_singleton("GodotPlayGameServices")
- 		gpgs.init(get_instance_id(), true)
-		
+		gpgs = Engine.get_singleton("GodotPlayGameServices")
+		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton Added!")
+		gpgs.init(get_instance_id(), true)
+		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton init() called!")
+
 func google_sign_in():
 	gpgs.signInInteractive()
+<<<<<<< HEAD
 	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	gpgs.rtmStartQuickGame(2, 50, 0)
 	
+=======
+	print("GPGS Sign In Succeeded!")
+
+>>>>>>> 1c14dd36e3c44796b1681ced2de02dd3ea855325
 func create_server(player_nickname):
 	self_data.name = player_nickname
 	players[1] = self_data
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_server(DEFAULT_PORT, MAX_PLAYERS)
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Server Created!")
 	get_tree().set_network_peer(peer)
 
 func connect_to_server(player_nickname):
 	self_data.name = player_nickname
 	get_tree().connect('connected_to_server', self, '_connected_to_server')
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Server Connected!")
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(DEFAULT_IP, DEFAULT_PORT)
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Client Created!")
 	get_tree().set_network_peer(peer)
 
 func _connected_to_server():
@@ -47,6 +64,7 @@ func _connected_to_server():
 	rpc('_send_player_info', get_tree().get_network_unique_id(), self_data)
 
 func _on_player_disconnected(id):
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Player Disconnected!")
 	players.erase(id)
 
 remote func _send_player_info(id, info):
