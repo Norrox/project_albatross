@@ -13,8 +13,8 @@ var gpgs = null
 #signal server_disconnected
 
 func _ready():
+	pass
 	init_play_services()
-	
 	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 
 func init_play_services():
@@ -24,6 +24,9 @@ func init_play_services():
 		
 func google_sign_in():
 	gpgs.signInInteractive()
+	
+func _on_play_game_services_sign_in_success(signInType, playerID):	
+	gpgs.rtmStartQuickGame(2, 50, 0)
 	
 func create_server(player_nickname):
 	self_data.name = player_nickname

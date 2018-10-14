@@ -19,7 +19,7 @@ func _on_JoinButton_pressed():
 	
 func _on_QuickMatchButton_pressed():
 	Network.google_sign_in()
-	_load_game()
+	#_load_game()
 
 func _load_game():
 	get_tree().change_scene('res://Game.tscn')
