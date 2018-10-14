@@ -7,11 +7,23 @@ const MAX_PLAYERS = 5
 var players = { }
 var self_data = { name = '', position = Vector2(360, 180), rifle_rotation = 0.0 }
 
-signal player_disconnected
-signal server_disconnected
+var gpgs = null
+
+#signal player_disconnected
+#signal server_disconnected
 
 func _ready():
+	init_play_services()
+	
 	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
+
+func init_play_services():
+	if Engine.has_singleton("GodotPlayGameServices"):
+ 		gpgs = Engine.get_singleton("GodotPlayGameServices")
+ 		gpgs.init(get_instance_id(), true)
+		
+func google_sign_in():
+	gpgs.signInInteractive()
 
 func create_server(player_nickname):
 	self_data.name = player_nickname
