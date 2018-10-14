@@ -18,10 +18,8 @@ func _on_JoinButton_pressed():
 	_load_game()
 	
 func _on_QuickMatchButton_pressed():
-	if _player_name == "":
-		return
 	Network.google_sign_in()
-	#_load_game()
+	_load_game()
 
 func _load_game():
 	get_tree().change_scene('res://Game.tscn')

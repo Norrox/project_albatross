@@ -24,7 +24,7 @@ func init_play_services():
 		
 func google_sign_in():
 	gpgs.signInInteractive()
-
+	
 func create_server(player_nickname):
 	self_data.name = player_nickname
 	players[1] = self_data
