@@ -30,6 +30,9 @@ func init_play_services():
 func google_sign_in():
 	gpgs.signInInteractive()
 	
+func google_sign_out():
+	gpgs.signOut()
+	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("GPGS Sign In Succeeded!")
 	

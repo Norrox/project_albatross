@@ -129,25 +129,30 @@ public class Client {
     }
 
     public void onMainActivityResult(int requestCode, int resultCode, Intent intent) {
-        switch (requestCode){
-            case RC_SIGN_IN:
-                GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(intent);
-                if (result.isSuccess()) {
-                    GoogleSignInAccount signedInAccount = result.getSignInAccount();
-                    onConnected(signedInAccount, SIGN_IN_INTERACTIVE);
+        // super.onActivityResult(requestCode, resultCode, data);
+    
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
+            handleSignInResult(task);
+        }
+    }
 
-                    // This line was needed to show the popups for "Welcome back", "achievement unlocked", etc.
-                    // Ugh, this thing was annoying to figure out haha.
-                    Games.getGamesClient(activity, signedInAccount).setViewForPopups(activity.findViewById(android.R.id.content));
-                } else {
-                    String message = result.getStatus().getStatusMessage();
-                    if (message != null && !message.isEmpty()) {
-                        Log.d(TAG, "Connection error. ApiException message: " + message);
-                    }
-                    onDisconnected();
-                    GodotLib.calldeferred(instance_id, GODOT_CALLBACK_FUNCTIONS[2], new Object[] { SIGN_IN_INTERACTIVE });
-                }
-                break;
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+    
+            // Signed in successfully, show authenticated UI.
+            //updateUI(account);
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+            //updateUI(null);
+            onDisconnected();
+            GodotLib.calldeferred(instance_id, GODOT_CALLBACK_FUNCTIONS[2], new Object[] { SIGN_IN_INTERACTIVE });
         }
     }
 

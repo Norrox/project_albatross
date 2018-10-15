@@ -17,9 +17,12 @@ func _on_JoinButton_pressed():
 	Network.connect_to_server(_player_name)
 	_load_game()
 	
-func _on_QuickMatchButton_pressed():
+func _on_SignInButton_pressed():
 	Network.google_sign_in()
 	#_load_game()
+	
+func _on_SignOutButton_pressed():
+	Network.google_sign_out()
 
 func _load_game():
 	get_tree().change_scene('res://Game.tscn')
