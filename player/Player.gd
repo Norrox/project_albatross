@@ -28,15 +28,8 @@ func _physics_process(delta):
 	if is_network_master():		
 		mouse_pos = get_global_mouse_position()
 	
-		if Input.is_action_pressed('left'):
-			direction += Vector2(-1, 0)
-		if Input.is_action_pressed('right'):
-			direction += Vector2(1, 0)
-		if Input.is_action_pressed('up'):
-			direction += Vector2(0, -1)
-		if Input.is_action_pressed('down'):
-			direction += Vector2(0, 1)
-		
+		direction += get_parent().find_node("CanvasLayer").stick1_vector
+	
 		if Input.is_action_pressed('roll'):
 			_roll()
 
@@ -75,7 +68,8 @@ func _animate(animation):
 	play_anim(animation)
 
 func _rotate_gun(mouse_pos):
-	$Rifle.look_at(mouse_pos)
+	#$Rifle.look_at(mouse_pos)
+	$Rifle.rotation = get_parent().find_node("CanvasLayer").stick2_angle
 	if check_flip():
 		_player_left()
 		_rifle_left()
