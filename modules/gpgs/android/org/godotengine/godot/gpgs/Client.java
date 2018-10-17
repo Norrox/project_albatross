@@ -75,7 +75,7 @@ public class Client {
             mGoogleSignInClient = GoogleSignIn.getClient(activity, signInOptions);
         }else{
             Log.d(TAG, "Creating sign in client");
-            mGoogleSignInClient = GoogleSignIn.getClient(activity, GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
+            mGoogleSignInClient = GoogleSignIn.getClient(activity, GoogleSignInOptions.DEFAULT_SIGN_IN);
         }
     }
 
@@ -143,7 +143,8 @@ public class Client {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-    
+            
+            onConnected(account, SIGN_IN_INTERACTIVE);
             // Signed in successfully, show authenticated UI.
             //updateUI(account);
         } catch (ApiException e) {
