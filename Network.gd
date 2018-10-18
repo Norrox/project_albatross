@@ -27,20 +27,58 @@ func init_play_services():
 		gpgs.init(get_instance_id(), true)
 		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton init() called!")
 
+func connected_init_match():
+	return
+	var player_IDs = get_IDs()
+	
+	self_data.name = get_current_player_display_name()
+
+func get_IDs():
+	return get_all_participant_IDs().split(',')
+
 func google_sign_in():
 	gpgs.signInInteractive()
 	
 func google_sign_out():
 	gpgs.signOut()
 	
+func is_online():
+	return gpgs.isOnline()
+	
+func get_current_player_ID():
+	return gpgs.getCurrentPlayerID()
+	
+func get_current_player_display_name():
+	return gpgs.getCurrentPlayerDisplayName()
+	
+func get_current_player_id():
+	return gpgs.getCurrentPlayerID()
+	
+func start_quick_game(minPlayers, maxPlayers, role_bitmask):
+	print('Starting auto quick match')
+	gpgs.rtmStartQuickGame(minPlayers, maxPlayers, role_bitmask)
+	
+func get_all_participant_IDs():
+	return gpgs.rtmGetAllParticipantIDs()
+	
+### google callbacks ###	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("GPGS Sign In Succeeded!")
+	start_quick_game(2, 2, 0)
 	
 func _on_play_game_services_sign_in_failure(signInType):
 	print('GPGS Sign In Failed')
 	
 func _on_play_game_services_sign_out(success):
 	print('GPGS Player Signed Out')
+	
+func _on_play_game_services_rtm_room_client_created(success,roomID):
+	print('Auto quick room created')
+	
+func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
+	print('All participants connected in quick match')
+	connected_init_match()
+### end google callbacks ###
 
 func create_server(player_nickname):
 	self_data.name = player_nickname
