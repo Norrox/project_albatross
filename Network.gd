@@ -41,24 +41,36 @@ func google_sign_out():
 	gpgs.signOut()
 	
 func google_send_player_info():
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ IN FUNCTION google_send_player_info():')
 	for peer_id in get_IDs():
 		if peer_id != master_ID:
 			send_reliable_data(var2str(self_data), peer_id)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ game_started:' + game_started)
 	if !game_started:
 		game_started = true
-		
+		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ game_started IS FALSE, SETTING IT TO TRUE: ' + game_started)
+
 func update_player_info(sender_ID, info):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Updating player info for' + sender_ID)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ Updating player info for' + sender_ID)
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Player info string: ' + info)
 	players[sender_ID] = str2var(info)
 	
 	if !game_started:
+		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ INSIDE IF STATEMENT')
 		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
 		var new_player = load('res://player/Player.tscn').instance()
+		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Loaded Player.tscn')
 		new_player.name = sender_ID
+		print('New Player Name ' + new_player.name
 		$'/root/Menu/'._load_game()
+		print('/root/Menu/ LOADED')
 		$'/root/Game/'.add_child(new_player)
+		print('/root/Game/ ADDED CHILD')
 		new_player.init(info.name, info.position, true)
+		print('New Player: ' + new_player.name + ' Initialized.')
+		return
+	
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GAME STARTED. DIDN'T ')
 	
 func is_online():
 	return gpgs.isOnline()
