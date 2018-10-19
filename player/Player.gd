@@ -4,30 +4,26 @@ const MOVE_SPEED = 250.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 
-#enum MoveDirection { UP, DOWN, LEFT, RIGHT, NONE }
-
-slave var slave_position = Vector2()
-slave var slave_movement = Vector2()
-slave var slave_mouse_pos = Vector2()
-slave var slave_animation = 'idle'
-slave var slave_rolling = false
-
+var is_master = false
 var health_points = MAX_HP
-var mouse_pos = Vector2()
 var animation = 'idle'
+var direction = Vector2()
 var dead = false
 var rolling = false
 var can_roll = true
+
+var slave_animation = 'idle'
+var slave_direction = Vector2()
+var slave_position = Vector2()
 
 func _ready():
 	_update_health_bar()
 
 func _physics_process(delta):
-	var direction = Vector2()
+	direction = Vector2()
+	slave_direction = Vector2()
 	
-	if is_network_master():		
-		mouse_pos = get_global_mouse_position()
-	
+	if is_master():		
 		direction += get_parent().find_node("CanvasLayer").stick1_vector
 	
 		if Input.is_action_pressed('roll'):
@@ -42,33 +38,29 @@ func _physics_process(delta):
 		elif direction == Vector2():
 			animation = 'idle'
 				
-		rset_unreliable('slave_position', position)
-		rset('slave_movement', direction)
-		rset('slave_mouse_pos', mouse_pos)
-		rset('slave_animation', animation)
-		rset('slave_rolling', rolling)
 		_move(direction)
-		_rotate_gun(mouse_pos)
+		_rotate_gun()
 		_animate(animation)
+		
+		Network.update_dir(direction)
+		Network.update_position(global_position)
+		Network.update_anim(animation)
+		#Network.update_gun_angle()		
+		Network._send_player_info()
 	else:
-		_move(slave_movement)
-		_rotate_gun(slave_mouse_pos)
+		var slaver = Network.players[Network.self_data.ID]
+		slave_direction = slaver.direction
+		#slave_position = slaver.position
+		slave_animation = slaver.animation
+		
+		_move(slave_direction)
+		#_rotate_gun()
 		_animate(slave_animation)
-		position = slave_position
-		mouse_pos = slave_mouse_pos
-		animation = slave_animation
-		rolling = slave_rolling
-	
-	if get_tree().is_network_server():
-		var player_id = int(name)
-		Network.update_position(player_id, position)
-		Network.update_rotation(player_id, $Rifle.rotation)
 
 func _animate(animation):
 	play_anim(animation)
 
-func _rotate_gun(mouse_pos):
-	#$Rifle.look_at(mouse_pos)
+func _rotate_gun():
 	$Rifle.rotation = get_parent().find_node("CanvasLayer").stick2_angle
 	if check_flip():
 		_player_left()
@@ -104,7 +96,7 @@ func _rifle_left():
 func _update_health_bar():
 	$GUI/HealthBar.value = health_points
 
-sync func _roll():
+func _roll():
 	if !can_roll:
 		return
 	rolling = true
@@ -121,7 +113,7 @@ func damage(value):
 		rpc('_die')
 	_update_health_bar()
 
-sync func _die():
+func _die():
 	dead = true
 	yield($AnimationPlayer,"animation_finished")
 	dead = false
