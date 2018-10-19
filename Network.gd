@@ -1,21 +1,14 @@
 extends Node
 
-#Default IP should be the one which creates the server?
-#I use a DLink router and my phone has this IP (Check IP address in WiFi Settings>WiFi Info)
-#const DEFAULT_IP = '192.168.0.102'
-const DEFAULT_IP = '127.0.0.1'
-const DEFAULT_PORT = 31400
-const MAX_PLAYERS = 5
+const MIN_PLAYERS = 1
+const MAX_PLAYERS = 3
 
 var players = { }
-var self_data = { ID = -1, name = '', position = Vector2(360, 180), direction = Vector2(), rifle_rotation = 0.0, animation = 'idle' }
+var self_data = { ID = "No_Player", name = '', position = Vector2(360, 180), direction = Vector2(), rifle_rotation = 0.0, animation = 'idle' }
 var master_ID = -1
 
 var gpgs = null
 var game_started = false
-
-#signal player_disconnected
-#signal server_disconnected
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
@@ -35,7 +28,6 @@ func connected_init_match():
 	master_ID = get_current_player_ID()
 	self_data.name = get_current_player_display_name()
 	players[master_ID] = self_data
-	#rpc('_send_player_info', get_tree().get_network_unique_id(), self_data)
 	google_send_player_info()
 			
 
@@ -56,13 +48,14 @@ func google_send_player_info():
 		game_started = true
 		
 func update_player_info(sender_ID, info):
-	print('Updating player info')
+	print('Updating player info for' + sender_ID)
+	print('Player info string: ' + info)
 	players[sender_ID] = str2var(info)
 	
 	if !game_started:
 		print('Creating player and loading game')
 		var new_player = load('res://player/Player.tscn').instance()
-		new_player.name = str(sender_ID)
+		new_player.name = sender_ID
 		$'/root/Menu/'._load_game()
 		$'/root/Game/'.add_child(new_player)
 		new_player.init(info.name, info.position, true)
@@ -97,7 +90,7 @@ func send_unreliable_data_to_all(data):
 ### google callbacks ###	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("GPGS Sign In Succeeded!")
-	start_quick_game(1, 3, 0)
+	start_quick_game(MIN_PLAYERS, MAX_PLAYERS, 0)
 	
 func _on_play_game_services_sign_in_failure(signInType):
 	print('GPGS Sign In Failed')
