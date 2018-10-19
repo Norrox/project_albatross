@@ -61,7 +61,7 @@ func update_player_info(sender_ID, info):
 		var new_player = load('res://player/Player.tscn').instance()
 		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Loaded Player.tscn')
 		new_player.name = sender_ID
-		print('New Player Name ' + new_player.name
+		print('New Player Name ' + new_player.name)
 		$'/root/Menu/'._load_game()
 		print('/root/Menu/ LOADED')
 		$'/root/Game/'.add_child(new_player)
@@ -70,7 +70,7 @@ func update_player_info(sender_ID, info):
 		print('New Player: ' + new_player.name + ' Initialized.')
 		return
 	
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GAME STARTED. DIDN'T ')
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GAME STARTED. DIDNT ')
 	
 func is_online():
 	return gpgs.isOnline()
