@@ -48,12 +48,12 @@ func google_send_player_info():
 		game_started = true
 		
 func update_player_info(sender_ID, info):
-	print('Updating player info for' + sender_ID)
-	print('Player info string: ' + info)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Updating player info for' + sender_ID)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Player info string: ' + info)
 	players[sender_ID] = str2var(info)
 	
 	if !game_started:
-		print('Creating player and loading game')
+		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
 		var new_player = load('res://player/Player.tscn').instance()
 		new_player.name = sender_ID
 		$'/root/Menu/'._load_game()
@@ -89,30 +89,30 @@ func send_unreliable_data_to_all(data):
 	
 ### google callbacks ###	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
-	print("GPGS Sign In Succeeded!")
+	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Succeeded!")
 	start_quick_game(MIN_PLAYERS, MAX_PLAYERS, 0)
 	
 func _on_play_game_services_sign_in_failure(signInType):
-	print('GPGS Sign In Failed')
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Failed')
 	
 func _on_play_game_services_sign_out(success):
-	print('GPGS Player Signed Out')
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Player Signed Out')
 	
 func _on_play_game_services_rtm_room_client_created(success,roomID):
-	print('Auto quick room created')
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')
 	
 func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
-	print('All participants connected in quick match')
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ All participants connected in quick match')
 	connected_init_match()
 	
 func _on_play_game_services_rtm_reliable_message_sent(recipientId,tokenID):
-	print('message sent to ' + recipientId)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message sent to ' + recipientId)
 	
 func _on_play_game_services_rtm_reliable_message_confirmed(recipientId,tokenID):
-	print('message confirmed from ' + recipientId)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message confirmed from ' + recipientId)
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
-	print('received message from ' + sender_ID)
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ received message from ' + sender_ID)
 	update_player_info(sender_ID, data) 
 ### end google callbacks ###
 
