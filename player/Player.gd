@@ -23,7 +23,7 @@ func _physics_process(delta):
 	direction = Vector2()
 	slave_direction = Vector2()
 	
-	if is_master():		
+	if is_master:		
 		direction += get_parent().find_node("CanvasLayer").stick1_vector
 	
 		if Input.is_action_pressed('roll'):

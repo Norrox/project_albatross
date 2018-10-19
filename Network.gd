@@ -28,6 +28,8 @@ func init_play_services():
 		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton Added!")
 		gpgs.init(get_instance_id(), true)
 		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton init() called!")
+		gpgs.keepScreenOn(true)
+		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Screen forced on!') 
 
 func connected_init_match():
 	master_ID = get_current_player_ID()
@@ -54,9 +56,11 @@ func google_send_player_info():
 		game_started = true
 		
 func update_player_info(sender_ID, info):
+	print('Updating player info')
 	players[sender_ID] = str2var(info)
 	
 	if !game_started:
+		print('Creating player and loading game')
 		var new_player = load('res://player/Player.tscn').instance()
 		new_player.name = str(sender_ID)
 		$'/root/Menu/'._load_game()
