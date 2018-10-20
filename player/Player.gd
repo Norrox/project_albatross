@@ -13,6 +13,7 @@ var dead = false
 var rolling = false
 var can_roll = true
 
+var slave_info = {}
 var slave_animation = 'idle'
 var slave_direction = Vector2()
 var slave_position = Vector2()
@@ -47,12 +48,13 @@ func _physics_process(delta):
 		Network.update_position(global_position)
 		Network.update_anim(animation)
 		#Network.update_gun_angle()		
-		Network.google_send_player_info()
+		#Network.google_send_player_info()
+		Network.google_send_unreliable(global_position)
 	else:
-		var slaver = Network.players[ID]
+		var slave_info = Network.players[ID]
 		#slave_direction = slaver.direction
-		slave_position = slaver.position
-		slave_animation = slaver.animation
+		slave_position = Network.players[ID].position
+		slave_animation = slave_info.animation
 		
 		position = slave_position
 		#_move(slave_direction)

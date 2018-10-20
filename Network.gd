@@ -1,10 +1,10 @@
 extends Node
 
 const MIN_PLAYERS = 1
-const MAX_PLAYERS = 2
+const MAX_PLAYERS = 3
 
 var players = { }
-var self_data = { name = '', position = Vector2(200, 200), direction = Vector2(), rifle_rotation = 0.0, animation = 'idle' }
+var self_data = { name = '', direction = Vector2(), animation = 'idle', position = Vector2(), rifle_rotation = 0.0 }
 var master_ID = "No_Master"
 
 var gpgs = null
@@ -45,8 +45,16 @@ func google_send_player_info():
 		if peer_id != master_ID:
 			send_reliable_data(var2str(self_data), peer_id)
 			
+func google_send_unreliable(position):
+	for peer_id in get_IDs():
+		if peer_id != master_ID:
+			send_unreliable_data(var2str(position), peer_id)
+			
 func update_player_info(sender_ID, info):
 	players[sender_ID] = str2var(info)		
+
+func update_player_position(sender_ID, info):
+	players[sender_ID].position = str2var(info)
 		
 func init_other_players():
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
@@ -112,7 +120,10 @@ func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	#print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message confirmed from ' + recipientId)
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
-	update_player_info(sender_ID, data) 
+	if is_reliable:
+		update_player_info(sender_ID, data) 
+	else:
+		update_player_position(sender_ID, data)
 ### end google callbacks ###
 
 func update_dir(direction):
