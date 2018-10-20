@@ -20,6 +20,7 @@ var slave_position = Vector2()
 
 func _ready():
 	_update_health_bar()
+	slave_position = global_position
 
 func _physics_process(delta):
 	direction = Vector2()
@@ -56,7 +57,10 @@ func _physics_process(delta):
 		slave_position = Network.players[ID].position
 		slave_animation = slave_info.animation
 		
-		position = slave_position
+		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
+		
+		position = slave_interpolated		
+		
 		#_move(slave_direction)
 		#_rotate_gun()
 		_animate(slave_animation)

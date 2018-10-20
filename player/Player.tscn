@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/roll.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://player/style 1_player death_00-sheet.png" type="Texture" id=5]
 [ext_resource path="res://player/player.png" type="Texture" id=6]
 [ext_resource path="res://player/player_run.png" type="Texture" id=7]
+[ext_resource path="res://player/Camera.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -291,7 +292,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -377,6 +378,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 8 )
 
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
 

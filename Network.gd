@@ -14,7 +14,6 @@ var game_started = false
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
 	init_play_services()
-	#get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):

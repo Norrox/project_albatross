@@ -9,8 +9,10 @@ var stick1_pos = Vector2()
 var stick2_pos = Vector2()
 var left_event_pos = Vector2()
 var right_event_pos = Vector2()
+var player_name = ""
 
 func _ready():
+	player_name = Network.get_current_player_display_name()
 	position.x = PLACEMENT_OFFSET
 	position.y = get_viewport().size.y - PLACEMENT_OFFSET
 	stick1_pos = $Analog_Small.global_position
@@ -53,9 +55,9 @@ func move_analog_small(event_pos, stick):
         
         if dist + SMALL_RADIUS > RADIUS:
             dist = RADIUS - SMALL_RADIUS
-            get_parent().get_parent().get_node("1").get_node("Rifle").shoot = true
+            get_parent().get_parent().get_node(player_name).get_node("Rifle").shoot = true
         else:
-            get_parent().get_parent().get_node("1").get_node("Rifle").shoot = false
+            get_parent().get_parent().get_node(player_name).get_node("Rifle").shoot = false
 			
         var vect = (event_pos - stick2_pos).normalized()
         var angle = event_pos.angle_to_point(stick2_pos)

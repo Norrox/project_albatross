@@ -4,7 +4,7 @@
 [ext_resource path="res://interface/Analog_Circle.png" type="Texture" id=2]
 [ext_resource path="res://interface/Analog.gd" type="Script" id=3]
 
-[node name="Analog" type="CanvasLayer" index="0"]
+[node name="Analog" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
