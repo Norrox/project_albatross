@@ -5,7 +5,7 @@ const MAX_PLAYERS = 4
 
 var connected_peers = ""
 var players = { }
-var self_data = { name = '', direction = Vector2(), animation = 'idle', position = Vector2(), rifle_rotation = 0.0 }
+var self_data = { name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0 }
 var master_ID = "No_Master"
 
 var gpgs = null
@@ -47,9 +47,12 @@ func google_send_player_info():
 	for peer_id in get_IDs():
 		if peer_id != master_ID:
 			send_reliable_data(var2str(self_data), peer_id)
+
+func google_send_reliable(data):
+	send_reliable_data(var2str(data), connected_peers)
 			
-func google_send_unreliable(position):
-	send_unreliable_data(var2str(position), connected_peers)
+func google_send_unreliable(data):
+	send_unreliable_data(var2str(data), connected_peers)
 	
 func set_peers_list():
 	for peer_id in players.keys():
@@ -57,11 +60,17 @@ func set_peers_list():
 			connected_peers += peer_id + ','
 	connected_peers = connected_peers.substr(0, connected_peers.length()-1)
 			
-func update_player_info(sender_ID, info):
-	players[sender_ID] = str2var(info)		
+func update_player_info(sender_ID, data):
+	players[sender_ID] = str2var(data)		
+	
+func update_player_animation(sender_ID, data):
+	var data_var = str2var(data)
+	players[sender_ID].animation = data_var.anim
 
-func update_player_position(sender_ID, info):
-	players[sender_ID].position = str2var(info)
+func update_player_positions(sender_ID, data):
+	var data_var = str2var(data)
+	players[sender_ID].position = data_var.position
+	players[sender_ID].rifle_rotation = data_var.rotation
 		
 func init_other_players():
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
@@ -128,19 +137,19 @@ func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	if is_reliable:
-		update_player_info(sender_ID, data) 
+		if str2var(data).has('name'):
+			update_player_info(sender_ID, data) 
+		else:
+			update_player_animation(sender_ID, data)
 	else:
-		update_player_position(sender_ID, data)
+		update_player_positions(sender_ID, data)
 ### end google callbacks ###
 
-func update_dir(direction):
-	players[master_ID].direction = direction
-	
 func update_position(pos):
 	players[master_ID].position = pos
 	
 func update_anim(animation):
 	players[master_ID].animation = animation
 	
-func update_gun_angle():
-	pass
+func update_gun_angle(rotation):
+	players[master_ID].rifle_rotation = rotation

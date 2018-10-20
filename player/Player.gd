@@ -9,7 +9,9 @@ var is_master = false
 var ID = "No_ID"
 var health_points = MAX_HP
 var animation = 'idle'
+var last_animation = ''
 var direction = Vector2()
+var rifle_rotation = 0
 var dead = false
 var rolling = false
 var can_roll = true
@@ -17,6 +19,7 @@ var can_roll = true
 var slave_info = {}
 var slave_animation = 'idle'
 var slave_direction = Vector2()
+var slave_rifle_rotation = 0
 var slave_position = Vector2()
 
 func _ready():
@@ -29,10 +32,12 @@ func _physics_process(delta):
 	
 	if is_master:		
 		direction += get_parent().find_node("CanvasLayer").stick1_vector
+		rifle_rotation = get_parent().find_node("CanvasLayer").stick2_angle
 	
 		if Input.is_action_pressed('roll'):
 			_roll()
 
+		last_animation = animation
 		if !dead and !rolling and direction != Vector2():
 			animation = 'run'
 		elif rolling:
@@ -43,35 +48,36 @@ func _physics_process(delta):
 			animation = 'idle'
 				
 		_move(direction)
-		_rotate_gun()
+		_rotate_gun(rifle_rotation)
 		_animate(animation)
 		
-		Network.update_dir(direction)
 		Network.update_position(global_position)
 		Network.update_anim(animation)
-		#Network.update_gun_angle()		
-		#Network.google_send_player_info()
-		Network.google_send_unreliable(global_position)
+		Network.update_gun_angle(rifle_rotation)		
+		if last_animation != animation:
+			Network.google_send_reliable({ anim = animation })
+		Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
 		slave_info = Network.players[ID]
-		#slave_direction = slaver.direction
 		slave_position = Network.players[ID].position
 		slave_animation = slave_info.animation
+		slave_rifle_rotation = slave_info.rifle_rotation
 		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
 		var network_difference = slave_interpolated.distance_to(global_position)
-		var slave_direction = slave_interpolated - global_position
+		slave_direction = slave_interpolated - global_position
 		
 		if network_difference > MIN_MOVE_DIST:
 			_move(slave_direction)
-		#_rotate_gun()
+			
+		_rotate_gun(slave_rifle_rotation)
 		_animate(slave_animation)
 
 func _animate(animation):
 	play_anim(animation)
 
-func _rotate_gun():
-	$Rifle.rotation = get_parent().find_node("CanvasLayer").stick2_angle
+func _rotate_gun(rotation):
+	$Rifle.rotation = rotation
 	if check_flip():
 		_player_left()
 		_rifle_left()
