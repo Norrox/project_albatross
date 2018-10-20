@@ -12,7 +12,10 @@ var right_event_pos = Vector2()
 var player_name = ""
 
 func _ready():
-	player_name = Network.get_current_player_display_name()
+	if !$'/root/Game'.force_local:
+		player_name = Network.get_current_player_display_name()
+	else:
+		player_name = 'test'
 	position.x = PLACEMENT_OFFSET
 	position.y = get_viewport().size.y - PLACEMENT_OFFSET
 	stick1_pos = $Analog_Small.global_position

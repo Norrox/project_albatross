@@ -71,6 +71,12 @@ func update_player_positions(sender_ID, data):
 	var data_var = str2var(data)
 	players[sender_ID].position = data_var.position
 	players[sender_ID].rifle_rotation = data_var.rotation
+	
+func spawn_bullet(sender_ID, data):
+	var data_var = str2var(data)
+	for peer_id in players.keys():
+		if peer_id != master_ID:
+			$'/root/Game'.get_node(players[peer_id].name).get_node('Rifle')._shoot(data_var.bullet_pos, data_var.bullet_rot, data_var.bullet_dir)
 		
 func init_other_players():
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
@@ -137,8 +143,11 @@ func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	if is_reliable:
-		if str2var(data).has('name'):
+		var data_var = str2var(data)
+		if data_var.has('name'):
 			update_player_info(sender_ID, data) 
+		elif data_var.has('bullet_pos'):
+			spawn_bullet(sender_ID, data)
 		else:
 			update_player_animation(sender_ID, data)
 	else:

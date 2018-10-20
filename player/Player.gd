@@ -51,12 +51,13 @@ func _physics_process(delta):
 		_rotate_gun(rifle_rotation)
 		_animate(animation)
 		
-		Network.update_position(global_position)
-		Network.update_anim(animation)
-		Network.update_gun_angle(rifle_rotation)		
-		if last_animation != animation:
-			Network.google_send_reliable({ anim = animation })
-		Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
+		if !$'/root/Game'.force_local:
+			Network.update_position(global_position)
+			Network.update_anim(animation)
+			Network.update_gun_angle(rifle_rotation)		
+			if last_animation != animation:
+				Network.google_send_reliable({ anim = animation })
+			Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
 		slave_info = Network.players[ID]
 		slave_position = Network.players[ID].position
