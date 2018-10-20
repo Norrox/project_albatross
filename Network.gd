@@ -1,11 +1,11 @@
 extends Node
 
 const MIN_PLAYERS = 1
-const MAX_PLAYERS = 3
+const MAX_PLAYERS = 2
 
 var players = { }
-var self_data = { ID = "No_Player", name = '', position = Vector2(360, 180), direction = Vector2(), rifle_rotation = 0.0, animation = 'idle' }
-var master_ID = -1
+var self_data = { name = '', position = Vector2(200, 200), direction = Vector2(), rifle_rotation = 0.0, animation = 'idle' }
+var master_ID = "No_Master"
 
 var gpgs = null
 var game_started = false
@@ -13,7 +13,7 @@ var game_started = false
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
 	init_play_services()
-	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
+	#get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):
@@ -29,7 +29,7 @@ func connected_init_match():
 	self_data.name = get_current_player_display_name()
 	players[master_ID] = self_data
 	google_send_player_info()
-			
+	$'/root/Menu/'._load_game()		
 
 func get_IDs():
 	return get_all_participant_IDs().split(',')
@@ -41,36 +41,24 @@ func google_sign_out():
 	gpgs.signOut()
 	
 func google_send_player_info():
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ IN FUNCTION google_send_player_info():')
 	for peer_id in get_IDs():
 		if peer_id != master_ID:
 			send_reliable_data(var2str(self_data), peer_id)
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ game_started:' + game_started)
-	if !game_started:
-		game_started = true
-		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ game_started IS FALSE, SETTING IT TO TRUE: ' + game_started)
-
+			
 func update_player_info(sender_ID, info):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~í ¾í´”~~~~~~í ½í±‰í ¼í¿»~í ¾í´”í ¾í´”í ¾í´”~ Updating player info for' + sender_ID)
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Player info string: ' + info)
-	players[sender_ID] = str2var(info)
-	
-	if !game_started:
-		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ INSIDE IF STATEMENT')
-		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
-		var new_player = load('res://player/Player.tscn').instance()
-		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Loaded Player.tscn')
-		new_player.name = sender_ID
-		print('New Player Name ' + new_player.name)
-		$'/root/Menu/'._load_game()
-		print('/root/Menu/ LOADED')
-		$'/root/Game/'.add_child(new_player)
-		print('/root/Game/ ADDED CHILD')
-		new_player.init(info.name, info.position, true)
-		print('New Player: ' + new_player.name + ' Initialized.')
-		return
-	
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GAME STARTED. DIDNT ')
+	players[sender_ID] = str2var(info)		
+		
+func init_other_players():
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
+	for peer_id in players.keys():
+		if peer_id != master_ID:
+			var new_player = load('res://player/Player.tscn').instance()
+			new_player.name = players[peer_id].name
+			new_player.ID = peer_id
+			print('New Player Name ' + new_player.name)
+			$'/root/Game/'.add_child(new_player)
+			new_player.init(new_player.name, Vector2(200,200), true)
+			print('New Player: ' + new_player.name + ' Initialized.')
 	
 func is_online():
 	return gpgs.isOnline()
@@ -117,14 +105,13 @@ func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ All participants connected in quick match')
 	connected_init_match()
 	
-func _on_play_game_services_rtm_reliable_message_sent(recipientId,tokenID):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message sent to ' + recipientId)
+#func _on_play_game_services_rtm_reliable_message_sent(recipientId,tokenID):
+	#print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message sent to ' + recipientId)
 	
-func _on_play_game_services_rtm_reliable_message_confirmed(recipientId,tokenID):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message confirmed from ' + recipientId)
+#func _on_play_game_services_rtm_reliable_message_confirmed(recipientId,tokenID):
+	#print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ message confirmed from ' + recipientId)
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ received message from ' + sender_ID)
 	update_player_info(sender_ID, data) 
 ### end google callbacks ###
 

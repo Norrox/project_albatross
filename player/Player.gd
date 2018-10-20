@@ -5,6 +5,7 @@ const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 
 var is_master = false
+var ID = "No_ID"
 var health_points = MAX_HP
 var animation = 'idle'
 var direction = Vector2()
@@ -46,14 +47,15 @@ func _physics_process(delta):
 		Network.update_position(global_position)
 		Network.update_anim(animation)
 		#Network.update_gun_angle()		
-		Network._send_player_info()
+		Network.google_send_player_info()
 	else:
-		var slaver = Network.players[Network.self_data.ID]
-		slave_direction = slaver.direction
-		#slave_position = slaver.position
+		var slaver = Network.players[ID]
+		#slave_direction = slaver.direction
+		slave_position = slaver.position
 		slave_animation = slaver.animation
 		
-		_move(slave_direction)
+		position = slave_position
+		#_move(slave_direction)
 		#_rotate_gun()
 		_animate(slave_animation)
 
