@@ -3,6 +3,7 @@ extends Node
 const MIN_PLAYERS = 1
 const MAX_PLAYERS = 4
 
+var connected_peers = ""
 var players = { }
 var self_data = { name = '', direction = Vector2(), animation = 'idle', position = Vector2(), rifle_rotation = 0.0 }
 var master_ID = "No_Master"
@@ -31,6 +32,7 @@ func connected_init_match():
 	google_send_player_info()
 	while players.size() < get_IDs().size():
 		yield(get_tree().create_timer(0.02), "timeout")
+	set_peers_list()
 	$'/root/Menu/'._load_game()		
 
 func get_IDs():
@@ -48,9 +50,13 @@ func google_send_player_info():
 			send_reliable_data(var2str(self_data), peer_id)
 			
 func google_send_unreliable(position):
-	for peer_id in get_IDs():
+	send_unreliable_data(var2str(position), connected_peers)
+	
+func set_peers_list():
+	for peer_id in players.keys():
 		if peer_id != master_ID:
-			send_unreliable_data(var2str(position), peer_id)
+			connected_peers += peer_id + ','
+	connected_peers = connected_peers.substr(0, connected_peers.length()-1)
 			
 func update_player_info(sender_ID, info):
 	players[sender_ID] = str2var(info)		
