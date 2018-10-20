@@ -3,6 +3,7 @@ extends KinematicBody2D
 const MOVE_SPEED = 250.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
+const MIN_MOVE_DIST = 5
 
 var is_master = false
 var ID = "No_ID"
@@ -52,16 +53,17 @@ func _physics_process(delta):
 		#Network.google_send_player_info()
 		Network.google_send_unreliable(global_position)
 	else:
-		var slave_info = Network.players[ID]
+		slave_info = Network.players[ID]
 		#slave_direction = slaver.direction
 		slave_position = Network.players[ID].position
 		slave_animation = slave_info.animation
 		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
+		var network_difference = slave_interpolated.distance_to(global_position)
+		var slave_direction = slave_interpolated - global_position
 		
-		position = slave_interpolated		
-		
-		#_move(slave_direction)
+		if network_difference > MIN_MOVE_DIST:
+			_move(slave_direction)
 		#_rotate_gun()
 		_animate(slave_animation)
 
