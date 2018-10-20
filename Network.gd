@@ -1,7 +1,7 @@
 extends Node
 
 const MIN_PLAYERS = 1
-const MAX_PLAYERS = 3
+const MAX_PLAYERS = 4
 
 var players = { }
 var self_data = { name = '', direction = Vector2(), animation = 'idle', position = Vector2(), rifle_rotation = 0.0 }
@@ -29,6 +29,8 @@ func connected_init_match():
 	self_data.name = get_current_player_display_name()
 	players[master_ID] = self_data
 	google_send_player_info()
+	while players.size() < get_IDs().size():
+		yield(get_tree().create_timer(0.02), "timeout")
 	$'/root/Menu/'._load_game()		
 
 func get_IDs():
