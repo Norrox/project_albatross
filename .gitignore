@@ -10,3 +10,4 @@ export_presets.cfg
 .directory
 *~
 export_presets.cfg
+builds/
