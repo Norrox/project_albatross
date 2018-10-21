@@ -6,7 +6,7 @@
 [ext_resource path="res://tilemap/env_collision.tres" type="TileSet" id=4]
 [ext_resource path="res://tilemap/env_top.tres" type="TileSet" id=5]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 

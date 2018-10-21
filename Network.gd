@@ -1,7 +1,7 @@
 extends Node
 
-const MIN_PLAYERS = 1
-const MAX_PLAYERS = 4
+var MIN_PLAYERS = 1 #const
+var MAX_PLAYERS = 4 #const
 
 var connected_peers = ""
 var players = { }
