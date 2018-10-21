@@ -5,7 +5,7 @@ const MAX_PLAYERS = 4
 
 var connected_peers = ""
 var players = { }
-var self_data = { name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0 }
+var self_data = { name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100 }
 var master_ID = "No_Master"
 
 var gpgs = null
@@ -71,6 +71,18 @@ func update_player_positions(sender_ID, data):
 	var data_var = str2var(data)
 	players[sender_ID].position = data_var.position
 	players[sender_ID].rifle_rotation = data_var.rotation
+	
+func update_player_health(sender_ID, data):
+	var data_var = str2var(data)
+	for peer_id in players.keys():
+		if peer_id != master_ID:
+			$'/root/Game'.get_node(players[sender_ID].name)._update_health_bar(players[sender_ID].hp)
+			
+func update_player_death(sender_ID, data):
+	var data_var = str2var(data)
+	for peer_id in players.keys():
+		if peer_id != master_ID:
+			$'/root/Game'.get_node(players[sender_ID].name)._die()
 	
 func spawn_bullet(sender_ID, data):
 	var data_var = str2var(data)
@@ -148,6 +160,10 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 			update_player_info(sender_ID, data) 
 		elif data_var.has('bullet_pos'):
 			spawn_bullet(sender_ID, data)
+		elif data_var.has('hp'):
+			update_player_health(sender_ID, data)
+		elif data_var.has('die'):
+			update_player_death(sender_ID, data)
 		else:
 			update_player_animation(sender_ID, data)
 	else:
@@ -162,3 +178,6 @@ func update_anim(animation):
 	
 func update_gun_angle(rotation):
 	players[master_ID].rifle_rotation = rotation
+	
+func update_health(hp):
+	players[master_ID].hp = hp

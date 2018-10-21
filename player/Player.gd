@@ -23,7 +23,7 @@ var slave_rifle_rotation = 0
 var slave_position = Vector2()
 
 func _ready():
-	_update_health_bar()
+	_update_health_bar(MAX_HP)
 	slave_position = global_position
 
 func _physics_process(delta):
@@ -110,8 +110,12 @@ func _rifle_right():
 func _rifle_left():
 	$Rifle.flip_v = true
 
-func _update_health_bar():
-	$GUI/HealthBar.value = health_points
+func _update_health_bar(hp):
+	$GUI/HealthBar.value = hp
+	if !$'/root/Game'.force_local:
+		Network.update_player_health(health_points)
+		Network.google_send_reliable({ hp = health_points })
+		
 
 func _roll():
 	if !can_roll:
@@ -127,8 +131,9 @@ func damage(value):
 	health_points -= value
 	if health_points <= 0:
 		health_points = 0
-		rpc('_die')
-	_update_health_bar()
+		Network.google_send_reliable({ die = true })
+		_die()
+	_update_health_bar(health_points)
 
 func _die():
 	dead = true
@@ -150,7 +155,7 @@ func _on_RespawnTimer_timeout():
 			child.show()
 	$CollisionShape2D.disabled = false
 	health_points = MAX_HP
-	_update_health_bar()
+	_update_health_bar(health_points)
 
 func init(nickname, start_position, is_slave):
 	$GUI/Nickname.text = nickname
