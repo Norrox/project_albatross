@@ -12,6 +12,7 @@ var animation = 'idle'
 var last_animation = ''
 var direction = Vector2()
 var rifle_rotation = 0
+var last_rifle_rotation = 0
 var dead = false
 var rolling = false
 var can_roll = true
@@ -32,6 +33,7 @@ func _physics_process(delta):
 	
 	if is_master:		
 		direction += get_parent().find_node("CanvasLayer").stick1_vector
+		last_rifle_rotation = rifle_rotation
 		rifle_rotation = get_parent().find_node("CanvasLayer").stick2_angle
 	
 		if Input.is_action_pressed('roll'):
@@ -57,7 +59,9 @@ func _physics_process(delta):
 			Network.update_gun_angle(rifle_rotation)		
 			if last_animation != animation:
 				Network.google_send_reliable({ anim = animation })
-			Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
+				
+			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
+				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
 		slave_info = Network.players[ID]
 		slave_position = Network.players[ID].position
@@ -70,6 +74,9 @@ func _physics_process(delta):
 		
 		if network_difference > MIN_MOVE_DIST:
 			_move(slave_direction)
+		else:
+			#need to move to exact position over time here
+			pass
 			
 		_rotate_gun(slave_rifle_rotation)
 		_animate(slave_animation)
@@ -113,7 +120,7 @@ func _rifle_left():
 func _update_health_bar(hp):
 	$GUI_Node/GUI/HealthBar.value = hp
 	if !$'/root/Game'.force_local:
-		Network.update_player_health(hp)
+		Network.update_health(hp)
 		Network.google_send_reliable({ health = hp })
 		
 

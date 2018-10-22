@@ -88,8 +88,8 @@ func spawn_bullet(sender_ID, data):
 	var data_var = str2var(data)
 	for peer_id in players.keys():
 		if peer_id != master_ID:
-			$'/root/Game'.get_node(players[peer_id].name).get_node('Rifle')._shoot(data_var.bullet_pos, data_var.bullet_rot, data_var.bullet_dir)
-		
+			$'/root/Game'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.bullet_pos, data_var.bullet_rot, data_var.bullet_dir)
+
 func init_other_players():
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
 	for peer_id in players.keys():

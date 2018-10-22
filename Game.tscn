@@ -87,6 +87,7 @@ _sections_unfolded = [ "Cell", "Collision", "Transform", "Z Index" ]
 
 [node name="Spikes" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 z_index = -4
 script = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]

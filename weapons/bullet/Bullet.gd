@@ -9,6 +9,8 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
 	$AudioStreamPlayer2D.play()
+	yield(get_tree().create_timer(1), "timeout")
+	queue_free()
 
 func _process(delta):
 	position += direction * SPEED * delta
@@ -24,5 +26,5 @@ func _on_body_entered(body):
 	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	# causing damage to not update when freeing here
-	pass
+	# bullet off screen!
+	pass 

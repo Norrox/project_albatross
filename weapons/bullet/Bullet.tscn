@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 6, 8 )
 
-[node name="Projectile" type="Area2D" index="0"]
+[node name="Projectile" type="Area2D"]
 
 z_index = -3
 z_as_relative = false
@@ -22,7 +22,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-SPEED = 750
+SPEED = 750.0
 DAMAGE = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -40,7 +40,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
-position = Vector2( 27.728, 0 )
 rect = Rect2( -10, -10, 20, 20 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
@@ -49,7 +48,7 @@ stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
-max_distance = 2000.0
+max_distance = 200.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
