@@ -1,7 +1,7 @@
 extends Area2D
 
 export(float) var SPEED = 750
-export(float) var DAMAGE = 15
+export(float) var DAMAGE = 5
 
 var direction = 0
 
@@ -24,4 +24,5 @@ func _on_body_entered(body):
 	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	# causing damage to not update when freeing here
+	pass

@@ -160,7 +160,7 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 			update_player_info(sender_ID, data) 
 		elif data_var.has('bullet_pos'):
 			spawn_bullet(sender_ID, data)
-		elif data_var.has('hp'):
+		elif data_var.has('health'):
 			update_player_health(sender_ID, data)
 		elif data_var.has('die'):
 			update_player_death(sender_ID, data)

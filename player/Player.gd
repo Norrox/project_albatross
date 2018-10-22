@@ -113,8 +113,8 @@ func _rifle_left():
 func _update_health_bar(hp):
 	$GUI_Node/GUI/HealthBar.value = hp
 	if !$'/root/Game'.force_local:
-		Network.update_player_health(health_points)
-		Network.google_send_reliable({ hp = health_points })
+		Network.update_player_health(hp)
+		Network.google_send_reliable({ health = hp })
 		
 
 func _roll():
