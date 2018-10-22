@@ -9,11 +9,11 @@ func _ready():
 
 func _process(delta):
 	if shoot and $Timer.is_stopped():
-		var bullet_direction = analog.stick2_vector
-		var bullet_position = global_position
-		var bullet_rotation = rotation
+		var bd = analog.stick2_vector
+		var bp = global_position
+		var br = rotation
 		if !$'/root/Game'.force_local:
-			Network.google_send_reliable({ bullet_pos = bullet_position, bullet_rot = bullet_rotation, bullet_dir = bullet_direction })
+			Network.google_send_reliable({ p = bp, r = br, d = bd })
 		_shoot(bullet_position, bullet_rotation, bullet_direction)
 		$Timer.start()
 

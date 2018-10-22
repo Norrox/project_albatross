@@ -88,7 +88,7 @@ func spawn_bullet(sender_ID, data):
 	var data_var = str2var(data)
 	for peer_id in players.keys():
 		if peer_id != master_ID:
-			$'/root/Game'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.bullet_pos, data_var.bullet_rot, data_var.bullet_dir)
+			$'/root/Game'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 
 func init_other_players():
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Creating player and loading game')
@@ -158,7 +158,7 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 		var data_var = str2var(data)
 		if data_var.has('name'):
 			update_player_info(sender_ID, data) 
-		elif data_var.has('bullet_pos'):
+		elif data_var.has('p'):
 			spawn_bullet(sender_ID, data)
 		elif data_var.has('health'):
 			update_player_health(sender_ID, data)
