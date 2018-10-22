@@ -2,6 +2,10 @@ extends Control
 
 var _player_name = ""
 
+func _ready():
+	if OS.get_name() == 'Windows':
+		get_tree().change_scene('res://Game.tscn')
+
 func _on_TextField_text_changed(new_text):
 	_player_name = new_text
 
