@@ -14,7 +14,7 @@ func _process(delta):
 		var br = rotation
 		if !$'/root/Game'.force_local:
 			Network.google_send_reliable({ p = bp, r = br, d = bd })
-		_shoot(bullet_position, bullet_rotation, bullet_direction)
+		_shoot(bp, br, bd)
 		$Timer.start()
 
 func _on_Timer_timeout():
