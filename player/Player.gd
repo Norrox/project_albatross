@@ -111,7 +111,7 @@ func _rifle_left():
 	$Rifle.flip_v = true
 
 func _update_health_bar(hp):
-	$GUI/HealthBar.value = hp
+	$GUI_Node/GUI/HealthBar.value = hp
 	if !$'/root/Game'.force_local:
 		Network.update_player_health(health_points)
 		Network.google_send_reliable({ hp = health_points })
@@ -158,7 +158,7 @@ func _on_RespawnTimer_timeout():
 	_update_health_bar(health_points)
 
 func init(nickname, start_position, is_slave):
-	$GUI/Nickname.text = nickname
+	$GUI_Node/GUI/Nickname.text = nickname
 	global_position = start_position
 	if is_slave:
 		$Sprite.texture = load('res://player/player.png')
