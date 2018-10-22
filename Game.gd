@@ -1,6 +1,7 @@
 extends Node
 
 var force_local = false
+onready var sc_canvas = $CanvasLayer/L_debug
 
 func _ready():
 	if !force_local:
@@ -12,6 +13,7 @@ func _ready():
 		add_child(new_player)
 		var info = Network.self_data
 		new_player.init(info.name, Vector2(100,100), false)
+		sc_canvas.debug_print('New Player: ' + info.name)
 		
 		Network.init_other_players()
 	else:
@@ -22,3 +24,4 @@ func _ready():
 			
 		add_child(new_player)
 		new_player.init('test', Vector2(100,100), false)
+		sc_canvas.debug_print('test player initialised')

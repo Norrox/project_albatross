@@ -82,7 +82,6 @@ margin_left = 19.0
 margin_top = 68.0
 margin_right = 1009.0
 margin_bottom = 568.0
-rect_scale = Vector2( 1.3, 1.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
