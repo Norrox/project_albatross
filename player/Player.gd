@@ -5,6 +5,8 @@ const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
 
+onready var canvas = $'/root/Game'.get_node("CanvasLayer")
+
 var is_master = false
 var ID = "No_ID"
 var health_points = MAX_HP
@@ -25,22 +27,14 @@ func _physics_process(delta):
 	direction = Vector2()
 	
 	if is_master:		
-		direction += $'/root/Game'.get_node("CanvasLayer").stick1_vector
+		direction += canvas.stick1_vector
 		last_rifle_rotation = rifle_rotation
-		rifle_rotation = $'/root/Game'.get_node("CanvasLayer").stick2_angle
+		rifle_rotation = canvas.stick2_angle
 	
 		if Input.is_action_pressed('roll'):
 			_roll()
 
-		last_animation = animation
-		if !dead and !rolling and direction != Vector2():
-			animation = 'run'
-		elif rolling:
-			animation = 'roll'
-		elif dead:
-			animation = 'die'
-		elif direction == Vector2():
-			animation = 'idle'
+		decide_animation()
 				
 		_move(direction)
 		_rotate_gun(rifle_rotation)
@@ -49,9 +43,8 @@ func _physics_process(delta):
 		if !$'/root/Game'.force_local:
 			Network.update_position(global_position)
 			Network.update_anim(animation)
-			Network.update_gun_angle(rifle_rotation)		
-			if last_animation != animation:
-				Network.google_send_reliable({ anim = animation })
+			Network.update_gun_angle(rifle_rotation)
+			#Network.google_send_reliable(Network.self_data)
 				
 			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
@@ -73,6 +66,17 @@ func _physics_process(delta):
 			
 		_rotate_gun(slave_rifle_rotation)
 		_animate(slave_animation)
+
+func decide_animation():
+	last_animation = animation
+	if !dead and !rolling and direction != Vector2():
+		animation = 'run'
+	elif rolling:
+		animation = 'roll'
+	elif dead:
+		animation = 'die'
+	elif direction == Vector2():
+		animation = 'idle'
 
 func _animate(animation):
 	play_anim(animation)
@@ -114,7 +118,7 @@ func _update_health_bar(hp):
 	$GUI_Node/GUI/HealthBar.value = hp
 	if !$'/root/Game'.force_local:
 		Network.update_health(hp)
-		Network.google_send_reliable({ health = hp })	
+		#Network.google_send_reliable({ health = hp })	
 
 func _roll():
 	if !can_roll:
@@ -130,7 +134,7 @@ func damage(value):
 	health_points -= value
 	if health_points <= 0:
 		health_points = 0
-		Network.google_send_reliable({ die = true })
+		#Network.google_send_reliable({ die = true })
 		_die()
 	_update_health_bar(health_points)
 

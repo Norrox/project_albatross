@@ -6,7 +6,7 @@ var MAX_PLAYERS = 4 #const
 var connected_peers = ''
 var players = { }
 var players_order = []
-var self_data = { name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, index = -1 }
+var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '' }
 var master_ID = 'No_Master'
 var master_participant_ID = 'No_participant_ID'
 
@@ -37,6 +37,7 @@ func connected_init_match():
 	while players.size() < get_IDs().size():
 		yield(get_tree().create_timer(0.02), "timeout")
 	set_index()
+	game_started = true
 	$'/root/Menu/'._load_game()		
 
 func get_IDs():
@@ -77,8 +78,16 @@ func set_peers_list():
 func update_player_info(sender_ID, data):
 	print('updating player info')
 	var data_var = str2var(data)
-	players[sender_ID] = data_var
-	players_order.append(players[sender_ID].name)
+	#players[sender_ID].hp = data_var.hp
+	
+	if data_var.action != '':
+		var func_to_call = funcref(self, data_var.action)
+		func_to_call.call_func(sender_ID, data)
+		update_action('')
+	
+	if  !game_started:
+		players[sender_ID] = data_var
+		players_order.append(players[sender_ID].name)
 	
 func update_player_animation(sender_ID, data):
 	print('updating player animation')
@@ -89,11 +98,11 @@ func create_slave_at_spawn(sender_ID, data):
 	print('creating slave player')
 	var data_var = str2var(data)
 	var new_player = load('res://player/Player.tscn').instance()
-	new_player.name = data_var.player_name
+	new_player.name = data_var.name
 	new_player.ID = sender_ID
-	players[sender_ID].position = data_var.pos
+	players[sender_ID].position = data_var.position
 	$'/root/'.add_child(new_player)
-	new_player.init(new_player.name, data_var.pos, true)
+	new_player.init(new_player.name, data_var.position, true)
 
 func update_player_positions(sender_ID, data):
 	var data_var = str2var(data)
@@ -103,19 +112,19 @@ func update_player_positions(sender_ID, data):
 func update_player_health(sender_ID, data):
 	var data_var = str2var(data)
 	for peer_id in players.keys():
-		if peer_id != master_ID:
+		if peer_id != master_participant_ID:
 			$'/root/'.get_node(players[sender_ID].name)._update_health_bar(players[sender_ID].hp)
 			
 func update_player_death(sender_ID, data):
 	var data_var = str2var(data)
 	for peer_id in players.keys():
-		if peer_id != master_ID:
+		if peer_id != master_participant_ID:
 			$'/root/'.get_node(players[sender_ID].name)._die()
 	
 func spawn_bullet(sender_ID, data):
 	var data_var = str2var(data)
 	for peer_id in players.keys():
-		if peer_id != master_ID:
+		if peer_id != master_participant_ID:
 			$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 	
 func is_online():
@@ -167,28 +176,18 @@ func _on_play_game_services_rtm_room_status_connected_to_room(roomID, myParticip
 	master_participant_ID = myParticipantID
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
-	var data_var = str2var(data)
 	if is_reliable:
-		if data_var.has('index'):
-			update_player_info(sender_ID, data) 
-		elif data_var.has('health'):
-			update_player_health(sender_ID, data)
-		elif data_var.has('die'):
-			update_player_death(sender_ID, data)
-		elif data_var.has('pos'):
-			create_slave_at_spawn(sender_ID, data)
-		elif data_var.has('anim'):
-			update_player_animation(sender_ID, data)
+		update_player_info(sender_ID, data) 
 	else:
-		if data_var.has('p'):
-			spawn_bullet(sender_ID, data)
-		else:
-			update_player_positions(sender_ID, data)
+		update_player_positions(sender_ID, data)
 ### end google callbacks ###
 
 func update_position(pos):
 	players[master_participant_ID].position = pos
-	
+
+func update_name(player_name):
+	players[master_participant_ID].name = player_name
+
 func update_anim(animation):
 	players[master_participant_ID].animation = animation
 	
@@ -197,3 +196,6 @@ func update_gun_angle(rotation):
 	
 func update_health(hp):
 	players[master_participant_ID].hp = hp
+	
+func update_action(action):
+	players[master_participant_ID].action = action

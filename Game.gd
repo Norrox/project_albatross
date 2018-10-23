@@ -15,7 +15,10 @@ func _ready():
 		create_master_player(spawn_pos, play_name, player_ID)
 		sc_canvas.debug_print('New Player: ' + play_name)
 		
-		Network.google_send_reliable({ pos = spawn_pos, player_name = play_name })		
+		Network.update_name(play_name)
+		Network.update_position(spawn_pos)
+		Network.update_action('create_slave_at_spawn')
+		Network.google_send_reliable(Network.self_data)		
 	else:
 		var new_player = preload('res://player/Player.tscn').instance()
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn1').global_position

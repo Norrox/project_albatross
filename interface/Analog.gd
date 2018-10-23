@@ -10,12 +10,18 @@ var stick2_pos = Vector2()
 var left_event_pos = Vector2()
 var right_event_pos = Vector2()
 var player_name = ""
+var rifle = null
 
 func _ready():
 	if !$'/root/Game'.force_local:
 		player_name = Network.get_current_player_display_name()
 	else:
 		player_name = 'test'
+		
+	while $'/root/'.get_node(player_name) == null:
+		yield(get_tree().create_timer(0.02), "timeout")
+	rifle = $'/root/'.get_node(player_name).get_node("Rifle")
+	
 	position.x = PLACEMENT_OFFSET
 	position.y = get_viewport().size.y - PLACEMENT_OFFSET
 	stick1_pos = $Analog_Small.global_position
@@ -58,9 +64,9 @@ func move_analog_small(event_pos, stick):
         
         if dist + SMALL_RADIUS > RADIUS:
             dist = RADIUS - SMALL_RADIUS
-            $'/root/'.get_node(player_name).get_node("Rifle").shoot = true
+            rifle.shoot = true
         else:
-            $'/root/'.get_node(player_name).get_node("Rifle").shoot = false
+            rifle.shoot = false
 			
         var vect = (event_pos - stick2_pos).normalized()
         var angle = event_pos.angle_to_point(stick2_pos)
