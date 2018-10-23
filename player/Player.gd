@@ -17,24 +17,17 @@ var dead = false
 var rolling = false
 var can_roll = true
 
-var slave_info = {}
-var slave_animation = 'idle'
-var slave_direction = Vector2()
-var slave_rifle_rotation = 0
-var slave_position = Vector2()
-
 func _ready():
-	_update_health_bar(MAX_HP)
-	slave_position = global_position
+	pass
+	#_update_health_bar(MAX_HP)
 
 func _physics_process(delta):
 	direction = Vector2()
-	slave_direction = Vector2()
 	
 	if is_master:		
-		direction += get_parent().find_node("CanvasLayer").stick1_vector
+		direction += $'/root/Game'.get_node("CanvasLayer").stick1_vector
 		last_rifle_rotation = rifle_rotation
-		rifle_rotation = get_parent().find_node("CanvasLayer").stick2_angle
+		rifle_rotation = $'/root/Game'.get_node("CanvasLayer").stick2_angle
 	
 		if Input.is_action_pressed('roll'):
 			_roll()
@@ -63,14 +56,14 @@ func _physics_process(delta):
 			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
-		slave_info = Network.players[ID]
-		slave_position = Network.players[ID].position
-		slave_animation = slave_info.animation
-		slave_rifle_rotation = slave_info.rifle_rotation
+		var slave_info = Network.players[ID]
+		var slave_position = slave_info.position
+		var slave_animation = slave_info.animation
+		var slave_rifle_rotation = slave_info.rifle_rotation
 		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
 		var network_difference = slave_interpolated.distance_to(global_position)
-		slave_direction = slave_interpolated - global_position
+		var slave_direction = slave_interpolated - global_position
 		
 		if network_difference > MIN_MOVE_DIST:
 			_move(slave_direction)
@@ -121,8 +114,7 @@ func _update_health_bar(hp):
 	$GUI_Node/GUI/HealthBar.value = hp
 	if !$'/root/Game'.force_local:
 		Network.update_health(hp)
-		Network.google_send_reliable({ health = hp })
-		
+		Network.google_send_reliable({ health = hp })	
 
 func _roll():
 	if !can_roll:
@@ -168,6 +160,7 @@ func init(nickname, start_position, is_slave):
 	$GUI_Node/GUI/Nickname.text = nickname
 	global_position = start_position
 	if is_slave:
+
 		$Sprite.texture = load('res://player/player.png')
 		
 func play_anim(animation):

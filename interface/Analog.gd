@@ -58,9 +58,9 @@ func move_analog_small(event_pos, stick):
         
         if dist + SMALL_RADIUS > RADIUS:
             dist = RADIUS - SMALL_RADIUS
-            get_parent().get_parent().get_node(player_name).get_node("Rifle").shoot = true
+            $'/root/'.get_node(player_name).get_node("Rifle").shoot = true
         else:
-            get_parent().get_parent().get_node(player_name).get_node("Rifle").shoot = false
+            $'/root/'.get_node(player_name).get_node("Rifle").shoot = false
 			
         var vect = (event_pos - stick2_pos).normalized()
         var angle = event_pos.angle_to_point(stick2_pos)

@@ -199,6 +199,41 @@ position = Vector2( 1392, 336 )
 
 position = Vector2( 1392, 368 )
 
+[node name="Spawns" type="Node2D" parent="." index="5"]
+
+[node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
+
+position = Vector2( 464, 368 )
+
+[node name="Spawn2" type="Node2D" parent="Spawns" index="1"]
+
+position = Vector2( 1792, 208 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Spawn3" type="Node2D" parent="Spawns" index="2"]
+
+position = Vector2( 2336, 1072 )
+
+[node name="Spawn4" type="Node2D" parent="Spawns" index="3"]
+
+position = Vector2( 2320, 2064 )
+
+[node name="Spawn5" type="Node2D" parent="Spawns" index="4"]
+
+position = Vector2( 1488, 2960 )
+
+[node name="Spawn6" type="Node2D" parent="Spawns" index="5"]
+
+position = Vector2( 704, 2960 )
+
+[node name="Spawn7" type="Node2D" parent="Spawns" index="6"]
+
+position = Vector2( -288, 2160 )
+
+[node name="Spawn8" type="Node2D" parent="Spawns" index="7"]
+
+position = Vector2( -384, 1056 )
+
 [connection signal="timeout" from="Spikes/Timer" to="Spikes" method="_on_Timer_timeout"]
 
 

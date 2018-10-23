@@ -5,7 +5,7 @@ var shoot = false
 var analog = null
 
 func _ready():
-	analog = get_node("../../CanvasLayer")
+	analog = get_node("/root/Game/CanvasLayer")
 
 func _process(delta):
 	if shoot and $Timer.is_stopped():
@@ -13,7 +13,7 @@ func _process(delta):
 		var bp = global_position
 		var br = rotation
 		if !$'/root/Game'.force_local:
-			Network.google_send_reliable({ p = bp, r = br, d = bd })
+			Network.google_send_unreliable({ p = bp, r = br, d = bd })
 		_shoot(bp, br, bd)
 		$Timer.start()
 
