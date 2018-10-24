@@ -92,6 +92,9 @@ func update_player_positions(sender_ID, data_var):
 	players[sender_ID].position = data_var.position
 	players[sender_ID].rifle_rotation = data_var.rotation
 	
+func update_player_animation(sender_ID, data_var):
+	players[sender_ID].animation = data_var.anim
+	
 func update_player_health(sender_ID, data_var):
 	print('updating health for ' + sender_ID)
 	players[sender_ID].hp = data_var.hp
@@ -167,7 +170,10 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 		else:
 			update_player_info(sender_ID, data_var) 
 	else:
-		update_player_positions(sender_ID, data_var)
+		if data_var.has('anim'):
+			update_player_animation(sender_ID, data_var)
+		else:
+			update_player_positions(sender_ID, data_var)
 ### end google callbacks ###
 
 ### self_data update functions ###

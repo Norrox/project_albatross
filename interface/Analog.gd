@@ -22,12 +22,13 @@ func _ready():
 		yield(get_tree().create_timer(0.02), "timeout")
 	rifle = $'/root/'.get_node(player_name).get_node("Rifle")
 	
+	var screen_size = Vector2(960, 540)
 	position.x = PLACEMENT_OFFSET
-	position.y = get_viewport().size.y - PLACEMENT_OFFSET
+	position.y = screen_size.y - PLACEMENT_OFFSET
 	stick1_pos = $Analog_Small.global_position
 	var right_stick = get_node("../Analog_Big_Right")
-	right_stick.position.x = get_viewport().size.x - PLACEMENT_OFFSET
-	right_stick.position.y = get_viewport().size.y - PLACEMENT_OFFSET
+	right_stick.position.x = screen_size.x - PLACEMENT_OFFSET
+	right_stick.position.y = screen_size.y - PLACEMENT_OFFSET
 	stick2_pos = right_stick.get_node("Analog_Small").global_position
 	RADIUS = texture.get_height() / 2
 	SMALL_RADIUS = 13

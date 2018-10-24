@@ -6,6 +6,7 @@ const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
 
 onready var canvas = $'/root/Game'.get_node("CanvasLayer")
+onready var sc_canvas = canvas.get_node('L_debug')
 
 var is_master = false
 var ID = "No_ID"
@@ -41,18 +42,21 @@ func _physics_process(delta):
 		direction += canvas.stick1_vector
 		last_rifle_rotation = rifle_rotation
 		rifle_rotation = canvas.stick2_angle
-	
+		animation = decide_animation()
+		
 		if Input.is_action_pressed('roll'):
 			_roll()
-
-		decide_animation()
-				
+		
 		_move(direction)
 		_rotate_gun(rifle_rotation)
 		_animate(animation)
 		
 		if !$'/root/Game'.force_local:
-			update_net_self_data(global_position, animation, rifle_rotation, health_points)				
+			update_net_self_data(global_position, animation, rifle_rotation, health_points)	
+			
+			if last_animation != animation:
+				Network.google_send_unreliable({ anim = animation })
+
 			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
@@ -88,6 +92,7 @@ func decide_animation():
 		animation = 'die'
 	elif direction == Vector2():
 		animation = 'idle'
+	return animation
 
 func _animate(animation):
 	play_anim(animation)
@@ -153,7 +158,6 @@ func damage(value):
 func _die():
 	dead = true
 	yield($AnimationPlayer,"animation_finished")
-	dead = false
 	$RespawnTimer.start()
 	set_physics_process(false)
 	$Rifle.set_process(false)
@@ -166,7 +170,7 @@ func update_reliable(pos, anim, rifle_rot, hp, action=''):
 	if !$'/root/Game'.force_local and is_master:
 		update_net_self_data(pos, anim, rifle_rot, hp)
 		Network.self_data.action = action
-		Network.google_send_reliable(Network.self_data)
+		Network.google_send_reliable(Network.self_data)		
 		
 func update_net_self_data(pos, anim, rifle_rot, hp):
 	Network.update_position(pos)
@@ -175,16 +179,19 @@ func update_net_self_data(pos, anim, rifle_rot, hp):
 	Network.update_health(hp)
 
 func _on_RespawnTimer_timeout():
-	update_reliable(global_position, 'idle', rifle_rotation, MAX_HP)
+	$RespawnTimer.stop()
+	if is_master:
+		dead = false
+		health_points = MAX_HP
+		update_reliable(global_position, 'idle', rifle_rotation, MAX_HP)
 		
+	$GUI_Node/GUI/HealthBar.value = MAX_HP	
 	set_physics_process(true)
 	$Rifle.set_process(true)
 	for child in get_children():
 		if child.has_method('show'):
 			child.show()
 	$CollisionShape2D.disabled = false
-	health_points = MAX_HP
-	_update_health_bar(health_points)
 		
 func play_anim(animation):
 	if animation == $AnimationPlayer.current_animation:
