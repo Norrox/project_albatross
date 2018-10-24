@@ -13,7 +13,7 @@ func _process(delta):
 		var bp = global_position
 		var br = rotation
 		if !$'/root/Game'.force_local:
-			pass#Network.google_send_reliable({ p = bp, r = br, d = bd })
+			Network.google_send_reliable({ p = bp, r = br, d = bd })
 		_shoot(bp, br, bd)
 		$Timer.start()
 

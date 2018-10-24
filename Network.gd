@@ -61,42 +61,26 @@ func google_sign_in():
 func google_sign_out():
 	gpgs.signOut()
 	
-func google_send_reliable(data):
-	send_reliable_data(var2str(data), connected_peers)
-			
-func google_send_unreliable(data):
-	send_unreliable_data(var2str(data), connected_peers)
-	
 func set_peers_list():
 	print('setting peers master is ' + str(master_ID))
 	for peer_id in get_IDs():
 		if peer_id != master_participant_ID:
 			connected_peers += peer_id + ','
 	connected_peers = connected_peers.substr(0, connected_peers.length()-1)
-	print('connected peers' + str(connected_peers))
+	print('connected peers: ' + str(connected_peers))
 			
-func update_player_info(sender_ID, data):
-	print('updating player info')
-	var data_var = str2var(data)
-	#players[sender_ID].hp = data_var.hp
-	
+func update_player_info(sender_ID, data_var):
+	players[sender_ID] = data_var
 	if data_var.action != '':
 		var func_to_call = funcref(self, data_var.action)
-		func_to_call.call_func(sender_ID, data)
+		func_to_call.call_func(sender_ID, data_var)
 		update_action('')
 	
 	if  !game_started:
-		players[sender_ID] = data_var
 		players_order.append(players[sender_ID].name)
 	
-func update_player_animation(sender_ID, data):
-	print('updating player animation')
-	var data_var = str2var(data)
-	players[sender_ID].animation = data_var.anim
-	
-func create_slave_at_spawn(sender_ID, data):
+func create_slave_at_spawn(sender_ID, data_var):
 	print('creating slave player')
-	var data_var = str2var(data)
 	var new_player = load('res://player/Player.tscn').instance()
 	new_player.name = data_var.name
 	new_player.ID = sender_ID
@@ -104,31 +88,31 @@ func create_slave_at_spawn(sender_ID, data):
 	$'/root/'.add_child(new_player)
 	new_player.init(new_player.name, data_var.position, true)
 
-func update_player_positions(sender_ID, data):
-	var data_var = str2var(data)
+func update_player_positions(sender_ID, data_var):
 	players[sender_ID].position = data_var.position
 	players[sender_ID].rifle_rotation = data_var.rotation
 	
-func update_player_health(sender_ID, data):
-	var data_var = str2var(data)
-	for peer_id in players.keys():
-		if peer_id != master_participant_ID:
-			$'/root/'.get_node(players[sender_ID].name)._update_health_bar(players[sender_ID].hp)
+func update_player_health(sender_ID, data_var):
+	print('updating health for ' + sender_ID)
+	players[sender_ID].hp = data_var.hp
+	$'/root/'.get_node(players[sender_ID].name)._update_health_bar(players[sender_ID].hp)
 			
-func update_player_death(sender_ID, data):
-	var data_var = str2var(data)
-	for peer_id in players.keys():
-		if peer_id != master_participant_ID:
-			$'/root/'.get_node(players[sender_ID].name)._die()
+func update_player_death(sender_ID, data_var):
+	print(data_var.name  + ' died')
+	players[sender_ID].hp = 0
+	$'/root/'.get_node(players[sender_ID].name)._die()
 	
-func spawn_bullet(sender_ID, data):
-	var data_var = str2var(data)
-	for peer_id in players.keys():
-		if peer_id != master_participant_ID:
-			$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
+func spawn_bullet(sender_ID, data_var):
+	$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 	
 func is_online():
 	return gpgs.isOnline()
+	
+func google_send_reliable(data):
+	send_reliable_data(var2str(data), connected_peers)
+			
+func google_send_unreliable(data):
+	send_unreliable_data(var2str(data), connected_peers)
 	
 func get_current_player_ID():
 	return gpgs.getCurrentPlayerID()
@@ -176,12 +160,17 @@ func _on_play_game_services_rtm_room_status_connected_to_room(roomID, myParticip
 	master_participant_ID = myParticipantID
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
+	var data_var = str2var(data)
 	if is_reliable:
-		update_player_info(sender_ID, data) 
+		if data_var.has('p'):
+			spawn_bullet(sender_ID, data_var)
+		else:
+			update_player_info(sender_ID, data_var) 
 	else:
-		update_player_positions(sender_ID, data)
+		update_player_positions(sender_ID, data_var)
 ### end google callbacks ###
 
+### self_data update functions ###
 func update_position(pos):
 	players[master_participant_ID].position = pos
 
@@ -199,3 +188,4 @@ func update_health(hp):
 	
 func update_action(action):
 	players[master_participant_ID].action = action
+### end self_data update functions ###

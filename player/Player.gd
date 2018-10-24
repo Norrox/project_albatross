@@ -19,9 +19,20 @@ var dead = false
 var rolling = false
 var can_roll = true
 
+var slave_info = {}
+var slave_animation = 'idle'
+var slave_position = Vector2()
+var slave_rifle_rotation = 0
+var slave_hp = MAX_HP
+
 func _ready():
-	pass
-	#_update_health_bar(MAX_HP)
+	_update_health_bar(MAX_HP)
+
+func init(nickname, start_position, is_slave):
+	$GUI_Node/GUI/Nickname.text = nickname
+	global_position = start_position
+	if is_slave:
+		$Sprite.texture = load('res://player/player.png')
 
 func _physics_process(delta):
 	direction = Vector2()
@@ -41,31 +52,36 @@ func _physics_process(delta):
 		_animate(animation)
 		
 		if !$'/root/Game'.force_local:
-			Network.update_position(global_position)
-			Network.update_anim(animation)
-			Network.update_gun_angle(rifle_rotation)
+			update_net_self_data(global_position, animation, rifle_rotation, health_points)
 			#Network.google_send_reliable(Network.self_data)
 				
 			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
-		var slave_info = Network.players[ID]
-		var slave_position = slave_info.position
-		var slave_animation = slave_info.animation
-		var slave_rifle_rotation = slave_info.rifle_rotation
+		update_slave_data(Network.players[ID])
 		
-		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
-		var network_difference = slave_interpolated.distance_to(global_position)
-		var slave_direction = slave_interpolated - global_position
+		#var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
+		#var network_difference = slave_interpolated.distance_to(global_position)
+		#var slave_direction = slave_interpolated - global_position
 		
-		if network_difference > MIN_MOVE_DIST:
-			_move(slave_direction)
-		else:
+		position = slave_position
+		
+		#if network_difference > MIN_MOVE_DIST:
+			#pass
+			#_move(slave_direction)
+		#else:
 			#need to move to exact position over time here
-			pass
+			#pass
 			
 		_rotate_gun(slave_rifle_rotation)
 		_animate(slave_animation)
+		
+func update_slave_data(slave_info):
+	slave_position = slave_info.position
+	slave_animation = slave_info.animation
+	slave_rifle_rotation = slave_info.rifle_rotation
+	slave_hp = slave_info.hp
+	$GUI_Node/GUI/HealthBar.value = slave_hp
 
 func decide_animation():
 	last_animation = animation
@@ -96,7 +112,6 @@ func check_flip():
 		return false
 	elif (rot > -270 and rot < -90) or (rot > 90 and rot < 270):
 		return true
-		
 
 func _move(direction):
 	direction = direction.normalized() * MOVE_SPEED
@@ -115,10 +130,9 @@ func _rifle_left():
 	$Rifle.flip_v = true
 
 func _update_health_bar(hp):
-	$GUI_Node/GUI/HealthBar.value = hp
-	if !$'/root/Game'.force_local:
-		Network.update_health(hp)
-		#Network.google_send_reliable({ health = hp })	
+	if is_master:
+		update_reliable(global_position, animation, rifle_rotation, health_points, 'update_player_health')
+		$GUI_Node/GUI/HealthBar.value = hp
 
 func _roll():
 	if !can_roll:
@@ -131,12 +145,15 @@ func _roll():
 	can_roll = true
 
 func damage(value):
+	if !is_master:
+		return
 	health_points -= value
+	Network.self_data.hp = health_points
 	if health_points <= 0:
 		health_points = 0
-		#Network.google_send_reliable({ die = true })
+		update_reliable(global_position, 'die', rifle_rotation, health_points, 'update_player_death')
 		_die()
-	_update_health_bar(health_points)
+	_update_health_bar(Network.self_data.hp)
 
 func _die():
 	dead = true
@@ -150,7 +167,21 @@ func _die():
 			child.hide()
 	$CollisionShape2D.disabled = true
 
+func update_reliable(pos, anim, rifle_rot, hp, action=''):
+	if !$'/root/Game'.force_local and is_master:
+		update_net_self_data(pos, anim, rifle_rot, hp)
+		Network.self_data.action = action
+		Network.google_send_reliable(Network.self_data)
+		
+func update_net_self_data(pos, anim, rifle_rot, hp):
+	Network.update_position(pos)
+	Network.update_anim(anim)
+	Network.update_gun_angle(rifle_rot)
+	Network.update_health(hp)
+
 func _on_RespawnTimer_timeout():
+	update_reliable(global_position, 'idle', rifle_rotation, MAX_HP)
+		
 	set_physics_process(true)
 	$Rifle.set_process(true)
 	for child in get_children():
@@ -159,13 +190,6 @@ func _on_RespawnTimer_timeout():
 	$CollisionShape2D.disabled = false
 	health_points = MAX_HP
 	_update_health_bar(health_points)
-
-func init(nickname, start_position, is_slave):
-	$GUI_Node/GUI/Nickname.text = nickname
-	global_position = start_position
-	if is_slave:
-
-		$Sprite.texture = load('res://player/player.png')
 		
 func play_anim(animation):
 	if animation == $AnimationPlayer.current_animation:
