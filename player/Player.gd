@@ -52,23 +52,18 @@ func _physics_process(delta):
 		_animate(animation)
 		
 		if !$'/root/Game'.force_local:
-			update_net_self_data(global_position, animation, rifle_rotation, health_points)
-			#Network.google_send_reliable(Network.self_data)
-				
+			update_net_self_data(global_position, animation, rifle_rotation, health_points)				
 			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 	else:
 		update_slave_data(Network.players[ID])
 		
-		#var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
-		#var network_difference = slave_interpolated.distance_to(global_position)
-		#var slave_direction = slave_interpolated - global_position
+		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
+		var network_difference = slave_interpolated.distance_to(global_position)
+		var slave_direction = slave_interpolated - global_position
 		
-		position = slave_position
-		
-		#if network_difference > MIN_MOVE_DIST:
-			#pass
-			#_move(slave_direction)
+		if network_difference > MIN_MOVE_DIST:
+			_move(slave_direction)
 		#else:
 			#need to move to exact position over time here
 			#pass
