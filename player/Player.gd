@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const JITTER = 1
 const MOVE_SPEED = 250.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
@@ -68,9 +69,8 @@ func _physics_process(delta):
 		
 		if network_difference > MIN_MOVE_DIST:
 			_move(slave_direction)
-		#else:
-			#need to move to exact position over time here
-			#pass
+		elif network_difference > JITTER and network_difference <= MIN_MOVE_DIST:
+			_move(slave_position - global_position)
 			
 		_rotate_gun(slave_rifle_rotation)
 		_animate(slave_animation)
