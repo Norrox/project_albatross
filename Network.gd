@@ -102,7 +102,6 @@ func update_player_health(sender_ID, data_var):
 			
 func update_player_death(sender_ID, data_var):
 	print(data_var.name  + ' died')
-	players[sender_ID].hp = 0
 	$'/root/'.get_node(players[sender_ID].name)._die()
 	
 func spawn_bullet(sender_ID, data_var):

@@ -17,9 +17,9 @@ var last_animation = ''
 var direction = Vector2()
 var rifle_rotation = 0
 var last_rifle_rotation = 0
-var dead = false
 var rolling = false
 var can_roll = true
+var dead = false
 
 var slave_info = {}
 var slave_animation = 'idle'
@@ -40,26 +40,17 @@ func _physics_process(delta):
 	direction = Vector2()
 	
 	if is_master:		
-		direction += canvas.stick1_vector
-		last_rifle_rotation = rifle_rotation
-		rifle_rotation = canvas.stick2_angle
-		animation = decide_animation()
+		set_master_info()
 		
 		if Input.is_action_pressed('roll'):
 			_roll()
 		
+		update_net_self_data()
+		send_net_data()
+		
 		_move(direction)
 		_rotate_gun(rifle_rotation)
-		_animate(animation)
-		
-		if !$'/root/Game'.force_local:
-			update_net_self_data(global_position, animation, rifle_rotation, health_points)	
-			
-			if last_animation != animation:
-				Network.google_send_unreliable({ anim = animation })
-
-			if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
-				Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
+		play_anim(animation)
 	else:
 		update_slave_data(Network.players[ID])
 		
@@ -73,8 +64,31 @@ func _physics_process(delta):
 			_move(slave_position - global_position)
 			
 		_rotate_gun(slave_rifle_rotation)
-		_animate(slave_animation)
+		play_anim(slave_animation)
+
+func set_master_info():
+	direction += canvas.stick1_vector
+	last_rifle_rotation = rifle_rotation
+	rifle_rotation = canvas.stick2_angle
+	decide_animation()
+	
+func send_net_data():
+	if $'/root/Game'.force_local:
+		return	
+	if last_animation != animation:
+		Network.google_send_unreliable({ anim = animation })
+
+	if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
+		Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 		
+func update_net_self_data():
+	if $'/root/Game'.force_local:
+		return	
+	Network.update_position(global_position)
+	Network.update_anim(animation)
+	Network.update_gun_angle(rifle_rotation)
+	Network.update_health(health_points)
+
 func update_slave_data(slave_info):
 	slave_position = slave_info.position
 	slave_animation = slave_info.animation
@@ -92,19 +106,20 @@ func decide_animation():
 		animation = 'die'
 	elif direction == Vector2():
 		animation = 'idle'
-	return animation
-
-func _animate(animation):
-	play_anim(animation)
+	
+func play_anim(animation):
+	if animation == $AnimationPlayer.current_animation:
+		return
+	$AnimationPlayer.play(animation)
 
 func _rotate_gun(rotation):
 	$Rifle.rotation = rotation
 	if check_flip():
-		_player_left()
-		_rifle_left()
+		$Sprite.flip_h = true
+		$Rifle.flip_v = true
 	else:
-		_player_right()
-		_rifle_right()
+		$Sprite.flip_h = false
+		$Rifle.flip_v = false
 	
 func check_flip():
 	var rot = int($Rifle.rotation_degrees) % 360
@@ -117,23 +132,6 @@ func _move(direction):
 	direction = direction.normalized() * MOVE_SPEED
 	move_and_slide(direction)
 
-func _player_right():
-	$Sprite.flip_h = false
-	
-func _player_left():
-	$Sprite.flip_h = true
-
-func _rifle_right():
-	$Rifle.flip_v = false
-
-func _rifle_left():
-	$Rifle.flip_v = true
-
-func _update_health_bar(hp):
-	if is_master:
-		update_reliable(global_position, animation, rifle_rotation, health_points, 'update_player_health')
-		$GUI_Node/GUI/HealthBar.value = hp
-
 func _roll():
 	if !can_roll:
 		return
@@ -144,19 +142,25 @@ func _roll():
 	yield( get_tree().create_timer(ROLL_WAIT_TIME), "timeout" )
 	can_roll = true
 
+func _update_health_bar(hp):
+	$GUI_Node/GUI/HealthBar.value = hp
+
 func damage(value):
-	if !is_master:
-		return
-	health_points -= value
-	Network.self_data.hp = health_points
-	if health_points <= 0:
-		health_points = 0
-		update_reliable(global_position, 'die', rifle_rotation, health_points, 'update_player_death')
-		_die()
-	_update_health_bar(Network.self_data.hp)
+	if is_master:
+		health_points -= value
+		if health_points <= 0:
+			health_points = 0
+			_die()
+		update_reliable('update_player_health')
+		_update_health_bar(health_points)
 
 func _die():
-	dead = true
+	if is_master:
+		dead = true
+		animation = 'die'
+		update_reliable('update_player_death')
+		
+	yield(get_tree().create_timer(0.02), 'timeout')	
 	yield($AnimationPlayer,"animation_finished")
 	$RespawnTimer.start()
 	set_physics_process(false)
@@ -165,35 +169,26 @@ func _die():
 		if child.has_method('hide'):
 			child.hide()
 	$CollisionShape2D.disabled = true
-
-func update_reliable(pos, anim, rifle_rot, hp, action=''):
-	if !$'/root/Game'.force_local and is_master:
-		update_net_self_data(pos, anim, rifle_rot, hp)
-		Network.self_data.action = action
-		Network.google_send_reliable(Network.self_data)		
-		
-func update_net_self_data(pos, anim, rifle_rot, hp):
-	Network.update_position(pos)
-	Network.update_anim(anim)
-	Network.update_gun_angle(rifle_rot)
-	Network.update_health(hp)
-
+	
 func _on_RespawnTimer_timeout():
 	$RespawnTimer.stop()
 	if is_master:
 		dead = false
+		animation = 'idle'
+		play_anim(animation)
 		health_points = MAX_HP
-		update_reliable(global_position, 'idle', rifle_rotation, MAX_HP)
+		_update_health_bar(health_points)
+		update_reliable('update_player_health')
 		
-	$GUI_Node/GUI/HealthBar.value = MAX_HP	
 	set_physics_process(true)
 	$Rifle.set_process(true)
 	for child in get_children():
 		if child.has_method('show'):
 			child.show()
 	$CollisionShape2D.disabled = false
-		
-func play_anim(animation):
-	if animation == $AnimationPlayer.current_animation:
-		return
-	$AnimationPlayer.play(animation)
+
+func update_reliable(action=''):
+	if !$'/root/Game'.force_local and is_master:
+		update_net_self_data()
+		Network.self_data.action = action
+		Network.google_send_reliable(Network.self_data)		
