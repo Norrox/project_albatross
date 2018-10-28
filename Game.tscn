@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://interface/Canvas.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tilemap/env_ground.tres" type="TileSet" id=3]
 [ext_resource path="res://tilemap/env_collision.tres" type="TileSet" id=4]
 [ext_resource path="res://tilemap/env_top.tres" type="TileSet" id=5]
-[ext_resource path="res://scriptable_objects/Spikes.gd" type="Script" id=6]
-[ext_resource path="res://scriptable_objects/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scriptable_objects/spikes/Spikes.gd" type="Script" id=6]
+[ext_resource path="res://scriptable_objects/spikes/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scriptable_objects/chest/Chest.tscn" type="PackedScene" id=8]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -201,6 +202,8 @@ position = Vector2( 1392, 368 )
 
 [node name="Spawns" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
+
 [node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
 
 position = Vector2( 464, 368 )
@@ -233,6 +236,18 @@ position = Vector2( -288, 2160 )
 [node name="Spawn8" type="Node2D" parent="Spawns" index="7"]
 
 position = Vector2( -384, 1056 )
+
+[node name="Chests" type="Node2D" parent="." index="6"]
+
+position = Vector2( -16, 0 )
+
+[node name="Chest1" parent="Chests" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 128, 496 )
+
+[node name="Chest2" parent="Chests" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 1520, 320 )
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes" method="_on_Timer_timeout"]
 

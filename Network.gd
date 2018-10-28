@@ -9,12 +9,14 @@ var players_order = []
 var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '' }
 var master_ID = 'No_Master'
 var master_participant_ID = 'No_participant_ID'
+var chests = []
 
 var gpgs = null
 var game_started = false
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
+	init_chests()
 	init_play_services()
 
 func init_play_services():
@@ -25,6 +27,11 @@ func init_play_services():
 		print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS module singleton init() called!")
 		gpgs.keepScreenOn(true)
 		print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Screen forced on!') 
+		
+func init_chests():
+	chests.resize(100)
+	for i in range(0, 100):
+		chests[i] = false
 
 func connected_init_match():
 	print('connected init match')
@@ -107,6 +114,10 @@ func update_player_death(sender_ID, data_var):
 func spawn_bullet(sender_ID, data_var):
 	$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 	
+func update_chest_open(sender_ID, data_var):
+	chests[data_var.chest_num] = true
+	$'/root/Chests/'.get_node('Chest' + str(data_var.chest_num)).open()
+	
 func is_online():
 	return gpgs.isOnline()
 	
@@ -166,6 +177,8 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	if is_reliable:
 		if data_var.has('p'):
 			spawn_bullet(sender_ID, data_var)
+		elif data_var.has('chest_num'):
+			update_chest_open(sender_ID, data_var)
 		else:
 			update_player_info(sender_ID, data_var) 
 	else:

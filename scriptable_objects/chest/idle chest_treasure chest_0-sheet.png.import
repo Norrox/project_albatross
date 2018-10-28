@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spikes_sheet.png-29dd6ed2388ff50600d48ab5520fe0d5.stex"
+path="res://.import/idle chest_treasure chest_0-sheet.png-343192c72801bc2c641aba6ed7579d31.stex"
 
 [deps]
 
-source_file="res://scriptable_objects/spikes_sheet.png"
-dest_files=[ "res://.import/spikes_sheet.png-29dd6ed2388ff50600d48ab5520fe0d5.stex" ]
+source_file="res://scriptable_objects/chest/idle chest_treasure chest_0-sheet.png"
+dest_files=[ "res://.import/idle chest_treasure chest_0-sheet.png-343192c72801bc2c641aba6ed7579d31.stex" ]
 
 [params]
 
