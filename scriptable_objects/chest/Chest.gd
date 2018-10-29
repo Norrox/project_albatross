@@ -16,6 +16,7 @@ func open(player):
 	var item_spawn = item_res.instance()
 	add_child(item_spawn)
 	item_spawn.spawned = true
+	item_spawn.intended_player = player
 	if !$'/root/Game'.force_local and player.is_master:
 		Network.google_send_reliable( { chest_num = get_chest_number() } )
 	
