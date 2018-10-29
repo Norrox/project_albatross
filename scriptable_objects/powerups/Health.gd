@@ -22,14 +22,16 @@ func _physics_process(delta):
 	if dist_to_target > MIN_MOVE_DIST:
 		move_and_slide((target_loc - global_position) * MOVE_SPEED)
 	else:
-		if intended_player.health_points + HEALTH >= 100:
-			intended_player.health_points = 100
-		else:
-			intended_player.health_points += HEALTH
 		if intended_player.is_master:
+			if intended_player.health_points + HEALTH >= 100:
+				intended_player.health_points = 100
+			else:
+				intended_player.health_points += HEALTH
 			intended_player.update_reliable('update_player_health')
-		intended_player._update_health_bar(intended_player.health_points)
+			intended_player._update_health_bar(intended_player.health_points)
 			
 		self.set_physics_process(false)
 		yield(get_tree().create_timer(STAY_TIME), "timeout")
 		queue_free()
+	
+	

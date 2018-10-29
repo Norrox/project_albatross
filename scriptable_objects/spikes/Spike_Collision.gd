@@ -19,8 +19,9 @@ func _process(delta):
 			can_damage = true
 			
 func _on_body_entered(body):
-	is_in_spikes = true
-	player_body = body
+	if body.is_in_group('players'):
+		is_in_spikes = true
+		player_body = body
 	
 func _on_body_exited(body):
 	is_in_spikes = false

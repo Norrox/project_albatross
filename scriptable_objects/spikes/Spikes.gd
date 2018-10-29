@@ -12,6 +12,6 @@ func _on_Timer_timeout():
 	
 func update_all_spikes():
 	for child in get_children():
-		if child.name != 'Timer':
-			child.get_node("AnimationPlayer").play('up')
+		for children in child.get_children():
+			children.get_node("AnimationPlayer").play('up')
 	$Timer.start()
