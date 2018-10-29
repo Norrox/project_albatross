@@ -25,8 +25,9 @@ func _on_body_entered(body):
 		queue_free()
 	elif 'Chest' in body.name:
 		body.open(player)
-	hide()
-	yield($AudioStreamPlayer2D,"finished")
+	#todo bring back below and disable collider
+	#hide()
+	#yield($AudioStreamPlayer2D,"finished")
 	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():

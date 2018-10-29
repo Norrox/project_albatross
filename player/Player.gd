@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
 const JITTER = 1
-const MOVE_SPEED = 250.0
+const MOVE_SPEED = 200.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
+const MAX_MOVE_DIST = 20
 
 onready var canvas = $'/root/Game'.get_node("CanvasLayer")
 onready var sc_canvas = canvas.get_node('L_debug')
@@ -35,33 +36,33 @@ func init(nickname, start_position, is_slave):
 	global_position = start_position
 	if is_slave:
 		$Sprite.texture = load('res://player/player.png')
-
+		
 func _physics_process(delta):
 	direction = Vector2()
-	
-	if is_master:		
+	if is_master:
 		set_master_info()
-		
+		update_net_self_data()
+		send_net_data()
+		play_anim(animation)
+	if is_master and !dead:		
 		if Input.is_action_pressed('roll'):
 			_roll()
 		
-		update_net_self_data()
-		send_net_data()
-		
 		_move(direction)
 		_rotate_gun(rifle_rotation)
-		play_anim(animation)
-	else:
+	if !is_master:
 		update_slave_data(Network.players[ID])
 		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
 		var network_difference = slave_interpolated.distance_to(global_position)
 		var slave_direction = slave_interpolated - global_position
 		
-		if network_difference > MIN_MOVE_DIST:
+		if network_difference > MIN_MOVE_DIST and network_difference < MAX_MOVE_DIST:
 			_move(slave_direction)
 		elif network_difference > JITTER and network_difference <= MIN_MOVE_DIST:
 			_move(slave_position - global_position)
+		elif network_difference > MAX_MOVE_DIST:
+			global_position = Network.players[ID].position
 			
 		_rotate_gun(slave_rifle_rotation)
 		play_anim(slave_animation)
@@ -88,6 +89,12 @@ func update_net_self_data():
 	Network.update_anim(animation)
 	Network.update_gun_angle(rifle_rotation)
 	Network.update_health(health_points)
+	
+func update_reliable(action=''):
+	if !$'/root/Game'.force_local and is_master:
+		update_net_self_data()
+		Network.self_data.action = action
+		Network.google_send_reliable(Network.self_data)	
 
 func update_slave_data(slave_info):
 	slave_position = slave_info.position
@@ -155,6 +162,11 @@ func damage(value):
 		_update_health_bar(health_points)
 
 func _die():
+	if dead:
+		return
+		
+	$RespawnTimer.start()
+	
 	if is_master:
 		dead = true
 		animation = 'die'
@@ -162,8 +174,14 @@ func _die():
 		
 	yield(get_tree().create_timer(0.02), 'timeout')	
 	yield($AnimationPlayer,"animation_finished")
-	$RespawnTimer.start()
-	set_physics_process(false)
+	
+	if is_master:
+		randomize()
+		var random = randi()%9+1
+		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(random)).global_position
+		global_position = spawn_pos
+		update_reliable('update_player_positions')
+	#set_physics_process(false)
 	$Rifle.set_process(false)
 	for child in get_children():
 		if child.has_method('hide'):
@@ -171,7 +189,6 @@ func _die():
 	$CollisionShape2D.disabled = true
 	
 func _on_RespawnTimer_timeout():
-	$RespawnTimer.stop()
 	if is_master:
 		dead = false
 		animation = 'idle'
@@ -179,16 +196,10 @@ func _on_RespawnTimer_timeout():
 		health_points = MAX_HP
 		_update_health_bar(health_points)
 		update_reliable('update_player_health')
-		
-	set_physics_process(true)
+
+	#set_physics_process(true)
 	$Rifle.set_process(true)
 	for child in get_children():
 		if child.has_method('show'):
 			child.show()
-	$CollisionShape2D.disabled = false
-
-func update_reliable(action=''):
-	if !$'/root/Game'.force_local and is_master:
-		update_net_self_data()
-		Network.self_data.action = action
-		Network.google_send_reliable(Network.self_data)		
+	$CollisionShape2D.disabled = false	
