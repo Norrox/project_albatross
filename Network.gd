@@ -116,7 +116,7 @@ func spawn_bullet(sender_ID, data_var):
 	
 func update_chest_open(sender_ID, data_var):
 	chests[data_var.chest_num] = true
-	$'/root/Chests/'.get_node('Chest' + str(data_var.chest_num)).open()
+	$'/root/Game/Chests/'.get_node('Chest' + str(data_var.chest_num)).open()
 	
 func is_online():
 	return gpgs.isOnline()

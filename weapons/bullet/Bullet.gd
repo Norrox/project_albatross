@@ -4,13 +4,13 @@ export(float) var SPEED = 750
 export(float) var DAMAGE = 5
 
 var direction = 0
-var player_name = 'No_Name'
+var player = null
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
 	$AudioStreamPlayer2D.play()
-	player_name = $'../../'.name
+	player = $'../../'
 	yield(get_tree().create_timer(1), "timeout")
 	queue_free()
 
@@ -24,7 +24,7 @@ func _on_body_entered(body):
 		body.damage(DAMAGE)
 		queue_free()
 	elif 'Chest' in body.name:
-		body.open(player_name)
+		body.open(player)
 	hide()
 	yield($AudioStreamPlayer2D,"finished")
 	queue_free()
