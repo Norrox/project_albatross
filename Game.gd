@@ -25,6 +25,9 @@ func _ready():
 		
 		new_player.name = 'test'
 		new_player.is_master = true
+		Network.master_ID = 'test'
+		Network.self_data.name = 'test'
+		Network.players[Network.master_ID] = Network.self_data
 			
 		$'/root/'.add_child(new_player)
 		new_player.init('test', spawn_pos, false)

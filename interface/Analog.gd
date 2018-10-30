@@ -5,6 +5,7 @@ var SMALL_RADIUS = 0
 const RADIUS_ALLOWANCE = 55
 const PLACEMENT_OFFSET = 110
 const SCREEN_SIZE = Vector2(960, 540)
+const ROLL_BTN_OFFSET = Vector2(-55, -170)
 
 var stick1_pos = Vector2()
 var stick2_pos = Vector2()
@@ -30,6 +31,11 @@ func _ready():
 	right_stick.position.x = SCREEN_SIZE.x - PLACEMENT_OFFSET
 	right_stick.position.y = SCREEN_SIZE.y - PLACEMENT_OFFSET
 	stick2_pos = right_stick.get_node("Analog_Small").global_position
+	
+	var roll_button = $'../Roll_Button'
+	roll_button.position = stick2_pos
+	roll_button.position += ROLL_BTN_OFFSET
+	
 	RADIUS = texture.get_height() / 2
 	SMALL_RADIUS = 13
 	

@@ -18,6 +18,7 @@ var last_animation = ''
 var direction = Vector2()
 var rifle_rotation = 0
 var last_rifle_rotation = 0
+var start_roll = false
 var rolling = false
 var can_roll = true
 var dead = false
@@ -45,7 +46,7 @@ func _physics_process(delta):
 		send_net_data()
 		play_anim(animation)
 
-		if Input.is_action_pressed('roll'):
+		if start_roll:
 			_roll()
 		
 		_move(direction)
@@ -144,6 +145,7 @@ func _roll():
 		return
 	rolling = true
 	can_roll = false
+	start_roll = false
 	yield($AnimationPlayer,"animation_finished")
 	rolling = false
 	yield( get_tree().create_timer(ROLL_WAIT_TIME), "timeout" )
