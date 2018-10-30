@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://player/roll.png" type="Texture" id=2]
+[ext_resource path="res://player/style 1_player death_00-sheet.png" type="Texture" id=2]
 [ext_resource path="res://weapons/rifle/Rifle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/GUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/style 1_player death_00-sheet.png" type="Texture" id=5]
-[ext_resource path="res://player/player.png" type="Texture" id=6]
+[ext_resource path="res://player/player.png" type="Texture" id=5]
+[ext_resource path="res://player/roll.png" type="Texture" id=6]
 [ext_resource path="res://player/player_run.png" type="Texture" id=7]
 [ext_resource path="res://player/Camera.gd" type="Script" id=8]
 
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:hframes")
@@ -75,10 +75,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.24 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.24 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -108,7 +108,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:hframes")
@@ -135,7 +135,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 1.92776 ), Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 3 ), Vector2( 0, 2.96388 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath(".:visible")
+tracks/4/path = NodePath("Rifle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -163,7 +163,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:hframes")
@@ -314,13 +314,13 @@ shape = SubResource( 1 )
 
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-hframes = 6
-frame = 5
+hframes = 12
 _sections_unfolded = [ "Animation", "Transform", "Z Index" ]
 
 [node name="Rifle" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 3, 4 )
+visible = false
+position = Vector2( 2, -1 )
 offset = Vector2( 5, 0 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 

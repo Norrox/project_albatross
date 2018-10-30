@@ -27,6 +27,7 @@ var slave_animation = 'idle'
 var slave_position = Vector2()
 var slave_rifle_rotation = 0
 var slave_hp = MAX_HP
+var slave_is_dead = false
 
 func _ready():
 	_update_health_bar(MAX_HP)
@@ -63,8 +64,9 @@ func _physics_process(delta):
 			_move(slave_position - global_position)
 		elif network_difference > MAX_MOVE_DIST:
 			global_position = Network.players[ID].position
-			
-		_rotate_gun(slave_rifle_rotation)
+		
+		if !slave_is_dead:	
+			_rotate_gun(slave_rifle_rotation)
 		play_anim(slave_animation)
 
 func set_master_info():
@@ -170,7 +172,10 @@ func _die():
 	if is_master:
 		dead = true
 		animation = 'die'
-		update_reliable('update_player_death')
+		if $'/root/Game'.force_local:
+			update_reliable('update_player_death')
+	else:
+		slave_is_dead = true
 		
 	yield(get_tree().create_timer(0.02), 'timeout')	
 	yield($AnimationPlayer,"animation_finished")
@@ -180,11 +185,13 @@ func _die():
 		var random = randi()%9+1
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(random)).global_position
 		global_position = spawn_pos
-		update_reliable('update_player_positions')
+		if $'/root/Game'.force_local:
+			update_reliable('update_player_positions')
+	
 	#set_physics_process(false)
 	$Rifle.set_process(false)
 	for child in get_children():
-		if child.has_method('hide'):
+		if child.has_method('hide') and child.name != 'Rifle':
 			child.hide()
 	$CollisionShape2D.disabled = true
 	
@@ -196,6 +203,8 @@ func _on_RespawnTimer_timeout():
 		health_points = MAX_HP
 		_update_health_bar(health_points)
 		update_reliable('update_player_health')
+	else:
+		slave_is_dead = false
 
 	#set_physics_process(true)
 	$Rifle.set_process(true)
