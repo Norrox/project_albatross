@@ -37,23 +37,25 @@ func init(nickname, start_position, is_slave):
 	global_position = start_position
 	if is_slave:
 		$Sprite.texture = load('res://player/player.png')
-		
-func _physics_process(delta):
-	direction = Vector2()
+	
+func _process(delta):
 	if is_master:
 		set_master_info()
 		update_net_self_data()
-		send_net_data()
 		play_anim(animation)
-
+		_rotate_gun(rifle_rotation)
 		if start_roll:
 			_roll()
-		
-		_move(direction)
-		_rotate_gun(rifle_rotation)
 	else:
 		update_slave_data(Network.players[ID])
+		play_anim(slave_animation)
+		_rotate_gun(slave_rifle_rotation)
 		
+func _physics_process(delta):
+	if is_master:
+		send_net_data()
+		_move(direction)
+	else:		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
 		var network_difference = slave_interpolated.distance_to(global_position)
 		var slave_direction = slave_interpolated - global_position
@@ -63,16 +65,22 @@ func _physics_process(delta):
 		elif network_difference > JITTER and network_difference <= MIN_MOVE_DIST:
 			_move(slave_position - global_position)
 		elif network_difference > MAX_MOVE_DIST:
-			global_position = Network.players[ID].position
-		
-		_rotate_gun(slave_rifle_rotation)
-		play_anim(slave_animation)
+			global_position = Network.players[ID].position		
 
 func set_master_info():
+	direction = Vector2()
 	direction += canvas.stick1_vector
 	last_rifle_rotation = rifle_rotation
 	rifle_rotation = canvas.stick2_angle
 	decide_animation()
+
+func update_net_self_data():
+	if $'/root/Game'.force_local:
+		return	
+	Network.update_position(global_position)
+	Network.update_anim(animation)
+	Network.update_gun_angle(rifle_rotation)
+	Network.update_health(health_points)
 	
 func send_net_data():
 	if $'/root/Game'.force_local:
@@ -83,14 +91,6 @@ func send_net_data():
 	if direction != Vector2() or last_rifle_rotation != rifle_rotation:	
 		Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 		
-func update_net_self_data():
-	if $'/root/Game'.force_local:
-		return	
-	Network.update_position(global_position)
-	Network.update_anim(animation)
-	Network.update_gun_angle(rifle_rotation)
-	Network.update_health(health_points)
-	
 func update_reliable(action=''):
 	if !$'/root/Game'.force_local and is_master:
 		update_net_self_data()
