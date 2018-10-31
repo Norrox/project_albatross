@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const WAIT_TO_SPAWN = 0.6
 const MOVE_SPEED = 3
-const MOVE_DIST_Y = 40
+const MOVE_DIST_Y = 25
 const MIN_MOVE_DIST = 1
 const STAY_TIME = 1
 const HEALTH = 50

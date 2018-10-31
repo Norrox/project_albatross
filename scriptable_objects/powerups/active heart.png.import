@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite heart.png-5aa1ae869bd6dd47d136a2caca32ca40.stex"
+path="res://.import/active heart.png-c7a139a1587a04404e3dea5613123cf3.stex"
 
 [deps]
 
-source_file="res://scriptable_objects/powerups/sprite heart.png"
-dest_files=[ "res://.import/sprite heart.png-5aa1ae869bd6dd47d136a2caca32ca40.stex" ]
+source_file="res://scriptable_objects/powerups/active heart.png"
+dest_files=[ "res://.import/active heart.png-c7a139a1587a04404e3dea5613123cf3.stex" ]
 
 [params]
 
