@@ -22,6 +22,7 @@ var start_roll = false
 var rolling = false
 var can_roll = true
 var dead = false
+var lives = 3
 
 var slave_info = {}
 var slave_animation = 'idle'
@@ -153,6 +154,28 @@ func _roll():
 
 func _update_health_bar(hp):
 	$GUI_Node/GUI/HealthBar.value = hp
+	
+func update_ui_hearts(num_lives):
+	var lives_bar = $'/root/Game/CanvasLayer/Lives/'
+	if num_lives >= 3:
+		num_lives = 3
+		lives_bar.get_node('Active_Heart1').show()
+		lives_bar.get_node('Active_Heart2').show()
+		lives_bar.get_node('Active_Heart3').show()
+	elif num_lives == 2:
+		lives_bar.get_node('Active_Heart1').show()
+		lives_bar.get_node('Active_Heart2').show()
+		lives_bar.get_node('Active_Heart3').hide()
+	elif num_lives == 1:
+		lives_bar.get_node('Active_Heart1').show()
+		lives_bar.get_node('Active_Heart2').hide()
+		lives_bar.get_node('Active_Heart3').hide()
+	elif num_lives <= 0:
+		num_lives = 0
+		lives_bar.get_node('Active_Heart1').hide()
+		lives_bar.get_node('Active_Heart2').hide()
+		lives_bar.get_node('Active_Heart3').hide()
+				
 
 func damage(value):
 	if is_master:
@@ -167,6 +190,8 @@ func _die():
 	if dead and is_master:
 		return
 		
+	lives -= 1
+	update_ui_hearts(lives)
 	$RespawnTimer.start()
 	set_physics_process(false)
 	$Rifle.set_process(false)
