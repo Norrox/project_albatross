@@ -191,7 +191,7 @@ func hide_player():
 func choose_spawn_loc():
 	if is_master:
 		randomize()
-		var random = randi()%9+1
+		var random = randi()%8+1
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(random)).global_position
 		global_position = spawn_pos
 		if $'/root/Game'.force_local:
