@@ -320,8 +320,6 @@ expand = true
 stretch_mode = 5
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
 
-[connection signal="changed" from="VBoxContainer/HBoxContainerPlayer/Node2D/SpinBox" to="." method="_on_SpinBox_changed"]
-
 [connection signal="value_changed" from="VBoxContainer/HBoxContainerPlayer/Node2D/SpinBox" to="." method="_on_SpinBox_value_changed"]
 
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextField" to="." method="_on_TextField_text_changed"]

@@ -19,5 +19,5 @@ func _load_game():
 	get_tree().change_scene('res://Game.tscn')
 
 func _on_SpinBox_value_changed(value):
-	print("~~~~~~~~~~~MIN_PLAYERS_CHANGED~~~~~~~~~" + str($VBoxContainer/HBoxContainerPlayer/SpinBox.value))
-	Network.MIN_PLAYERS = int($VBoxContainer/HBoxContainerPlayer/SpinBox.value)
+	print("~~~~~~~~~~~MIN_PLAYERS_CHANGED~~~~~~~~~" + str(value))
+	Network.MIN_PLAYERS = int(value)
