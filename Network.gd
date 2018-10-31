@@ -115,7 +115,7 @@ func spawn_bullet(sender_ID, data_var):
 	$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 	
 func update_chest_open(sender_ID, data_var):
-	chests[data_var.chest_num] = true
+	chests[data_var.chest_num - 1] = true
 	$'/root/Game/Chests/'.get_node('Chest' + str(data_var.chest_num)).open()
 	
 func is_online():
