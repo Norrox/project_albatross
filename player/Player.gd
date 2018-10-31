@@ -158,7 +158,6 @@ func _update_health_bar(hp):
 func update_ui_hearts(num_lives):
 	var lives_bar = $'/root/Game/CanvasLayer/Lives/'
 	if num_lives >= 3:
-		num_lives = 3
 		lives_bar.get_node('Active_Heart1').show()
 		lives_bar.get_node('Active_Heart2').show()
 		lives_bar.get_node('Active_Heart3').show()
@@ -171,7 +170,6 @@ func update_ui_hearts(num_lives):
 		lives_bar.get_node('Active_Heart2').hide()
 		lives_bar.get_node('Active_Heart3').hide()
 	elif num_lives <= 0:
-		num_lives = 0
 		lives_bar.get_node('Active_Heart1').hide()
 		lives_bar.get_node('Active_Heart2').hide()
 		lives_bar.get_node('Active_Heart3').hide()
@@ -190,13 +188,13 @@ func _die():
 	if dead and is_master:
 		return
 		
-	lives -= 1
-	update_ui_hearts(lives)
 	$RespawnTimer.start()
 	set_physics_process(false)
 	$Rifle.set_process(false)
 	
 	if is_master:
+		lives -= 1
+		update_ui_hearts(lives)
 		dead = true
 		if !$'/root/Game'.force_local:
 			update_reliable('update_player_death')
