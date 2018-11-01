@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 6.0
 
 [sub_resource type="Animation" id=2]
 
@@ -48,27 +48,28 @@ tracks/0/keys = {
 
 [node name="Shell" type="KinematicBody2D" index="0"]
 
-scale = Vector2( 2, 2 )
 z_index = -4
 z_as_relative = false
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 1024
+collision_mask = 2048
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 2
 frame = 1
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -1, -1 )
 shape = SubResource( 1 )
-disabled = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 

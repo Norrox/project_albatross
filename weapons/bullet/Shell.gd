@@ -3,7 +3,7 @@ extends KinematicBody2D
 const SHOW_TIME = 2
 const MIN_MOVE_DIST = 1
 const MAX_MOVE_DIST = 60
-const EXTRA_FORCE_Y = -25
+const EXTRA_FORCE_Y = 25
 const MAX_ROTATE_SPEED = 5
 
 var target_pos = Vector2()
@@ -13,9 +13,9 @@ var rotate_speed = MAX_ROTATE_SPEED
 func _ready():
 	randomize()
 	rotate_dir = randi()%3-1
-	rotate_speed = randi()%MAX_ROTATE_SPEED-MAX_ROTATE_SPEED
+	rotate_speed = randi()%MAX_ROTATE_SPEED+1
 	target_pos = global_position
-	target_pos -= Vector2(randi()%MAX_MOVE_DIST-1, randi()%MAX_MOVE_DIST-1)
+	target_pos += Vector2(randi()%MAX_MOVE_DIST+1, -randi()%MAX_MOVE_DIST+1)
 	print(target_pos)
 	target_pos.y += EXTRA_FORCE_Y
 	$AnimationPlayer.play('idle')
