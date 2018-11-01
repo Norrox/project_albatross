@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[node name="Shell" type="KinematicBody2D" index="0"]
+[node name="Shell" type="KinematicBody2D"]
 
 z_index = -4
 z_as_relative = false
