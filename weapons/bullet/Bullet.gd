@@ -37,7 +37,16 @@ func _on_body_entered(body):
 		destroy(body)
 	elif 'Chest' in body.name:
 		body.open(player)
-	destroy(body)
+	elif 'Crate' in body.name:
+		destroy(body)
+		if body.hit < 2:
+			body.hit += 1
+			body.get_node('AnimationPlayer').play('hit' + str(body.hit))
+			yield(body.get_node('AnimationPlayer'), 'animation_finished')
+			if body.hit == 2:
+				body.queue_free()
+	if !$CollisionShape2D.disabled:
+		destroy(body)
 	
 func destroy(body):
 	collided = true
