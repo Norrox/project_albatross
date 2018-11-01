@@ -12,10 +12,11 @@ var rotate_speed = MAX_ROTATE_SPEED
 
 func _ready():
 	randomize()
-	rotate_dir = randi()%1-1
+	rotate_dir = randi()%3-1
 	rotate_speed = randi()%MAX_ROTATE_SPEED-MAX_ROTATE_SPEED
 	target_pos = global_position
-	target_pos -= Vector2(randi()%MAX_MOVE_DIST-MAX_MOVE_DIST, randi()%-MAX_MOVE_DIST-MAX_MOVE_DIST)
+	target_pos -= Vector2(randi()%MAX_MOVE_DIST-1, randi()%MAX_MOVE_DIST-1)
+	print(target_pos)
 	target_pos.y += EXTRA_FORCE_Y
 	$AnimationPlayer.play('idle')
 	yield(get_tree().create_timer(SHOW_TIME),'timeout')
