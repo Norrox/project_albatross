@@ -46,7 +46,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="Spikes" type="Sprite" index="0"]
+[node name="Spikes" type="Sprite"]
 
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
