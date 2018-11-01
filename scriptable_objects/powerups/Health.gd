@@ -28,10 +28,11 @@ func _physics_process(delta):
 	if dist_to_target > MIN_MOVE_DIST:
 		move_and_slide((target_loc - global_position) * MOVE_SPEED)
 	else:
-		intended_player.lives += 1
-		if intended_player.lives > 3:
-			intended_player.lives = 3
-		intended_player.update_ui_hearts(intended_player.lives)
+		if intended_player != null:
+			intended_player.lives += 1
+			if intended_player.lives > 3:
+				intended_player.lives = 3
+			intended_player.update_ui_hearts(intended_player.lives)
 			
 		self.set_physics_process(false)
 		yield(get_tree().create_timer(STAY_TIME), "timeout")
