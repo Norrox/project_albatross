@@ -11,7 +11,7 @@
 [ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -387,7 +387,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone4" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -11, -8, -11, 4, 21, 4, 21, -8 )
+polygon = PoolVector2Array( -15, -8, -15, 4, 25, 4, 25, -8 )
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes" method="_on_Timer_timeout"]
 
