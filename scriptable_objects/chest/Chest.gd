@@ -19,6 +19,8 @@ func open(player):
 	item_spawn.intended_player = player
 	if !$'/root/Game'.force_local and player.is_master:
 		Network.google_send_reliable( { chest_num = get_chest_number() } )
+	yield($AnimationPlayer,'animation_finished')
+	opening = false
 	
 func check_net_is_claimed():
 	return Network.chests[get_chest_number()-1]
