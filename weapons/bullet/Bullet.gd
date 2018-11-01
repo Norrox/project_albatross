@@ -29,7 +29,3 @@ func _on_body_entered(body):
 	#hide()
 	#yield($AudioStreamPlayer2D,"finished")
 	queue_free()
-
-func _on_VisibilityNotifier2D_screen_exited():
-	# bullet off screen!
-	pass 
