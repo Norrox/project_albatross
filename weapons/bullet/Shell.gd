@@ -16,7 +16,6 @@ func _ready():
 	rotate_speed = randi()%MAX_ROTATE_SPEED+1
 	target_pos = global_position
 	target_pos += Vector2(randi()%MAX_MOVE_DIST+1, -randi()%MAX_MOVE_DIST+1)
-	print(target_pos)
 	target_pos.y += EXTRA_FORCE_Y
 	$AnimationPlayer.play('idle')
 	yield(get_tree().create_timer(SHOW_TIME),'timeout')
