@@ -5,6 +5,7 @@ export(float) var DAMAGE = 5
 
 onready var on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
 onready var muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
+onready var shell = preload("res://weapons/bullet/Shell.tscn")
 
 var direction = 0
 var player = null
@@ -14,6 +15,9 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
 	var muzzle_flash_obj = muzzle_flash.instance()
+	var shell_obj = shell.instance()
+	shell_obj.global_position = global_position
+	$'/root/'.add_child(shell_obj)
 	get_parent().add_child(muzzle_flash_obj)
 	$AudioStreamPlayer2D.play()
 	player = $'../../'
