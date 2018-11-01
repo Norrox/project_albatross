@@ -419,7 +419,6 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 14
-frame = 13
 _sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
 
 [node name="Rifle" parent="." index="2" instance=ExtResource( 3 )]
