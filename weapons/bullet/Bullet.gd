@@ -4,6 +4,7 @@ export(float) var SPEED = 750
 export(float) var DAMAGE = 5
 
 onready var on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
+onready var muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
 
 var direction = 0
 var player = null
@@ -12,6 +13,8 @@ var collided = false
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
+	var muzzle_flash_obj = muzzle_flash.instance()
+	get_parent().add_child(muzzle_flash_obj)
 	$AudioStreamPlayer2D.play()
 	player = $'../../'
 	yield(get_tree().create_timer(1), "timeout")
