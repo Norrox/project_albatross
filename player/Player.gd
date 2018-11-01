@@ -184,11 +184,12 @@ func damage(value):
 		update_reliable('update_player_health')
 		_update_health_bar(health_points)
 
-func _die():
+func _die(skip_anim=false):
 	if dead and is_master:
 		return
 		
 	$RespawnTimer.start()
+	set_process(false)
 	set_physics_process(false)
 	$Rifle.set_process(false)
 	
@@ -198,9 +199,10 @@ func _die():
 		dead = true
 		if !$'/root/Game'.force_local:
 			update_reliable('update_player_death')
-		
-	play_anim('die')
-	yield($AnimationPlayer,"animation_finished")
+	
+	if !skip_anim:		
+		play_anim('die')
+		yield($AnimationPlayer,"animation_finished")
 	
 	hide_player()
 	choose_spawn_loc()
@@ -214,7 +216,7 @@ func hide_player():
 func choose_spawn_loc():
 	if is_master:
 		randomize()
-		var random = randi()%8+1
+		var random = randi()%9+1
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(random)).global_position
 		global_position = spawn_pos
 		if $'/root/Game'.force_local:
@@ -231,7 +233,8 @@ func _on_RespawnTimer_timeout():
 		health_points = MAX_HP
 		_update_health_bar(health_points)
 		update_reliable('update_player_health')
-
+	
+	set_process(true)
 	set_physics_process(true)
 	$Rifle.set_process(true)
 	show_player()
