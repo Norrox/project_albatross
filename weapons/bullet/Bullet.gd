@@ -3,8 +3,11 @@ extends Area2D
 export(float) var SPEED = 750
 export(float) var DAMAGE = 5
 
+onready var on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
+
 var direction = 0
 var player = null
+var collided = false
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -14,18 +17,34 @@ func _ready():
 	yield(get_tree().create_timer(1), "timeout")
 	queue_free()
 
-func _process(delta):
-	position += direction * SPEED * delta
+func _physics_process(delta):
+	var space_state = get_world_2d().direct_space_state
+	if !collided:
+		position += direction * SPEED * delta
 
 func _on_body_entered(body):
 	if body.is_a_parent_of(self):
 		return
 	elif body.is_in_group('players') and !body.rolling:	
 		body.damage(DAMAGE)
-		queue_free()
+		destroy(body)
 	elif 'Chest' in body.name:
 		body.open(player)
-	#todo bring back below and disable collider
-	#hide()
-	#yield($AudioStreamPlayer2D,"finished")
+	destroy(body)
+	
+func destroy(body):
+	collided = true
+	$Sprite.hide()
+	$CollisionShape2D.disabled = true
+	var on_hit_particle_obj = on_hit_particle.instance()
+	add_child(on_hit_particle_obj)
+	on_hit_particle_obj.global_position = get_collision_point(body)
+	on_hit_particle_obj.rotation = rotation
+	var particle_anim = on_hit_particle_obj.get_node('AnimationPlayer')
+	particle_anim.play('hit')
+	yield(particle_anim, 'animation_finished')
 	queue_free()
+	
+func get_collision_point(body):
+	#fix with more accurate
+	return (global_position + direction * 47)
