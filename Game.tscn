@@ -12,7 +12,7 @@
 [ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
 [ext_resource path="res://scriptable_objects/crate/Crate.tscn" type="PackedScene" id=11]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -184,8 +184,6 @@ position = Vector2( -304, 1648 )
 position = Vector2( -336, 1648 )
 
 [node name="Spawns" type="Node2D" parent="." index="5"]
-
-editor/display_folded = true
 
 [node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
 

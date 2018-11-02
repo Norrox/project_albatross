@@ -26,10 +26,8 @@ func check_player_master_and_anim_item(player):
 		animate_item()
 		
 func send_net_chest_num(player):
-	if !$'/root/Game'.force_local and player.is_master:
+	if Network.force_local and player.is_master:
 		Network.google_send_reliable( { chest_num = get_chest_number() } )
-	elif $'/root/Game'.force_local:
-		pass
 	Network.chests[get_chest_number() - 1] = true
 	
 func check_net_is_claimed():

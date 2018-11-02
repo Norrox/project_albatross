@@ -1,8 +1,12 @@
 extends Node
 
+const SIGN_IN_WAIT_TIME  = 5.0
+
 var MIN_PLAYERS = 1 #const
 var MAX_PLAYERS = 4 #const
 
+var signed_in = false
+var signing_in_busy = false
 var connected_peers = ''
 var players = { }
 var players_order = []
@@ -13,11 +17,18 @@ var chests = []
 
 var gpgs = null
 var game_started = false
+var force_local = false
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
+	
+	if OS.get_name() == 'Windows':
+		force_local = true
+	
 	init_chests()
 	init_play_services()
+	if !force_local:
+		google_sign_in()
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):
@@ -62,8 +73,21 @@ func get_ID_from_name(player_name):
 		if player_name == players[id].name:
 			return id
 
-func google_sign_in():
-	gpgs.signInInteractive()
+func google_sign_in(silent=true):
+	if !silent:
+		gpgs.signInInteractive()
+	else:
+		gpgs.signInSilent()
+	signing_in_busy = true
+	var delta = 0.0
+	while signed_in == false:
+		yield(get_tree().create_timer(0.02),'timeout')
+		delta += 0.02
+		if delta > SIGN_IN_WAIT_TIME:
+			print('failed to sign in.. signing out')
+			google_sign_out()
+			break
+	signing_in_busy = false
 	
 func google_sign_out():
 	gpgs.signOut()
@@ -155,7 +179,7 @@ func send_unreliable_data_to_all(data):
 ### google callbacks ###	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Succeeded!")
-	start_quick_game(MIN_PLAYERS, MAX_PLAYERS, 0)
+	signed_in = true
 	
 func _on_play_game_services_sign_in_failure(signInType):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Failed')

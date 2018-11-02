@@ -15,7 +15,7 @@ var player_name = ""
 var rifle = null
 
 func _ready():
-	if !$'/root/Game'.force_local:
+	if !Network.force_local:
 		player_name = Network.get_current_player_display_name()
 	else:
 		player_name = 'test'

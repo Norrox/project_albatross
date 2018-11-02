@@ -76,7 +76,7 @@ func set_master_info():
 	decide_animation()
 
 func update_net_self_data():
-	if $'/root/Game'.force_local:
+	if Network.force_local:
 		return	
 	Network.update_position(global_position)
 	Network.update_anim(animation)
@@ -84,7 +84,7 @@ func update_net_self_data():
 	Network.update_health(health_points)
 	
 func send_net_data():
-	if $'/root/Game'.force_local:
+	if Network.force_local:
 		return	
 	if last_animation != animation:
 		Network.google_send_unreliable({ anim = animation })
@@ -93,7 +93,7 @@ func send_net_data():
 		Network.google_send_unreliable({ position = global_position, rotation = rifle_rotation })
 		
 func update_reliable(action=''):
-	if !$'/root/Game'.force_local and is_master:
+	if !Network.force_local and is_master:
 		update_net_self_data()
 		Network.self_data.action = action
 		Network.google_send_reliable(Network.self_data)	
@@ -197,7 +197,7 @@ func _die(skip_anim=false):
 		lives -= 1
 		update_ui_hearts(lives)
 		dead = true
-		if !$'/root/Game'.force_local:
+		if !Network.force_local:
 			update_reliable('update_player_death')
 	
 	if !skip_anim:		
@@ -219,7 +219,7 @@ func choose_spawn_loc():
 		var random = randi()%8+1
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(random)).global_position
 		global_position = spawn_pos
-		if $'/root/Game'.force_local:
+		if !Network.force_local:
 			update_reliable('update_player_positions')
 	else:
 		#move out of view
