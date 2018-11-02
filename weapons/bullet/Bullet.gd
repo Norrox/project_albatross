@@ -36,8 +36,10 @@ func _on_body_entered(body):
 		body.damage(DAMAGE)
 		destroy(body)
 	elif 'Chest' in body.name:
+		OS.delay_msec(25)
 		body.open(player)
 	elif 'Crate' in body.name:
+		OS.delay_msec(25)
 		destroy(body)
 		if body.hit < 2:
 			body.hit += 1
