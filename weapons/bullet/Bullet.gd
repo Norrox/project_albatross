@@ -1,5 +1,7 @@
 extends Area2D
 
+const HIT_DELAY = 20
+
 export(float) var SPEED = 750
 export(float) var DAMAGE = 5
 
@@ -33,13 +35,14 @@ func _on_body_entered(body):
 	if body.is_a_parent_of(self):
 		return
 	elif body.is_in_group('players') and !body.rolling:	
+		OS.delay_msec(HIT_DELAY)
 		body.damage(DAMAGE)
 		destroy(body)
 	elif 'Chest' in body.name:
-		OS.delay_msec(25)
+		OS.delay_msec(HIT_DELAY)
 		body.open(player)
 	elif 'Crate' in body.name:
-		OS.delay_msec(25)
+		OS.delay_msec(HIT_DELAY)
 		destroy(body)
 		if body.hit < 2:
 			body.hit += 1
