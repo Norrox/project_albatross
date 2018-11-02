@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SHOW_TIME = 2
+const SHOW_TIME = 5
 const MIN_MOVE_DIST = 1
 const MAX_MOVE_DIST = 60
 const EXTRA_FORCE_Y = 25

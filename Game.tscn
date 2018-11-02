@@ -235,6 +235,8 @@ position = Vector2( 1952, 112 )
 
 [node name="Coins" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
+
 [node name="Room1" type="Node2D" parent="Coins" index="0"]
 
 [node name="Coin1" parent="Coins/Room1" index="0" instance=ExtResource( 9 )]
@@ -347,7 +349,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone1" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 220, 168, 220, 184, 292, 184, 292, 168 )
+polygon = PoolVector2Array( 220, 156, 220, 184, 292, 184, 292, 156 )
 
 [node name="Fall_Zone2" type="Area2D" parent="Fall_Zones" index="1"]
 
@@ -366,7 +368,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone2" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 236, 152, 236, 168, 276, 168, 276, 152 )
+polygon = PoolVector2Array( 236, 140, 236, 168, 276, 168, 276, 140 )
 
 [node name="Fall_Zone3" type="Area2D" parent="Fall_Zones" index="2"]
 
@@ -385,7 +387,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone3" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -25, -8, -25, 8, 39, 8, 39, -8 )
+polygon = PoolVector2Array( -25, -20, -25, 8, 39, 8, 39, -20 )
 
 [node name="Fall_Zone4" type="Area2D" parent="Fall_Zones" index="3"]
 
@@ -404,9 +406,11 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone4" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -15, -8, -15, 4, 25, 4, 25, -8 )
+polygon = PoolVector2Array( -15, -24, -15, 4, 25, 4, 25, -24 )
 
 [node name="Destructables" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
 
 [node name="Room1" type="Node2D" parent="Destructables" index="0"]
 
