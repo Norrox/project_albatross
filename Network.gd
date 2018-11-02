@@ -21,6 +21,7 @@ var force_local = false
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
+	get_tree().set_auto_accept_quit(false)
 	
 	if OS.get_name() == 'Windows':
 		force_local = true
@@ -29,6 +30,14 @@ func _ready():
 	init_play_services()
 	if !force_local:
 		google_sign_in()
+		
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST and !force_local:
+		google_sign_out()
+		google_clear_cache()
+		get_tree().quit() # default behavior
+	elif what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST and force_local:
+		get_tree().quit()
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):
@@ -176,6 +185,9 @@ func send_unreliable_data(data, participantIDs):
 func send_unreliable_data_to_all(data):
 	gpgs.rtmSendUnreliableDataToAll(data)
 	
+func google_clear_cache():
+	gpgs.clearCache()
+	
 ### google callbacks ###	
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Succeeded!")
@@ -186,6 +198,7 @@ func _on_play_game_services_sign_in_failure(signInType):
 	
 func _on_play_game_services_sign_out(success):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Player Signed Out')
+	signed_in = false
 	
 func _on_play_game_services_rtm_room_client_created(success,roomID):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')

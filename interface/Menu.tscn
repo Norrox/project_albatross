@@ -5,7 +5,7 @@
 [ext_resource path="res://interface/buttons/join.png" type="Texture" id=3]
 [ext_resource path="res://interface/buttons/join-pressed.png" type="Texture" id=4]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -45,9 +45,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -26.0
-margin_right = 657.0
-margin_bottom = 96.0
+margin_right = 630.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -64,9 +63,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 22.0
 margin_right = 491.0
-margin_bottom = 74.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -87,9 +85,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 601.0
-margin_right = 675.0
-margin_bottom = 96.0
+margin_left = 491.0
+margin_right = 565.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -108,16 +106,15 @@ prefix = ""
 suffix = ""
 _sections_unfolded = [ "Rect" ]
 
-[node name="HBoxContainerPlayer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+[node name="HBoxContainerPlayer2" type="VBoxContainer" parent="VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -28.0
-margin_top = 116.0
-margin_right = 655.0
-margin_bottom = 212.0
+margin_top = 72.0
+margin_right = 630.0
+margin_bottom = 264.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -134,8 +131,35 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 683.0
+margin_right = 630.0
 margin_bottom = 96.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Pause", "Size Flags", "Textures", "Visibility" ]
+
+[node name="SignOutButton" type="TextureButton" parent="VBoxContainer/HBoxContainerPlayer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 630.0
+margin_bottom = 192.0
 rect_min_size = Vector2( 192, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -157,5 +181,7 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Pause", "Size Flags", "Texture
 [connection signal="value_changed" from="VBoxContainer/HBoxContainerPlayer/SpinBox" to="." method="_on_SpinBox_value_changed"]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainerPlayer2/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainerPlayer2/SignOutButton" to="." method="_on_SignOutButton_pressed"]
 
 
