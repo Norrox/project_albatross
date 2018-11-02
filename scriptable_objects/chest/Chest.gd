@@ -26,7 +26,7 @@ func check_player_master_and_anim_item(player):
 		animate_item()
 		
 func send_net_chest_num(player):
-	if Network.force_local and player.is_master:
+	if !Network.force_local and player.is_master:
 		Network.google_send_reliable( { chest_num = get_chest_number() } )
 	Network.chests[get_chest_number() - 1] = true
 	

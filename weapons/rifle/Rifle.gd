@@ -21,6 +21,7 @@ func _on_Timer_timeout():
 	$Timer.stop()
 
 func _shoot(bullet_pos, bullet_rot, bullet_dir):
+	$'../Camera2D'.shake(0.2,15, 5)
 	var bullet = Bullet.instance()
 	add_child(bullet)
 	bullet.rotation = bullet_rot
