@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+extents = Vector2( 8, 3 )
 
 [sub_resource type="Animation" id=2]
 
@@ -88,7 +88,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0, 1 )
+position = Vector2( 0, -3 )
 z_as_relative = false
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
