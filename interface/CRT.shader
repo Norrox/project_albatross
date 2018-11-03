@@ -1,18 +1,18 @@
 shader_type canvas_item;
 
-uniform float screen_width = 1024;
-uniform float screen_height = 600;
+uniform float screen_width = 960;
+uniform float screen_height = 540;
 
 // Curvature
 uniform float BarrelPower =1.1;
 // Color bleeding
-uniform float color_bleeding = 1.2;
-uniform float bleeding_range_x = 3;
-uniform float bleeding_range_y = 3;
+uniform float color_bleeding = 0.5;
+uniform float bleeding_range_x = 2;
+uniform float bleeding_range_y = 2;
 // Scanline
 uniform float lines_distance = 4.0;
 uniform float scan_size = 2.0;
-uniform float scanline_alpha = 0.9;
+uniform float scanline_alpha = 0.95;
 uniform float lines_velocity = 30.0;
 vec2 distort(vec2 p) 
 {

@@ -18,6 +18,7 @@ var chests = []
 var gpgs = null
 var game_started = false
 var force_local = false
+var room_ID = 'No_Room'
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
@@ -65,6 +66,7 @@ func connected_init_match():
 		yield(get_tree().create_timer(0.02), "timeout")
 	set_index()
 	game_started = true
+	gpgs.rtmHideWaitingRoomUI()
 	$'/root/Menu/'._load_game()		
 
 func get_IDs():
@@ -215,10 +217,7 @@ func _on_play_game_services_sign_in_failure(signInType):
 func _on_play_game_services_sign_out(success):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Player Signed Out')
 	signed_in = false
-	
-func _on_play_game_services_rtm_room_client_created(success,roomID):
-	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')
-	
+		
 func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ All participants connected in quick match')
 	connected_init_match()
@@ -229,6 +228,11 @@ func _on_play_game_services_rtm_room_status_connected_to_room(roomID, myParticip
 func _on_play_game_services_rtm_room_status_peers_disconnected(participantIDs):
 	for id in participantIDs.split(','):
 		remove_from_connected(id)
+		
+func _on_play_game_services_rtm_room_client_created(success, roomID):
+	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')
+	print('showing waiting room UI')
+	gpgs.rtmShowWaitingRoomUI(MAX_PLAYERS)
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	var data_var = str2var(data)
