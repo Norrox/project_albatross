@@ -1088,18 +1088,14 @@ position = Vector2( 2400, 1696 )
 
 environment = SubResource( 1 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="11"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 
-position = Vector2( 992, 1632 )
-scale = Vector2( 53, 51 )
 stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 2000.0
-attenuation = 1.0
+mix_target = 0
 bus = "Master"
-area_mask = 1
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes" method="_on_Timer_timeout"]
 
