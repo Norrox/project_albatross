@@ -13,13 +13,15 @@ func _on_SpinBox_value_changed(value):
 
 func _on_QuickMatchButton_pressed():
 	if Network.signed_in:
-		print('starting quick match')
-		Network.start_quick_game(Network.MIN_PLAYERS, Network.MAX_PLAYERS, 0)
+		pass
 	elif !Network.signing_in_busy:
 		print('Not signed in or trying to sign in.. signing in interactive')
 		Network.google_sign_in(false)
 	elif Network.signing_in_busy:
 		print('Waiting for sign in')
+	while !Network.signed_in:
+		yield(get_tree().create_timer(0.02),'timeout')
+	Network.start_quick_game(Network.MIN_PLAYERS, Network.MAX_PLAYERS, 0)
 
 func _on_SignOutButton_pressed():
 	if Network.signed_in:

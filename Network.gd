@@ -108,6 +108,22 @@ func set_peers_list():
 			connected_peers += peer_id + ','
 	connected_peers = connected_peers.substr(0, connected_peers.length()-1)
 	print('connected peers: ' + str(connected_peers))
+	
+func remove_from_connected(participant_ID):
+	print('updating connected_peers')
+	var id_start_pos = connected_peers.find(participant_ID)
+	connected_peers.erase(id_start_pos, len(participant_ID))
+	if connected_peers.ends_with(','):
+		connected_peers = connected_peers.substr(0, connected_peers.length()-1)
+	elif connected_peers.substr(0,1) == ',':
+		connected_peers = connected_peers.substr(1, connected_peers.length())
+	else:
+		var left_over_comma_pos = connected_peers.find(',,')
+		connected_peers.erase(left_over_comma_pos, 1)
+		
+	#kill player wit no respawn	
+	print('killing deserter ' + participant_ID)
+	$'/root/'.get_node(players[participant_ID].name)._die(false, false)
 			
 func update_player_info(sender_ID, data_var):
 	players[sender_ID] = data_var
@@ -209,6 +225,10 @@ func _on_play_game_services_rtm_room_all_participants_connected(success,roomID):
 	
 func _on_play_game_services_rtm_room_status_connected_to_room(roomID, myParticipantID):
 	master_participant_ID = myParticipantID
+	
+func _on_play_game_services_rtm_room_status_peers_disconnected(participantIDs):
+	for id in participantIDs.split(','):
+		remove_from_connected(id)
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	var data_var = str2var(data)

@@ -184,11 +184,11 @@ func damage(value):
 		update_reliable('update_player_health')
 		_update_health_bar(health_points)
 
-func _die(skip_anim=false):
+func _die(skip_anim=false, respawn=true):
 	if dead and is_master:
 		return
-		
-	$RespawnTimer.start()
+	if respawn:
+		$RespawnTimer.start()
 	set_process(false)
 	set_physics_process(false)
 	$Rifle.set_process(false)
