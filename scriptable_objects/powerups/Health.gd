@@ -38,11 +38,14 @@ func _physics_process(delta):
 			
 		self.set_physics_process(false)
 		yield(get_tree().create_timer(STAY_TIME), "timeout")
+		hide()
 		$PowerupSound.play()
 		var particle_obj = particle.instance()
-		add_child(particle_obj)
-		particle_obj.position = position
+		get_parent().add_child(particle_obj)
+		particle_obj.global_position = global_position
+		particle_obj.global_position.y += -MOVE_DIST_Y
 		yield($PowerupSound,"finished")
+		particle_obj.queue_free()
 		queue_free()
 	
 	

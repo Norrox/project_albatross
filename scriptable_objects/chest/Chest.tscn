@@ -118,9 +118,9 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 4 )
+extents = Vector2( 8, 5 )
 
-[node name="Chest" type="StaticBody2D"]
+[node name="Chest" type="StaticBody2D" index="0"]
 
 scale = Vector2( 2, 2 )
 z_index = -3
@@ -155,7 +155,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 0, -4 )
+position = Vector2( 0, -2 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
