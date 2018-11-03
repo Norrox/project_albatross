@@ -21,7 +21,7 @@ func _ready():
 	shell_obj.global_position = global_position
 	$'/root/'.add_child(shell_obj)
 	get_parent().add_child(muzzle_flash_obj)
-	$AudioStreamPlayer2D.play()
+	$BulletSound.play()
 	player = $'../../'
 	yield(get_tree().create_timer(1), "timeout")
 	queue_free()

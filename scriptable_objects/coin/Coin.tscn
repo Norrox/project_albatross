@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scriptable_objects/coin/Coin.gd" type="Script" id=1]
 [ext_resource path="res://scriptable_objects/coin/Pick Up_pickup_0-sheet.png" type="Texture" id=2]
 [ext_resource path="res://scriptable_objects/coin/Pick Up_spin_0-sheet.png" type="Texture" id=3]
+[ext_resource path="res://scriptable_objects/coin/coin_collectcoin.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -158,5 +159,16 @@ anims/idle = SubResource( 2 )
 anims/pickup = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

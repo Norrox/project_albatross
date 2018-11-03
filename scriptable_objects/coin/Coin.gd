@@ -15,6 +15,7 @@ func _on_body_entered(body):
 				body.health_points += HEALTH
 			body.update_reliable('update_player_health')
 			body._update_health_bar(body.health_points)
+		$CoinSound.play()
 		$AnimationPlayer.play('pickup')
 		yield($AnimationPlayer, "animation_finished")
 		queue_free()
