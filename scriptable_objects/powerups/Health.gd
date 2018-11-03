@@ -4,8 +4,10 @@ const WAIT_TO_SPAWN = 0.6
 const MOVE_SPEED = 3
 const MOVE_DIST_Y = 25
 const MIN_MOVE_DIST = 1
-const STAY_TIME = 1
+const STAY_TIME = 0.5
 const HEALTH = 50
+
+onready var particle = preload("res://weapons/bullet/Hit_Particle.tscn")
 
 var ready = false
 var spawned = false
@@ -36,6 +38,11 @@ func _physics_process(delta):
 			
 		self.set_physics_process(false)
 		yield(get_tree().create_timer(STAY_TIME), "timeout")
+		$PowerupSound.play()
+		var particle_obj = particle.instance()
+		add_child(particle_obj)
+		particle_obj.position = position
+		yield($PowerupSound,"finished")
 		queue_free()
 	
 	

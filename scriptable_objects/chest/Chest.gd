@@ -15,6 +15,8 @@ func open(player):
 	opening = true
 	$AnimationPlayer.play('open')
 	check_player_master_and_anim_item(player)
+	yield(get_tree().create_timer(0.5),"timeout")
+	$ChestOpen.play()
 		
 	yield($AnimationPlayer,'animation_finished')
 	opening = false
