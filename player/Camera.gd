@@ -1,5 +1,8 @@
 extends Camera2D
 
+const CAMERA_MOVE_DIST = 200
+const DAMP_AMT = 0.04
+
 var _duration = 0.0
 var _period_in_ms = 0.0
 var _amplitude = 0.0
@@ -9,20 +12,25 @@ var _previous_x = 0.0
 var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
 
+var rifle_dir = Vector2()
+var analog = null
 
 func _ready():
+	analog = get_node("/root/Game/CanvasLayer")
 	if !get_parent().is_master:
 		current = false
 		
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
+	rifle_dir = analog.stick2_vector
+	_move_to_target(delta, rifle_dir)
     # Only shake when there's shake time remaining.
-    if _timer == 0:
+	if _timer == 0:
         return
     # Only shake on certain frames.
-    _last_shook_timer = _last_shook_timer + delta
+	_last_shook_timer = _last_shook_timer + delta
     # Be mathematically correct in the face of lag; usually only happens once.
-    while _last_shook_timer >= _period_in_ms:
+	while _last_shook_timer >= _period_in_ms:
         _last_shook_timer = _last_shook_timer - _period_in_ms
         # Lerp between [amplitude] and 0.0 intensity based on remaining shake time.
         var intensity = _amplitude * (1 - ((_duration - _timer) / _duration))
@@ -38,8 +46,8 @@ func _process(delta):
         set_offset(get_offset() - _last_offset + new_offset)
         _last_offset = new_offset
     # Reset the offset when we're done shaking.
-    _timer = _timer - delta
-    if _timer <= 0:
+	_timer = _timer - delta
+	if _timer <= 0:
         _timer = 0
         set_offset(get_offset() - _last_offset)
 
@@ -55,3 +63,6 @@ func shake(duration, frequency, amplitude):
     # Reset previous offset, if any.
     set_offset(get_offset() - _last_offset)
     _last_offset = Vector2(0, 0)
+	
+func _move_to_target(delta, target_vector):
+	position = position.linear_interpolate((target_vector * CAMERA_MOVE_DIST - position), DAMP_AMT)

@@ -92,7 +92,7 @@ adjustment_contrast = 1.5
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -712,52 +712,57 @@ polygon = PoolVector2Array( -15, -24, -15, 4, 25, 4, 25, -24 )
 
 [node name="Destructables" type="Node2D" parent="." index="9"]
 
-editor/display_folded = true
-
 [node name="Room1" type="Node2D" parent="Destructables" index="0"]
 
-editor/display_folded = true
 position = Vector2( 0, 32 )
 
 [node name="Crate1" parent="Destructables/Room1" index="0" instance=ExtResource( 11 )]
 
-position = Vector2( 784, 496 )
+position = Vector2( 528, 32 )
 
 [node name="Crate2" parent="Destructables/Room1" index="1" instance=ExtResource( 11 )]
 
-position = Vector2( 784, 528 )
+position = Vector2( 496, 48 )
 
 [node name="Crate3" parent="Destructables/Room1" index="2" instance=ExtResource( 11 )]
 
-position = Vector2( 784, 560 )
+position = Vector2( 528, 64 )
 
 [node name="Crate4" parent="Destructables/Room1" index="3" instance=ExtResource( 11 )]
 
-position = Vector2( 784, 592 )
+position = Vector2( 960, 208 )
 
 [node name="Crate8" parent="Destructables/Room1" index="4" instance=ExtResource( 11 )]
 
-position = Vector2( 976, 496 )
+position = Vector2( 144, 256 )
 
 [node name="Crate9" parent="Destructables/Room1" index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 944, 496 )
+position = Vector2( 560, 48 )
 
 [node name="Crate10" parent="Destructables/Room1" index="6" instance=ExtResource( 11 )]
 
-position = Vector2( 912, 496 )
+position = Vector2( 112, 256 )
 
 [node name="Crate11" parent="Destructables/Room1" index="7" instance=ExtResource( 11 )]
 
-position = Vector2( 880, 496 )
+position = Vector2( 240, 336 )
 
 [node name="Crate12" parent="Destructables/Room1" index="8" instance=ExtResource( 11 )]
 
-position = Vector2( 848, 496 )
+position = Vector2( 240, 304 )
 
-[node name="Crate13" parent="Destructables/Room1" index="9" instance=ExtResource( 11 )]
+[node name="Crate15" parent="Destructables/Room1" index="9" instance=ExtResource( 11 )]
 
-position = Vector2( 816, 496 )
+position = Vector2( 272, 320 )
+
+[node name="Crate16" parent="Destructables/Room1" index="10" instance=ExtResource( 11 )]
+
+position = Vector2( 64, 192 )
+
+[node name="Crate14" parent="Destructables/Room1" index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 432, 576 )
 
 [node name="Room2" type="Node2D" parent="Destructables" index="1"]
 
@@ -805,8 +810,6 @@ position = Vector2( 1872, 432 )
 position = Vector2( 1872, 464 )
 
 [node name="Room3" type="Node2D" parent="Destructables" index="2"]
-
-editor/display_folded = true
 
 [node name="Crate" parent="Destructables/Room3" index="0" instance=ExtResource( 11 )]
 

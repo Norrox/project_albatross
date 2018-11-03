@@ -68,4 +68,4 @@ func destroy(body):
 	
 func get_collision_point(body):
 	#fix with more accurate
-	return (global_position + direction * 27)
+	return (global_position + direction * 47)
