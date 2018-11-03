@@ -30,7 +30,7 @@ DAMAGE = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 34.409, 0.157776 )
+position = Vector2( 41.9825, 0.157776 )
 rotation = -1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]

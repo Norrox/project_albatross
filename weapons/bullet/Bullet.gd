@@ -1,6 +1,6 @@
 extends Area2D
 
-const HIT_DELAY = 20
+const HIT_DELAY = 15
 
 export(float) var SPEED = 750
 export(float) var DAMAGE = 5
@@ -68,4 +68,4 @@ func destroy(body):
 	
 func get_collision_point(body):
 	#fix with more accurate
-	return (global_position + direction * 23)
+	return (global_position + direction * 47)
