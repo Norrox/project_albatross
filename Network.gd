@@ -96,6 +96,7 @@ func google_sign_in(silent=true):
 		delta += 0.02
 		if delta > SIGN_IN_WAIT_TIME:
 			print('failed to sign in.. signing out')
+			google_clear_cache()
 			google_sign_out()
 			break
 	signing_in_busy = false
