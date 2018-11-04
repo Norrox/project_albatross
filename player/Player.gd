@@ -30,6 +30,8 @@ var slave_position = Vector2()
 var slave_rifle_rotation = 0
 var slave_hp = MAX_HP
 
+var frame_num = 1
+
 func _ready():
 	_update_health_bar(MAX_HP)
 
@@ -38,6 +40,7 @@ func init(nickname, start_position, is_slave):
 	global_position = start_position
 	if is_slave:
 		$Sprite.texture = load('res://player/player.png')
+		$Camera2D/Fog.queue_free()
 	
 func _process(delta):
 	if is_master:
@@ -55,16 +58,16 @@ func _process(delta):
 func _physics_process(delta):
 	if is_master:
 		send_net_data()
-		_move(direction)
+		_move(delta, direction)
 	else:		
 		var slave_interpolated = global_position.linear_interpolate(slave_position, 0.5)
 		var network_difference = slave_interpolated.distance_to(global_position)
 		var slave_direction = slave_interpolated - global_position
 		
 		if network_difference > MIN_MOVE_DIST and network_difference < MAX_MOVE_DIST:
-			_move(slave_direction)
+			_move(delta, slave_direction)
 		elif network_difference > JITTER and network_difference <= MIN_MOVE_DIST:
-			_move(slave_position - global_position)
+			_move(delta, slave_position - global_position)
 		elif network_difference > MAX_MOVE_DIST:
 			global_position = Network.players[ID].position		
 
@@ -137,9 +140,10 @@ func check_flip():
 	elif (rot > -270 and rot < -90) or (rot > 90 and rot < 270):
 		return true
 
-func _move(direction):
+func _move(delta, direction):
 	direction = direction.normalized() * MOVE_SPEED
-	move_and_slide(direction)
+	var motion = direction
+	move_and_slide(motion)
 
 func _roll():
 	if !can_roll:

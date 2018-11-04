@@ -15,7 +15,7 @@
 custom_solver_bias = 0.0
 radius = 50.0
 
-[node name="Analog" type="CanvasLayer" index="0"]
+[node name="Analog" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -155,6 +155,15 @@ scale = Vector2( 0.887246, 0.665025 )
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="FPSTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
 [connection signal="pressed" from="Roll_Button" to="." method="_on_TouchScreenButton_pressed"]
+
+[connection signal="timeout" from="FPSTimer" to="." method="_on_FPSTimer_timeout"]
 
 

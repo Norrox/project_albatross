@@ -120,7 +120,7 @@ tracks/3/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 8, 5 )
 
-[node name="Chest" type="StaticBody2D" index="0"]
+[node name="Chest" type="StaticBody2D"]
 
 scale = Vector2( 2, 2 )
 z_index = -3

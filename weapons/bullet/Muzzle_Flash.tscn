@@ -11,7 +11,7 @@ radius = 10.0
 [node name="Muzzle_Flash" type="StaticBody2D"]
 
 scale = Vector2( 0.75, 0.75 )
-z_index = -3
+z_index = 1
 z_as_relative = false
 input_pickable = false
 collision_layer = 1

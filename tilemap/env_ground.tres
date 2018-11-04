@@ -490,4 +490,5 @@
 53/occluder_offset = Vector2( 8, 8 )
 53/navigation_offset = Vector2( 8, 8 )
 53/shapes = [  ]
+_sections_unfolded = [ "1" ]
 

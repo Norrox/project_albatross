@@ -4,7 +4,7 @@ shader_type canvas_item;
 // If you use this shader, I would prefer it if you gave credit to me and my channel
 
 uniform vec3 color = vec3(1.5, 1.0, 1.0);
-uniform int OCTAVES = 4;
+uniform int OCTAVES = 1;
 
 float rand(vec2 coord){
 	return fract(sin(dot(coord, vec2(56, 78)) * 1000.0) * 1000.0);
@@ -38,7 +38,7 @@ float fbm(vec2 coord){
 }
 
 void fragment() {
-	vec2 coord = UV * 20.0;
+	vec2 coord = UV * 4.0;
 
 	vec2 motion = vec2( fbm(coord + vec2(TIME * -1.5, TIME * 1.5)) );
 
