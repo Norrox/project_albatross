@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scriptable_objects/sky/Untitled.png" type="Texture" id=1]
+
+
+[node name="Clouds" type="Node2D"]
+
+[node name="Cloud1" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 96, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 1
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 2
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0, 96 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud5" type="Sprite" parent="." index="4"]
+
+position = Vector2( 96, 96 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 4
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud6" type="Sprite" parent="." index="5"]
+
+position = Vector2( 192, 96 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 5
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud8" type="Sprite" parent="." index="6"]
+
+position = Vector2( 0, 192 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 6
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud7" type="Sprite" parent="." index="7"]
+
+position = Vector2( 96, 192 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 7
+_sections_unfolded = [ "Animation" ]
+
+[node name="Cloud9" type="Sprite" parent="." index="8"]
+
+position = Vector2( 192, 192 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 8
+_sections_unfolded = [ "Animation" ]
+
+
