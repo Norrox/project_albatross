@@ -74,12 +74,12 @@ glow_hdr_threshold = 1.0
 glow_hdr_scale = 2.0
 glow_bicubic_upscale = false
 adjustment_enabled = true
-adjustment_brightness = 0.85
+adjustment_brightness = 0.45
 adjustment_contrast = 1.5
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="WorldEnvironment" type="WorldEnvironment"]
+[node name="WorldEnvironment" type="WorldEnvironment" index="0"]
 
 environment = SubResource( 1 )
 
