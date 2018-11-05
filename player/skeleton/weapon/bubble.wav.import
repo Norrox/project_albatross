@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bubble.wav-5a77449e47bc09177be7d7dc614cfbf6.sample"
+
+[deps]
+
+source_file="res://player/skeleton/weapon/bubble.wav"
+dest_files=[ "res://.import/bubble.wav-5a77449e47bc09177be7d7dc614cfbf6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

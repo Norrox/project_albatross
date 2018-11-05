@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/style 1_player death_00-sheet.png-157bb6e9d83facfdd74a53ee1317db6e.stex"
+path="res://.import/Fall with gun_fall anim_00-sheet.png-d2d088990e0c6c18ad29464435c3c6a8.stex"
 
 [deps]
 
-source_file="res://player/style 1_player death_00-sheet.png"
-dest_files=[ "res://.import/style 1_player death_00-sheet.png-157bb6e9d83facfdd74a53ee1317db6e.stex" ]
+source_file="res://player/human/Fall with gun_fall anim_00-sheet.png"
+dest_files=[ "res://.import/Fall with gun_fall anim_00-sheet.png-d2d088990e0c6c18ad29464435c3c6a8.stex" ]
 
 [params]
 

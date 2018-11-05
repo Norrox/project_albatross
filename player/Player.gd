@@ -36,11 +36,10 @@ func _ready():
 	_update_health_bar(MAX_HP)
 
 func init(nickname, start_position, is_slave):
-	$GUI_Node/GUI/Nickname.text = nickname
+	$GUI/Name/Nickname.text = nickname
 	global_position = start_position
 	if is_slave:
-		$Sprite.texture = load('res://player/player.png')
-		$Camera2D/Fog.queue_free()
+		$Camera2D.queue_free()
 	
 func _process(delta):
 	if is_master:
@@ -157,7 +156,7 @@ func _roll():
 	can_roll = true
 
 func _update_health_bar(hp):
-	$GUI_Node/GUI/HealthBar.value = hp
+	$GUI/Health/HealthBar.value = hp
 	
 func update_ui_hearts(num_lives):
 	var lives_bar = $'/root/Game/CanvasLayer/Lives/'

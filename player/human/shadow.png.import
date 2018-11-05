@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/roll.png-5c5bda4a0d3a61eb0b31afab51cec372.stex"
+path="res://.import/shadow.png-11a826328786d55d532848c868343c43.stex"
 
 [deps]
 
-source_file="res://player/roll.png"
-dest_files=[ "res://.import/roll.png-5c5bda4a0d3a61eb0b31afab51cec372.stex" ]
+source_file="res://player/human/shadow.png"
+dest_files=[ "res://.import/shadow.png-11a826328786d55d532848c868343c43.stex" ]
 
 [params]
 

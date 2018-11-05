@@ -19,16 +19,22 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
-[node name="HealthBar" type="TextureProgress" parent="." index="0"]
+[node name="Health" type="Node2D" parent="." index="0"]
+
+z_index = 5
+z_as_relative = false
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="HealthBar" type="TextureProgress" parent="Health" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -64.0
-margin_top = -93.0
-margin_right = 64.0
-margin_bottom = -53.0
+margin_left = -96.0
+margin_top = -89.0
+margin_right = 32.0
+margin_bottom = -70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -50,17 +56,22 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Textures" ]
 
-[node name="Nickname" type="Label" parent="." index="1"]
+[node name="Name" type="Node2D" parent="." index="1"]
 
-visible = false
+z_index = -5
+z_as_relative = false
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Nickname" type="Label" parent="Name" index="0"]
+
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -95.0
-margin_top = 39.0
-margin_right = 94.0
-margin_bottom = 79.0
+margin_left = -127.0
+margin_top = -25.0
+margin_right = 62.0
+margin_bottom = 15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

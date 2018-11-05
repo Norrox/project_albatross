@@ -2,29 +2,32 @@ extends Area2D
 
 const HIT_DELAY = 15
 
-export(float) var SPEED = 750
-export(float) var DAMAGE = 5
+var SPEED = 550
+var DAMAGE = 5
+var FORWARD_AMT = 27
 
-onready var on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
-onready var muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
-onready var shell = preload("res://weapons/bullet/Shell.tscn")
+const on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
+const muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
+const shell = preload("res://weapons/bullet/Shell.tscn")
 
 var direction = 0
 var player = null
 var collided = false
+var can_rotate = true
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	set_as_toplevel(true)
 	var muzzle_flash_obj = muzzle_flash.instance()
-	var shell_obj = shell.instance()
-	shell_obj.global_position = global_position
-	$'/root/'.add_child(shell_obj)
+	
+	if "Bullet" in name:
+		var shell_obj = shell.instance()
+		shell_obj.global_position = global_position
+		$'/root/'.add_child(shell_obj)
+	
 	get_parent().add_child(muzzle_flash_obj)
 	$BulletSound.play()
 	player = $'../../'
-	yield(get_tree().create_timer(1), "timeout")
-	queue_free()
 
 func _physics_process(delta):
 	var space_state = get_world_2d().direct_space_state
@@ -34,7 +37,8 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.is_a_parent_of(self):
 		return
-	elif body.is_in_group('players') and !body.rolling:	
+	$HitSound.play()
+	if body.is_in_group('players') and !body.rolling:	
 		OS.delay_msec(HIT_DELAY)
 		body.damage(DAMAGE)
 		destroy(body)
@@ -50,22 +54,31 @@ func _on_body_entered(body):
 			yield(body.get_node('AnimationPlayer'), 'animation_finished')
 			if body.hit == 2:
 				body.queue_free()
-	if !$CollisionShape2D.disabled:
+	if !$Hitbox.disabled:
 		destroy(body)
 	
 func destroy(body):
+	hide_and_remove()
+	
+func hide_and_remove():
+	can_rotate = false
 	collided = true
-	$Sprite.hide()
-	$CollisionShape2D.disabled = true
+	for child in get_children():
+		if child.has_method('hide'):
+			child.hide()
+	$Hitbox.disabled = true
 	var on_hit_particle_obj = on_hit_particle.instance()
 	add_child(on_hit_particle_obj)
-	on_hit_particle_obj.global_position = get_collision_point(body)
+	on_hit_particle_obj.global_position = get_collision_point()
 	on_hit_particle_obj.rotation = rotation
 	var particle_anim = on_hit_particle_obj.get_node('AnimationPlayer')
 	particle_anim.play('hit')
 	yield(particle_anim, 'animation_finished')
 	queue_free()
 	
-func get_collision_point(body):
+func get_collision_point():
 	#fix with more accurate
-	return (global_position + direction * 27)
+	return (global_position + direction * FORWARD_AMT)
+
+func _on_Lifetime_timeout():
+	hide_and_remove()

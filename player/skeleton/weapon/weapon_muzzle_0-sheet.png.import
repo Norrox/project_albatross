@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fall with gun_fall anim_00-sheet.png-e6db44c4245f3096551f56638ed0ff49.stex"
+path="res://.import/weapon_muzzle_0-sheet.png-d844cf71a8d0ba9eb18c022107cd3915.stex"
 
 [deps]
 
-source_file="res://player/Fall with gun_fall anim_00-sheet.png"
-dest_files=[ "res://.import/Fall with gun_fall anim_00-sheet.png-e6db44c4245f3096551f56638ed0ff49.stex" ]
+source_file="res://player/skeleton/weapon/weapon_muzzle_0-sheet.png"
+dest_files=[ "res://.import/weapon_muzzle_0-sheet.png-d844cf71a8d0ba9eb18c022107cd3915.stex" ]
 
 [params]
 

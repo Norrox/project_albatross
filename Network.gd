@@ -10,7 +10,7 @@ var signing_in_busy = false
 var connected_peers = ''
 var players = { }
 var players_order = []
-var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '' }
+var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', skel = false}
 var master_ID = 'No_Master'
 var master_participant_ID = 'No_participant_ID'
 var chests = []
@@ -140,7 +140,13 @@ func update_player_info(sender_ID, data_var):
 	
 func create_slave_at_spawn(sender_ID, data_var):
 	print('creating slave player')
-	var new_player = load('res://player/Player.tscn').instance()
+	
+	var new_player = null
+	if data_var.skel:
+		new_player = load('res://player/Skeleton.tscn').instance()
+	else:
+		new_player = load('res://player/Player.tscn').instance()
+	
 	new_player.name = data_var.name
 	new_player.ID = sender_ID
 	players[sender_ID].position = data_var.position
@@ -269,4 +275,7 @@ func update_health(hp):
 	
 func update_action(action):
 	players[master_participant_ID].action = action
+	
+func update_player_type(is_skeleton):
+	players[master_participant_ID].skel = true
 ### end self_data update functions ###
