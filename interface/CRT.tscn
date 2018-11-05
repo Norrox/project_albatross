@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://interface/CRT.shader" type="Shader" id=1]
 [ext_resource path="res://white.png" type="Texture" id=2]
+[ext_resource path="res://interface/CRT.gd" type="Script" id=3]
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=1]
 
 render_priority = 0
 shader = ExtResource( 1 )
@@ -20,7 +21,7 @@ shader_param/lines_velocity = null
 
 [node name="CRT" type="TextureRect"]
 
-material = SubResource( 7 )
+material = SubResource( 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -38,6 +39,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
+script = ExtResource( 3 )
 _sections_unfolded = [ "Material" ]
 
 

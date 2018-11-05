@@ -23,6 +23,7 @@ config/quit_on_go_back=false
 [autoload]
 
 Network="*res://Network.gd"
+Settings="*res://Settings.gd"
 
 [debug]
 
