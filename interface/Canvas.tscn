@@ -28,6 +28,7 @@ script = ExtResource( 1 )
 [node name="Analog_Big_Left" type="Sprite" parent="." index="0"]
 
 editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.171294 )
 position = Vector2( 125, 475 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
@@ -43,6 +44,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Analog_Big_Right" type="Sprite" parent="." index="1"]
 
 editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.171294 )
 position = Vector2( 900, 475 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
@@ -56,6 +58,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="L_fps" type="Label" parent="." index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -85,6 +88,7 @@ _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "c
 
 [node name="L_debug" type="Label" parent="." index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -113,7 +117,8 @@ _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "c
 
 [node name="Roll_Button" type="TouchScreenButton" parent="." index="4"]
 
-position = Vector2( 832.133, 299.169 )
+modulate = Color( 1, 1, 1, 0.320431 )
+position = Vector2( 960, 337 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 2 )
@@ -124,12 +129,12 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Lives" type="Sprite" parent="." index="5"]
 
 editor/display_folded = true
-position = Vector2( 173, 41 )
+position = Vector2( 67, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]

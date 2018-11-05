@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAX_XY_MOVE = 1.5
+const MAX_XY_MOVE = 1.1
 
 var orig_pos = Vector2()
 var i = 0

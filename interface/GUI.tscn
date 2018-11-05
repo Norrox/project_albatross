@@ -52,6 +52,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="Nickname" type="Label" parent="." index="1"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

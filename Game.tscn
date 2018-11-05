@@ -1995,7 +1995,7 @@ position = Vector2( -400, 2304 )
 stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 
@@ -2014,330 +2014,330 @@ physics_process_parent = false
 
 [node name="Background" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
-
 [node name="Clouds" type="Node2D" parent="Background" index="0"]
 
+editor/display_folded = true
+visible = false
 z_index = -7
 z_as_relative = false
 _sections_unfolded = [ "Z Index" ]
 
 [node name="cloud1" type="Sprite" parent="Background/Clouds" index="0"]
 
-position = Vector2( 160, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 157, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud2" type="Sprite" parent="Background/Clouds" index="1"]
 
-position = Vector2( 352, 0 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 349, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud3" type="Sprite" parent="Background/Clouds" index="2"]
 
-position = Vector2( 976, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 973, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud4" type="Sprite" parent="Background/Clouds" index="3"]
 
-position = Vector2( 48, 32 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 45, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud22" type="Sprite" parent="Background/Clouds" index="4"]
 
-position = Vector2( 1984, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1981, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud5" type="Sprite" parent="Background/Clouds" index="5"]
 
-position = Vector2( -48, 112 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -51, 123 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud23" type="Sprite" parent="Background/Clouds" index="6"]
 
-position = Vector2( 2096, 32 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2029, 11 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 16 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud24" type="Sprite" parent="Background/Clouds" index="7"]
 
-position = Vector2( 2080, 80 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2077, 75 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 17 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud25" type="Sprite" parent="Background/Clouds" index="8"]
 
-position = Vector2( 2064, 144 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2061, 139 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud26" type="Sprite" parent="Background/Clouds" index="9"]
 
-position = Vector2( 2224, 224 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2221, 219 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud28" type="Sprite" parent="Background/Clouds" index="10"]
 
-position = Vector2( 2128, 192 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2125, 187 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 19 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud27" type="Sprite" parent="Background/Clouds" index="11"]
 
-position = Vector2( 2112, 256 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2109, 251 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 20 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud29" type="Sprite" parent="Background/Clouds" index="12"]
 
-position = Vector2( 2064, 320 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2045, 443 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud30" type="Sprite" parent="Background/Clouds" index="13"]
 
-position = Vector2( 2112, 448 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2109, 443 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud31" type="Sprite" parent="Background/Clouds" index="14"]
 
-position = Vector2( 2176, 592 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2237, 443 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 22 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud32" type="Sprite" parent="Background/Clouds" index="15"]
 
-position = Vector2( 2512, 592 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2637, 603 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud33" type="Sprite" parent="Background/Clouds" index="16"]
 
-position = Vector2( 2368, 592 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2525, 331 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud34" type="Sprite" parent="Background/Clouds" index="17"]
 
-position = Vector2( 2752, 704 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2749, 699 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 19 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud35" type="Sprite" parent="Background/Clouds" index="18"]
 
-position = Vector2( 2800, 896 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2797, 891 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 17 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud37" type="Sprite" parent="Background/Clouds" index="19"]
 
-position = Vector2( 2912, 992 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2701, 1083 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 16 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud36" type="Sprite" parent="Background/Clouds" index="20"]
 
-position = Vector2( 2800, 992 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2669, 971 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud0" type="Sprite" parent="Background/Clouds" index="21"]
 
-position = Vector2( -592, 352 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -595, 347 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud7" type="Sprite" parent="Background/Clouds" index="22"]
 
-position = Vector2( -288, 112 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -291, 107 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud19" type="Sprite" parent="Background/Clouds" index="23"]
 
-position = Vector2( 1280, 0 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1277, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud16" type="Sprite" parent="Background/Clouds" index="24"]
 
-position = Vector2( -576, 576 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -579, 571 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud14" type="Sprite" parent="Background/Clouds" index="25"]
 
-position = Vector2( -672, 400 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -675, 395 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud8" type="Sprite" parent="Background/Clouds" index="26"]
 
-position = Vector2( -496, 112 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -499, 107 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud20" type="Sprite" parent="Background/Clouds" index="27"]
 
-position = Vector2( 1632, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1629, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud13" type="Sprite" parent="Background/Clouds" index="28"]
 
-position = Vector2( 528, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 525, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud54" type="Sprite" parent="Background/Clouds" index="29"]
 
-position = Vector2( -736, 624 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -739, 619 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud55" type="Sprite" parent="Background/Clouds" index="30"]
 
-position = Vector2( -848, 1248 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -851, 1243 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud56" type="Sprite" parent="Background/Clouds" index="31"]
 
-position = Vector2( -768, 1648 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -771, 1643 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud57" type="Sprite" parent="Background/Clouds" index="32"]
 
-position = Vector2( -432, 2768 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -435, 2763 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud58" type="Sprite" parent="Background/Clouds" index="33"]
 
-position = Vector2( -224, 3024 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -227, 3019 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud59" type="Sprite" parent="Background/Clouds" index="34"]
 
-position = Vector2( 816, 3296 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 813, 3291 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud60" type="Sprite" parent="Background/Clouds" index="35"]
 
-position = Vector2( 1440, 3264 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1437, 3259 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud61" type="Sprite" parent="Background/Clouds" index="36"]
 
-position = Vector2( 2096, 3056 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2093, 3051 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud62" type="Sprite" parent="Background/Clouds" index="37"]
 
-position = Vector2( 2384, 2720 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2381, 2715 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud84" type="Sprite" parent="Background/Clouds" index="38"]
 
-position = Vector2( 2096, 2704 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2093, 2699 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud85" type="Sprite" parent="Background/Clouds" index="39"]
 
-position = Vector2( 2192, 2656 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2189, 2651 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2345,145 +2345,145 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud63" type="Sprite" parent="Background/Clouds" index="40"]
 
-position = Vector2( 2832, 1872 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2829, 1867 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud64" type="Sprite" parent="Background/Clouds" index="41"]
 
-position = Vector2( 2912, 720 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2909, 715 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud65" type="Sprite" parent="Background/Clouds" index="42"]
 
-position = Vector2( 1728, -32 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1725, -37 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud17" type="Sprite" parent="Background/Clouds" index="43"]
 
-position = Vector2( 1104, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1101, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud15" type="Sprite" parent="Background/Clouds" index="44"]
 
-position = Vector2( -704, 272 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -707, 267 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 22 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud18" type="Sprite" parent="Background/Clouds" index="45"]
 
-position = Vector2( 736, -16 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 733, -5 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 22 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud9" type="Sprite" parent="Background/Clouds" index="46"]
 
-position = Vector2( -640, 176 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -643, 171 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 20 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud11" type="Sprite" parent="Background/Clouds" index="47"]
 
-position = Vector2( -576, 240 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -579, 235 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud21" type="Sprite" parent="Background/Clouds" index="48"]
 
-position = Vector2( 1472, 0 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1469, -21 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud38" type="Sprite" parent="Background/Clouds" index="49"]
 
-position = Vector2( 2768, 1536 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2765, 1531 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud39" type="Sprite" parent="Background/Clouds" index="50"]
 
-position = Vector2( 2784, 1648 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2781, 1643 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 20 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud40" type="Sprite" parent="Background/Clouds" index="51"]
 
-position = Vector2( 2928, 1856 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2701, 1819 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 16 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud41" type="Sprite" parent="Background/Clouds" index="52"]
 
-position = Vector2( 2752, 2064 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2701, 2059 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud42" type="Sprite" parent="Background/Clouds" index="53"]
 
-position = Vector2( 2736, 2384 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2733, 2379 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud43" type="Sprite" parent="Background/Clouds" index="54"]
 
-position = Vector2( 2848, 2576 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2845, 2571 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud44" type="Sprite" parent="Background/Clouds" index="55"]
 
-position = Vector2( 2224, 2832 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2221, 2843 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud45" type="Sprite" parent="Background/Clouds" index="56"]
 
-position = Vector2( 2384, 3040 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2397, 3035 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="cloud80" type="Sprite" parent="Background/Clouds" index="57"]
+[node name="w" type="Sprite" parent="Background/Clouds" index="57"]
 
-position = Vector2( 2272, 3056 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2269, 3051 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2491,8 +2491,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud81" type="Sprite" parent="Background/Clouds" index="58"]
 
-position = Vector2( 2160, 3024 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2157, 3019 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 19 )
 script = ExtResource( 14 )
@@ -2500,8 +2500,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud82" type="Sprite" parent="Background/Clouds" index="59"]
 
-position = Vector2( 2064, 3264 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2061, 3259 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 19 )
 script = ExtResource( 14 )
@@ -2509,8 +2509,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud83" type="Sprite" parent="Background/Clouds" index="60"]
 
-position = Vector2( 2096, 3184 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2093, 3179 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 17 )
 script = ExtResource( 14 )
@@ -2518,8 +2518,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud46" type="Sprite" parent="Background/Clouds" index="61"]
 
-position = Vector2( 1824, 3280 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1821, 3275 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2527,8 +2527,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud47" type="Sprite" parent="Background/Clouds" index="62"]
 
-position = Vector2( 880, 3344 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 733, 3259 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2536,8 +2536,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud48" type="Sprite" parent="Background/Clouds" index="63"]
 
-position = Vector2( 384, 3296 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 381, 3291 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2545,16 +2545,16 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud49" type="Sprite" parent="Background/Clouds" index="64"]
 
-position = Vector2( -80, 3024 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -83, 3035 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud86" type="Sprite" parent="Background/Clouds" index="65"]
 
-position = Vector2( -160, 2848 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -163, 2843 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2562,8 +2562,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud87" type="Sprite" parent="Background/Clouds" index="66"]
 
-position = Vector2( -112, 3216 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -115, 3211 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2571,8 +2571,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud88" type="Sprite" parent="Background/Clouds" index="67"]
 
-position = Vector2( -576, 3200 )
-scale = Vector2( -0.25, 0.25 )
+position = Vector2( -579, 3195 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2580,8 +2580,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud50" type="Sprite" parent="Background/Clouds" index="68"]
 
-position = Vector2( -656, 2672 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -659, 2651 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 15 )
 script = ExtResource( 14 )
@@ -2589,8 +2589,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud51" type="Sprite" parent="Background/Clouds" index="69"]
 
-position = Vector2( -720, 2480 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -723, 2475 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 15 )
@@ -2599,8 +2599,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud52" type="Sprite" parent="Background/Clouds" index="70"]
 
-position = Vector2( -816, 2000 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -771, 2011 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 15 )
@@ -2609,8 +2609,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud53" type="Sprite" parent="Background/Clouds" index="71"]
 
-position = Vector2( -960, 1200 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -963, 1195 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 15 )
@@ -2619,8 +2619,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud66" type="Sprite" parent="Background/Clouds" index="72"]
 
-position = Vector2( 2672, 2656 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2669, 2651 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
@@ -2628,8 +2628,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud67" type="Sprite" parent="Background/Clouds" index="73"]
 
-position = Vector2( 2064, 2816 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 2061, 2843 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 18 )
@@ -2638,8 +2638,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud68" type="Sprite" parent="Background/Clouds" index="74"]
 
-position = Vector2( 1936, 3264 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1949, 3259 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
@@ -2647,8 +2647,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud69" type="Sprite" parent="Background/Clouds" index="75"]
 
-position = Vector2( 1072, 3344 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1053, 3259 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
@@ -2656,8 +2656,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud70" type="Sprite" parent="Background/Clouds" index="76"]
 
-position = Vector2( -32, 3184 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -51, 3195 )
+scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
 texture = ExtResource( 18 )
 script = ExtResource( 14 )
@@ -2665,8 +2665,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud71" type="Sprite" parent="Background/Clouds" index="77"]
 
-position = Vector2( -960, 1728 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -755, 1707 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 18 )
@@ -2675,8 +2675,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud72" type="Sprite" parent="Background/Clouds" index="78"]
 
-position = Vector2( -720, 1840 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -723, 1835 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 16 )
@@ -2685,8 +2685,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud73" type="Sprite" parent="Background/Clouds" index="79"]
 
-position = Vector2( -880, 1872 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -883, 1867 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 19 )
@@ -2695,8 +2695,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud74" type="Sprite" parent="Background/Clouds" index="80"]
 
-position = Vector2( -800, 672 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -803, 667 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 19 )
@@ -2705,8 +2705,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud75" type="Sprite" parent="Background/Clouds" index="81"]
 
-position = Vector2( -704, 704 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -707, 699 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 17 )
@@ -2715,8 +2715,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud76" type="Sprite" parent="Background/Clouds" index="82"]
 
-position = Vector2( -816, 880 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -819, 875 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 22 )
@@ -2725,8 +2725,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud77" type="Sprite" parent="Background/Clouds" index="83"]
 
-position = Vector2( -720, 944 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -723, 939 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 15 )
@@ -2735,8 +2735,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud78" type="Sprite" parent="Background/Clouds" index="84"]
 
-position = Vector2( -816, 992 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -819, 987 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 16 )
@@ -2745,8 +2745,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud79" type="Sprite" parent="Background/Clouds" index="85"]
 
-position = Vector2( -736, 1104 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -739, 1099 )
+scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
 texture = ExtResource( 19 )
@@ -2755,8 +2755,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud6" type="Sprite" parent="Background/Clouds" index="86"]
 
-position = Vector2( -32, 80 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -35, 75 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 21 )
 script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
