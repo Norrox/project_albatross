@@ -1,13 +1,16 @@
 extends Sprite
 
-const LEAD = 2
+const LEAD = 0
 
 const Bullet = preload("res://weapons/bullet/Bullet.tscn")
 var shoot = false
 var analog = null
 
+var player = null
+
 func _ready():
 	analog = get_node("/root/Game/CanvasLayer")
+	player = $'../../'
 
 func _process(delta):
 	if shoot and $Timer.is_stopped():
@@ -23,14 +26,14 @@ func _on_Timer_timeout():
 	$Timer.stop()
 
 func _shoot(bullet_pos, bullet_rot, bullet_dir):
-	if get_parent().direction == Vector2() and get_parent().get_node('Camera2D') != null:
-			$'../Camera2D'.shake(0.2,80, 2)
+	if player.direction == Vector2() and player.get_node('Camera2D') != null:
+			$'../../Camera2D'.shake(0.2,80, 2)
 			
 	var bullet = Bullet.instance()
 	add_child(bullet)
 	bullet.z_index = 1
 	bullet.rotation = bullet_rot
-	bullet_pos += get_parent().direction * LEAD
+	bullet_pos += player.direction * LEAD
 	bullet.global_position = bullet_pos
 	bullet.direction = bullet_dir
 	

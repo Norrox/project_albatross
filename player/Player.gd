@@ -124,16 +124,16 @@ func play_anim(anim):
 	$AnimationPlayer.play(anim)
 	
 func _rotate_gun(rotation):
-	$Rifle.rotation = rotation
+	$Pivot/Rifle.rotation = rotation
 	if check_flip():
 		$Sprite.flip_h = true
-		$Rifle.flip_v = true
+		$Pivot/Rifle.flip_v = true
 	else:
 		$Sprite.flip_h = false
-		$Rifle.flip_v = false
+		$Pivot/Rifle.flip_v = false
 	
 func check_flip():
-	var rot = int($Rifle.rotation_degrees) % 360
+	var rot = int($Pivot/Rifle.rotation_degrees) % 360
 	if rot > -90 and rot < 90:
 		return false
 	elif (rot > -270 and rot < -90) or (rot > 90 and rot < 270):
@@ -194,7 +194,7 @@ func _die(skip_anim=false, respawn=true):
 		$RespawnTimer.start()
 	set_process(false)
 	set_physics_process(false)
-	$Rifle.set_process(false)
+	$Pivot/Rifle.set_process(false)
 	
 	if is_master:
 		lives -= 1
@@ -239,7 +239,7 @@ func _on_RespawnTimer_timeout():
 	
 	set_process(true)
 	set_physics_process(true)
-	$Rifle.set_process(true)
+	$Pivot/Rifle.set_process(true)
 	show_player()
 	
 func show_player():

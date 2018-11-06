@@ -58,7 +58,11 @@ func wait_till_signed_in():
 		wait_time += 0.02
 
 func _on_SkeletonButton_pressed():
-	Settings.is_skeleton = true
+	Settings.player_type = Settings.PLAYER_TYPE.skeleton
 
 func _on_HumanButton_pressed():
-	Settings.is_skeleton = false
+	Settings.player_type = Settings.PLAYER_TYPE.human
+
+
+func _on_BanditButton_pressed():
+	Settings.player_type = Settings.PLAYER_TYPE.bandit

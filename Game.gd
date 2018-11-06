@@ -12,16 +12,18 @@ func _ready():
 		
 		Network.update_name(play_name)
 		Network.update_position(spawn_pos)
-		Network.update_player_type(Settings.is_skeleton)
+		Network.update_player_type(Settings.player_type)
 		Network.update_action('create_slave_at_spawn')
 		Network.google_send_reliable(Network.self_data)		
 	else:
 		var new_player = null
-		if Settings.is_skeleton:
+		if Settings.player_type == Settings.PLAYER_TYPE.skeleton:
 			new_player = preload('res://player/Skeleton.tscn').instance()
-		else:
+		elif Settings.player_type == Settings.PLAYER_TYPE.human:
 			new_player = preload('res://player/Player.tscn').instance()
-			
+		elif Settings.player_type == Settings.PLAYER_TYPE.bandit:
+			new_player = preload('res://player/Bandit.tscn').instance()
+				
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn1').global_position
 		
 		new_player.name = 'test'
@@ -38,10 +40,13 @@ func _ready():
 func create_master_player(spawn_pos, play_name, player_ID):
 	sc_canvas.debug_print('creating master player')
 	var new_player = null
-	if Settings.is_skeleton:
+	if Settings.player_type == Settings.PLAYER_TYPE.skeleton:
 		new_player = preload('res://player/Skeleton.tscn').instance()
-	else:
+	elif Settings.player_type == Settings.PLAYER_TYPE.human:
 		new_player = preload('res://player/Player.tscn').instance()
+	elif Settings.player_type == Settings.PLAYER_TYPE.bandit:
+		new_player = preload('res://player/Bandit.tscn').instance()
+				
 	new_player.name = play_name
 	new_player.ID = player_ID
 	new_player.is_master = true

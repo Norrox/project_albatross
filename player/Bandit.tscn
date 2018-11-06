@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://player/Skeleton.gd" type="Script" id=1]
-[ext_resource path="res://player/skeleton/walk1-sheet.png" type="Texture" id=2]
-[ext_resource path="res://player/skeleton/weapon/weapon.png" type="Texture" id=3]
-[ext_resource path="res://player/Wand.gd" type="Script" id=4]
+[ext_resource path="res://player/Bandit.gd" type="Script" id=1]
+[ext_resource path="res://player/bandit/run_run_0-sheet.png" type="Texture" id=2]
+[ext_resource path="res://player/bandit/gun_gun_0.png" type="Texture" id=3]
+[ext_resource path="res://player/Pistol.gd" type="Script" id=4]
 [ext_resource path="res://interface/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/human/style 1_player death_00-sheet.png" type="Texture" id=6]
 [ext_resource path="res://player/human/Fall with gun_fall anim_00-sheet.png" type="Texture" id=7]
-[ext_resource path="res://player/skeleton/idle1-sheet.png" type="Texture" id=8]
+[ext_resource path="res://player/bandit/idle_idle_0-sheet.png" type="Texture" id=8]
 [ext_resource path="res://player/human/roll.png" type="Texture" id=9]
 [ext_resource path="res://player/Camera.gd" type="Script" id=10]
 
@@ -204,19 +204,19 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Pivot/Rifle:position")
+tracks/3/path = NodePath("Pivot/Rifle:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 1.92776 ), Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 3 ), Vector2( 0, 2.96388 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Pivot/Rifle:visible")
+tracks/4/path = NodePath("AnimationPlayer:playback_speed")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -224,20 +224,20 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ 2.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimationPlayer:playback_speed")
+tracks/5/path = NodePath("Pivot/Rifle:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 2.0 ]
+"values": [ Vector2( 4, 14 ), Vector2( 4, 16 ), Vector2( 4, 16 ), Vector2( 4, 14 ), Vector2( 4, 12 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -360,19 +360,19 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Pivot/Rifle:position")
+tracks/3/path = NodePath("Pivot/Rifle:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.13, 0.39, 0.52, 0.65 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 3 ), Vector2( 0, 2 ), Vector2( 0, 3 ), Vector2( 0, 4 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Pivot/Rifle:visible")
+tracks/4/path = NodePath("AnimationPlayer:playback_speed")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -380,20 +380,20 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ 2.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimationPlayer:playback_speed")
+tracks/5/path = NodePath("Pivot/Rifle:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78, 0.91, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 2.0 ]
+"values": [ Vector2( 2, 12 ), Vector2( 2, 12 ), Vector2( 0, 14 ), Vector2( 0, 14 ), Vector2( 0, 12 ), Vector2( 0, 14 ), Vector2( 0, 16 ), Vector2( 0, 16 ), Vector2( 0, 14 ) ]
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -411,42 +411,43 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z In
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -4 )
+position = Vector2( -1, -1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 0, 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 8
-_sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
+frame = 2
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="Pivot" type="Node2D" parent="." index="2"]
 
-position = Vector2( 0, -8 )
+position = Vector2( -4, -14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Rifle" type="Sprite" parent="Pivot" index="0"]
 
-editor/display_folded = true
+position = Vector2( 0, 14 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
-offset = Vector2( 4, 0 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="Timer" type="Timer" parent="Pivot/Rifle" index="0"]
 
 process_mode = 1
-wait_time = 0.2
+wait_time = 0.15
 one_shot = false
 autostart = false
 
 [node name="GUI" parent="." index="3" instance=ExtResource( 5 )]
 
-margin_top = -8.0
-margin_bottom = -8.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = -1.0
+margin_bottom = 3.0
 
 [node name="RespawnTimer" type="Timer" parent="." index="4"]
 

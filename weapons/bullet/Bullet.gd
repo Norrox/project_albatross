@@ -26,7 +26,7 @@ func _ready():
 	
 	get_parent().add_child(muzzle_flash_obj)
 	$BulletSound.play()
-	player = $'../../'
+	player = $'../../../'
 
 func _physics_process(delta):
 	var space_state = get_world_2d().direct_space_state

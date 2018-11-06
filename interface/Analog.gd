@@ -22,7 +22,7 @@ func _ready():
 		
 	while $'/root/'.get_node(player_name) == null:
 		yield(get_tree().create_timer(0.02), "timeout")
-	rifle = $'/root/'.get_node(player_name).get_node("Rifle")
+	rifle = $'/root/'.get_node(player_name).get_node("Pivot").get_node("Rifle")
 	
 	position.x = PLACEMENT_OFFSET
 	position.y = SCREEN_SIZE.y - PLACEMENT_OFFSET

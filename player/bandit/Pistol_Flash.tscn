@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://weapons/bullet/Muzzle_Flash.gd" type="Script" id=1]
-[ext_resource path="res://weapons/bullet/muzzle flash_muzzle flash_0.png" type="Texture" id=2]
+[ext_resource path="res://player/bandit/pistol flash_muzzle flash_0.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -25,12 +25,15 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 6.83499, 0 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-offset = Vector2( 23, 0 )
+offset = Vector2( 6, 0 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 1 )
 disabled = true
 

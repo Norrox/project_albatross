@@ -10,7 +10,7 @@ var signing_in_busy = false
 var connected_peers = ''
 var players = { }
 var players_order = []
-var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', skel = false}
+var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', type = null}
 var master_ID = 'No_Master'
 var master_participant_ID = 'No_participant_ID'
 var chests = []
@@ -142,11 +142,13 @@ func create_slave_at_spawn(sender_ID, data_var):
 	print('creating slave player')
 	
 	var new_player = null
-	if data_var.skel:
+	if data_var.type == Settings.PLAYER_TYPE.skeleton:
 		new_player = load('res://player/Skeleton.tscn').instance()
-	else:
+	elif data_var.type == Settings.PLAYER_TYPE.human:
 		new_player = load('res://player/Player.tscn').instance()
-	
+	elif data_var.type == Settings.PLAYER_TYPE.bandit:
+		new_player = load('res://player/Bandit.tscn').instance()
+		
 	new_player.name = data_var.name
 	new_player.ID = sender_ID
 	players[sender_ID].position = data_var.position
@@ -170,7 +172,7 @@ func update_player_death(sender_ID, data_var):
 	$'/root/'.get_node(players[sender_ID].name)._die()
 	
 func spawn_bullet(sender_ID, data_var):
-	$'/root/'.get_node(players[sender_ID].name).get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
+	$'/root/'.get_node(players[sender_ID].name).get_node('Pivot').get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
 	
 func update_chest_open(sender_ID, data_var):
 	var chest = $'/root/Game/Chests/'.get_node('Chest' + str(data_var.chest_num))
@@ -276,6 +278,6 @@ func update_health(hp):
 func update_action(action):
 	players[master_participant_ID].action = action
 	
-func update_player_type(is_skeleton):
-	players[master_participant_ID].skel = is_skeleton
+func update_player_type(player_type):
+	players[master_participant_ID].type = player_type
 ### end self_data update functions ###

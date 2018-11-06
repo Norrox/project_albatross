@@ -58,7 +58,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Rifle:position")
+tracks/3/path = NodePath("Pivot/Rifle:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -70,7 +70,7 @@ tracks/3/keys = {
 "values": [ Vector2( 2, -1 ), Vector2( -3, -1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Rifle:visible")
+tracks/4/path = NodePath("Pivot/Rifle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -149,7 +149,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Rifle:visible")
+tracks/4/path = NodePath("Pivot/Rifle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -203,7 +203,7 @@ tracks/2/keys = {
 "values": [ 5 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Rifle:position")
+tracks/3/path = NodePath("Pivot/Rifle:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -215,7 +215,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 1.92776 ), Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 3 ), Vector2( 0, 2.96388 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Rifle:visible")
+tracks/4/path = NodePath("Pivot/Rifle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -281,7 +281,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Rifle:visible")
+tracks/3/path = NodePath("Pivot/Rifle:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -293,7 +293,7 @@ tracks/3/keys = {
 "values": [ true, false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Rifle:position")
+tracks/4/path = NodePath("Pivot/Rifle:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -359,7 +359,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Rifle:position")
+tracks/3/path = NodePath("Pivot/Rifle:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -371,7 +371,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 3 ), Vector2( 0, 2 ), Vector2( 0, 3 ), Vector2( 0, 4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Rifle:visible")
+tracks/4/path = NodePath("Pivot/Rifle:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -410,7 +410,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z In
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-visible = false
+position = Vector2( 0, -4 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -420,7 +420,9 @@ texture = ExtResource( 2 )
 hframes = 14
 _sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
 
-[node name="Rifle" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Pivot" type="Node2D" parent="." index="2"]
+
+[node name="Rifle" parent="Pivot" index="0" instance=ExtResource( 3 )]
 
 visible = false
 position = Vector2( -3, -1 )

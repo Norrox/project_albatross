@@ -3,8 +3,6 @@ extends "res://weapons/bullet/Bullet.gd"
 const muzzle_flash = preload("res://player/skeleton/weapon/Wand_Flash.tscn")
 const on_hit_particle = preload("res://weapons/bullet/Red_Hit_Particle.tscn")
 
-const ROT_AMT = 10
-
 func _ready():
 	._ready()
 	SPEED = 250
