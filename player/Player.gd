@@ -105,7 +105,7 @@ func update_slave_data(slave_info):
 	slave_animation = slave_info.animation
 	slave_rifle_rotation = slave_info.rifle_rotation
 	slave_hp = slave_info.hp
-	$GUI_Node/GUI/HealthBar.value = slave_hp
+	$GUI/Health/HealthBar.value = slave_hp
 
 func decide_animation():
 	last_animation = animation

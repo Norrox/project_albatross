@@ -56,3 +56,9 @@ func wait_till_signed_in():
 			break
 		yield(get_tree().create_timer(0.02),'timeout')		
 		wait_time += 0.02
+
+func _on_SkeletonButton_pressed():
+	Settings.is_skeleton = true
+
+func _on_HumanButton_pressed():
+	Settings.is_skeleton = false

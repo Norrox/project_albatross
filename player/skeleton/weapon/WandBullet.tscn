@@ -2,7 +2,7 @@
 
 [ext_resource path="res://player/skeleton/weapon/WandBullet.gd" type="Script" id=1]
 [ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=2]
-[ext_resource path="res://player/skeleton/weapon/bubble.wav" type="AudioStream" id=3]
+[ext_resource path="res://player/skeleton/weapon/bubble (2).wav" type="AudioStream" id=3]
 [ext_resource path="res://player/skeleton/weapon/bubble pop.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -67,7 +67,7 @@ area_mask = 1
 [node name="Lifetime" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 1.2
+wait_time = 1.8
 one_shot = true
 autostart = true
 

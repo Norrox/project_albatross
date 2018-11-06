@@ -277,5 +277,5 @@ func update_action(action):
 	players[master_participant_ID].action = action
 	
 func update_player_type(is_skeleton):
-	players[master_participant_ID].skel = true
+	players[master_participant_ID].skel = is_skeleton
 ### end self_data update functions ###

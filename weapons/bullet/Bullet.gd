@@ -13,7 +13,6 @@ const shell = preload("res://weapons/bullet/Shell.tscn")
 var direction = 0
 var player = null
 var collided = false
-var can_rotate = true
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -61,7 +60,6 @@ func destroy(body):
 	hide_and_remove()
 	
 func hide_and_remove():
-	can_rotate = false
 	collided = true
 	for child in get_children():
 		if child.has_method('hide'):

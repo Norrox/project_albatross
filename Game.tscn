@@ -105,7 +105,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -198,6 +198,8 @@ one_shot = false
 autostart = false
 
 [node name="Room1" type="Node2D" parent="Spikes" index="1"]
+
+editor/display_folded = true
 
 [node name="Spikes" parent="Spikes/Room1" index="0" instance=ExtResource( 7 )]
 
@@ -369,8 +371,6 @@ position = Vector2( 1744, 2608 )
 
 [node name="Spawns" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
 
 position = Vector2( 512, 368 )
@@ -402,7 +402,7 @@ position = Vector2( -304, 2128 )
 
 [node name="Spawn8" type="Node2D" parent="Spawns" index="7"]
 
-position = Vector2( -320, 1120 )
+position = Vector2( -336, 1000 )
 
 [node name="Chests" type="Node2D" parent="." index="4"]
 
@@ -1129,6 +1129,8 @@ build_mode = 0
 polygon = PoolVector2Array( -15, -24, -15, 4, 25, 4, 25, -24 )
 
 [node name="Destructables" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
 
 [node name="Room1" type="Node2D" parent="Destructables" index="0"]
 
