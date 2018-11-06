@@ -105,7 +105,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
