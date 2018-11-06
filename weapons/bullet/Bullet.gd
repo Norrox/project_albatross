@@ -2,9 +2,9 @@ extends Area2D
 
 const HIT_DELAY = 15
 
-var SPEED = 550
+var SPEED = 500
 var DAMAGE = 5
-var FORWARD_AMT = 27
+var FORWARD_AMT = 33
 
 const on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
 const muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
@@ -38,14 +38,14 @@ func _on_body_entered(body):
 		return
 	$HitSound.play()
 	if body.is_in_group('players') and !body.rolling:	
-		OS.delay_msec(HIT_DELAY)
+		#OS.delay_msec(HIT_DELAY)
 		body.damage(DAMAGE)
 		destroy(body)
 	elif 'Chest' in body.name:
-		OS.delay_msec(HIT_DELAY)
+		#OS.delay_msec(HIT_DELAY)
 		body.open(player)
 	elif 'Crate' in body.name:
-		OS.delay_msec(HIT_DELAY)
+		#OS.delay_msec(HIT_DELAY)
 		destroy(body)
 		if body.hit < 2:
 			body.hit += 1

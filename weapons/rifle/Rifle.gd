@@ -1,5 +1,7 @@
 extends Sprite
 
+const LEAD = 2
+
 const Bullet = preload("res://weapons/bullet/Bullet.tscn")
 var shoot = false
 var analog = null
@@ -28,5 +30,7 @@ func _shoot(bullet_pos, bullet_rot, bullet_dir):
 	add_child(bullet)
 	bullet.z_index = 1
 	bullet.rotation = bullet_rot
+	bullet_pos += get_parent().direction * LEAD
 	bullet.global_position = bullet_pos
 	bullet.direction = bullet_dir
+	

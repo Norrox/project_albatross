@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Muzzle_Flash" type="StaticBody2D"]
+[node name="Muzzle_Flash" type="StaticBody2D" index="0"]
 
 scale = Vector2( 0.75, 0.75 )
 z_index = 1
@@ -26,12 +26,21 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-offset = Vector2( 24, 0 )
-_sections_unfolded = [ "Offset" ]
+offset = Vector2( 23, 0 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
 disabled = true
+
+[node name="Lifetime" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]
 
 

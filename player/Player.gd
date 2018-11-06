@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const JITTER = 1
-const MOVE_SPEED = 200.0
+const MOVE_SPEED = 7500.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
@@ -141,7 +141,7 @@ func check_flip():
 
 func _move(delta, direction):
 	direction = direction.normalized() * MOVE_SPEED
-	var motion = direction
+	var motion = direction * delta
 	move_and_slide(motion)
 
 func _roll():

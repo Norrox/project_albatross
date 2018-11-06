@@ -8,8 +8,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 8.0
-height = 10.0
+radius = 7.0
+height = 5.0
 
 [node name="Bullet" type="Area2D" index="0"]
 
@@ -29,7 +29,7 @@ _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Hitbox" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 26.0468, 0.157776 )
+position = Vector2( 29.8915, 0.157776 )
 rotation = -1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
