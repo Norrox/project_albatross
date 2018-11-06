@@ -10,7 +10,7 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 4 )
+extents = Vector2( 8, 8 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,9 +68,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Top_No_Collision/StaticBody2D" index="0"]
 
-position = Vector2( 0, 4 )
 shape = SubResource( 2 )
-disabled = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Wall_Top_Left" type="Sprite" parent="." index="2"]

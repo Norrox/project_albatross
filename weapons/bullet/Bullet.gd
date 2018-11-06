@@ -4,7 +4,7 @@ const HIT_DELAY = 15
 
 var SPEED = 500
 var DAMAGE = 5
-var FORWARD_AMT = 33
+var FORWARD_AMT = 35
 
 const on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
 const muzzle_flash = preload("res://weapons/bullet/Muzzle_Flash.tscn")
@@ -46,13 +46,8 @@ func _on_body_entered(body):
 		body.open(player)
 	elif 'Crate' in body.name:
 		#OS.delay_msec(HIT_DELAY)
+		body.hit()
 		destroy(body)
-		if body.hit < 2:
-			body.hit += 1
-			body.get_node('AnimationPlayer').play('hit' + str(body.hit))
-			yield(body.get_node('AnimationPlayer'), 'animation_finished')
-			if body.hit == 2:
-				body.queue_free()
 	if !$Hitbox.disabled:
 		destroy(body)
 	
@@ -68,7 +63,7 @@ func hide_and_remove():
 	var on_hit_particle_obj = on_hit_particle.instance()
 	add_child(on_hit_particle_obj)
 	on_hit_particle_obj.global_position = get_collision_point()
-	on_hit_particle_obj.rotation = rotation
+	on_hit_particle_obj.rotation = randi()%361+1
 	var particle_anim = on_hit_particle_obj.get_node('AnimationPlayer')
 	particle_anim.play('hit')
 	yield(particle_anim, 'animation_finished')

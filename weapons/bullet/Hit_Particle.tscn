@@ -28,7 +28,7 @@ tracks/0/keys = {
 
 [node name="Hit_Particle" type="Area2D"]
 
-z_index = -3
+z_index = 1
 z_as_relative = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -59,7 +59,7 @@ root_node = NodePath("..")
 autoplay = "hit"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 4.0
+playback_speed = 6.0
 anims/hit = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
