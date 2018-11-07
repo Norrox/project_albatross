@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/human/weapons/bullet/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://player/human/weapons/bullet/sprites/bullet.png" type="Texture" id=2]
+[ext_resource path="res://player/human/weapons/bullet/sounds/laser_shot_silenced.wav" type="AudioStream" id=3]
+[ext_resource path="res://player/human/weapons/bullet/sounds/light_slap.wav" type="AudioStream" id=4]
+
+
+
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.0
+height = 5.0
+
+[node name="Bullet" type="Area2D"]
+
+z_index = 1
+z_as_relative = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 7168
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+
+[node name="Hitbox" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 29.8915, 0.157776 )
+rotation = -1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+offset = Vector2( 14, 0 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = -12.0
+pitch_scale = 0.1
+autoplay = false
+max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Lifetime" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]
+
+

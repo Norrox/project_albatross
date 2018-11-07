@@ -7,7 +7,7 @@ const MIN_MOVE_DIST = 1
 const STAY_TIME = 0.5
 const HEALTH = 50
 
-onready var particle = preload("res://weapons/bullet/Hit_Particle.tscn")
+onready var particle = preload("res://player/human/weapons/bullet/Hit_Particle.tscn")
 
 var ready = false
 var spawned = false

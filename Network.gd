@@ -143,11 +143,11 @@ func create_slave_at_spawn(sender_ID, data_var):
 	
 	var new_player = null
 	if data_var.type == Settings.PLAYER_TYPE.skeleton:
-		new_player = load('res://player/Skeleton.tscn').instance()
+		new_player = load('res://player/skeleton/Skeleton.tscn').instance()
 	elif data_var.type == Settings.PLAYER_TYPE.human:
-		new_player = load('res://player/Player.tscn').instance()
+		new_player = load('res://player/human/Player.tscn').instance()
 	elif data_var.type == Settings.PLAYER_TYPE.bandit:
-		new_player = load('res://player/Bandit.tscn').instance()
+		new_player = load('res://player/bandit/Bandit.tscn').instance()
 		
 	new_player.name = data_var.name
 	new_player.ID = sender_ID

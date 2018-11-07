@@ -8,7 +8,7 @@ enum PLAYER_TYPE {
 	bandit	
 	}
 
-var player_type = PLAYER_TYPE.bandit
+var player_type = PLAYER_TYPE.human
 
 func _ready():
 	pass

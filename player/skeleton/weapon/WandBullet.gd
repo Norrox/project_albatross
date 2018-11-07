@@ -1,7 +1,7 @@
-extends "res://weapons/bullet/Bullet.gd"
+extends "res://player/human/weapons/bullet/Bullet.gd"
 
 const muzzle_flash = preload("res://player/skeleton/weapon/Wand_Flash.tscn")
-const on_hit_particle = preload("res://weapons/bullet/Red_Hit_Particle.tscn")
+const on_hit_particle = preload("res://player/skeleton/Red_Hit_Particle.tscn")
 
 func _ready():
 	._ready()

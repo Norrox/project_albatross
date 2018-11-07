@@ -18,11 +18,11 @@ func _ready():
 	else:
 		var new_player = null
 		if Settings.player_type == Settings.PLAYER_TYPE.skeleton:
-			new_player = preload('res://player/Skeleton.tscn').instance()
+			new_player = preload('res://player/skeleton/Skeleton.tscn').instance()
 		elif Settings.player_type == Settings.PLAYER_TYPE.human:
-			new_player = preload('res://player/Player.tscn').instance()
+			new_player = preload('res://player/human/Player.tscn').instance()
 		elif Settings.player_type == Settings.PLAYER_TYPE.bandit:
-			new_player = preload('res://player/Bandit.tscn').instance()
+			new_player = preload('res://player/bandit/Bandit.tscn').instance()
 				
 		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn1').global_position
 		
@@ -41,11 +41,11 @@ func create_master_player(spawn_pos, play_name, player_ID):
 	sc_canvas.debug_print('creating master player')
 	var new_player = null
 	if Settings.player_type == Settings.PLAYER_TYPE.skeleton:
-		new_player = preload('res://player/Skeleton.tscn').instance()
+		new_player = preload('res://player/skeleton/Skeleton.tscn').instance()
 	elif Settings.player_type == Settings.PLAYER_TYPE.human:
-		new_player = preload('res://player/Player.tscn').instance()
+		new_player = preload('res://player/human/Player.tscn').instance()
 	elif Settings.player_type == Settings.PLAYER_TYPE.bandit:
-		new_player = preload('res://player/Bandit.tscn').instance()
+		new_player = preload('res://player/bandit/Bandit.tscn').instance()
 				
 	new_player.name = play_name
 	new_player.ID = player_ID

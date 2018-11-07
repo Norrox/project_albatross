@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light_slap.wav-edfd0d541a059c995613eab885268ecf.sample"
+
+[deps]
+
+source_file="res://player/human/weapons/bullet/sounds/light_slap.wav"
+dest_files=[ "res://.import/light_slap.wav-edfd0d541a059c995613eab885268ecf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

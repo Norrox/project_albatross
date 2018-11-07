@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://interface/Canvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/Canvas/Canvas.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tilemap/env_ground.tres" type="TileSet" id=3]
 [ext_resource path="res://tilemap/env_collision.tres" type="TileSet" id=4]
 [ext_resource path="res://tilemap/env_top.tres" type="TileSet" id=5]
@@ -12,19 +12,27 @@
 [ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
 [ext_resource path="res://scriptable_objects/crate/Crate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://music/Uneasy Truce.wav" type="AudioStream" id=12]
-[ext_resource path="res://scriptable_objects/sky/cloud1.png" type="Texture" id=13]
-[ext_resource path="res://Clouds.gd" type="Script" id=14]
-[ext_resource path="res://scriptable_objects/sky/cloud5.png" type="Texture" id=15]
-[ext_resource path="res://scriptable_objects/sky/cloud7.png" type="Texture" id=16]
-[ext_resource path="res://scriptable_objects/sky/cloud2.png" type="Texture" id=17]
-[ext_resource path="res://scriptable_objects/sky/cloud9.png" type="Texture" id=18]
-[ext_resource path="res://scriptable_objects/sky/cloud4.png" type="Texture" id=19]
-[ext_resource path="res://scriptable_objects/sky/cloud8.png" type="Texture" id=20]
-[ext_resource path="res://scriptable_objects/sky/cloud3.png" type="Texture" id=21]
-[ext_resource path="res://scriptable_objects/sky/cloud6.png" type="Texture" id=22]
-[ext_resource path="res://scriptable_objects/sky/Star.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=13]
+[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=14]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=15]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud7.png" type="Texture" id=16]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=17]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=18]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud4.png" type="Texture" id=19]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=20]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=21]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud6.png" type="Texture" id=22]
+[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=23]
 [ext_resource path="res://black.png" type="Texture" id=24]
-[ext_resource path="res://interface/CRT.gd" type="Script" id=25]
+[ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=25]
+
+
+
+
+
+
+
+
 
 [sub_resource type="Environment" id=1]
 
