@@ -44,6 +44,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 7.64766, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 14, 0 )
 hframes = 2
@@ -52,6 +53,7 @@ _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 1 )
 disabled = true
 

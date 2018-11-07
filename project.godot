@@ -31,8 +31,8 @@ settings/fps/force_fps=48
 
 [display]
 
-window/size/width=960
-window/size/height=540
+window/size/width=1152
+window/size/height=648
 window/size/always_on_top=true
 window/vsync/use_vsync=false
 window/handheld/emulate_touchscreen=true

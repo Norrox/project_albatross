@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 20 )
+extents = Vector2( 8, 19 )
 
 [sub_resource type="Animation" id=2]
 
@@ -410,7 +410,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z In
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -4 )
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -485,7 +485,7 @@ limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-smoothing_speed = 4.0
+smoothing_speed = 2.0
 offset_v = 0.0
 offset_h = 0.0
 drag_margin_left = 0.0
@@ -496,7 +496,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 10 )
-_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing", "Transform" ]
 
 [connection signal="timeout" from="Pivot/Rifle/Timer" to="Pivot/Rifle" method="_on_Timer_timeout"]
 

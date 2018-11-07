@@ -11,16 +11,10 @@
 [ext_resource path="res://player/human/sprites/roll.png" type="Texture" id=9]
 [ext_resource path="res://interface/Camera.gd" type="Script" id=10]
 
-
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 20 )
+extents = Vector2( 8, 19 )
 
 [sub_resource type="Animation" id=2]
 
@@ -402,7 +396,7 @@ tracks/5/keys = {
 "values": [ Vector2( 2, 12 ), Vector2( 2, 12 ), Vector2( 0, 14 ), Vector2( 0, 14 ), Vector2( 0, 12 ), Vector2( 0, 14 ), Vector2( 0, 16 ), Vector2( 0, 16 ), Vector2( 0, 14 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
