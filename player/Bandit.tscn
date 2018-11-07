@@ -396,7 +396,7 @@ tracks/5/keys = {
 "values": [ Vector2( 2, 12 ), Vector2( 2, 12 ), Vector2( 0, 14 ), Vector2( 0, 14 ), Vector2( 0, 12 ), Vector2( 0, 14 ), Vector2( 0, 16 ), Vector2( 0, 16 ), Vector2( 0, 14 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "players",
 ]]
 

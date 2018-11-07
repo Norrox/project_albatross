@@ -5,7 +5,7 @@ const on_hit_particle = preload("res://weapons/bullet/Hit_Particle.tscn")
 const shell = preload("res://player/bandit/GrayShell.tscn")
 
 func _ready():
-	SPEED = 480
+	SPEED = 400
 	FORWARD_AMT = 27
 
 func _physics_process(delta):		
