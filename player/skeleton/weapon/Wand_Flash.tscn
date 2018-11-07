@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Muzzle_Flash" type="StaticBody2D" index="0"]
+[node name="Muzzle_Flash" type="StaticBody2D"]
 
 scale = Vector2( 0.75, 0.75 )
 z_index = 5

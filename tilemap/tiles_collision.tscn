@@ -2,13 +2,13 @@
 
 [ext_resource path="res://tilemap/16 x 16 codename iso game.png" type="Texture" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Animation" ]
 
 [node name="Wall_Mid1" type="Sprite" parent="." index="0"]
 
-position = Vector2( 60.0989, 0 )
+position = Vector2( 64, 0 )
 z_index = -5
 z_as_relative = false
 texture = ExtResource( 1 )
@@ -35,11 +35,11 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall_Mid1/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 7.90108, -8, 7.9011, 8, -8.0989, 8, -8.0989, -8, 3.90108, -8, 3.90108, -8 )
+polygon = PoolVector2Array( 8, -8, 8, 8, -8, 8, -8, -8 )
 
 [node name="Wall_Mid2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 16, 0 )
+position = Vector2( 20, 0 )
 z_index = -5
 z_as_relative = false
 texture = ExtResource( 1 )
@@ -72,7 +72,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Wall_Mid3" type="Sprite" parent="." index="2"]
 
-position = Vector2( 36, 0 )
+position = Vector2( 40, 0 )
 z_index = -5
 z_as_relative = false
 texture = ExtResource( 1 )
