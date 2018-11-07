@@ -5,7 +5,7 @@ const on_hit_particle = preload("res://player/skeleton/Red_Hit_Particle.tscn")
 
 func _ready():
 	._ready()
-	SPEED = 250
+	SPEED = 200
 	FORWARD_AMT = 27
 
 func _physics_process(delta):		
