@@ -1,13 +1,50 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
-[ext_resource path="res://white.png" type="Texture" id=2]
-[ext_resource path="res://black.png" type="Texture" id=3]
-[ext_resource path="res://interface/fonts/montserrat_eb_48.tres" type="DynamicFont" id=4]
-[ext_resource path="res://interface/buttons/join.png" type="Texture" id=5]
-[ext_resource path="res://interface/buttons/join-pressed.png" type="Texture" id=6]
+[ext_resource path="res://hard_black.png" type="Texture" id=2]
+[ext_resource path="res://interface/Canvas/FX/CRT.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/Canvas/FX/fog.shader" type="Shader" id=4]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=5]
+[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=6]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=7]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=8]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=9]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=10]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=11]
+[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interface/fonts/montserrat_eb_32.tres" type="DynamicFont" id=13]
+[ext_resource path="res://interface/albatross_logo.png" type="Texture" id=14]
+[ext_resource path="res://interface/panel.png" type="Texture" id=15]
+[ext_resource path="res://interface/parchment.png" type="Texture" id=16]
+[ext_resource path="res://player/skeleton/idle1.png" type="Texture" id=17]
+[ext_resource path="res://player/skeleton/weapon/weapon.png" type="Texture" id=18]
+[ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=19]
+[ext_resource path="res://player/bandit/idle_idle_0.png" type="Texture" id=20]
+[ext_resource path="res://white.png" type="Texture" id=21]
+[ext_resource path="res://player/human/sprites/Idle_idle_0.png" type="Texture" id=22]
+[ext_resource path="res://interface/play-button-filetypepng-1.png" type="Texture" id=23]
+[ext_resource path="res://interface/play-button-pressed.png" type="Texture" id=24]
+[ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=25]
+[ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=26]
 
-[node name="Menu" type="Control"]
+[sub_resource type="ShaderMaterial" id=1]
+
+render_priority = 0
+shader = ExtResource( 4 )
+shader_param/color = null
+shader_param/OCTAVES = null
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = ExtResource( 26 )
+shader_param/lines_distance = null
+shader_param/pixel_size = null
+shader_param/size_screen = null
+shader_param/scanline_alpha = null
+shader_param/lines_velocity = null
+
+[node name="Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -21,179 +58,641 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="SkeletonLabel" type="Label" parent="." index="0"]
+[node name="BG" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 18, 10.125 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Animation", "Offset", "Z Index" ]
+
+[node name="Fog" parent="." index="1" instance=ExtResource( 3 )]
+
+material = SubResource( 1 )
+margin_right = 1152.0
+margin_bottom = 648.0
+script = null
+
+[node name="Clouds" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="cloud1" type="Sprite" parent="Clouds" index="0"]
+
+position = Vector2( 1108, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud10" type="Sprite" parent="Clouds" index="1"]
+
+position = Vector2( 776, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud16" type="Sprite" parent="Clouds" index="2"]
+
+position = Vector2( 432, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud2" type="Sprite" parent="Clouds" index="3"]
+
+position = Vector2( 240, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud3" type="Sprite" parent="Clouds" index="4"]
+
+position = Vector2( 88, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud4" type="Sprite" parent="Clouds" index="5"]
+
+position = Vector2( 16, 620 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud17" type="Sprite" parent="Clouds" index="6"]
+
+position = Vector2( 500, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud9" type="Sprite" parent="Clouds" index="7"]
+
+position = Vector2( 28, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud15" type="Sprite" parent="Clouds" index="8"]
+
+position = Vector2( 384, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud6" type="Sprite" parent="Clouds" index="9"]
+
+position = Vector2( 932, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud11" type="Sprite" parent="Clouds" index="10"]
+
+position = Vector2( 708, 652 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud5" type="Sprite" parent="Clouds" index="11"]
+
+position = Vector2( 1012, 628 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud12" type="Sprite" parent="Clouds" index="12"]
+
+position = Vector2( 648, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud7" type="Sprite" parent="Clouds" index="13"]
+
+position = Vector2( 852, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud14" type="Sprite" parent="Clouds" index="14"]
+
+position = Vector2( 312, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud13" type="Sprite" parent="Clouds" index="15"]
+
+position = Vector2( 564, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud8" type="Sprite" parent="Clouds" index="16"]
+
+position = Vector2( 176, 624 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stars" type="Node2D" parent="." index="3"]
+
+z_index = 1
+z_as_relative = false
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Star" parent="Stars" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 528, 200 )
+z_index = 1
+z_as_relative = true
+
+[node name="Star2" parent="Stars" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 776, 176 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star3" parent="Stars" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 572, 332 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star4" parent="Stars" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 976, 68 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star5" parent="Stars" index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 1072, 580 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star9" parent="Stars" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 396, 592 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star6" parent="Stars" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 364 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star10" parent="Stars" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 48, 536 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star7" parent="Stars" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 192, 380 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star8" parent="Stars" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 252, 48 )
+z_index = 0
+z_as_relative = true
+
+[node name="Title" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 264.0
-margin_top = 60.0
-margin_right = 319.0
-margin_bottom = 74.0
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 115.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Skeleton"
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.625, 0.065918, 0.065918, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "ALBATROSS"
+align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="HumanLabel" type="Label" parent="." index="1"]
+[node name="Logo" type="Sprite" parent="." index="5"]
+
+position = Vector2( 136, 104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Panel" type="Sprite" parent="." index="6"]
+
+position = Vector2( 576, 280 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlayerStats" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="Parchment" type="Sprite" parent="PlayerStats" index="0"]
+
+position = Vector2( 708, 352 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Text" type="Node2D" parent="PlayerStats" index="1"]
+
+position = Vector2( 0, 4 )
+
+[node name="Phrase" type="Label" parent="PlayerStats/Text" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 457.0
-margin_top = 60.0
-margin_right = 512.0
-margin_bottom = 74.0
+margin_left = 464.0
+margin_top = 120.0
+margin_right = 617.0
+margin_bottom = 219.0
+rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Human"
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Six Feet of Earth Makes Us All Equal"
+align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="BanditLabel" type="Label" parent="." index="2"]
+[node name="Description" type="Label" parent="PlayerStats/Text" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 637.0
-margin_top = 60.0
-margin_right = 692.0
-margin_bottom = 74.0
+margin_left = 588.0
+margin_top = 240.0
+margin_right = 836.0
+margin_bottom = 444.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Bandit"
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Unleash the power of the undead. Cold and damned, using sorcery instead of ligaments, seek out other spirits to join you in the grave."
+align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="BanditButton" type="TouchScreenButton" parent="." index="3"]
+[node name="WeaponName" type="Label" parent="PlayerStats/Text" index="2"]
 
-position = Vector2( 627, 77 )
-normal = ExtResource( 2 )
-pressed = ExtResource( 3 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 612.0
+margin_top = 256.0
+margin_right = 765.0
+margin_bottom = 355.0
+rect_scale = Vector2( 1.25, 1.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "BLOOD BUBBLE"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="WeaponDescription" type="Label" parent="PlayerStats/Text" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 308.0
+margin_right = 780.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.153809, 0.492188, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "No Recoil
+
+Expands"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="WeaponDescription2" type="Label" parent="PlayerStats/Text" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 308.0
+margin_right = 780.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.660156, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "
+
+
+
+Slow
+"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Player Enlarged" type="Sprite" parent="PlayerStats" index="2"]
+
+position = Vector2( 440, 412 )
+scale = Vector2( 14, 14 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Weapon" type="Sprite" parent="PlayerStats/Player Enlarged" index="0"]
+
+position = Vector2( 1.875, 4 )
+rotation = 0.323297
+texture = ExtResource( 18 )
+
+[node name="Bullet" type="Sprite" parent="PlayerStats/Player Enlarged" index="1"]
+
+visible = false
+position = Vector2( 18, 9.71428 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CharacterSelect" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 868, 44 )
+
+[node name="SkeletonLabel" type="Label" parent="CharacterSelect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 221.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.00656128, 0.410182, 0.839844, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "SKULLY
+the Dead"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HumanLabel" type="Label" parent="CharacterSelect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 68.0
+margin_top = 280.0
+margin_right = 247.0
+margin_bottom = 362.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.00656128, 0.410182, 0.839844, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "BRAX
+the Hero"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="BanditLabel" type="Label" parent="CharacterSelect" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 68.0
+margin_top = 432.0
+margin_right = 190.0
+margin_bottom = 514.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.00656128, 0.410182, 0.839844, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "BILLY
+the Bandit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="BanditButton" type="TouchScreenButton" parent="CharacterSelect" index="3"]
+
+position = Vector2( 156, 420 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 20 )
+pressed = ExtResource( 21 )
 bitmask = null
 shape = null
 shape_centered = true
-shape_visible = true
-passby_press = false
-action = ""
-visibility_mode = 0
-
-[node name="HumanButton" type="TouchScreenButton" parent="." index="4"]
-
-position = Vector2( 451, 77 )
-normal = ExtResource( 2 )
-pressed = ExtResource( 3 )
-bitmask = null
-shape = null
-shape_centered = true
-shape_visible = true
+shape_visible = false
 passby_press = false
 action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
-[node name="SkeletonButton" type="TouchScreenButton" parent="." index="5"]
+[node name="HumanButton" type="TouchScreenButton" parent="CharacterSelect" index="4"]
 
-position = Vector2( 260, 77 )
-normal = ExtResource( 2 )
-pressed = ExtResource( 3 )
+position = Vector2( 160, 272 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 22 )
+pressed = ExtResource( 21 )
 bitmask = null
 shape = null
 shape_centered = true
-shape_visible = true
+shape_visible = false
 passby_press = false
 action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
+[node name="SkeletonButton" type="TouchScreenButton" parent="CharacterSelect" index="5"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -315.0
-margin_top = -120.0
-margin_right = 315.0
-margin_bottom = 120.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/separation = 20
-alignment = 0
-_sections_unfolded = [ "custom_constants" ]
+position = Vector2( 160, 128 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 21 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = false
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
 
-[node name="HBoxContainerPlayer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+[node name="SelectLabel" type="Label" parent="CharacterSelect" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 630.0
-margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/separation = 0
-alignment = 0
-_sections_unfolded = [ "Rect", "custom_constants" ]
-
-[node name="L_min_players" type="Label" parent="VBoxContainer/HBoxContainerPlayer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 491.0
-margin_bottom = 52.0
+margin_left = 64.0
+margin_top = 80.0
+margin_right = 131.0
+margin_bottom = 94.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0.578125, 1, 1 )
+text = "Characters"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="L_min_players" type="Label" parent="." index="9"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 564.0
+margin_right = 890.0
+margin_bottom = 578.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MIN EXTRA PLAYERS: "
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainerPlayer" index="1"]
+[node name="SpinBox" type="SpinBox" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 491.0
-margin_right = 565.0
-margin_bottom = 52.0
+margin_left = 548.0
+margin_top = 56.0
+margin_right = 622.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -212,15 +711,17 @@ prefix = ""
 suffix = ""
 _sections_unfolded = [ "Rect" ]
 
-[node name="HBoxContainerPlayer2" type="VBoxContainer" parent="VBoxContainer" index="1"]
+[node name="HBoxContainerPlayer2" type="HBoxContainer" parent="." index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 72.0
-margin_right = 630.0
-margin_bottom = 168.0
+margin_left = 266.0
+margin_top = 536.0
+margin_right = 1504.0
+margin_bottom = 712.0
+rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -231,14 +732,14 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="QuickMatchButton" type="TextureButton" parent="VBoxContainer/HBoxContainerPlayer2" index="0"]
+[node name="QuickMatchButton" type="TextureButton" parent="HBoxContainerPlayer2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 630.0
-margin_bottom = 96.0
+margin_right = 412.0
+margin_bottom = 176.0
 rect_min_size = Vector2( 192, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -251,20 +752,95 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 24 )
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Focus", "Hint", "Mouse", "Pause", "Size Flags", "Textures", "Visibility" ]
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
 
-[connection signal="pressed" from="BanditButton" to="." method="_on_BanditButton_pressed"]
+[node name="QuickMatchButton2" type="TextureButton" parent="HBoxContainerPlayer2" index="1"]
 
-[connection signal="pressed" from="HumanButton" to="." method="_on_HumanButton_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 412.0
+margin_right = 824.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 24 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
 
-[connection signal="pressed" from="SkeletonButton" to="." method="_on_SkeletonButton_pressed"]
+[node name="QuickMatchButton3" type="TextureButton" parent="HBoxContainerPlayer2" index="2"]
 
-[connection signal="value_changed" from="VBoxContainer/HBoxContainerPlayer/SpinBox" to="." method="_on_SpinBox_value_changed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 824.0
+margin_right = 1238.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 24 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainerPlayer2/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
+[node name="FX" type="Node2D" parent="." index="12"]
+
+script = ExtResource( 25 )
+
+[node name="CRT" parent="FX" index="0" instance=ExtResource( 3 )]
+
+margin_left = 284.0
+margin_top = 108.0
+margin_right = 868.0
+margin_bottom = 544.0
+script = null
+
+[node name="ScanLines" parent="FX" index="1" instance=ExtResource( 3 )]
+
+material = SubResource( 2 )
+margin_left = 284.0
+margin_top = 108.0
+margin_right = 868.0
+margin_bottom = 544.0
+script = null
+
+[connection signal="pressed" from="CharacterSelect/BanditButton" to="." method="_on_BanditButton_pressed"]
+
+[connection signal="pressed" from="CharacterSelect/HumanButton" to="." method="_on_HumanButton_pressed"]
+
+[connection signal="pressed" from="CharacterSelect/SkeletonButton" to="." method="_on_SkeletonButton_pressed"]
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_SpinBox_value_changed"]
+
+[connection signal="pressed" from="HBoxContainerPlayer2/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
 
 
