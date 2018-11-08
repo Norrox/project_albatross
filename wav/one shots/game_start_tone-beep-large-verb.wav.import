@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/game_start_tone-beep-large-verb.wav-d639ba29fa5e2b71091f1c823916bc1b.sample"
+
+[deps]
+
+source_file="res://wav/one shots/game_start_tone-beep-large-verb.wav"
+dest_files=[ "res://.import/game_start_tone-beep-large-verb.wav-d639ba29fa5e2b71091f1c823916bc1b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

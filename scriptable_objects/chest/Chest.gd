@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var opening = false
+var opened = false
 var item_res = null
 
 func _ready():
@@ -9,17 +9,16 @@ func _ready():
 	item_res = load("res://scriptable_objects/powerups/" + item + ".tscn")
 	
 func open(player):
-	if opening or check_net_is_claimed():
+	if opened or check_net_is_claimed():
 		return
 	send_net_chest_num(player)
-	opening = true
+	opened = true
 	$AnimationPlayer.play('open')
 	check_player_master_and_anim_item(player)
 	yield(get_tree().create_timer(0.5),"timeout")
 	$ChestOpen.play()
 		
-	yield($AnimationPlayer,'animation_finished')
-	opening = false
+	#yield($AnimationPlayer,'animation_finished')
 	
 func check_player_master_and_anim_item(player):
 	if player.is_master:
@@ -29,8 +28,10 @@ func check_player_master_and_anim_item(player):
 		
 func send_net_chest_num(player):
 	if !Network.force_local and player.is_master:
+		Network.chests[get_chest_number() - 1] = true
 		Network.google_send_reliable( { chest_num = get_chest_number() } )
-	Network.chests[get_chest_number() - 1] = true
+	elif Network.force_local:
+		Network.chests[get_chest_number() - 1] = true
 	
 func check_net_is_claimed():
 	return Network.chests[get_chest_number()-1]

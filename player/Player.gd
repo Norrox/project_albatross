@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const JITTER = 1
-const MOVE_SPEED = 200.0
+const MOVE_SPEED = 150.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
@@ -178,6 +178,7 @@ func update_ui_hearts(num_lives):
 				
 
 func damage(value):
+	$DamageSound.play()
 	if is_master:
 		health_points -= value
 		if health_points <= 0:

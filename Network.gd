@@ -178,6 +178,7 @@ func update_chest_open(sender_ID, data_var):
 	var chest = $'/root/Game/Chests/'.get_node('Chest' + str(data_var.chest_num))
 	var player = $'/root/'.get_node(players[sender_ID].name)
 	chest.open(player)
+	Network.chests[data_var.chest_num - 1] = true
 	
 func is_online():
 	return gpgs.isOnline()

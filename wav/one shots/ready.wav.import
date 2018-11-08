@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ready.wav-1b4e001bf9863113a92e8f9a87ccdbef.sample"
+
+[deps]
+
+source_file="res://wav/one shots/ready.wav"
+dest_files=[ "res://.import/ready.wav-1b4e001bf9863113a92e8f9a87ccdbef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
