@@ -453,80 +453,79 @@ position = Vector2( -312, 1120 )
 
 [node name="Chests" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( -16, 0 )
 
 [node name="Chest1" parent="Chests" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 128, 496 )
 
-[node name="Chest14" parent="Chests" index="1" instance=ExtResource( 8 )]
-
-position = Vector2( -160, 496 )
-
-[node name="Chest17" parent="Chests" index="2" instance=ExtResource( 8 )]
-
-position = Vector2( -136, 2808 )
-
-[node name="Chest2" parent="Chests" index="3" instance=ExtResource( 8 )]
+[node name="Chest2" parent="Chests" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 1952, 112 )
 
-[node name="Chest15" parent="Chests" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( 2528, 448 )
-
-[node name="Chest" parent="Chests" index="5" instance=ExtResource( 8 )]
-
-position = Vector2( 2336, 1136 )
-
-[node name="Chest16" parent="Chests" index="6" instance=ExtResource( 8 )]
-
-position = Vector2( 2320, 2928 )
-
-[node name="Chest3" parent="Chests" index="7" instance=ExtResource( 8 )]
+[node name="Chest3" parent="Chests" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 2616, 2152 )
 
-[node name="Chest4" parent="Chests" index="8" instance=ExtResource( 8 )]
+[node name="Chest4" parent="Chests" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 80, 2560 )
 
-[node name="Chest5" parent="Chests" index="9" instance=ExtResource( 8 )]
+[node name="Chest5" parent="Chests" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 1520, 2240 )
 
-[node name="Chest6" parent="Chests" index="10" instance=ExtResource( 8 )]
+[node name="Chest6" parent="Chests" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 1392, 2240 )
 
-[node name="Chest7" parent="Chests" index="11" instance=ExtResource( 8 )]
+[node name="Chest7" parent="Chests" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 1936, 1624 )
 
-[node name="Chest8" parent="Chests" index="12" instance=ExtResource( 8 )]
+[node name="Chest8" parent="Chests" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 1776, 992 )
 
-[node name="Chest9" parent="Chests" index="13" instance=ExtResource( 8 )]
+[node name="Chest9" parent="Chests" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 512, 992 )
 
-[node name="Chest10" parent="Chests" index="14" instance=ExtResource( 8 )]
+[node name="Chest10" parent="Chests" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 352, 1744 )
 
-[node name="Chest18" parent="Chests" index="15" instance=ExtResource( 8 )]
+[node name="Chest11" parent="Chests" index="10" instance=ExtResource( 8 )]
 
-position = Vector2( -464, 1408 )
+position = Vector2( 2336, 1136 )
 
-[node name="Chest12" parent="Chests" index="16" instance=ExtResource( 8 )]
+[node name="Chest12" parent="Chests" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 1936, 3152 )
 
-[node name="Chest13" parent="Chests" index="17" instance=ExtResource( 8 )]
+[node name="Chest13" parent="Chests" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 576, 2928 )
+
+[node name="Chest14" parent="Chests" index="13" instance=ExtResource( 8 )]
+
+position = Vector2( -160, 496 )
+
+[node name="Chest15" parent="Chests" index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 2528, 448 )
+
+[node name="Chest16" parent="Chests" index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 2320, 2928 )
+
+[node name="Chest17" parent="Chests" index="16" instance=ExtResource( 8 )]
+
+position = Vector2( -136, 2808 )
+
+[node name="Chest18" parent="Chests" index="17" instance=ExtResource( 8 )]
+
+position = Vector2( -464, 1408 )
 
 [node name="Chest19" parent="Chests" index="18" instance=ExtResource( 8 )]
 
