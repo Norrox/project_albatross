@@ -13,7 +13,7 @@
 [ext_resource path="res://scriptable_objects/crate/Crate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=12]
 [ext_resource path="res://BGMusic.gd" type="Script" id=13]
-[ext_resource path="res://wav/one shots/ready.wav" type="AudioStream" id=14]
+[ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=14]
 [ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=15]
 [ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=16]
 [ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=17]
@@ -107,7 +107,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -453,6 +453,7 @@ position = Vector2( -312, 1120 )
 
 [node name="Chests" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( -16, 0 )
 
 [node name="Chest1" parent="Chests" index="0" instance=ExtResource( 8 )]
@@ -2079,8 +2080,8 @@ script = ExtResource( 13 )
 
 stream = ExtResource( 14 )
 volume_db = 0.0
-pitch_scale = 1.0
-autoplay = true
+pitch_scale = 0.7
+autoplay = false
 mix_target = 0
 bus = "Master"
 
@@ -2098,8 +2099,6 @@ process_parent = false
 physics_process_parent = false
 
 [node name="Background" type="Node2D" parent="." index="11"]
-
-editor/display_folded = true
 
 [node name="Clouds" type="Node2D" parent="Background" index="0"]
 
@@ -3021,8 +3020,6 @@ position = Vector2( -672, 496 )
 
 [node name="Space" type="Node2D" parent="Background" index="2"]
 
-editor/display_folded = true
-
 [node name="PitColor" type="Sprite" parent="Background/Space" index="0"]
 
 position = Vector2( 1008, -168 )
@@ -3034,8 +3031,8 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor2" type="Sprite" parent="Background/Space" index="1"]
 
-position = Vector2( -544, -104 )
-scale = Vector2( 17, 7.75 )
+position = Vector2( -640, -104 )
+scale = Vector2( 20, 7.75 )
 z_index = -10
 z_as_relative = false
 texture = ExtResource( 26 )

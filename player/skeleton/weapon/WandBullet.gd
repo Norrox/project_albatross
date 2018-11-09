@@ -4,7 +4,6 @@ const muzzle_flash = preload("res://player/skeleton/weapon/Wand_Flash.tscn")
 const on_hit_particle = preload("res://player/skeleton/Red_Hit_Particle.tscn")
 
 func _ready():
-	._ready()
 	SPEED = 200
 	FORWARD_AMT = 27
 
