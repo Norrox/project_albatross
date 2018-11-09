@@ -44,7 +44,7 @@ shader_param/size_screen = null
 shader_param/scanline_alpha = null
 shader_param/lines_velocity = null
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -70,6 +70,8 @@ _sections_unfolded = [ "Animation", "Offset", "Z Index" ]
 [node name="Fog" parent="." index="1" instance=ExtResource( 3 )]
 
 material = SubResource( 1 )
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 1152.0
 margin_bottom = 648.0
 script = null
@@ -817,10 +819,9 @@ _sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visi
 
 [node name="FX" type="Node2D" parent="." index="12"]
 
-editor/display_folded = true
-
 [node name="CRT" parent="FX" index="0" instance=ExtResource( 3 )]
 
+visible = false
 margin_left = 284.0
 margin_top = 108.0
 margin_right = 868.0
@@ -829,6 +830,7 @@ script = null
 
 [node name="ScanLines" parent="FX" index="1" instance=ExtResource( 3 )]
 
+visible = false
 material = SubResource( 2 )
 margin_left = 284.0
 margin_top = 108.0
