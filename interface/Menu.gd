@@ -4,11 +4,16 @@ var button_busy = false
 var quick_match_started = false
 
 func _ready():
+	return
 	if OS.get_name() == 'Windows':
 		get_tree().change_scene('res://Game.tscn')
+		#get_tree().change_scene('res://GrassLevel.tscn')
 
 func _load_game():
-	get_tree().change_scene('res://Game.tscn')
+	if Settings.match_1v1:
+		get_tree().change_scene('res://GrassLevel.tscn')
+	else:
+		get_tree().change_scene('res://Game.tscn')
 
 func _on_SpinBox_value_changed(value):
 	print("~~~~~~~~~~~MIN_PLAYERS_CHANGED~~~~~~~~~" + str(value))
@@ -59,10 +64,44 @@ func wait_till_signed_in():
 
 func _on_SkeletonButton_pressed():
 	Settings.player_type = Settings.PLAYER_TYPE.skeleton
+	$Panel/PlayerStats/PlayerEnlarged.texture = load('res://player/skeleton/idle1.png')
+	$Panel/PlayerStats/PlayerEnlarged.offset = Vector2(0,-0.5)
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.texture = load('res://player/skeleton/weapon/weapon.png')
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.offset = Vector2(0,-0.5)
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.rotation = -18.5
+	$Panel/PlayerStats/Text/WeaponName.text = 'BLOOD WAND'
+	$Panel/PlayerStats/Text/WeaponDescriptionPos.text = 'Expands\n\nNo Recoil'
+	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nSlow'
 
 func _on_HumanButton_pressed():
 	Settings.player_type = Settings.PLAYER_TYPE.human
+	$Panel/PlayerStats/PlayerEnlarged.texture = load('res://player/human/sprites/Idle_idle_0.png')
+	$Panel/PlayerStats/PlayerEnlarged.offset = Vector2(-1,0)
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.texture = load('res://player/human/weapons/rifle/main gun_Gun_0.png')
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.offset = Vector2(-1,-2)
+	$Panel/PlayerStats/Text/WeaponName.text = 'PULSE RIFLE'
+	$Panel/PlayerStats/Text/WeaponDescriptionPos.text = 'Fast\n\nMove Steady'
+	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nStand Recoil'
 
 
 func _on_BanditButton_pressed():
 	Settings.player_type = Settings.PLAYER_TYPE.bandit
+	$Panel/PlayerStats/PlayerEnlarged.texture = load('res://player/bandit/idle_idle_0.png')
+	$Panel/PlayerStats/PlayerEnlarged.offset = Vector2(0,-1)
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.texture = load('res://player/bandit/weapon/gun_gun_0.png')
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.offset = Vector2(-2.5,-4)
+	$Panel/PlayerStats/PlayerEnlarged/Weapon.rotation = 0
+	$Panel/PlayerStats/Text/WeaponName.text = 'LEAD PELLET'
+	$Panel/PlayerStats/Text/WeaponDescriptionPos.text = 'Fastest\n\nNo Recoil'
+	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nSmall'
+
+func _on_Match1v1Button_pressed():
+	Settings.match_1v1 = true
+	Network.MIN_PLAYERS = 1
+	Network.MAX_PLAYERS = 2
+
+
+func _on_MatchFFAButton_pressed():
+	Settings.match_1v1 = false
+	Network.MIN_PLAYERS = 3
+	Network.MAX_PLAYERS = 8

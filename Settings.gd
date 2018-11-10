@@ -1,7 +1,5 @@
 extends Node2D
 
-var enable_ultra_graphics = false
-
 enum PLAYER_TYPE {
 	human,
 	skeleton,
@@ -9,6 +7,5 @@ enum PLAYER_TYPE {
 	}
 
 var player_type = PLAYER_TYPE.skeleton
-
-func _ready():
-	pass
+var enable_ultra_graphics = false
+var match_1v1 = true

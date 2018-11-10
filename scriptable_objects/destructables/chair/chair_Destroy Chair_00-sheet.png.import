@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/chair_Destroy Chair_00-sheet.png-211e556ea56e6f056871f13211607057.stex"
+
+[deps]
+
+source_file="res://scriptable_objects/destructables/chair/chair_Destroy Chair_00-sheet.png"
+dest_files=[ "res://.import/chair_Destroy Chair_00-sheet.png-211e556ea56e6f056871f13211607057.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

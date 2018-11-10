@@ -44,7 +44,7 @@ func _on_body_entered(body):
 	elif 'Chest' in body.name:
 		#OS.delay_msec(HIT_DELAY)
 		body.open(player)
-	elif 'Crate' in body.name:
+	elif 'Destructable' in body.name or 'Crate' in body.name:
 		#OS.delay_msec(HIT_DELAY)
 		body.hit()
 		destroy(body)

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const JITTER = 1
-const MOVE_SPEED = 150.0
+const MOVE_SPEED = 180.0
 const MAX_HP = 100
 const ROLL_WAIT_TIME = 0.5
 const MIN_MOVE_DIST = 5
@@ -23,6 +23,7 @@ var rolling = false
 var can_roll = true
 var dead = false
 var lives = 3
+var eliminated = false
 
 var slave_info = {}
 var slave_animation = 'idle'
@@ -183,7 +184,12 @@ func damage(value):
 		health_points -= value
 		if health_points <= 0:
 			health_points = 0
-			_die()
+			if lives > 1:
+				_die()
+			else:
+				print(name + ' eliminated')
+				eliminated = true
+				_die(false, false)
 		update_reliable('update_player_health')
 		_update_health_bar(health_points)
 
@@ -201,6 +207,7 @@ func _die(skip_anim=false, respawn=true):
 		update_ui_hearts(lives)
 		dead = true
 		if !Network.force_local:
+			Network.self_data.lives = lives
 			update_reliable('update_player_death')
 	
 	if !skip_anim:		
@@ -217,6 +224,8 @@ func hide_player():
 	$CollisionShape2D.disabled = true	
 	
 func choose_spawn_loc():
+	if eliminated:
+		return
 	if is_master:
 		randomize()
 		var random = randi()%8+1

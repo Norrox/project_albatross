@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crate_Destroy Crate_00-sheet.png-b47fa898a5e05a9026aadef2bcfb7058.stex"
+path="res://.import/crate_Destroy Crate_00-sheet.png-e6b51e234a634e06afe0483edd05163d.stex"
 
 [deps]
 
-source_file="res://scriptable_objects/crate/crate_Destroy Crate_00-sheet.png"
-dest_files=[ "res://.import/crate_Destroy Crate_00-sheet.png-b47fa898a5e05a9026aadef2bcfb7058.stex" ]
+source_file="res://scriptable_objects/destructables/crate/crate_Destroy Crate_00-sheet.png"
+dest_files=[ "res://.import/crate_Destroy Crate_00-sheet.png-e6b51e234a634e06afe0483edd05163d.stex" ]
 
 [params]
 

@@ -10,7 +10,7 @@ var signing_in_busy = false
 var connected_peers = ''
 var players = { }
 var players_order = []
-var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', type = null}
+var self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', lives = 3, type = null}
 var master_ID = 'No_Master'
 var master_participant_ID = 'No_participant_ID'
 var chests = []
@@ -19,6 +19,8 @@ var gpgs = null
 var game_started = false
 var force_local = false
 var room_ID = 'No_Room'
+
+var victorious = false
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")
@@ -68,6 +70,11 @@ func connected_init_match():
 	game_started = true
 	gpgs.rtmHideWaitingRoomUI()
 	$'/root/Menu/'._load_game()		
+	
+func check_win_condition():
+	if connected_peers.split(',').size() == 0:
+		print(self_data.name + ' wins')
+		victorious = true
 
 func get_IDs():
 	return get_all_participant_IDs().split(',')
@@ -111,6 +118,7 @@ func set_peers_list():
 			connected_peers += peer_id + ','
 	connected_peers = connected_peers.substr(0, connected_peers.length()-1)
 	print('connected peers: ' + str(connected_peers))
+	check_win_condition()
 	
 func remove_from_connected(participant_ID):
 	print('updating connected_peers')
@@ -169,7 +177,13 @@ func update_player_health(sender_ID, data_var):
 			
 func update_player_death(sender_ID, data_var):
 	print(data_var.name  + ' died')
-	$'/root/'.get_node(players[sender_ID].name)._die()
+	players[sender_ID].lives -= 1
+	if players[sender_ID].lives > 0:
+		$'/root/'.get_node(players[sender_ID].name)._die()
+	else:
+		$'/root/'.get_node(players[sender_ID].name)._die(false, false)
+		remove_from_connected(sender_ID)
+		check_win_condition()
 	
 func spawn_bullet(sender_ID, data_var):
 	$'/root/'.get_node(players[sender_ID].name).get_node('Pivot').get_node('Rifle')._shoot(data_var.p, data_var.r, data_var.d)
@@ -214,8 +228,7 @@ func send_unreliable_data_to_all(data):
 	
 func google_clear_cache():
 	gpgs.clearCache()
-	
-### google callbacks ###	
+
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Succeeded!")
 	signed_in = true
@@ -257,9 +270,7 @@ func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 			update_player_animation(sender_ID, data_var)
 		else:
 			update_player_positions(sender_ID, data_var)
-### end google callbacks ###
 
-### self_data update functions ###
 func update_position(pos):
 	players[master_participant_ID].position = pos
 
@@ -280,4 +291,3 @@ func update_action(action):
 	
 func update_player_type(player_type):
 	players[master_participant_ID].type = player_type
-### end self_data update functions ###

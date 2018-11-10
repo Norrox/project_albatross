@@ -1,0 +1,1889 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://interface/Canvas/Canvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tilemap/GrasslandGround.tres" type="TileSet" id=3]
+[ext_resource path="res://tilemap/env_collision.tres" type="TileSet" id=4]
+[ext_resource path="res://tilemap/env_top.tres" type="TileSet" id=5]
+[ext_resource path="res://scriptable_objects/chest/Chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scriptable_objects/destructables/red table/RedTable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scriptable_objects/destructables/table/DestructableTable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scriptable_objects/destructables/rock/DestructableRock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scriptable_objects/destructables/chair/DestructableChai.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scriptable_objects/destructables/stool/DestructableStool.tscn" type="PackedScene" id=11]
+[ext_resource path="res://tilemap/background color grass.png" type="Texture" id=12]
+[ext_resource path="res://tilemap/tree.png" type="Texture" id=13]
+[ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=14]
+[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=15]
+[ext_resource path="res://BGMusic.gd" type="Script" id=16]
+[ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=17]
+
+[sub_resource type="Environment" id=1]
+
+background_mode = 4
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 1.3
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 1.0
+glow_strength = 1.0
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = true
+adjustment_brightness = 0.45
+adjustment_contrast = 2.0
+adjustment_saturation = 0.9
+_sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
+
+[node name="Game" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="TileMaps" type="Node2D" parent="." index="1"]
+
+[node name="Grassland" type="TileMap" parent="TileMaps" index="0"]
+
+scale = Vector2( 2, 2 )
+z_index = -9
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2048
+collision_mask = 4096
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1048566, 30, 0, -983030, 105, 0, -983017, 104, 0, -917494, 105, 0, -917492, -1073741721, 0, -917491, 102, 0, -917490, 102, 0, -917489, 102, 0, -917488, 102, 0, -917487, 102, 0, -917486, 102, 0, -917485, 102, 0, -917484, 102, 0, -917483, 103, 0, -917481, 104, 0, -851958, 105, 0, -851956, 104, 0, -851955, 30, 0, -851954, -1073741815, 0, -851953, 8, 0, -851952, 8, 0, -851951, 8, 0, -851950, 8, 0, -851949, 9, 0, -851948, 30, 0, -851947, 105, 0, -851945, 104, 0, -786422, 105, 0, -786420, 104, 0, -786419, 30, 0, -786418, 21, 0, -786417, 22, 0, -786416, 22, 0, -786415, 22, 0, -786414, 22, 0, -786413, 23, 0, -786412, 30, 0, -786411, 105, 0, -786409, 104, 0, -720886, 105, 0, -720884, 104, 0, -720883, 30, 0, -720882, 1610612745, 0, -720881, 1610612744, 0, -720880, 83, 0, -720879, 84, 0, -720878, 1610612744, 0, -720877, -1610612727, 0, -720876, 30, 0, -720875, 105, 0, -720873, 104, 0, -655350, 105, 0, -655348, 104, 0, -655347, 30, 0, -655346, 30, 0, -655345, 30, 0, -655344, 21, 0, -655343, 49, 0, -655342, 30, 0, -655341, 30, 0, -655340, 30, 0, -655339, 105, 0, -655337, 104, 0, -589814, 105, 0, -589809, 30, 0, -589808, 21, 0, -589807, 49, 0, -589806, 30, 0, -589801, 104, 0, -524278, 105, 0, -524273, 104, 0, -524272, 21, 0, -524271, 49, 0, -524270, 105, 0, -524265, 104, 0, -458742, 30, 0, -458741, 102, 0, -458740, 102, 0, -458739, 103, 0, -458737, 104, 0, -458736, 21, 0, -458735, 49, 0, -458734, 105, 0, -458732, -1073741721, 0, -458731, 102, 0, -458730, 102, 0, -393203, 105, 0, -393201, 104, 0, -393200, 21, 0, -393199, 49, 0, -393198, 105, 0, -393196, 104, 0, -196616, 105, 0, -262101, 104, 0, -131080, 105, 0, -131078, -1073741721, 0, -131077, 102, 0, -131076, 102, 0, -131075, 102, 0, -131074, 102, 0, -131073, 102, 0, -196608, 102, 0, -196607, 102, 0, -196606, 102, 0, -196605, 102, 0, -196604, 102, 0, -196603, 102, 0, -196602, 102, 0, -196601, 102, 0, -196600, 102, 0, -196599, 102, 0, -196598, 102, 0, -196597, 102, 0, -196596, 102, 0, -196595, 102, 0, -196594, 102, 0, -196593, 102, 0, -196592, 102, 0, -196591, 102, 0, -196590, 102, 0, -196589, 102, 0, -196588, 102, 0, -196587, 102, 0, -196586, 102, 0, -196585, 102, 0, -196584, 102, 0, -196583, 102, 0, -196582, 102, 0, -196581, 102, 0, -196580, 102, 0, -196579, 102, 0, -196578, 102, 0, -196577, 102, 0, -196576, 102, 0, -196575, 102, 0, -196574, 102, 0, -196573, 102, 0, -196572, 102, 0, -196571, 102, 0, -196570, 102, 0, -196569, 102, 0, -196568, 102, 0, -196567, 103, 0, -196565, 104, 0, -65542, 104, 0, -131056, 38, 0, -131055, 9, 0, -131031, 105, 0, -10, 105, 0, -6, 104, 0, -65520, 21, 0, -65519, 23, 0, -65495, 105, 0, -65491, 104, 0, 65526, 105, 0, 65528, -1073741721, 0, 65529, 102, 0, 15, 94, 0, 16, 21, 0, 17, 49, 0, 18, 94, 0, 42, 102, 0, 43, 103, 0, 45, 104, 0, 131062, 105, 0, 131064, 104, 0, 65551, 95, 0, 65552, 21, 0, 65553, 49, 0, 65554, 95, 0, 65579, 105, 0, 65581, 104, 0, 196598, 105, 0, 196600, 104, 0, 131087, 94, 0, 131088, 21, 0, 131089, 49, 0, 131090, 94, 0, 131115, 105, 0, 131117, 104, 0, 262134, 105, 0, 262136, 104, 0, 196613, 96, 0, 196614, 97, 0, 196615, 96, 0, 196616, 97, 0, 196617, 96, 0, 196618, 97, 0, 196619, 96, 0, 196620, 97, 0, 196621, 96, 0, 196622, 97, 0, 196623, 95, 0, 196624, 21, 0, 196625, 49, 0, 196626, 95, 0, 196627, 96, 0, 196628, 97, 0, 196629, 96, 0, 196630, 97, 0, 196631, 96, 0, 196632, 97, 0, 196633, 96, 0, 196634, 97, 0, 196635, 96, 0, 196636, 97, 0, 196637, 96, 0, 196638, 97, 0, 196651, 105, 0, 196653, 104, 0, 327670, 105, 0, 327672, 104, 0, 262148, 38, 0, 262149, 8, 0, 262150, 8, 0, 262151, 8, 0, 262152, 8, 0, 262153, 8, 0, 262154, 8, 0, 262155, 8, 0, 262156, 8, 0, 262157, 8, 0, 262158, 8, 0, 262159, 8, 0, 262160, 73, 0, 262161, 74, 0, 262162, 8, 0, 262163, 8, 0, 262164, 8, 0, 262165, 8, 0, 262166, 8, 0, 262167, 8, 0, 262168, 8, 0, 262169, 8, 0, 262170, 8, 0, 262171, 8, 0, 262172, 8, 0, 262173, 8, 0, 262174, 8, 0, 262175, 40, 0, 262187, 105, 0, 262189, 104, 0, 393206, 105, 0, 393208, 104, 0, 327684, 21, 0, 327685, 22, 0, 327686, 22, 0, 327687, 22, 0, 327688, 22, 0, 327689, 22, 0, 327690, 22, 0, 327691, 22, 0, 327692, 22, 0, 327693, 22, 0, 327694, 22, 0, 327695, 22, 0, 327696, 22, 0, 327697, 22, 0, 327698, 22, 0, 327699, 22, 0, 327700, 22, 0, 327701, 22, 0, 327702, 22, 0, 327703, 22, 0, 327704, 22, 0, 327705, 22, 0, 327706, 22, 0, 327707, 22, 0, 327708, 22, 0, 327709, 22, 0, 327710, 22, 0, 327711, 23, 0, 327723, 105, 0, 327725, 104, 0, 458742, 105, 0, 458744, 104, 0, 393220, 21, 0, 393221, 22, 0, 393222, 22, 0, 393223, 22, 0, 393224, 22, 0, 393225, 22, 0, 393226, 22, 0, 393227, 22, 0, 393228, 22, 0, 393229, 22, 0, 393230, 22, 0, 393231, 22, 0, 393232, 22, 0, 393233, 22, 0, 393234, 22, 0, 393235, 22, 0, 393236, 22, 0, 393237, 22, 0, 393238, 22, 0, 393239, 22, 0, 393240, 22, 0, 393241, 22, 0, 393242, 22, 0, 393243, 22, 0, 393244, 22, 0, 393245, 22, 0, 393246, 22, 0, 393247, 23, 0, 393259, 105, 0, 393261, 104, 0, 524278, 105, 0, 524280, 104, 0, 458756, 21, 0, 458757, 22, 0, 458758, 22, 0, 458759, 22, 0, 458760, 22, 0, 458761, 22, 0, 458762, 22, 0, 458763, 22, 0, 458764, 22, 0, 458765, 22, 0, 458766, 22, 0, 458767, 22, 0, 458768, 22, 0, 458769, 22, 0, 458770, 22, 0, 458771, 22, 0, 458772, 22, 0, 458773, 22, 0, 458774, 22, 0, 458775, 22, 0, 458776, 22, 0, 458777, 22, 0, 458778, 22, 0, 458779, 22, 0, 458780, 22, 0, 458781, 22, 0, 458782, 22, 0, 458783, 23, 0, 458795, 105, 0, 458797, 104, 0, 589814, 105, 0, 589816, 104, 0, 524292, 21, 0, 524293, 22, 0, 524294, 22, 0, 524295, 22, 0, 524296, 22, 0, 524297, 22, 0, 524298, 22, 0, 524299, 22, 0, 524300, 22, 0, 524301, 22, 0, 524302, 22, 0, 524303, 22, 0, 524304, 22, 0, 524305, 22, 0, 524306, 22, 0, 524307, 22, 0, 524308, 22, 0, 524309, 22, 0, 524310, 22, 0, 524311, 22, 0, 524312, 22, 0, 524313, 22, 0, 524314, 22, 0, 524315, 22, 0, 524316, 22, 0, 524317, 22, 0, 524318, 22, 0, 524319, 23, 0, 524331, 105, 0, 524333, 104, 0, 655350, 105, 0, 655352, 104, 0, 589828, 21, 0, 589829, 22, 0, 589830, 22, 0, 589831, 22, 0, 589832, 22, 0, 589833, 22, 0, 589834, 22, 0, 589835, 22, 0, 589836, 22, 0, 589837, 22, 0, 589838, 22, 0, 589839, 22, 0, 589840, 22, 0, 589841, 22, 0, 589842, 22, 0, 589843, 22, 0, 589844, 22, 0, 589845, 22, 0, 589846, 22, 0, 589847, 22, 0, 589848, 22, 0, 589849, 22, 0, 589850, 22, 0, 589851, 22, 0, 589852, 22, 0, 589853, 22, 0, 589854, 22, 0, 589855, 23, 0, 589867, 105, 0, 589869, 104, 0, 720886, 105, 0, 720888, 104, 0, 655364, 21, 0, 655365, 22, 0, 655366, 22, 0, 655367, 22, 0, 655368, 22, 0, 655369, 22, 0, 655370, 22, 0, 655371, 22, 0, 655372, 22, 0, 655373, 22, 0, 655374, 22, 0, 655375, 22, 0, 655376, 22, 0, 655377, 22, 0, 655378, 22, 0, 655379, 22, 0, 655380, 22, 0, 655381, 22, 0, 655382, 22, 0, 655383, 22, 0, 655384, 22, 0, 655385, 22, 0, 655386, 22, 0, 655387, 22, 0, 655388, 22, 0, 655389, 22, 0, 655390, 22, 0, 655391, 23, 0, 655403, 105, 0, 655405, 104, 0, 786422, 105, 0, 786424, 104, 0, 720900, 21, 0, 720901, 22, 0, 720902, 22, 0, 720903, 22, 0, 720904, 22, 0, 720905, 22, 0, 720906, 22, 0, 720907, 22, 0, 720908, 22, 0, 720909, 22, 0, 720910, 22, 0, 720911, 22, 0, 720912, 22, 0, 720913, 22, 0, 720914, 22, 0, 720915, 22, 0, 720916, 22, 0, 720917, 22, 0, 720918, 22, 0, 720919, 22, 0, 720920, 22, 0, 720921, 22, 0, 720922, 22, 0, 720923, 22, 0, 720924, 22, 0, 720925, 22, 0, 720926, 22, 0, 720927, 23, 0, 720939, 105, 0, 720941, 104, 0, 851958, 105, 0, 851960, 104, 0, 786436, 21, 0, 786437, 22, 0, 786438, 22, 0, 786439, 22, 0, 786440, 22, 0, 786441, 22, 0, 786442, 22, 0, 786443, 22, 0, 786444, 22, 0, 786445, 22, 0, 786446, 22, 0, 786447, 22, 0, 786448, 22, 0, 786449, 22, 0, 786450, 22, 0, 786451, 22, 0, 786452, 22, 0, 786453, 22, 0, 786454, 22, 0, 786455, 22, 0, 786456, 22, 0, 786457, 22, 0, 786458, 22, 0, 786459, 22, 0, 786460, 22, 0, 786461, 22, 0, 786462, 22, 0, 786463, 23, 0, 786475, 105, 0, 786477, 104, 0, 917494, 105, 0, 917496, 104, 0, 851972, 21, 0, 851973, 22, 0, 851974, 22, 0, 851975, 22, 0, 851976, 22, 0, 851977, 22, 0, 851978, 22, 0, 851979, 22, 0, 851980, 22, 0, 851981, 22, 0, 851982, 22, 0, 851983, 22, 0, 851984, 22, 0, 851985, 22, 0, 851986, 22, 0, 851987, 22, 0, 851988, 22, 0, 851989, 22, 0, 851990, 22, 0, 851991, 22, 0, 851992, 22, 0, 851993, 22, 0, 851994, 22, 0, 851995, 22, 0, 851996, 22, 0, 851997, 22, 0, 851998, 22, 0, 851999, 23, 0, 852011, 105, 0, 852013, 104, 0, 983030, 105, 0, 983032, 104, 0, 917508, 21, 0, 917509, 22, 0, 917510, 22, 0, 917511, 22, 0, 917512, 22, 0, 917513, 22, 0, 917514, 22, 0, 917515, 22, 0, 917516, 22, 0, 917517, 22, 0, 917518, 22, 0, 917519, 22, 0, 917520, 22, 0, 917521, 22, 0, 917522, 22, 0, 917523, 22, 0, 917524, 22, 0, 917525, 22, 0, 917526, 22, 0, 917527, 22, 0, 917528, 22, 0, 917529, 22, 0, 917530, 22, 0, 917531, 22, 0, 917532, 22, 0, 917533, 22, 0, 917534, 22, 0, 917535, 23, 0, 917547, 105, 0, 917549, 104, 0, 1048566, 105, 0, 1048568, 104, 0, 983044, 34, 0, 983045, 35, 0, 983046, 35, 0, 983047, 35, 0, 983048, 35, 0, 983049, 35, 0, 983050, 35, 0, 983051, 35, 0, 983052, 35, 0, 983053, 35, 0, 983054, 35, 0, 983055, 35, 0, 983056, 35, 0, 983057, 35, 0, 983058, 35, 0, 983059, 35, 0, 983060, 35, 0, 983061, 35, 0, 983062, 35, 0, 983063, 35, 0, 983064, 35, 0, 983065, 35, 0, 983066, 35, 0, 983067, 35, 0, 983068, 35, 0, 983069, 35, 0, 983070, 35, 0, 983071, 36, 0, 983083, 105, 0, 983085, 104, 0, 1114102, 105, 0, 1114104, 104, 0, 1048619, 105, 0, 1048621, 104, 0, 1179638, 105, 0, 1179640, 104, 0, 1114155, 105, 0, 1114157, 104, 0, 1245174, 105, 0, 1245176, 104, 0, 1179691, 105, 0, 1179693, 104, 0, 1310710, 105, 0, 1310712, 104, 0, 1310715, 93, 0, 1245227, 105, 0, 1245229, 104, 0, 1376246, 105, 0, 1376248, 104, 0, 1310763, 105, 0, 1310765, 104, 0, 1441782, 105, 0, 1376301, 104, 0, 1507318, 105, 0, 1507322, 104, 0, 1441833, 105, 0, 1441837, 104, 0, 1572855, 102, 0, 1572856, 103, 0, 1507371, -1073741721, 0, 1507372, 102, 0, 1638392, 105, 0, 1572907, 104, 0, 1703929, 102, 0, 1703930, 102, 0, 1703931, 102, 0, 1703932, 102, 0, 1703933, 102, 0, 1703934, 102, 0, 1703935, 102, 0, 1638400, 102, 0, 1638401, 102, 0, 1638402, 102, 0, 1638403, 102, 0, 1638404, 102, 0, 1638405, 102, 0, 1638406, 102, 0, 1638407, 102, 0, 1638408, 102, 0, 1638409, 102, 0, 1638410, 102, 0, 1638411, 102, 0, 1638412, 102, 0, 1638413, 102, 0, 1638414, 102, 0, 1638415, 102, 0, 1638416, 102, 0, 1638417, 102, 0, 1638418, 102, 0, 1638419, 102, 0, 1638420, 102, 0, 1638421, 102, 0, 1638422, 102, 0, 1638423, 102, 0, 1638424, 102, 0, 1638425, 102, 0, 1638426, 102, 0, 1638427, 102, 0, 1638428, 102, 0, 1638429, 102, 0, 1638430, 102, 0, 1638431, 102, 0, 1638432, 102, 0, 1638433, 102, 0, 1638434, 102, 0, 1638435, 102, 0, 1638436, 102, 0, 1638437, 102, 0, 1638438, 102, 0, 1638439, 102, 0, 1638440, 102, 0, 1638441, 102, 0, 1638442, 102, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Z Index" ]
+
+[node name="Top" type="TileMap" parent="TileMaps" index="1"]
+
+scale = Vector2( 2, 2 )
+z_index = -7
+z_as_relative = false
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2048
+collision_mask = 4096
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -917489, 51, 0, -786419, 42, 0, -786412, 51, 0, -655348, 51, 0, -655340, 42, 0, -524270, 42, 0, -131071, 41, 0, -131062, 42, 0, -131047, 43, 0, -131041, 42, 0, -65528, 43, 0, -65500, 43, 0, 131066, 43, 0, 65573, 41, 0, 262140, 42, 0, 262141, 43, 0, 196613, 42, 0, 196619, 41, 0, 196624, 25, 0, 196647, 43, 0, 327673, 41, 0, 262171, 25, 0, 262182, 42, 0, 327683, 50, 0, 327689, 26, 0, 327712, 89, 0, 393227, 11, 0, 393258, 41, 0, 524285, 42, 0, 458789, 43, 0, 589818, 42, 0, 524291, 42, 0, 589829, 26, 0, 589865, 43, 0, 720897, 41, 0, 786436, 25, 0, 786474, 42, 0, 852002, 53, 0, 983033, 43, 0, 917509, 24, 0, 983050, 26, 0, 983064, 25, 0, 983073, 50, 0, 1114109, 43, 0, 1048586, 43, 0, 1048608, 89, 0, 1179647, 43, 0, 1114114, 42, 0, 1114133, 88, 0, 1114137, 43, 0, 1114152, 43, 0, 1245178, 41, 0, 1179686, 42, 0, 1310757, 43, 0, 1441789, 43, 0, 1376261, 42, 0, 1376277, 41, 0, 1376279, 42, 0 )
+_sections_unfolded = [ "Cell", "Transform", "Z Index" ]
+
+[node name="Walls" type="TileMap" parent="TileMaps" index="2"]
+
+scale = Vector2( 2, 2 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2048
+collision_mask = 4096
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -983028, 0, 0, -983027, 2, 0, -983026, 2, 0, -983025, 2, 0, -983024, 2, 0, -983023, 2, 0, -983022, 2, 0, -983021, 2, 0, -983020, 2, 0, -983019, 3, 0, -524277, 0, 0, -524276, 2, 0, -524275, 3, 0, -524268, 0, 0, -524267, 2, 0, -524266, 3, 0, -196614, 0, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -262137, 2, 0, -262136, 2, 0, -262135, 2, 0, -262134, 2, 0, -262133, 2, 0, -262132, 2, 0, -262131, 2, 0, -262130, 2, 0, -262129, 2, 0, -262128, 5, 0, -262127, 6, 0, -262126, 2, 0, -262125, 2, 0, -262124, 2, 0, -262123, 2, 0, -262122, 2, 0, -262121, 2, 0, -262120, 2, 0, -262119, 2, 0, -262118, 2, 0, -262117, 2, 0, -262116, 2, 0, -262115, 2, 0, -262114, 2, 0, -262113, 2, 0, -262112, 2, 0, -262111, 2, 0, -262110, 2, 0, -262109, 2, 0, -262108, 2, 0, -262107, 2, 0, -262106, 2, 0, -262105, 2, 0, -262104, 2, 0, -262103, 3, 0, -8, 0, 0, -7, 3, 0, -65494, 0, 0, -65493, 3, 0, 1507319, 0, 0, 1507320, 3, 0, 1441835, 0, 0, 1441836, 3, 0, 1638393, 2, 0, 1638394, 2, 0, 1638395, 2, 0, 1638396, 2, 0, 1638397, 2, 0, 1638398, 2, 0, 1638399, 2, 0, 1572864, 2, 0, 1572865, 2, 0, 1572866, 2, 0, 1572867, 2, 0, 1572868, 2, 0, 1572869, 2, 0, 1572870, 2, 0, 1572871, 2, 0, 1572872, 2, 0, 1572873, 2, 0, 1572874, 2, 0, 1572875, 2, 0, 1572876, 2, 0, 1572877, 2, 0, 1572878, 2, 0, 1572879, 2, 0, 1572880, 2, 0, 1572881, 2, 0, 1572882, 2, 0, 1572883, 2, 0, 1572884, 2, 0, 1572885, 2, 0, 1572886, 2, 0, 1572887, 2, 0, 1572888, 2, 0, 1572889, 2, 0, 1572890, 2, 0, 1572891, 2, 0, 1572892, 2, 0, 1572893, 2, 0, 1572894, 2, 0, 1572895, 2, 0, 1572896, 2, 0, 1572897, 2, 0, 1572898, 2, 0, 1572899, 2, 0, 1572900, 2, 0, 1572901, 2, 0, 1572902, 2, 0, 1572903, 2, 0, 1572904, 2, 0, 1572905, 2, 0, 1572906, 3, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Brick" type="TileMap" parent="TileMaps" index="3"]
+
+scale = Vector2( 2, 2 )
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2048
+collision_mask = 4096
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1048565, 0, 0, -1048564, 0, 0, -1048563, 0, 0, -1048562, 0, 0, -1048561, 0, 0, -1048560, 0, 0, -1048559, 0, 0, -1048558, 0, 0, -1048557, 0, 0, -1048556, 0, 0, -1048555, 0, 0, -1048554, 0, 0, -983029, 0, 0, -983018, 0, 0, -917493, 0, 0, -917482, 0, 0, -851957, 0, 0, -851946, 0, 0, -786421, 0, 0, -786410, 0, 0, -720885, 0, 0, -720874, 0, 0, -655349, 0, 0, -655338, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -524274, 0, 0, -524269, 0, 0, -458738, 0, 0, -458733, 0, 0, -393202, 0, 0, -393197, 0, 0, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 1, 0, -327663, 2, 0, -327662, 0, 0, -327661, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327656, 0, 0, -327655, 0, 0, -327654, 0, 0, -327653, 0, 0, -327652, 0, 0, -327651, 0, 0, -327650, 0, 0, -327649, 0, 0, -327648, 0, 0, -327647, 0, 0, -327646, 0, 0, -327645, 0, 0, -327644, 0, 0, -327643, 0, 0, -327642, 0, 0, -327641, 0, 0, -327640, 0, 0, -327639, 0, 0, -327638, 0, 0, -196615, 0, 0, -262102, 0, 0, -131079, 0, 0, -196566, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -131030, 0, 0, -131029, 0, 0, -131028, 0, 0, -9, 0, 0, -65492, 0, 0, 65527, 0, 0, 44, 0, 0, 131063, 0, 0, 65580, 0, 0, 196599, 0, 0, 131116, 0, 0, 262135, 0, 0, 196652, 0, 0, 327671, 0, 0, 262188, 0, 0, 393207, 0, 0, 327724, 0, 0, 458743, 0, 0, 393260, 0, 0, 524279, 0, 0, 458796, 0, 0, 589815, 0, 0, 524332, 0, 0, 655351, 0, 0, 589868, 0, 0, 720887, 0, 0, 655404, 0, 0, 786423, 0, 0, 720940, 0, 0, 851959, 0, 0, 786476, 0, 0, 917495, 0, 0, 852012, 0, 0, 983031, 0, 0, 917548, 0, 0, 1048567, 0, 0, 983084, 0, 0, 1114103, 0, 0, 1048620, 0, 0, 1179639, 0, 0, 1114156, 0, 0, 1245175, 0, 0, 1179692, 0, 0, 1310711, 0, 0, 1245228, 0, 0, 1376247, 0, 0, 1310764, 0, 0, 1441783, 0, 0, 1441784, 0, 0, 1441785, 0, 0, 1376298, 0, 0, 1376299, 0, 0, 1376300, 0, 0, 1507321, 0, 0, 1441834, 0, 0, 1572857, 0, 0, 1572858, 0, 0, 1572859, 0, 0, 1572860, 0, 0, 1572861, 0, 0, 1572862, 0, 0, 1572863, 0, 0, 1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1507349, 0, 0, 1507350, 0, 0, 1507351, 0, 0, 1507352, 0, 0, 1507353, 0, 0, 1507354, 0, 0, 1507355, 0, 0, 1507356, 0, 0, 1507357, 0, 0, 1507358, 0, 0, 1507359, 0, 0, 1507360, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1507363, 0, 0, 1507364, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1507368, 0, 0, 1507369, 0, 0, 1507370, 0, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Spawns" type="Node2D" parent="." index="2"]
+
+[node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
+
+position = Vector2( 88, 320 )
+
+[node name="Spawn2" type="Node2D" parent="Spawns" index="1"]
+
+position = Vector2( 1064, 320 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Chests" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Chest" parent="Chests" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 680, -308 )
+z_index = -1
+
+[node name="Chest12" parent="Chests" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 408, -308 )
+z_index = -1
+
+[node name="Chest2" parent="Chests" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 680, -352 )
+z_index = -1
+
+[node name="Chest11" parent="Chests" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 408, -352 )
+z_index = -1
+
+[node name="Chest3" parent="Chests" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 680, -392 )
+z_index = -1
+
+[node name="Chest13" parent="Chests" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 408, -392 )
+z_index = -1
+
+[node name="Chest4" parent="Chests" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 680, -432 )
+z_index = -1
+
+[node name="Chest5" parent="Chests" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 636, -432 )
+z_index = -1
+
+[node name="Chest6" parent="Chests" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 592, -432 )
+z_index = -1
+
+[node name="Chest7" parent="Chests" index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 548, -432 )
+z_index = -1
+
+[node name="Chest8" parent="Chests" index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 456, -432 )
+z_index = -1
+
+[node name="Chest9" parent="Chests" index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 504, -432 )
+z_index = -1
+
+[node name="Chest10" parent="Chests" index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 408, -432 )
+z_index = -1
+
+[node name="Destructables" type="Node2D" parent="." index="4"]
+
+[node name="Tables" type="Node2D" parent="Destructables" index="0"]
+
+editor/display_folded = true
+
+[node name="DestructableRedTable" parent="Destructables/Tables" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 544, 320 )
+
+[node name="DestructableRedTable2" parent="Destructables/Tables" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 864, 320 )
+
+[node name="DestructableRedTable3" parent="Destructables/Tables" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 282, 320 )
+
+[node name="DestructableRedTable4" parent="Destructables/Tables" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 280, 224 )
+
+[node name="DestructableRedTable5" parent="Destructables/Tables" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 280, 440 )
+
+[node name="DestructableRedTable6" parent="Destructables/Tables" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 864, 448 )
+
+[node name="DestructableRedTable7" parent="Destructables/Tables" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 864, 232 )
+
+[node name="Rocks" type="Node2D" parent="Destructables" index="1"]
+
+[node name="DestructableRock" parent="Destructables/Rocks" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 80, 464 )
+
+[node name="DestructableRock2" parent="Destructables/Rocks" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 1280, 224 )
+
+[node name="DestructableRock3" parent="Destructables/Rocks" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( -48, 16 )
+
+[node name="Chairs" type="Node2D" parent="Destructables" index="2"]
+
+editor/display_folded = true
+
+[node name="DestructableChair" parent="Destructables/Chairs" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 546, 276 )
+
+[node name="DestructableStool" parent="Destructables/Chairs" index="1" instance=ExtResource( 11 )]
+
+position = Vector2( 594, 318 )
+
+[node name="DestructableStool2" parent="Destructables/Chairs" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 546, 362 )
+
+[node name="DestructableStool3" parent="Destructables/Chairs" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 498, 320 )
+
+[node name="DestructableStool4" parent="Destructables/Chairs" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( 336, 320 )
+
+[node name="DestructableStool5" parent="Destructables/Chairs" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( 234, 322 )
+
+[node name="DestructableStool6" parent="Destructables/Chairs" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 816, 320 )
+
+[node name="DestructableStool7" parent="Destructables/Chairs" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 920, 320 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="5"]
+
+visible = false
+position = Vector2( 984, 1627 )
+scale = Vector2( 167.2, 163.7 )
+rect = Rect2( -10, -10, 20, 20 )
+pause_animations = true
+freeze_bodies = true
+pause_particles = true
+pause_animated_sprites = true
+process_parent = false
+physics_process_parent = false
+
+[node name="Background" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Space" type="Node2D" parent="Background" index="0"]
+
+[node name="GrassColor" type="Sprite" parent="Background/Space" index="0"]
+
+position = Vector2( -848, -1064 )
+scale = Vector2( 2844, 2364 )
+z_index = -10
+z_as_relative = false
+texture = ExtResource( 12 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Trees" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+z_index = -4
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Tree2" type="Sprite" parent="Trees" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1120, 112 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree2" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="Tree3" type="Sprite" parent="Trees" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1232, 368 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree3" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="Tree5" type="Sprite" parent="Trees" index="2"]
+
+editor/display_folded = true
+position = Vector2( 832, 688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree5" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree5/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="Tree6" type="Sprite" parent="Trees" index="3"]
+
+editor/display_folded = true
+position = Vector2( -96, 240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree6" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree6/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="Tree7" type="Sprite" parent="Trees" index="4"]
+
+editor/display_folded = true
+position = Vector2( 32, 592 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree7" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree7/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="Tree9" type="Sprite" parent="Trees" index="5"]
+
+editor/display_folded = true
+position = Vector2( 176, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/Tree9" index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/Tree9/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4, 16, 4, 16, 20, 0, 20, -8, 12, -24, -12, -24, -20, -8, -20, 0 )
+
+[node name="tree2" type="Sprite" parent="Trees" index="6"]
+
+position = Vector2( -272, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree3" type="Sprite" parent="Trees" index="7"]
+
+position = Vector2( -176, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree4" type="Sprite" parent="Trees" index="8"]
+
+position = Vector2( -96, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree5" type="Sprite" parent="Trees" index="9"]
+
+position = Vector2( 0, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree185" type="Sprite" parent="Trees" index="10"]
+
+position = Vector2( 0, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree6" type="Sprite" parent="Trees" index="11"]
+
+position = Vector2( 96, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree7" type="Sprite" parent="Trees" index="12"]
+
+position = Vector2( 176, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree8" type="Sprite" parent="Trees" index="13"]
+
+position = Vector2( 256, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree9" type="Sprite" parent="Trees" index="14"]
+
+position = Vector2( 336, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree10" type="Sprite" parent="Trees" index="15"]
+
+position = Vector2( 432, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree11" type="Sprite" parent="Trees" index="16"]
+
+position = Vector2( 544, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree12" type="Sprite" parent="Trees" index="17"]
+
+position = Vector2( 624, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree13" type="Sprite" parent="Trees" index="18"]
+
+position = Vector2( 720, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree14" type="Sprite" parent="Trees" index="19"]
+
+position = Vector2( 816, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree15" type="Sprite" parent="Trees" index="20"]
+
+position = Vector2( 896, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree16" type="Sprite" parent="Trees" index="21"]
+
+position = Vector2( 992, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree17" type="Sprite" parent="Trees" index="22"]
+
+position = Vector2( 1104, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree18" type="Sprite" parent="Trees" index="23"]
+
+position = Vector2( 1200, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree19" type="Sprite" parent="Trees" index="24"]
+
+position = Vector2( 1296, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree20" type="Sprite" parent="Trees" index="25"]
+
+position = Vector2( 1392, 848 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree21" type="Sprite" parent="Trees" index="26"]
+
+position = Vector2( 1488, 800 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree22" type="Sprite" parent="Trees" index="27"]
+
+position = Vector2( 1504, 688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree23" type="Sprite" parent="Trees" index="28"]
+
+position = Vector2( 1504, 576 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree24" type="Sprite" parent="Trees" index="29"]
+
+position = Vector2( 1504, 448 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree25" type="Sprite" parent="Trees" index="30"]
+
+position = Vector2( 1504, 320 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree26" type="Sprite" parent="Trees" index="31"]
+
+position = Vector2( 1504, 208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree28" type="Sprite" parent="Trees" index="32"]
+
+position = Vector2( 1504, 16 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree27" type="Sprite" parent="Trees" index="33"]
+
+position = Vector2( 1504, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree29" type="Sprite" parent="Trees" index="34"]
+
+position = Vector2( 1472, -128 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree30" type="Sprite" parent="Trees" index="35"]
+
+position = Vector2( 1408, -224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree31" type="Sprite" parent="Trees" index="36"]
+
+position = Vector2( 1312, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree32" type="Sprite" parent="Trees" index="37"]
+
+position = Vector2( 1216, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree33" type="Sprite" parent="Trees" index="38"]
+
+position = Vector2( 1136, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree34" type="Sprite" parent="Trees" index="39"]
+
+position = Vector2( 1056, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree39" type="Sprite" parent="Trees" index="40"]
+
+position = Vector2( 800, -544 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree35" type="Sprite" parent="Trees" index="41"]
+
+position = Vector2( 960, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree38" type="Sprite" parent="Trees" index="42"]
+
+position = Vector2( 800, -448 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree37" type="Sprite" parent="Trees" index="43"]
+
+position = Vector2( 816, -352 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree36" type="Sprite" parent="Trees" index="44"]
+
+position = Vector2( 864, -240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree40" type="Sprite" parent="Trees" index="45"]
+
+position = Vector2( 704, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree41" type="Sprite" parent="Trees" index="46"]
+
+position = Vector2( 608, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree42" type="Sprite" parent="Trees" index="47"]
+
+position = Vector2( 528, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree43" type="Sprite" parent="Trees" index="48"]
+
+position = Vector2( 432, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree44" type="Sprite" parent="Trees" index="49"]
+
+position = Vector2( 320, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree45" type="Sprite" parent="Trees" index="50"]
+
+position = Vector2( 288, -448 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree46" type="Sprite" parent="Trees" index="51"]
+
+position = Vector2( 288, -336 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree47" type="Sprite" parent="Trees" index="52"]
+
+position = Vector2( 288, -224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree48" type="Sprite" parent="Trees" index="53"]
+
+position = Vector2( 176, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree49" type="Sprite" parent="Trees" index="54"]
+
+position = Vector2( 80, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree50" type="Sprite" parent="Trees" index="55"]
+
+position = Vector2( -16, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree51" type="Sprite" parent="Trees" index="56"]
+
+position = Vector2( -128, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree52" type="Sprite" parent="Trees" index="57"]
+
+position = Vector2( -256, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree53" type="Sprite" parent="Trees" index="58"]
+
+position = Vector2( -320, -112 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree54" type="Sprite" parent="Trees" index="59"]
+
+position = Vector2( -352, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree55" type="Sprite" parent="Trees" index="60"]
+
+position = Vector2( -352, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree56" type="Sprite" parent="Trees" index="61"]
+
+position = Vector2( -352, 176 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree57" type="Sprite" parent="Trees" index="62"]
+
+position = Vector2( -352, 288 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree58" type="Sprite" parent="Trees" index="63"]
+
+position = Vector2( -352, 400 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree59" type="Sprite" parent="Trees" index="64"]
+
+position = Vector2( -352, 512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree60" type="Sprite" parent="Trees" index="65"]
+
+position = Vector2( -352, 592 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree61" type="Sprite" parent="Trees" index="66"]
+
+position = Vector2( -352, 688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree62" type="Sprite" parent="Trees" index="67"]
+
+position = Vector2( -368, 800 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree63" type="Sprite" parent="Trees" index="68"]
+
+position = Vector2( -448, 704 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree64" type="Sprite" parent="Trees" index="69"]
+
+position = Vector2( -448, 592 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree65" type="Sprite" parent="Trees" index="70"]
+
+position = Vector2( -432, 464 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree66" type="Sprite" parent="Trees" index="71"]
+
+position = Vector2( -448, 352 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree67" type="Sprite" parent="Trees" index="72"]
+
+position = Vector2( -448, 208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree68" type="Sprite" parent="Trees" index="73"]
+
+position = Vector2( -464, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree69" type="Sprite" parent="Trees" index="74"]
+
+position = Vector2( -448, -96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree70" type="Sprite" parent="Trees" index="75"]
+
+position = Vector2( -400, -208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree71" type="Sprite" parent="Trees" index="76"]
+
+position = Vector2( -304, -304 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree72" type="Sprite" parent="Trees" index="77"]
+
+position = Vector2( -160, -336 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree73" type="Sprite" parent="Trees" index="78"]
+
+position = Vector2( -48, -320 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree74" type="Sprite" parent="Trees" index="79"]
+
+position = Vector2( 96, -320 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree75" type="Sprite" parent="Trees" index="80"]
+
+position = Vector2( 160, -432 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree76" type="Sprite" parent="Trees" index="81"]
+
+position = Vector2( 208, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree77" type="Sprite" parent="Trees" index="82"]
+
+position = Vector2( 288, -688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree78" type="Sprite" parent="Trees" index="83"]
+
+position = Vector2( 432, -704 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree79" type="Sprite" parent="Trees" index="84"]
+
+position = Vector2( 592, -672 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree80" type="Sprite" parent="Trees" index="85"]
+
+position = Vector2( 720, -704 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree81" type="Sprite" parent="Trees" index="86"]
+
+position = Vector2( 864, -672 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree82" type="Sprite" parent="Trees" index="87"]
+
+position = Vector2( 928, -544 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree83" type="Sprite" parent="Trees" index="88"]
+
+position = Vector2( 944, -400 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree84" type="Sprite" parent="Trees" index="89"]
+
+position = Vector2( 1056, -336 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree85" type="Sprite" parent="Trees" index="90"]
+
+position = Vector2( 1200, -320 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree86" type="Sprite" parent="Trees" index="91"]
+
+position = Vector2( 1344, -368 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree87" type="Sprite" parent="Trees" index="92"]
+
+position = Vector2( 1504, -384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree88" type="Sprite" parent="Trees" index="93"]
+
+position = Vector2( 1632, -272 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree89" type="Sprite" parent="Trees" index="94"]
+
+position = Vector2( 1600, -160 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree90" type="Sprite" parent="Trees" index="95"]
+
+position = Vector2( 1664, -48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree91" type="Sprite" parent="Trees" index="96"]
+
+position = Vector2( 1648, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree92" type="Sprite" parent="Trees" index="97"]
+
+position = Vector2( 1616, 224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree93" type="Sprite" parent="Trees" index="98"]
+
+position = Vector2( 1600, 336 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree94" type="Sprite" parent="Trees" index="99"]
+
+position = Vector2( 1616, 448 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree95" type="Sprite" parent="Trees" index="100"]
+
+position = Vector2( 1616, 544 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree96" type="Sprite" parent="Trees" index="101"]
+
+position = Vector2( 1664, 704 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree97" type="Sprite" parent="Trees" index="102"]
+
+position = Vector2( 1600, 832 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree98" type="Sprite" parent="Trees" index="103"]
+
+position = Vector2( 1504, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree99" type="Sprite" parent="Trees" index="104"]
+
+position = Vector2( 1344, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree100" type="Sprite" parent="Trees" index="105"]
+
+position = Vector2( 1216, 944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree101" type="Sprite" parent="Trees" index="106"]
+
+position = Vector2( 1088, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree102" type="Sprite" parent="Trees" index="107"]
+
+position = Vector2( 944, 976 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree103" type="Sprite" parent="Trees" index="108"]
+
+position = Vector2( 816, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree104" type="Sprite" parent="Trees" index="109"]
+
+position = Vector2( 672, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree105" type="Sprite" parent="Trees" index="110"]
+
+position = Vector2( 576, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree106" type="Sprite" parent="Trees" index="111"]
+
+position = Vector2( 432, 992 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree107" type="Sprite" parent="Trees" index="112"]
+
+position = Vector2( 304, 960 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree108" type="Sprite" parent="Trees" index="113"]
+
+position = Vector2( 192, 944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree109" type="Sprite" parent="Trees" index="114"]
+
+position = Vector2( 80, 944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree110" type="Sprite" parent="Trees" index="115"]
+
+position = Vector2( -48, 976 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree111" type="Sprite" parent="Trees" index="116"]
+
+position = Vector2( -160, 944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree112" type="Sprite" parent="Trees" index="117"]
+
+position = Vector2( -272, 976 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree113" type="Sprite" parent="Trees" index="118"]
+
+position = Vector2( -400, 928 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree114" type="Sprite" parent="Trees" index="119"]
+
+position = Vector2( -544, 832 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree115" type="Sprite" parent="Trees" index="120"]
+
+position = Vector2( -608, 688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree116" type="Sprite" parent="Trees" index="121"]
+
+position = Vector2( -640, 864 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree117" type="Sprite" parent="Trees" index="122"]
+
+position = Vector2( -560, 992 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree118" type="Sprite" parent="Trees" index="123"]
+
+position = Vector2( -432, 1104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree119" type="Sprite" parent="Trees" index="124"]
+
+position = Vector2( -304, 1200 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree120" type="Sprite" parent="Trees" index="125"]
+
+position = Vector2( -208, 1088 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree121" type="Sprite" parent="Trees" index="126"]
+
+position = Vector2( -32, 1120 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree122" type="Sprite" parent="Trees" index="127"]
+
+position = Vector2( 96, 1072 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree123" type="Sprite" parent="Trees" index="128"]
+
+position = Vector2( 240, 1104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree124" type="Sprite" parent="Trees" index="129"]
+
+position = Vector2( 432, 1104 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree125" type="Sprite" parent="Trees" index="130"]
+
+position = Vector2( 560, 1088 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree126" type="Sprite" parent="Trees" index="131"]
+
+position = Vector2( 560, 1088 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree127" type="Sprite" parent="Trees" index="132"]
+
+position = Vector2( 784, 1072 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree128" type="Sprite" parent="Trees" index="133"]
+
+position = Vector2( 976, 1088 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree129" type="Sprite" parent="Trees" index="134"]
+
+position = Vector2( 1152, 1168 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree130" type="Sprite" parent="Trees" index="135"]
+
+position = Vector2( 1264, 1136 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree131" type="Sprite" parent="Trees" index="136"]
+
+position = Vector2( 1408, 1056 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree132" type="Sprite" parent="Trees" index="137"]
+
+position = Vector2( 1632, 1184 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree133" type="Sprite" parent="Trees" index="138"]
+
+position = Vector2( 1696, 1024 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree134" type="Sprite" parent="Trees" index="139"]
+
+position = Vector2( 1744, 864 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree135" type="Sprite" parent="Trees" index="140"]
+
+position = Vector2( 1776, 688 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree136" type="Sprite" parent="Trees" index="141"]
+
+position = Vector2( 1744, 544 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree137" type="Sprite" parent="Trees" index="142"]
+
+position = Vector2( 1776, 368 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree138" type="Sprite" parent="Trees" index="143"]
+
+position = Vector2( 1872, 192 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree139" type="Sprite" parent="Trees" index="144"]
+
+position = Vector2( 1744, 208 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree140" type="Sprite" parent="Trees" index="145"]
+
+position = Vector2( 1904, 448 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree141" type="Sprite" parent="Trees" index="146"]
+
+position = Vector2( 1808, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree142" type="Sprite" parent="Trees" index="147"]
+
+position = Vector2( 1824, -224 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree143" type="Sprite" parent="Trees" index="148"]
+
+position = Vector2( 1936, -96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree144" type="Sprite" parent="Trees" index="149"]
+
+position = Vector2( 1728, -432 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree145" type="Sprite" parent="Trees" index="150"]
+
+position = Vector2( 1488, -496 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree146" type="Sprite" parent="Trees" index="151"]
+
+position = Vector2( 1632, -560 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree147" type="Sprite" parent="Trees" index="152"]
+
+position = Vector2( 1856, -384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree148" type="Sprite" parent="Trees" index="153"]
+
+position = Vector2( 1344, -512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree149" type="Sprite" parent="Trees" index="154"]
+
+position = Vector2( 1152, -512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree150" type="Sprite" parent="Trees" index="155"]
+
+position = Vector2( 1216, -656 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree151" type="Sprite" parent="Trees" index="156"]
+
+position = Vector2( 1056, -672 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree152" type="Sprite" parent="Trees" index="157"]
+
+position = Vector2( 928, -832 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree153" type="Sprite" parent="Trees" index="158"]
+
+position = Vector2( 736, -928 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree154" type="Sprite" parent="Trees" index="159"]
+
+position = Vector2( 784, -800 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree155" type="Sprite" parent="Trees" index="160"]
+
+position = Vector2( 592, -832 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree156" type="Sprite" parent="Trees" index="161"]
+
+position = Vector2( 448, -944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree157" type="Sprite" parent="Trees" index="162"]
+
+position = Vector2( 464, -816 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree158" type="Sprite" parent="Trees" index="163"]
+
+position = Vector2( 352, -800 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree159" type="Sprite" parent="Trees" index="164"]
+
+position = Vector2( 176, -784 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree160" type="Sprite" parent="Trees" index="165"]
+
+position = Vector2( 80, -720 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree161" type="Sprite" parent="Trees" index="166"]
+
+position = Vector2( 112, -944 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree162" type="Sprite" parent="Trees" index="167"]
+
+position = Vector2( -48, -832 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree163" type="Sprite" parent="Trees" index="168"]
+
+position = Vector2( -64, -640 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree164" type="Sprite" parent="Trees" index="169"]
+
+position = Vector2( 32, -464 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree165" type="Sprite" parent="Trees" index="170"]
+
+position = Vector2( -176, -464 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree166" type="Sprite" parent="Trees" index="171"]
+
+position = Vector2( -384, -528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree167" type="Sprite" parent="Trees" index="172"]
+
+position = Vector2( -288, -624 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree168" type="Sprite" parent="Trees" index="173"]
+
+position = Vector2( -432, -400 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree169" type="Sprite" parent="Trees" index="174"]
+
+position = Vector2( -656, -512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree170" type="Sprite" parent="Trees" index="175"]
+
+position = Vector2( -496, -736 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree171" type="Sprite" parent="Trees" index="176"]
+
+position = Vector2( -496, -736 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree172" type="Sprite" parent="Trees" index="177"]
+
+position = Vector2( -592, -288 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree173" type="Sprite" parent="Trees" index="178"]
+
+position = Vector2( -544, -112 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree174" type="Sprite" parent="Trees" index="179"]
+
+position = Vector2( -720, -48 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree175" type="Sprite" parent="Trees" index="180"]
+
+position = Vector2( -624, 112 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree176" type="Sprite" parent="Trees" index="181"]
+
+position = Vector2( -624, 112 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree177" type="Sprite" parent="Trees" index="182"]
+
+position = Vector2( -576, 240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree178" type="Sprite" parent="Trees" index="183"]
+
+position = Vector2( -576, 400 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree179" type="Sprite" parent="Trees" index="184"]
+
+position = Vector2( -576, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree180" type="Sprite" parent="Trees" index="185"]
+
+position = Vector2( -704, 544 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree181" type="Sprite" parent="Trees" index="186"]
+
+position = Vector2( -768, 384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree182" type="Sprite" parent="Trees" index="187"]
+
+position = Vector2( -736, 256 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree183" type="Sprite" parent="Trees" index="188"]
+
+position = Vector2( -736, 256 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree184" type="Sprite" parent="Trees" index="189"]
+
+position = Vector2( -736, 256 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ReadyOneShot" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 0.7
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 16 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+
+environment = SubResource( 1 )
+script = ExtResource( 17 )
+
+

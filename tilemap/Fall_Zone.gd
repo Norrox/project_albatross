@@ -9,7 +9,12 @@ func _on_body_entered(body):
 		body.set_process(false)
 		body.get_node('AnimationPlayer').play('fall')
 		yield(body.get_node('AnimationPlayer'), 'animation_finished')
-		body._die(true)
+		if body.lives > 1:
+			body._die(true)
+		else:
+			print(body.name + 'eliminated')
+			body.eliminated = true
+			body._die(true,false)
 		while body.dead:
 			yield(get_tree().create_timer(0.02),'timeout')
 		body.set_process(true)

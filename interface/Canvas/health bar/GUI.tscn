@@ -3,7 +3,7 @@
 [ext_resource path="res://interface/Canvas/health bar/bar-background.png" type="Texture" id=1]
 [ext_resource path="res://interface/Canvas/health bar/bar-fill.png" type="Texture" id=2]
 
-[node name="GUI" type="Control" index="0"]
+[node name="GUI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -56,7 +56,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Textures" ]
 
 [node name="Name" type="Node2D" parent="." index="1"]
 
-z_index = -5
+z_index = -8
 z_as_relative = false
 _sections_unfolded = [ "Transform", "Z Index" ]
 

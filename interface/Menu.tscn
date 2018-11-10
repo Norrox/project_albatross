@@ -1,43 +1,44 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
 [ext_resource path="res://hard_black.png" type="Texture" id=2]
-[ext_resource path="res://interface/Canvas/FX/CRT.tscn" type="PackedScene" id=3]
-[ext_resource path="res://interface/Canvas/FX/fog.shader" type="Shader" id=4]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=5]
-[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=6]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=7]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=8]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=9]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=10]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=11]
-[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=12]
-[ext_resource path="res://interface/fonts/montserrat_eb_32.tres" type="DynamicFont" id=13]
-[ext_resource path="res://interface/albatross_logo.png" type="Texture" id=14]
-[ext_resource path="res://interface/panel.png" type="Texture" id=15]
-[ext_resource path="res://interface/parchment.png" type="Texture" id=16]
-[ext_resource path="res://player/skeleton/idle1.png" type="Texture" id=17]
-[ext_resource path="res://player/skeleton/weapon/weapon.png" type="Texture" id=18]
-[ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=19]
-[ext_resource path="res://player/bandit/idle_idle_0.png" type="Texture" id=20]
-[ext_resource path="res://white.png" type="Texture" id=21]
-[ext_resource path="res://player/human/sprites/Idle_idle_0.png" type="Texture" id=22]
-[ext_resource path="res://interface/play-button-filetypepng-1.png" type="Texture" id=23]
-[ext_resource path="res://interface/play-button-pressed.png" type="Texture" id=24]
-[ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=25]
-[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=26]
+[ext_resource path="res://interface/fonts/montserrat_eb_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://interface/albatross_logo.png" type="Texture" id=4]
+[ext_resource path="res://black.png" type="Texture" id=5]
+[ext_resource path="res://interface/Canvas/FX/CRT.tscn" type="PackedScene" id=6]
+[ext_resource path="res://interface/Canvas/FX/fog.shader" type="Shader" id=7]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=8]
+[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=9]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=10]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=11]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=12]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=13]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=14]
+[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=15]
+[ext_resource path="res://interface/Canvas/Panel.tscn" type="PackedScene" id=16]
+[ext_resource path="res://interface/parchment.png" type="Texture" id=17]
+[ext_resource path="res://player/skeleton/idle1.png" type="Texture" id=18]
+[ext_resource path="res://player/skeleton/weapon/weapon.png" type="Texture" id=19]
+[ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=20]
+[ext_resource path="res://interface/play-button-filetypepng-1.png" type="Texture" id=21]
+[ext_resource path="res://interface/play-button-pressed.png" type="Texture" id=22]
+[ext_resource path="res://player/bandit/idle_idle_0.png" type="Texture" id=23]
+[ext_resource path="res://white.png" type="Texture" id=24]
+[ext_resource path="res://player/human/sprites/Idle_idle_0.png" type="Texture" id=25]
+[ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=26]
+[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=27]
 
 [sub_resource type="ShaderMaterial" id=1]
 
 render_priority = 0
-shader = ExtResource( 4 )
+shader = ExtResource( 7 )
 shader_param/color = null
 shader_param/OCTAVES = null
 
 [sub_resource type="ShaderMaterial" id=2]
 
 render_priority = 0
-shader = ExtResource( 25 )
+shader = ExtResource( 26 )
 shader_param/lines_distance = null
 shader_param/pixel_size = null
 shader_param/size_screen = null
@@ -67,230 +68,11 @@ texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Z Index" ]
 
-[node name="Fog" parent="." index="1" instance=ExtResource( 3 )]
-
-material = SubResource( 1 )
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1152.0
-margin_bottom = 648.0
-script = null
-
-[node name="Clouds" type="Node2D" parent="." index="2"]
+[node name="Title" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
-visible = false
 
-[node name="cloud1" type="Sprite" parent="Clouds" index="0"]
-
-position = Vector2( 1108, 632 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud10" type="Sprite" parent="Clouds" index="1"]
-
-position = Vector2( 776, 632 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud16" type="Sprite" parent="Clouds" index="2"]
-
-position = Vector2( 432, 644 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud2" type="Sprite" parent="Clouds" index="3"]
-
-position = Vector2( 240, 632 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud3" type="Sprite" parent="Clouds" index="4"]
-
-position = Vector2( 88, 632 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud4" type="Sprite" parent="Clouds" index="5"]
-
-position = Vector2( 16, 620 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 7 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud17" type="Sprite" parent="Clouds" index="6"]
-
-position = Vector2( 500, 644 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 7 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud9" type="Sprite" parent="Clouds" index="7"]
-
-position = Vector2( 28, 644 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud15" type="Sprite" parent="Clouds" index="8"]
-
-position = Vector2( 384, 640 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud6" type="Sprite" parent="Clouds" index="9"]
-
-position = Vector2( 932, 632 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 9 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud11" type="Sprite" parent="Clouds" index="10"]
-
-position = Vector2( 708, 652 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 9 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud5" type="Sprite" parent="Clouds" index="11"]
-
-position = Vector2( 1012, 628 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 10 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud12" type="Sprite" parent="Clouds" index="12"]
-
-position = Vector2( 648, 644 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 10 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud7" type="Sprite" parent="Clouds" index="13"]
-
-position = Vector2( 852, 636 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 11 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud14" type="Sprite" parent="Clouds" index="14"]
-
-position = Vector2( 312, 636 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 11 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud13" type="Sprite" parent="Clouds" index="15"]
-
-position = Vector2( 564, 636 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 11 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="cloud8" type="Sprite" parent="Clouds" index="16"]
-
-position = Vector2( 176, 624 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 9 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Stars" type="Node2D" parent="." index="3"]
-
-editor/display_folded = true
-z_index = 1
-z_as_relative = false
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Star" parent="Stars" index="0" instance=ExtResource( 12 )]
-
-position = Vector2( 528, 200 )
-z_index = 1
-z_as_relative = true
-
-[node name="Star2" parent="Stars" index="1" instance=ExtResource( 12 )]
-
-position = Vector2( 776, 176 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star3" parent="Stars" index="2" instance=ExtResource( 12 )]
-
-position = Vector2( 572, 332 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star4" parent="Stars" index="3" instance=ExtResource( 12 )]
-
-position = Vector2( 976, 68 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star5" parent="Stars" index="4" instance=ExtResource( 12 )]
-
-position = Vector2( 1072, 580 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star9" parent="Stars" index="5" instance=ExtResource( 12 )]
-
-position = Vector2( 396, 592 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star6" parent="Stars" index="6" instance=ExtResource( 12 )]
-
-position = Vector2( 928, 364 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star10" parent="Stars" index="7" instance=ExtResource( 12 )]
-
-position = Vector2( 48, 536 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star7" parent="Stars" index="8" instance=ExtResource( 12 )]
-
-position = Vector2( 192, 380 )
-scale = Vector2( 0.25, 0.25 )
-z_index = 0
-z_as_relative = true
-
-[node name="Star8" parent="Stars" index="9" instance=ExtResource( 12 )]
-
-position = Vector2( 252, 48 )
-z_index = 0
-z_as_relative = true
-
-[node name="Title" type="Label" parent="." index="4"]
+[node name="Title" type="Label" parent="Title" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -306,7 +88,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.625, 0.065918, 0.065918, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
@@ -318,35 +100,316 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Logo" type="Sprite" parent="." index="5"]
+[node name="Logo" type="Sprite" parent="Title" index="1"]
 
 position = Vector2( 136, 104 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 14 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Panel" type="Sprite" parent="." index="6"]
-
-position = Vector2( 576, 280 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 15 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="PlayerStats" type="Node2D" parent="." index="7"]
+[node name="MatchSelect" type="Node2D" parent="." index="2"]
 
 editor/display_folded = true
 
-[node name="Parchment" type="Sprite" parent="PlayerStats" index="0"]
+[node name="MatchTypeLabel1" type="Label" parent="MatchSelect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 464.0
+margin_right = 198.0
+margin_bottom = 546.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.00656128, 0.410182, 0.839844, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "FFA"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MatchTypeLabel2" type="Label" parent="MatchSelect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 292.0
+margin_right = 198.0
+margin_bottom = 374.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.00656128, 0.410182, 0.839844, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "1v1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Match1v1Button" type="TouchScreenButton" parent="MatchSelect" index="2"]
+
+position = Vector2( 104, 216 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="MatchFFAButton" type="TouchScreenButton" parent="MatchSelect" index="3"]
+
+position = Vector2( 104, 388 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Fog" parent="." index="3" instance=ExtResource( 6 )]
+
+material = SubResource( 1 )
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1152.0
+margin_bottom = 648.0
+script = null
+
+[node name="Clouds" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+visible = false
+
+[node name="cloud1" type="Sprite" parent="Clouds" index="0"]
+
+position = Vector2( 1108, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud10" type="Sprite" parent="Clouds" index="1"]
+
+position = Vector2( 776, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud16" type="Sprite" parent="Clouds" index="2"]
+
+position = Vector2( 432, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud2" type="Sprite" parent="Clouds" index="3"]
+
+position = Vector2( 240, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud3" type="Sprite" parent="Clouds" index="4"]
+
+position = Vector2( 88, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud4" type="Sprite" parent="Clouds" index="5"]
+
+position = Vector2( 16, 620 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud17" type="Sprite" parent="Clouds" index="6"]
+
+position = Vector2( 500, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud9" type="Sprite" parent="Clouds" index="7"]
+
+position = Vector2( 28, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud15" type="Sprite" parent="Clouds" index="8"]
+
+position = Vector2( 384, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud6" type="Sprite" parent="Clouds" index="9"]
+
+position = Vector2( 932, 632 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud11" type="Sprite" parent="Clouds" index="10"]
+
+position = Vector2( 708, 652 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud5" type="Sprite" parent="Clouds" index="11"]
+
+position = Vector2( 1012, 628 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud12" type="Sprite" parent="Clouds" index="12"]
+
+position = Vector2( 648, 644 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud7" type="Sprite" parent="Clouds" index="13"]
+
+position = Vector2( 852, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud14" type="Sprite" parent="Clouds" index="14"]
+
+position = Vector2( 312, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud13" type="Sprite" parent="Clouds" index="15"]
+
+position = Vector2( 564, 636 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cloud8" type="Sprite" parent="Clouds" index="16"]
+
+position = Vector2( 176, 624 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stars" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+z_index = 1
+z_as_relative = false
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Star4" parent="Stars" index="0" instance=ExtResource( 15 )]
+
+position = Vector2( 976, 68 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star5" parent="Stars" index="1" instance=ExtResource( 15 )]
+
+position = Vector2( 1072, 580 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star9" parent="Stars" index="2" instance=ExtResource( 15 )]
+
+position = Vector2( 396, 592 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star6" parent="Stars" index="3" instance=ExtResource( 15 )]
+
+position = Vector2( 928, 364 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star10" parent="Stars" index="4" instance=ExtResource( 15 )]
+
+position = Vector2( 48, 536 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star7" parent="Stars" index="5" instance=ExtResource( 15 )]
+
+position = Vector2( 192, 380 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star8" parent="Stars" index="6" instance=ExtResource( 15 )]
+
+position = Vector2( 252, 48 )
+z_index = 0
+z_as_relative = true
+
+[node name="Panel" parent="." index="6" instance=ExtResource( 16 )]
+
+position = Vector2( 576, -344 )
+
+[node name="PlayerStats" type="Node2D" parent="Panel" index="1"]
+
+position = Vector2( -144, -70 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Parchment" type="Sprite" parent="Panel/PlayerStats" index="0"]
 
 position = Vector2( 708, 352 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Text" type="Node2D" parent="PlayerStats" index="1"]
+[node name="Text" type="Node2D" parent="Panel/PlayerStats" index="1"]
 
 position = Vector2( 0, 4 )
 
-[node name="Phrase" type="Label" parent="PlayerStats/Text" index="0"]
+[node name="Phrase" type="Label" parent="Panel/PlayerStats/Text" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -374,7 +437,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="Description" type="Label" parent="PlayerStats/Text" index="1"]
+[node name="Description" type="Label" parent="Panel/PlayerStats/Text" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -400,7 +463,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="WeaponName" type="Label" parent="PlayerStats/Text" index="2"]
+[node name="WeaponName" type="Label" parent="Panel/PlayerStats/Text" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -429,7 +492,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="WeaponDescription" type="Label" parent="PlayerStats/Text" index="3"]
+[node name="WeaponDescriptionPos" type="Label" parent="Panel/PlayerStats/Text" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -459,7 +522,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="WeaponDescription2" type="Label" parent="PlayerStats/Text" index="4"]
+[node name="WeaponDescriptionNeg" type="Label" parent="Panel/PlayerStats/Text" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -492,28 +555,152 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="Player Enlarged" type="Sprite" parent="PlayerStats" index="2"]
+[node name="PlayerEnlarged" type="Sprite" parent="Panel/PlayerStats" index="2"]
 
 position = Vector2( 440, 412 )
 scale = Vector2( 14, 14 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Weapon" type="Sprite" parent="PlayerStats/Player Enlarged" index="0"]
+[node name="Weapon" type="Sprite" parent="Panel/PlayerStats/PlayerEnlarged" index="0"]
 
 position = Vector2( 1.875, 4 )
 rotation = 0.323297
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Bullet" type="Sprite" parent="PlayerStats/Player Enlarged" index="1"]
+[node name="Bullet" type="Sprite" parent="Panel/PlayerStats/PlayerEnlarged" index="1"]
 
 visible = false
 position = Vector2( 18, 9.71428 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="CharacterSelect" type="Node2D" parent="." index="8"]
+[node name="Star1" parent="Panel" index="2" instance=ExtResource( 15 )]
+
+position = Vector2( -12.375, -11.8125 )
+scale = Vector2( 0.125, 0.125 )
+z_index = 1
+z_as_relative = true
+
+[node name="Star2" parent="Panel" index="3" instance=ExtResource( 15 )]
+
+position = Vector2( 49.625, -17.8125 )
+scale = Vector2( 0.0625, 0.0625 )
+z_index = 0
+z_as_relative = true
+
+[node name="Star3" parent="Panel" index="4" instance=ExtResource( 15 )]
+
+position = Vector2( -1.375, 21.1875 )
+scale = Vector2( 0.0625, 0.0625 )
+z_index = 0
+z_as_relative = true
+
+[node name="MenuButtonContainer" type="HBoxContainer" parent="Panel" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -78.0
+margin_top = 56.0
+margin_right = 542.0
+margin_bottom = 232.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="QuickMatchButton" type="TextureButton" parent="Panel/MenuButtonContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 206.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+[node name="QuickMatchButton2" type="TextureButton" parent="Panel/MenuButtonContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 206.0
+margin_right = 412.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+[node name="QuickMatchButton3" type="TextureButton" parent="Panel/MenuButtonContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 412.0
+margin_right = 620.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+[node name="CharacterSelect" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 868, 44 )
@@ -597,8 +784,8 @@ max_lines_visible = -1
 
 position = Vector2( 156, 420 )
 scale = Vector2( 4, 4 )
-normal = ExtResource( 20 )
-pressed = ExtResource( 21 )
+normal = ExtResource( 23 )
+pressed = ExtResource( 24 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -612,8 +799,8 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 160, 272 )
 scale = Vector2( 4, 4 )
-normal = ExtResource( 22 )
-pressed = ExtResource( 21 )
+normal = ExtResource( 25 )
+pressed = ExtResource( 24 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -627,8 +814,8 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 160, 128 )
 scale = Vector2( 4, 4 )
-normal = ExtResource( 17 )
-pressed = ExtResource( 21 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 24 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -662,41 +849,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors" ]
 
-[node name="L_min_players" type="Label" parent="." index="9"]
+[node name="SpinBox" type="SpinBox" parent="." index="8"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 260.0
+margin_left = 96.0
 margin_top = 564.0
-margin_right = 890.0
-margin_bottom = 578.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "MIN EXTRA PLAYERS: "
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
-
-[node name="SpinBox" type="SpinBox" parent="." index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 548.0
-margin_top = 56.0
-margin_right = 622.0
-margin_bottom = 80.0
+margin_right = 170.0
+margin_bottom = 588.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -715,111 +877,11 @@ prefix = ""
 suffix = ""
 _sections_unfolded = [ "Rect" ]
 
-[node name="HBoxContainerPlayer2" type="HBoxContainer" parent="." index="11"]
+[node name="FX" type="Node2D" parent="." index="9"]
 
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 266.0
-margin_top = 536.0
-margin_right = 1504.0
-margin_bottom = 712.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/separation = 0
-alignment = 0
-_sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="QuickMatchButton" type="TextureButton" parent="HBoxContainerPlayer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 412.0
-margin_bottom = 176.0
-rect_min_size = Vector2( 192, 96 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 24 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
-
-[node name="QuickMatchButton2" type="TextureButton" parent="HBoxContainerPlayer2" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 412.0
-margin_right = 824.0
-margin_bottom = 176.0
-rect_min_size = Vector2( 192, 96 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 24 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
-
-[node name="QuickMatchButton3" type="TextureButton" parent="HBoxContainerPlayer2" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 824.0
-margin_right = 1238.0
-margin_bottom = 176.0
-rect_min_size = Vector2( 192, 96 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 24 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
-
-[node name="FX" type="Node2D" parent="." index="12"]
-
-[node name="CRT" parent="FX" index="0" instance=ExtResource( 3 )]
+[node name="CRT" parent="FX" index="0" instance=ExtResource( 6 )]
 
 visible = false
 margin_left = 284.0
@@ -828,7 +890,7 @@ margin_right = 868.0
 margin_bottom = 544.0
 script = null
 
-[node name="ScanLines" parent="FX" index="1" instance=ExtResource( 3 )]
+[node name="ScanLines" parent="FX" index="1" instance=ExtResource( 6 )]
 
 visible = false
 material = SubResource( 2 )
@@ -838,14 +900,20 @@ margin_right = 868.0
 margin_bottom = 544.0
 script = null
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="13"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
-stream = ExtResource( 26 )
+stream = ExtResource( 27 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[connection signal="pressed" from="MatchSelect/Match1v1Button" to="." method="_on_Match1v1Button_pressed"]
+
+[connection signal="pressed" from="MatchSelect/MatchFFAButton" to="." method="_on_MatchFFAButton_pressed"]
+
+[connection signal="pressed" from="Panel/MenuButtonContainer/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
 
 [connection signal="pressed" from="CharacterSelect/BanditButton" to="." method="_on_BanditButton_pressed"]
 
@@ -854,7 +922,5 @@ bus = "Master"
 [connection signal="pressed" from="CharacterSelect/SkeletonButton" to="." method="_on_SkeletonButton_pressed"]
 
 [connection signal="value_changed" from="SpinBox" to="." method="_on_SpinBox_value_changed"]
-
-[connection signal="pressed" from="HBoxContainerPlayer2/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
 
 

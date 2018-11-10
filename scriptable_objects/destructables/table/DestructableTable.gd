@@ -1,0 +1,1 @@
+extends "res://scriptable_objects/destructables/crate/Crate.gd"

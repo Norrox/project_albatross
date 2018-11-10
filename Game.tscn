@@ -10,7 +10,7 @@
 [ext_resource path="res://scriptable_objects/chest/Chest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
-[ext_resource path="res://scriptable_objects/crate/Crate.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=12]
 [ext_resource path="res://BGMusic.gd" type="Script" id=13]
 [ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=14]
@@ -27,6 +27,8 @@
 [ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=25]
 [ext_resource path="res://black.png" type="Texture" id=26]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=27]
+
+
 
 [sub_resource type="Environment" id=1]
 
