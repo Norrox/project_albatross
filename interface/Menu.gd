@@ -5,8 +5,8 @@ var quick_match_started = false
 
 func _ready():
 	if OS.get_name() == 'Windows':
-		#get_tree().change_scene('res://Game.tscn')
-		get_tree().change_scene('res://GrassLevel.tscn')
+		get_tree().change_scene('res://Game.tscn')
+		#get_tree().change_scene('res://GrassLevel.tscn')
 
 func _load_game():
 	if Settings.match_1v1:

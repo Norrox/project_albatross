@@ -21,6 +21,7 @@ var force_local = false
 var room_ID = 'No_Room'
 
 var victorious = false
+var out_of_lives = false
 
 func _ready():
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ ready() Called!")

@@ -10,8 +10,10 @@ func _ready():
 	hide()
 
 func _physics_process(delta):
-	if !Network.victorious and !get_tree().current_scene.name == 'Menu':
+	if !Network.victorious and !Network.out_of_lives and !get_tree().current_scene.name == 'Menu':
 		return
+	if Network.out_of_lives:
+		$VictoryLabel.text = 'DEFEAT!'
 	if !visible:
 		show()
 		

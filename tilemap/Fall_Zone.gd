@@ -13,7 +13,7 @@ func _on_body_entered(body):
 			body._die(true)
 		else:
 			print(body.name + 'eliminated')
-			body.eliminated = true
+			Network.out_of_lives = true
 			body._die(true,false)
 		while body.dead:
 			yield(get_tree().create_timer(0.02),'timeout')
