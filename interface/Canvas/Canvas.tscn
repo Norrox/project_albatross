@@ -180,6 +180,8 @@ margin_bottom = 540.0
 
 [node name="Panel" parent="." index="9" instance=ExtResource( 11 )]
 
+visible = false
+
 [node name="Label" type="Label" parent="Panel" index="1"]
 
 anchor_left = 0.0

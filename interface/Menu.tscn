@@ -45,7 +45,7 @@ shader_param/size_screen = null
 shader_param/scanline_alpha = null
 shader_param/lines_velocity = null
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -484,7 +484,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
-text = "BLOOD BUBBLE"
+text = "BLOOD WAND"
 align = 1
 autowrap = true
 percent_visible = 1.0
@@ -512,9 +512,10 @@ custom_colors/font_color = Color( 0.153809, 0.492188, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
-text = "No Recoil
+text = "Expands
 
-Expands"
+No Recoil
+"
 align = 1
 autowrap = true
 percent_visible = 1.0
@@ -560,14 +561,16 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
 position = Vector2( 440, 412 )
 scale = Vector2( 14, 14 )
 texture = ExtResource( 18 )
-_sections_unfolded = [ "Transform" ]
+offset = Vector2( 0, -0.5 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Weapon" type="Sprite" parent="Panel/PlayerStats/PlayerEnlarged" index="0"]
 
 position = Vector2( 1.875, 4 )
 rotation = 0.323297
 texture = ExtResource( 19 )
-_sections_unfolded = [ "Transform" ]
+offset = Vector2( 0, -0.5 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Bullet" type="Sprite" parent="Panel/PlayerStats/PlayerEnlarged" index="1"]
 
@@ -607,7 +610,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -78.0
 margin_top = 56.0
-margin_right = 542.0
+margin_right = 546.0
 margin_bottom = 232.0
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -626,7 +629,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 206.0
+margin_right = 208.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 192, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -652,8 +655,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 206.0
-margin_right = 412.0
+margin_left = 208.0
+margin_right = 416.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 192, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -679,8 +682,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 412.0
-margin_right = 620.0
+margin_left = 416.0
+margin_right = 624.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 192, 96 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -905,7 +908,7 @@ script = null
 stream = ExtResource( 27 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
