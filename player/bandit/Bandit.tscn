@@ -397,7 +397,7 @@ tracks/5/keys = {
 "values": [ Vector2( 2, 12 ), Vector2( 2, 12 ), Vector2( 0, 14 ), Vector2( 0, 14 ), Vector2( 0, 12 ), Vector2( 0, 14 ), Vector2( 0, 16 ), Vector2( 0, 16 ), Vector2( 0, 14 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -424,7 +424,7 @@ _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z Inde
 
 [node name="Pivot" type="Node2D" parent="." index="2"]
 
-position = Vector2( -4, -16 )
+position = Vector2( -4, -13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Rifle" type="Sprite" parent="Pivot" index="0"]

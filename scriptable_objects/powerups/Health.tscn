@@ -11,6 +11,8 @@ radius = 10.0
 
 [node name="Health" type="KinematicBody2D"]
 
+position = Vector2( 0.142395, 0.854378 )
+z_index = 4
 z_as_relative = false
 input_pickable = false
 collision_layer = 1

@@ -3,7 +3,7 @@
 [ext_resource path="res://interface/Canvas/Panel.gd" type="Script" id=1]
 [ext_resource path="res://interface/panel.png" type="Texture" id=2]
 
-[node name="Panel" type="KinematicBody2D"]
+[node name="Panel" type="KinematicBody2D" index="0"]
 
 position = Vector2( 576, -280 )
 scale = Vector2( 4, 4 )

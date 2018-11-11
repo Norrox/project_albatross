@@ -11,11 +11,15 @@ var rotate_dir = -1
 var rotate_speed = MAX_ROTATE_SPEED
 
 func _ready():
+	var player = $'/root'.get_node(Network.self_data.name)
 	randomize()
 	rotate_dir = randi()%3-1
 	rotate_speed = randi()%MAX_ROTATE_SPEED+1
 	target_pos = global_position
-	target_pos += Vector2(randi()%MAX_MOVE_DIST+1, -randi()%MAX_MOVE_DIST+1)
+	if !player.get_node('Sprite').flip_h:
+		target_pos += Vector2(-randi()%MAX_MOVE_DIST+1, -randi()%MAX_MOVE_DIST+1)
+	else:
+		target_pos += Vector2(randi()%MAX_MOVE_DIST+1, -randi()%MAX_MOVE_DIST+1)
 	target_pos.y += EXTRA_FORCE_Y
 	$AnimationPlayer.play('idle')
 	yield(get_tree().create_timer(SHOW_TIME),'timeout')
