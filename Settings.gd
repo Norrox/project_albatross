@@ -5,7 +5,13 @@ enum PLAYER_TYPE {
 	skeleton,
 	bandit	
 	}
+	
+enum MATCH_TYPE {
+	one_verse_one,
+	ffa_4,
+	ffa_8
+	}
 
 var player_type = PLAYER_TYPE.bandit
 var enable_ultra_graphics = false
-var match_1v1 = true
+var match_type = MATCH_TYPE.ffa_4

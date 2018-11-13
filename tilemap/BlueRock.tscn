@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tilemap/blue_rock_1.png" type="Texture" id=1]
+
+[node name="BlueRock" type="Sprite"]
+
+position = Vector2( 180, 240 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 2048
+collision_mask = 4096
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Z Index" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -26, 24, 2, 30, 28, 24, 20, -6, 6, -18, -14, -16 )
+
+

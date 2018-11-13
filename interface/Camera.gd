@@ -19,6 +19,8 @@ func _ready():
 	analog = get_node("/root/Game/CanvasLayer")
 	if !get_parent().is_master:
 		current = false
+	else:
+		global_position = get_parent().global_position
 		
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):

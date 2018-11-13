@@ -181,6 +181,7 @@ margin_bottom = 540.0
 
 [node name="Panel" parent="." index="9" instance=ExtResource( 11 )]
 
+visible = false
 position = Vector2( 576, -282 )
 
 [node name="VictoryLabel" type="Label" parent="Panel" index="1"]

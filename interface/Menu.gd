@@ -5,14 +5,17 @@ var quick_match_started = false
 
 func _ready():
 	if OS.get_name() == 'Windows':
-		get_tree().change_scene('res://Game.tscn')
+		#get_tree().change_scene('res://Game.tscn')
 		#get_tree().change_scene('res://GrassLevel.tscn')
+		get_tree().change_scene('res://SpaceLevel.tscn')
 
 func _load_game():
-	if Settings.match_1v1:
+	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one:
 		get_tree().change_scene('res://GrassLevel.tscn')
-	else:
+	elif Settings.match_type == Settings.MATCH_TYPE.ffa_8:
 		get_tree().change_scene('res://Game.tscn')
+	else:
+		get_tree().change_scene('res://SpaceLevel.tscn')
 
 func _on_SpinBox_value_changed(value):
 	print("~~~~~~~~~~~MIN_PLAYERS_CHANGED~~~~~~~~~" + str(value))
@@ -102,12 +105,18 @@ func _on_BanditButton_pressed():
 	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nSmall'
 
 func _on_Match1v1Button_pressed():
-	Settings.match_1v1 = true
+	Settings.match_type = Settings.MATCH_TYPE.one_verse_one
 	Network.MIN_PLAYERS = 1
 	Network.MAX_PLAYERS = 2
 
 
 func _on_MatchFFAButton_pressed():
-	Settings.match_1v1 = false
-	Network.MIN_PLAYERS = 3
+	Settings.match_type = Settings.MATCH_TYPE.ffa_8
+	Network.MIN_PLAYERS = 7
 	Network.MAX_PLAYERS = 8
+
+
+func _on_MatchFFA4Button_pressed():
+	Settings.match_type = Settings.MATCH_TYPE.ffa_4
+	Network.MIN_PLAYERS = 3
+	Network.MAX_PLAYERS = 4

@@ -33,6 +33,10 @@ var slave_hp = MAX_HP
 var frame_num = 1
 
 func _ready():
+	print(get_tree().current_scene.name)
+	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one or Settings.match_type == Settings.MATCH_TYPE.ffa_4:
+		lives = 1
+		update_ui_hearts(1)
 	_update_health_bar(MAX_HP)
 
 func init(nickname, start_position, is_slave):
