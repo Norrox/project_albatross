@@ -50,7 +50,6 @@ func cleanup_up_after_game():
 	master_participant_ID = 'No_participant_ID'
 	chests = []
 	game_started = false
-	force_local = false
 	room_ID = 'No_Room'
 	victorious = false
 	out_of_lives = false
@@ -86,7 +85,7 @@ func connected_init_match():
 	$'/root/Menu/'._load_game()		
 	
 func check_win_condition():
-	if connected_peers.split(',').size() == 0:
+	if get_IDs().size() == 1:
 		print(self_data.name + ' wins')
 		victorious = true
 		google_leave_room()
