@@ -93,6 +93,7 @@ func _on_BanditButton_pressed():
 
 func _on_Match1v1Button_pressed():
 	if quick_match_started:
+		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.one_verse_one
 	Network.MIN_PLAYERS = 1
@@ -101,6 +102,7 @@ func _on_Match1v1Button_pressed():
 
 func _on_MatchFFAButton_pressed():
 	if quick_match_started:
+		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_8
 	Network.MIN_PLAYERS = 7
@@ -109,6 +111,7 @@ func _on_MatchFFAButton_pressed():
 
 func _on_MatchFFA4Button_pressed():
 	if quick_match_started:
+		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_4
 	Network.MIN_PLAYERS = 3

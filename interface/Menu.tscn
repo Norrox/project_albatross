@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
 [ext_resource path="res://hard_black.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://player/human/sprites/Idle_idle_0.png" type="Texture" id=26]
 [ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=27]
 [ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=28]
+[ext_resource path="res://wav/one shots/error.wav" type="AudioStream" id=29]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -46,7 +47,7 @@ shader_param/size_screen = null
 shader_param/scanline_alpha = null
 shader_param/lines_velocity = null
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -957,6 +958,15 @@ stream = ExtResource( 28 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
 mix_target = 0
 bus = "Master"
 
