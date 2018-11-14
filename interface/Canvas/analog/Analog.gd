@@ -3,7 +3,7 @@ extends Sprite
 var RADIUS = 0
 var SMALL_RADIUS = 0
 const RADIUS_ALLOWANCE = 55
-const PLACEMENT_OFFSET = 110
+const PLACEMENT_OFFSET = 120
 const SCREEN_SIZE = Vector2(1152, 648)
 const ROLL_BTN_OFFSET = Vector2(-50, -250)
 
