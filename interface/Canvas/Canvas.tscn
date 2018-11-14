@@ -31,7 +31,7 @@ script = ExtResource( 1 )
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.171294 )
 position = Vector2( 125, 475 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -47,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.171294 )
 position = Vector2( 900, 475 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -119,8 +119,8 @@ _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "c
 [node name="Roll_Button" type="TouchScreenButton" parent="." index="4"]
 
 modulate = Color( 1, 1, 1, 0.320431 )
-position = Vector2( 960, 337 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 869, 228 )
+scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 2 )
 bitmask = null
@@ -131,6 +131,29 @@ passby_press = false
 action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Label" type="Label" parent="Roll_Button" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 51.0
+margin_right = 65.0
+margin_bottom = 65.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "ROLL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
 
 [node name="Lives" type="Sprite" parent="." index="5"]
 
@@ -179,6 +202,8 @@ margin_right = 960.0
 margin_bottom = 540.0
 
 [node name="GamePanel" parent="." index="9" instance=ExtResource( 11 )]
+
+visible = false
 
 [connection signal="pressed" from="Roll_Button" to="." method="_on_TouchScreenButton_pressed"]
 

@@ -5,7 +5,7 @@ var SMALL_RADIUS = 0
 const RADIUS_ALLOWANCE = 55
 const PLACEMENT_OFFSET = 110
 const SCREEN_SIZE = Vector2(1152, 648)
-const ROLL_BTN_OFFSET = Vector2(-55, -170)
+const ROLL_BTN_OFFSET = Vector2(-50, -250)
 
 var stick1_pos = Vector2()
 var stick2_pos = Vector2()

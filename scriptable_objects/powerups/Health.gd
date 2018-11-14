@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const WAIT_TO_SPAWN = 0.6
 const MOVE_SPEED = 3
-const MOVE_DIST_Y = 25
+const MOVE_DIST_Y = 40
 const MIN_MOVE_DIST = 1
 const STAY_TIME = 0.5
 const HEALTH = 50
@@ -42,6 +42,7 @@ func _physics_process(delta):
 		$PowerupSound.play()
 		var particle_obj = particle.instance()
 		get_parent().add_child(particle_obj)
+		particle_obj.get_node('Sprite').scale = Vector2(1.0,1.0)
 		particle_obj.global_position = global_position
 		particle_obj.global_position.y += -MOVE_DIST_Y
 		yield($PowerupSound,"finished")

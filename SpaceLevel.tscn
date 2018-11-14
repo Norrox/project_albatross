@@ -14,7 +14,7 @@
 [ext_resource path="res://BGMusic.gd" type="Script" id=12]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=13]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "idle"
 length = 1.0
@@ -31,6 +31,25 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 1.0
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -109,26 +128,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=7]
-
-resource_name = "idle"
-length = 1.0
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=7]
 
 background_mode = 4
 background_sky_custom_fov = 0.0
@@ -207,7 +207,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -237,7 +237,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 2 )
+anims/idle = SubResource( 1 )
 blend_times = [  ]
 
 [node name="Foliage" type="Node2D" parent="." index="2"]
@@ -262,7 +262,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 3 )
+anims/idle = SubResource( 2 )
 blend_times = [  ]
 
 [node name="Mushroom2" type="Sprite" parent="Foliage" index="1"]
@@ -283,7 +283,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 4 )
+anims/idle = SubResource( 3 )
 blend_times = [  ]
 
 [node name="Mushroom3" type="Sprite" parent="Foliage" index="2"]
@@ -304,7 +304,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 5 )
+anims/idle = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Mushroom4" type="Sprite" parent="Foliage" index="3"]
@@ -325,7 +325,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 6 )
+anims/idle = SubResource( 5 )
 blend_times = [  ]
 
 [node name="Mushroom5" type="Sprite" parent="Foliage" index="4"]
@@ -347,10 +347,12 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 7 )
+anims/idle = SubResource( 6 )
 blend_times = [  ]
 
 [node name="TileMaps" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="Bot" type="TileMap" parent="TileMaps" index="0"]
 
@@ -1412,6 +1414,7 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="Coins" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( -8, 0 )
 
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
@@ -1539,7 +1542,7 @@ script = ExtResource( 12 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="12"]
 
-environment = SubResource( 1 )
+environment = SubResource( 7 )
 script = ExtResource( 13 )
 
 
