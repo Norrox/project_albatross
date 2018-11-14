@@ -6,9 +6,9 @@ var quick_match_started = false
 func _ready():
 	Settings.player_type = Settings.PLAYER_TYPE.skeleton
 	if OS.get_name() == 'Windows':
-		get_tree().change_scene('res://Game.tscn')
+		#get_tree().change_scene('res://Game.tscn')
 		#get_tree().change_scene('res://GrassLevel.tscn')
-		#Global.goto_scene('res://SpaceLevel.tscn')
+		Global.goto_scene('res://SpaceLevel.tscn')
 
 func _load_game():
 	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one:
