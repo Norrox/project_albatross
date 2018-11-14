@@ -1,6 +1,4 @@
-extends Node
-
-const SIGN_IN_WAIT_TIME  = 5.0
+extends Node2D
 
 var MIN_PLAYERS = 1 #const
 var MAX_PLAYERS = 4 #const
@@ -33,7 +31,7 @@ func _ready():
 	init_chests()
 	init_play_services()
 	if !force_local:
-		google_sign_in()
+		google_sign_in(false)
 		
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST and !force_local:
@@ -42,6 +40,21 @@ func _notification(what):
 		get_tree().quit() # default behavior
 	elif what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST and force_local:
 		get_tree().quit()
+
+func cleanup_up_after_game():
+	connected_peers = ''
+	players = { }
+	players_order = []
+	self_data = { index = -1, name = '', animation = 'idle', position = Vector2(), rifle_rotation = 0, hp = 100, action = '', lives = 3, type = null}
+	master_ID = 'No_Master'
+	master_participant_ID = 'No_participant_ID'
+	chests = []
+	game_started = false
+	force_local = false
+	room_ID = 'No_Room'
+	victorious = false
+	out_of_lives = false
+	init_chests()
 
 func init_play_services():
 	if Engine.has_singleton("GodotPlayGameServices"):
@@ -76,6 +89,7 @@ func check_win_condition():
 	if connected_peers.split(',').size() == 0:
 		print(self_data.name + ' wins')
 		victorious = true
+		google_leave_room()
 
 func get_IDs():
 	return get_all_participant_IDs().split(',')
@@ -98,19 +112,16 @@ func google_sign_in(silent=true):
 	else:
 		gpgs.signInSilent()
 	signing_in_busy = true
-	var delta = 0.0
 	while signed_in == false:
 		yield(get_tree().create_timer(0.02),'timeout')
-		delta += 0.02
-		if delta > SIGN_IN_WAIT_TIME:
-			print('failed to sign in.. signing out')
-			google_clear_cache()
-			google_sign_out()
-			break
 	signing_in_busy = false
 	
 func google_sign_out():
 	gpgs.signOut()
+
+func google_leave_room(player_name):
+	print(player_name + ' has left the room')
+	gpgs.rtmLeaveRoom()
 	
 func set_peers_list():
 	print('setting peers master is ' + str(master_ID))
@@ -134,7 +145,7 @@ func remove_from_connected(participant_ID):
 		connected_peers.erase(left_over_comma_pos, 1)
 		
 	#kill player wit no respawn	
-	print('killing deserter ' + participant_ID)
+	print('killing off ' + participant_ID)
 	$'/root/'.get_node(players[participant_ID].name)._die(false, false)
 			
 func update_player_info(sender_ID, data_var):
@@ -172,6 +183,8 @@ func update_player_animation(sender_ID, data_var):
 	players[sender_ID].animation = data_var.anim
 	
 func update_player_health(sender_ID, data_var):
+	if connected_peers.split(',').size() == 0:
+		return
 	print('updating health for ' + sender_ID)
 	players[sender_ID].hp = data_var.hp
 	$'/root/'.get_node(players[sender_ID].name)._update_health_bar(players[sender_ID].hp)
@@ -216,15 +229,23 @@ func get_all_participant_IDs():
 	return gpgs.rtmGetAllParticipantIDs()
 	
 func send_reliable_data(data, participantIDs):
+	if connected_peers.split(',').size() == 0:
+		return
 	gpgs.rtmSendReliableData(data, participantIDs)
 	
 func send_reliable_data_to_all(data):
+	if connected_peers.split(',').size() == 0:
+		return
 	gpgs.rtmSendReliableDataToAll(data)
 	
 func send_unreliable_data(data, participantIDs):
+	if connected_peers.split(',').size() == 0:
+		return
 	gpgs.rtmSendUnreliableData(data, participantIDs)
 	
 func send_unreliable_data_to_all(data):
+	if connected_peers.split(',').size() == 0:
+		return
 	gpgs.rtmSendUnreliableDataToAll(data)
 	
 func google_clear_cache():
@@ -256,6 +277,13 @@ func _on_play_game_services_rtm_room_client_created(success, roomID):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')
 	print('showing waiting room UI')
 	gpgs.rtmShowWaitingRoomUI(MAX_PLAYERS)
+	
+func _on_play_game_services_rtm_waiting_room_ui_closed():
+	print('closing ui')
+		
+func _on_play_game_services_rtm_waiting_room_ui_left_room():
+	print('leaving room')
+	$'/root/Menu/'.quick_match_started = false
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	var data_var = str2var(data)

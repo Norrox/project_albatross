@@ -374,7 +374,7 @@ collision_layer = 2048
 collision_mask = 4096
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1310706, 2, 0, -1310705, 3, 0, -1245170, 4, 0, -1245169, 5, 0, -917535, 2, 0, -917534, 3, 0, -851999, 4, 0, -851998, 5, 0, -786391, 2, 0, -786390, 3, 0, -720885, 2, 0, -720884, 3, 0, -720855, 4, 0, -720854, 5, 0, -655349, 4, 0, -655348, 5, 0, -327697, 2, 0, -327696, 3, 0, -262161, 4, 0, -262160, 5, 0, -196594, 2, 0, -196593, 3, 0, -196578, 2, 0, -196577, 3, 0, -196551, 2, 0, -196550, 3, 0, -131058, 4, 0, -131057, 5, 0, -131042, 4, 0, -131041, 5, 0, -131015, 4, 0, -131014, 5, 0, -65523, 2, 0, -65522, 3, 0, 13, 4, 0, 14, 5, 0, 51, 26, 0, 66, 27, 0, 196672, 20, 0, 262161, 2, 0, 262162, 3, 0, 262179, 2, 0, 262180, 3, 0, 262186, 2, 0, 262203, 27, 0, 393199, 2, 0, 393200, 3, 0, 327697, 4, 0, 327698, 5, 0, 327715, 4, 0, 327716, 5, 0, 327722, 4, 0, 327723, 5, 0, 327734, 22, 0, 458735, 4, 0, 458736, 5, 0, 393268, 20, 0, 393283, 26, 0, 524240, 2, 0, 524241, 3, 0, 524275, 2, 0, 524276, 3, 0, 458761, 2, 0, 458762, 3, 0, 458784, 2, 0, 458790, 3, 0, 458800, 26, 0, 589776, 4, 0, 589777, 5, 0, 589811, 4, 0, 589812, 5, 0, 589814, 2, 0, 589815, 3, 0, 524294, 2, 0, 524295, 3, 0, 524297, 4, 0, 524298, 5, 0, 524320, 4, 0, 524321, 5, 0, 524325, 4, 0, 524326, 5, 0, 655350, 4, 0, 655351, 5, 0, 589828, 2, 0, 589829, 3, 0, 589830, 4, 0, 589831, 5, 0, 589838, 2, 0, 589839, 3, 0, 589863, 2, 0, 589882, 26, 0, 589890, 27, 0, 655364, 4, 0, 655365, 5, 0, 655367, 3, 0, 655374, 4, 0, 655375, 5, 0, 655399, 4, 0, 655400, 5, 0, 655412, 26, 0, 720901, 2, 0, 720903, 5, 0, 720913, 2, 0, 720914, 3, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720943, 27, 0, 720950, 21, 0, 786437, 4, 0, 786438, 5, 0, 786442, 2, 0, 786443, 3, 0, 786449, 4, 0, 786450, 5, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 851978, 4, 0, 851979, 5, 0, 851993, 0, 0, 852025, 0, 0, 852031, 27, 0, 917529, 0, 0, 917562, 2, 0, 917563, 3, 0, 983058, 2, 0, 983059, 3, 0, 983064, 2, 0, 983065, 3, 0, 983098, 4, 0, 983099, 5, 0, 1048579, 2, 0, 1048580, 3, 0, 1048594, 4, 0, 1048595, 5, 0, 1048600, 4, 0, 1048601, 5, 0, 1048631, 27, 0, 1179644, 2, 0, 1179645, 3, 0, 1114115, 4, 0, 1114116, 5, 0, 1114163, 26, 0, 1114175, 26, 0, 1245180, 4, 0, 1245181, 5, 0, 1376286, 2, 0, 1376287, 3, 0, 1441822, 4, 0, 1441823, 5, 0, 1507377, 21, 0, 1507381, 26, 0, 1703912, 2, 0, 1703913, 3, 0, 1638411, 2, 0, 1638412, 3, 0, 1769448, 4, 0, 1769449, 5, 0, 1703947, 4, 0, 1703948, 5, 0, 1769519, 27, 0, 1769539, 23, 0, 1835070, 26, 0, 1900561, 2, 0, 1900562, 3, 0, 1900589, 26, 0, 2031607, 2, 0, 2031608, 3, 0, 1966097, 4, 0, 1966098, 5, 0, 2097143, 4, 0, 2097144, 5, 0, 2031682, 21, 0, 2097210, 27, 0, 2162728, 20, 0, 2293741, 2, 0, 2293742, 3, 0, 2228285, 2, 0, 2228286, 3, 0, 2359277, 4, 0, 2359278, 5, 0, 2293777, 21, 0, 2293811, 26, 0, 2293820, 27, 0, 2293821, 4, 0, 2293822, 5, 0, 2293829, 26, 0, 2359349, 20, 0, 2490413, 23, 0 )
+tile_data = PoolIntArray( -1310706, 2, 0, -1310705, 3, 0, -1245170, 4, 0, -1245169, 5, 0, -917535, 2, 0, -917534, 3, 0, -851999, 4, 0, -851998, 5, 0, -786391, 2, 0, -786390, 3, 0, -720885, 2, 0, -720884, 3, 0, -720855, 4, 0, -720854, 5, 0, -655349, 4, 0, -655348, 5, 0, -327697, 2, 0, -327696, 3, 0, -262161, 4, 0, -262160, 5, 0, -196594, 2, 0, -196593, 3, 0, -196578, 2, 0, -196577, 3, 0, -196551, 2, 0, -196550, 3, 0, -131058, 4, 0, -131057, 5, 0, -131042, 4, 0, -131041, 5, 0, -131015, 4, 0, -131014, 5, 0, -65523, 2, 0, -65522, 3, 0, 13, 4, 0, 14, 5, 0, 51, 26, 0, 66, 27, 0, 196672, 20, 0, 262161, 2, 0, 262162, 3, 0, 262179, 2, 0, 262180, 3, 0, 262186, 2, 0, 262203, 27, 0, 393199, 2, 0, 393200, 3, 0, 327697, 4, 0, 327698, 5, 0, 327715, 4, 0, 327716, 5, 0, 327722, 4, 0, 327723, 5, 0, 327734, 22, 0, 458735, 4, 0, 458736, 5, 0, 393268, 20, 0, 393283, 26, 0, 524240, 2, 0, 524241, 3, 0, 524275, 2, 0, 524276, 3, 0, 458761, 2, 0, 458762, 3, 0, 458784, 2, 0, 458790, 3, 0, 458800, 26, 0, 589776, 4, 0, 589777, 5, 0, 589811, 4, 0, 589812, 5, 0, 589814, 2, 0, 589815, 3, 0, 524294, 2, 0, 524295, 3, 0, 524297, 4, 0, 524298, 5, 0, 524320, 4, 0, 524321, 5, 0, 524325, 4, 0, 524326, 5, 0, 655350, 4, 0, 655351, 5, 0, 589828, 2, 0, 589829, 3, 0, 589830, 4, 0, 589831, 5, 0, 589838, 2, 0, 589839, 3, 0, 589863, 2, 0, 589882, 26, 0, 589890, 27, 0, 655364, 4, 0, 655365, 5, 0, 655367, 3, 0, 655374, 4, 0, 655375, 5, 0, 655399, 4, 0, 655400, 5, 0, 655412, 26, 0, 720901, 2, 0, 720903, 5, 0, 720913, 2, 0, 720914, 3, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720943, 27, 0, 720950, 21, 0, 786437, 4, 0, 786438, 5, 0, 786442, 2, 0, 786443, 3, 0, 786449, 4, 0, 786450, 5, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 851978, 4, 0, 851979, 5, 0, 851993, 0, 0, 852025, 0, 0, 852031, 27, 0, 917529, 0, 0, 917562, 2, 0, 917563, 3, 0, 983058, 2, 0, 983059, 3, 0, 983064, 2, 0, 983065, 3, 0, 983098, 4, 0, 983099, 5, 0, 1048579, 2, 0, 1048580, 3, 0, 1048594, 4, 0, 1048595, 5, 0, 1048600, 4, 0, 1048601, 5, 0, 1048631, 27, 0, 1179644, 2, 0, 1179645, 3, 0, 1114115, 4, 0, 1114116, 5, 0, 1114163, 26, 0, 1114175, 26, 0, 1245180, 4, 0, 1245181, 5, 0, 1376286, 2, 0, 1376287, 3, 0, 1441822, 4, 0, 1441823, 5, 0, 1507377, 21, 0, 1507381, 26, 0, 1703912, 2, 0, 1703913, 3, 0, 1638411, 2, 0, 1638412, 3, 0, 1769448, 4, 0, 1769449, 5, 0, 1703947, 4, 0, 1703948, 5, 0, 1769519, 27, 0, 1769539, 23, 0, 1835070, 26, 0, 1900561, 2, 0, 1900562, 3, 0, 1900589, 26, 0, 2031607, 2, 0, 2031608, 3, 0, 1966097, 4, 0, 1966098, 5, 0, 2097143, 4, 0, 2097144, 5, 0, 2031682, 21, 0, 2097210, 27, 0, 2162728, 20, 0, 2293741, 2, 0, 2293742, 3, 0, 2228285, 2, 0, 2228286, 3, 0, 2359277, 4, 0, 2359278, 5, 0, 2293777, 21, 0, 2293811, 26, 0, 2293820, 27, 0, 2293821, 4, 0, 2293822, 5, 0, 2293829, 26, 0, 2359349, 20, 0, 2490413, 23, 0, 2686952, 2, 0, 2686953, 3, 0, 2752488, 4, 0, 2752489, 5, 0 )
 _sections_unfolded = [ "Cell", "Z Index" ]
 
 [node name="Top" type="TileMap" parent="TileMaps" index="1"]
@@ -399,853 +399,1032 @@ collision_layer = 2048
 collision_mask = 4096
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -786449, 20, 0, -655357, 21, 0, -524291, 27, 0, -589783, 26, 0, -524270, 26, 0, -524255, 20, 0, -524219, 25, 0, -458749, 27, 0, -458744, 27, 0, -327693, 21, 0, -327686, 27, 0, -393191, 26, 0, -393172, 26, 0, -262168, 27, 0, -327648, 7, 0, -327642, 22, 0, -327630, 26, 0, -262112, 13, 0, -196580, 6, 0, -196576, 18, 0, -196556, 20, 0, -131044, 12, 0, -27, 27, 0, -65508, 18, 0, 65502, 26, 0, 65503, 26, 0, 131039, 20, 0, 65581, 7, 0, 131117, 13, 0, 262119, 21, 0, 196653, 18, 0, 327664, 6, 0, 262187, 6, 0, 393187, 26, 0, 393200, 12, 0, 393203, 7, 0, 327681, 21, 0, 327695, 27, 0, 327723, 12, 0, 458736, 19, 0, 458738, 6, 0, 458739, 13, 0, 458740, 29, 0, 458745, 7, 0, 458748, 26, 0, 393225, 10, 0, 393226, 11, 0, 393249, 7, 0, 393253, 6, 0, 393259, 18, 0, 524273, 25, 0, 524274, 12, 0, 524275, 19, 0, 524278, 7, 0, 524280, 25, 0, 524281, 13, 0, 458758, 26, 0, 458760, 25, 0, 458761, 16, 0, 458762, 17, 0, 458772, 21, 0, 458778, 20, 0, 458785, 13, 0, 458788, 25, 0, 458789, 12, 0, 589808, 26, 0, 589810, 19, 0, 589814, 13, 0, 589817, 19, 0, 524295, 10, 0, 524296, 11, 0, 524297, 29, 0, 524321, 18, 0, 524325, 18, 0, 524328, 7, 0, 655350, 19, 0, 589829, 6, 0, 589831, 16, 0, 589832, 17, 0, 589864, 13, 0, 720895, 8, 0, 655360, 9, 0, 655365, 12, 0, 655366, 6, 0, 655388, 26, 0, 655400, 18, 0, 786398, 26, 0, 786431, 14, 0, 720896, 15, 0, 720900, 22, 0, 720901, 19, 0, 720902, 12, 0, 720903, 29, 0, 720911, 26, 0, 720916, 0, 0, 720917, 0, 0, 786438, 19, 0, 851981, 27, 0, 851990, 10, 0, 851991, 11, 0, 851993, 0, 0, 852025, 0, 0, 983009, 21, 0, 983031, 26, 0, 917508, 21, 0, 917523, 7, 0, 917526, 16, 0, 917527, 17, 0, 917529, 0, 0, 917537, 26, 0, 983051, 21, 0, 983059, 13, 0, 1114107, 6, 0, 1048595, 19, 0, 1048596, 29, 0, 1048616, 27, 0, 1179621, 21, 0, 1179641, 7, 0, 1179642, 25, 0, 1179643, 12, 0, 1245177, 13, 0, 1245179, 18, 0, 1310713, 18, 0, 1245221, 20, 0, 1376241, 26, 0, 1310728, 21, 0, 1310732, 27, 0, 1441761, 27, 0, 1441771, 26, 0, 1441790, 26, 0, 1507293, 20, 0, 1572840, 27, 0, 1507344, 7, 0, 1638394, 26, 0, 1572880, 13, 0, 1572888, 27, 0, 1638416, 19, 0, 1703941, 27, 0, 1703964, 21, 0, 1834985, 27, 0, 1900509, 26, 0, 1900531, 21, 0, 1966052, 26, 0, 1966063, 26, 0, 1900578, 27, 0, 2097138, 26, 0, 2162665, 26, 0, 2228220, 21, 0, 2162748, 8, 0, 2162749, 9, 0, 2293751, 27, 0, 2228284, 14, 0, 2228285, 15, 0, 2228286, 29, 0, 2359258, 21, 0, 2359276, 27, 0, 2424802, 21, 0, 2490339, 26, 0, 2490344, 20, 0, 2424856, 20, 0, 2555890, 26, 0, 2555895, 20, 0, 2490372, 26, 0, 2490379, 21, 0, 2621438, 26, 0, 2555939, 21, 0, 2555940, 26, 0, 2686956, 20, 0, 2687006, 21, 0, 2752529, 21, 0, 2752530, 26, 0, 2883558, 26, 0, 2883572, 22, 0, 2883589, 26, 0, 3080183, 26, 0, 3014672, 20, 0, 3014685, 21, 0, 3014690, 26, 0 )
+tile_data = PoolIntArray( -786449, 20, 0, -655357, 21, 0, -524291, 27, 0, -589783, 26, 0, -524270, 26, 0, -524255, 20, 0, -524219, 25, 0, -458749, 27, 0, -458744, 27, 0, -327693, 21, 0, -327686, 27, 0, -393191, 26, 0, -393172, 26, 0, -262168, 27, 0, -327648, 7, 0, -327642, 22, 0, -327630, 26, 0, -262112, 13, 0, -196580, 6, 0, -196576, 18, 0, -196556, 20, 0, -131044, 12, 0, -27, 27, 0, -65508, 18, 0, 65502, 26, 0, 65503, 26, 0, 131039, 20, 0, 65581, 7, 0, 131117, 13, 0, 262119, 21, 0, 196653, 18, 0, 327664, 6, 0, 262187, 6, 0, 393187, 26, 0, 393200, 12, 0, 393203, 7, 0, 327681, 21, 0, 327695, 27, 0, 327723, 12, 0, 458736, 19, 0, 458738, 6, 0, 458739, 13, 0, 458740, 29, 0, 458745, 7, 0, 458748, 26, 0, 393225, 10, 0, 393226, 11, 0, 393249, 7, 0, 393253, 6, 0, 393259, 18, 0, 524273, 25, 0, 524274, 12, 0, 524275, 19, 0, 524278, 7, 0, 524280, 25, 0, 524281, 13, 0, 458758, 26, 0, 458760, 25, 0, 458761, 16, 0, 458762, 17, 0, 458772, 21, 0, 458778, 20, 0, 458785, 13, 0, 458788, 25, 0, 458789, 12, 0, 589808, 26, 0, 589810, 19, 0, 589814, 13, 0, 589817, 19, 0, 524295, 10, 0, 524296, 11, 0, 524297, 29, 0, 524321, 18, 0, 524325, 18, 0, 524328, 7, 0, 655350, 19, 0, 589829, 6, 0, 589831, 16, 0, 589832, 17, 0, 589864, 13, 0, 720895, 8, 0, 655360, 9, 0, 655365, 12, 0, 655366, 6, 0, 655388, 26, 0, 655400, 18, 0, 786398, 26, 0, 786431, 14, 0, 720896, 15, 0, 720900, 22, 0, 720901, 19, 0, 720902, 12, 0, 720903, 29, 0, 720911, 26, 0, 720916, 0, 0, 720917, 0, 0, 786438, 19, 0, 851981, 27, 0, 851990, 10, 0, 851991, 11, 0, 851993, 0, 0, 852025, 0, 0, 983009, 21, 0, 983031, 26, 0, 917508, 21, 0, 917523, 7, 0, 917526, 16, 0, 917527, 17, 0, 917529, 0, 0, 917537, 26, 0, 983051, 21, 0, 983059, 13, 0, 1114107, 6, 0, 1048595, 19, 0, 1048596, 29, 0, 1048616, 27, 0, 1179621, 21, 0, 1179641, 7, 0, 1179642, 25, 0, 1179643, 12, 0, 1245177, 13, 0, 1245179, 18, 0, 1310713, 18, 0, 1245221, 20, 0, 1376241, 26, 0, 1310728, 21, 0, 1310732, 27, 0, 1441761, 27, 0, 1441771, 26, 0, 1441790, 26, 0, 1507293, 20, 0, 1572840, 27, 0, 1507344, 7, 0, 1638394, 26, 0, 1572880, 13, 0, 1572888, 27, 0, 1638416, 19, 0, 1703941, 27, 0, 1703964, 21, 0, 1834985, 27, 0, 1900509, 26, 0, 1900531, 21, 0, 1966052, 26, 0, 1966063, 26, 0, 1900578, 27, 0, 2097138, 26, 0, 2162665, 26, 0, 2162748, 8, 0, 2162749, 9, 0, 2228284, 14, 0, 2228285, 15, 0, 2228286, 29, 0, 2359258, 21, 0, 2424856, 20, 0, 2555890, 26, 0, 2555895, 20, 0, 2490372, 26, 0, 2490379, 21, 0, 2621438, 26, 0, 2555939, 21, 0, 2555940, 26, 0, 2686956, 20, 0, 2687006, 21, 0, 2752529, 21, 0, 2752530, 26, 0, 2883558, 26, 0, 2883589, 26, 0, 3080183, 26, 0, 3014672, 20, 0, 3014685, 21, 0, 3014690, 26, 0 )
 _sections_unfolded = [ "Cell", "Z Index" ]
 
 [node name="Rocks" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
+visible = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="BlueRock" parent="Rocks" index="0" instance=ExtResource( 6 )]
+[node name="RockCluster" type="Node2D" parent="Rocks" index="0"]
 
-position = Vector2( 82, 650 )
+editor/display_folded = true
+
+[node name="BlueRock" parent="Rocks/RockCluster" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock46" parent="Rocks" index="1" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 782, 396 )
+position = Vector2( 264, 504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock3" parent="Rocks/RockCluster" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock65" parent="Rocks" index="2" instance=ExtResource( 6 )]
+[node name="RockCluster9" type="Node2D" parent="Rocks" index="1"]
 
-position = Vector2( -86, -466 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+position = Vector2( 792, -1016 )
 
-[node name="BlueRock68" parent="Rocks" index="3" instance=ExtResource( 6 )]
+[node name="BlueRock" parent="Rocks/RockCluster9" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -282, -470 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock69" parent="Rocks" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( -348, -458 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock6" parent="Rocks" index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 374, 676 )
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock49" parent="Rocks" index="6" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster9" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 392, -466 )
+position = Vector2( 264, 504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock3" parent="Rocks/RockCluster9" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock11" parent="Rocks" index="7" instance=ExtResource( 6 )]
+[node name="RockCluster10" type="Node2D" parent="Rocks" index="2"]
 
-position = Vector2( 674, 686 )
+position = Vector2( 488, -1016 )
+
+[node name="BlueRock" parent="Rocks/RockCluster10" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock2" parent="Rocks/RockCluster10" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock63" parent="Rocks" index="8" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster10" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 272, -464 )
+position = Vector2( 176, 560 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockCluster11" type="Node2D" parent="Rocks" index="3"]
+
+position = Vector2( 200, -968 )
+
+[node name="BlueRock" parent="Rocks/RockCluster11" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock53" parent="Rocks" index="9" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster11" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 692, -456 )
+position = Vector2( 264, 504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock3" parent="Rocks/RockCluster11" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock44" parent="Rocks" index="10" instance=ExtResource( 6 )]
+[node name="RockCluster12" type="Node2D" parent="Rocks" index="4"]
 
-position = Vector2( 860, -450 )
+position = Vector2( -240, -1000 )
+
+[node name="BlueRock" parent="Rocks/RockCluster12" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock16" parent="Rocks" index="11" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster12" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 964, 664 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock57" parent="Rocks" index="12" instance=ExtResource( 6 )]
-
-position = Vector2( 982, -478 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock2" parent="Rocks" index="13" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster12" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 22, 670 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock60" parent="Rocks" index="14" instance=ExtResource( 6 )]
+[node name="RockCluster13" type="Node2D" parent="Rocks" index="5"]
 
-position = Vector2( 40, -472 )
+position = Vector2( -536, -1016 )
+
+[node name="BlueRock" parent="Rocks/RockCluster13" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock10" parent="Rocks" index="15" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster13" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 314, 696 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock52" parent="Rocks" index="16" instance=ExtResource( 6 )]
-
-position = Vector2( 332, -446 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock15" parent="Rocks" index="17" instance=ExtResource( 6 )]
-
-position = Vector2( 614, 706 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock58" parent="Rocks" index="18" instance=ExtResource( 6 )]
-
-position = Vector2( 632, -436 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock20" parent="Rocks" index="19" instance=ExtResource( 6 )]
-
-position = Vector2( 904, 684 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock59" parent="Rocks" index="20" instance=ExtResource( 6 )]
-
-position = Vector2( 928, -440 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock3" parent="Rocks" index="21" instance=ExtResource( 6 )]
-
-position = Vector2( 136, 676 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock7" parent="Rocks" index="22" instance=ExtResource( 6 )]
-
-position = Vector2( 428, 702 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock50" parent="Rocks" index="23" instance=ExtResource( 6 )]
-
-position = Vector2( 446, -440 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock12" parent="Rocks" index="24" instance=ExtResource( 6 )]
-
-position = Vector2( 728, 712 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock54" parent="Rocks" index="25" instance=ExtResource( 6 )]
-
-position = Vector2( 746, -430 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock17" parent="Rocks" index="26" instance=ExtResource( 6 )]
-
-position = Vector2( 1018, 690 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock61" parent="Rocks" index="27" instance=ExtResource( 6 )]
-
-position = Vector2( 1036, -452 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock4" parent="Rocks" index="28" instance=ExtResource( 6 )]
-
-position = Vector2( 196, 694 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock48" parent="Rocks" index="29" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster13" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 214, -448 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock9" parent="Rocks" index="30" instance=ExtResource( 6 )]
+[node name="RockCluster14" type="Node2D" parent="Rocks" index="6"]
 
-position = Vector2( 488, 720 )
+position = Vector2( -832, -1032 )
+
+[node name="BlueRock" parent="Rocks/RockCluster14" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock51" parent="Rocks" index="31" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster14" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 506, -422 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock14" parent="Rocks" index="32" instance=ExtResource( 6 )]
-
-position = Vector2( 788, 730 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock55" parent="Rocks" index="33" instance=ExtResource( 6 )]
-
-position = Vector2( 806, -412 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock23" parent="Rocks" index="34" instance=ExtResource( 6 )]
-
-position = Vector2( 1180, 542 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock62" parent="Rocks" index="35" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster14" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 572, -428 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock64" parent="Rocks" index="36" instance=ExtResource( 6 )]
+[node name="RockCluster15" type="Node2D" parent="Rocks" index="7"]
 
-position = Vector2( -16, -448 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+editor/display_folded = true
+position = Vector2( -1120, -1056 )
 
-[node name="BlueRock66" parent="Rocks" index="37" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster15" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -150, -472 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock67" parent="Rocks" index="38" instance=ExtResource( 6 )]
-
-position = Vector2( -212, -454 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock70" parent="Rocks" index="39" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster15" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -412, -462 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock71" parent="Rocks" index="40" instance=ExtResource( 6 )]
+[node name="RockClusertVert6" type="Node2D" parent="Rocks" index="8"]
 
-position = Vector2( -476, -464 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+editor/display_folded = true
+position = Vector2( 0, 880 )
 
-[node name="BlueRock72" parent="Rocks" index="41" instance=ExtResource( 6 )]
+[node name="BlueRock4" parent="Rocks/RockClusertVert6" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -536, -456 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock73" parent="Rocks" index="42" instance=ExtResource( 6 )]
-
-position = Vector2( -612, -466 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock74" parent="Rocks" index="43" instance=ExtResource( 6 )]
-
-position = Vector2( -586, -416 )
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock75" parent="Rocks" index="44" instance=ExtResource( 6 )]
+[node name="BlueRock5" parent="Rocks/RockClusertVert6" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -678, -464 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock76" parent="Rocks" index="45" instance=ExtResource( 6 )]
-
-position = Vector2( -744, -456 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock77" parent="Rocks" index="46" instance=ExtResource( 6 )]
-
-position = Vector2( -810, -440 )
+position = Vector2( -1144, -504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock78" parent="Rocks" index="47" instance=ExtResource( 6 )]
+[node name="BlueRock6" parent="Rocks/RockClusertVert6" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -872, -422 )
+position = Vector2( -1064, -448 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock79" parent="Rocks" index="48" instance=ExtResource( 6 )]
+[node name="RockClusertVert11" type="Node2D" parent="Rocks" index="9"]
 
-position = Vector2( -934, -418 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+editor/display_folded = true
+position = Vector2( 2304, 912 )
 
-[node name="BlueRock80" parent="Rocks" index="49" instance=ExtResource( 6 )]
+[node name="BlueRock4" parent="Rocks/RockClusertVert11" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -932, -362 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock81" parent="Rocks" index="50" instance=ExtResource( 6 )]
-
-position = Vector2( -934, -306 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock82" parent="Rocks" index="51" instance=ExtResource( 6 )]
-
-position = Vector2( -946, -246 )
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock83" parent="Rocks" index="52" instance=ExtResource( 6 )]
+[node name="BlueRock5" parent="Rocks/RockClusertVert11" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -976, -198 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock84" parent="Rocks" index="53" instance=ExtResource( 6 )]
-
-position = Vector2( -974, -146 )
+position = Vector2( -1144, -504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock85" parent="Rocks" index="54" instance=ExtResource( 6 )]
+[node name="BlueRock6" parent="Rocks/RockClusertVert11" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -1018, -112 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock86" parent="Rocks" index="55" instance=ExtResource( 6 )]
-
-position = Vector2( -1016, -58 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock87" parent="Rocks" index="56" instance=ExtResource( 6 )]
-
-position = Vector2( -1012, -12 )
+position = Vector2( -1064, -448 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock88" parent="Rocks" index="57" instance=ExtResource( 6 )]
+[node name="RockClusertVert7" type="Node2D" parent="Rocks" index="10"]
 
-position = Vector2( -1022, 54 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+editor/display_folded = true
+position = Vector2( 0, 880 )
 
-[node name="BlueRock90" parent="Rocks" index="58" instance=ExtResource( 6 )]
+[node name="BlueRock4" parent="Rocks/RockClusertVert7" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -1012, 112 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock91" parent="Rocks" index="59" instance=ExtResource( 6 )]
-
-position = Vector2( -994, 168 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock92" parent="Rocks" index="60" instance=ExtResource( 6 )]
-
-position = Vector2( -984, 224 )
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock93" parent="Rocks" index="61" instance=ExtResource( 6 )]
+[node name="BlueRock5" parent="Rocks/RockClusertVert7" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -1018, 278 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock94" parent="Rocks" index="62" instance=ExtResource( 6 )]
-
-position = Vector2( -1058, 338 )
+position = Vector2( -1144, -504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock95" parent="Rocks" index="63" instance=ExtResource( 6 )]
+[node name="BlueRock6" parent="Rocks/RockClusertVert7" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -1068, 386 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock96" parent="Rocks" index="64" instance=ExtResource( 6 )]
-
-position = Vector2( -1078, 436 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock97" parent="Rocks" index="65" instance=ExtResource( 6 )]
-
-position = Vector2( -1066, 490 )
+position = Vector2( -1064, -448 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock98" parent="Rocks" index="66" instance=ExtResource( 6 )]
+[node name="RockClusertVert8" type="Node2D" parent="Rocks" index="11"]
 
-position = Vector2( -1054, 546 )
+editor/display_folded = true
+position = Vector2( 2304, 912 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert8" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock99" parent="Rocks" index="67" instance=ExtResource( 6 )]
+[node name="BlueRock5" parent="Rocks/RockClusertVert8" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -1022, 606 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock100" parent="Rocks" index="68" instance=ExtResource( 6 )]
-
-position = Vector2( -998, 556 )
+position = Vector2( -1144, -504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock101" parent="Rocks" index="69" instance=ExtResource( 6 )]
+[node name="BlueRock6" parent="Rocks/RockClusertVert8" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -960, 610 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock102" parent="Rocks" index="70" instance=ExtResource( 6 )]
-
-position = Vector2( -926, 652 )
+position = Vector2( -1064, -448 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock103" parent="Rocks" index="71" instance=ExtResource( 6 )]
+[node name="RockCluster8" type="Node2D" parent="Rocks" index="12"]
 
-position = Vector2( -876, 678 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+position = Vector2( -1184, 0 )
 
-[node name="BlueRock104" parent="Rocks" index="72" instance=ExtResource( 6 )]
+[node name="BlueRock" parent="Rocks/RockCluster8" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -818, 678 )
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock106" parent="Rocks" index="73" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster8" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -704, 672 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock107" parent="Rocks" index="74" instance=ExtResource( 6 )]
-
-position = Vector2( -642, 664 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock108" parent="Rocks" index="75" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster8" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -584, 654 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock109" parent="Rocks" index="76" instance=ExtResource( 6 )]
-
-position = Vector2( -530, 672 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock110" parent="Rocks" index="77" instance=ExtResource( 6 )]
+[node name="RockCluster4" type="Node2D" parent="Rocks" index="13"]
 
-position = Vector2( -472, 666 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+position = Vector2( 592, 0 )
 
-[node name="BlueRock112" parent="Rocks" index="78" instance=ExtResource( 6 )]
+[node name="BlueRock" parent="Rocks/RockCluster4" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -358, 658 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock113" parent="Rocks" index="79" instance=ExtResource( 6 )]
-
-position = Vector2( -302, 670 )
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock114" parent="Rocks" index="80" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster4" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -238, 660 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock115" parent="Rocks" index="81" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster4" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -178, 640 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock116" parent="Rocks" index="82" instance=ExtResource( 6 )]
-
-position = Vector2( -122, 660 )
-scale = Vector2( 2, 2 )
-z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock117" parent="Rocks" index="83" instance=ExtResource( 6 )]
-
-position = Vector2( -62, 676 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock118" parent="Rocks" index="84" instance=ExtResource( 6 )]
+[node name="RockCluster7" type="Node2D" parent="Rocks" index="14"]
 
-position = Vector2( -20, 710 )
+position = Vector2( -592, 0 )
+
+[node name="BlueRock" parent="Rocks/RockCluster7" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock19" parent="Rocks" index="85" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster7" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1078, 708 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
-
-[node name="BlueRock56" parent="Rocks" index="86" instance=ExtResource( 6 )]
-
-position = Vector2( 1096, -434 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock24" parent="Rocks" index="87" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster7" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 1158, -442 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock45" parent="Rocks" index="88" instance=ExtResource( 6 )]
+[node name="RockCluster2" type="Node2D" parent="Rocks" index="15"]
 
-position = Vector2( 1176, -1584 )
+position = Vector2( 296, 0 )
+
+[node name="BlueRock" parent="Rocks/RockCluster2" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock2" parent="Rocks/RockCluster2" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock5" parent="Rocks" index="89" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster2" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 254, 670 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock8" parent="Rocks" index="90" instance=ExtResource( 6 )]
+[node name="RockCluster6" type="Node2D" parent="Rocks" index="16"]
 
-position = Vector2( 546, 696 )
-scale = Vector2( 2, 2 )
-z_index = -7
+position = Vector2( -888, 0 )
 
-[node name="BlueRock13" parent="Rocks" index="91" instance=ExtResource( 6 )]
+[node name="BlueRock" parent="Rocks/RockCluster6" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 846, 706 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock18" parent="Rocks" index="92" instance=ExtResource( 6 )]
-
-position = Vector2( 1136, 684 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock22" parent="Rocks" index="93" instance=ExtResource( 6 )]
-
-position = Vector2( 1190, 598 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock25" parent="Rocks" index="94" instance=ExtResource( 6 )]
-
-position = Vector2( 1166, -398 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock26" parent="Rocks" index="95" instance=ExtResource( 6 )]
-
-position = Vector2( 1172, -342 )
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock27" parent="Rocks" index="96" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster6" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1184, -288 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock28" parent="Rocks" index="97" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster6" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 1192, -246 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock29" parent="Rocks" index="98" instance=ExtResource( 6 )]
-
-position = Vector2( 1172, -214 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock30" parent="Rocks" index="99" instance=ExtResource( 6 )]
+[node name="RockCluster3" type="Node2D" parent="Rocks" index="17"]
 
-position = Vector2( 1210, -166 )
+position = Vector2( 888, 0 )
+
+[node name="BlueRock" parent="Rocks/RockCluster3" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock31" parent="Rocks" index="100" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster3" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1212, -108 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-
-[node name="BlueRock32" parent="Rocks" index="101" instance=ExtResource( 6 )]
-
-position = Vector2( 1180, -62 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock33" parent="Rocks" index="102" instance=ExtResource( 6 )]
-
-position = Vector2( 1176, -10 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock34" parent="Rocks" index="103" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster3" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 1176, 46 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock35" parent="Rocks" index="104" instance=ExtResource( 6 )]
-
-position = Vector2( 1170, 100 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock36" parent="Rocks" index="105" instance=ExtResource( 6 )]
+[node name="RockCluster5" type="Node2D" parent="Rocks" index="18"]
 
-position = Vector2( 1188, 150 )
+position = Vector2( -296, 0 )
+
+[node name="BlueRock" parent="Rocks/RockCluster5" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock37" parent="Rocks" index="106" instance=ExtResource( 6 )]
+[node name="BlueRock2" parent="Rocks/RockCluster5" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1200, 188 )
+position = Vector2( 264, 504 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock38" parent="Rocks" index="107" instance=ExtResource( 6 )]
+[node name="BlueRock3" parent="Rocks/RockCluster5" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 1192, 244 )
-scale = Vector2( 2, 2 )
-z_index = -7
-flip_h = true
-
-[node name="BlueRock39" parent="Rocks" index="108" instance=ExtResource( 6 )]
-
-position = Vector2( 1194, 294 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock40" parent="Rocks" index="109" instance=ExtResource( 6 )]
-
-position = Vector2( 1178, 344 )
+position = Vector2( 176, 560 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock41" parent="Rocks" index="110" instance=ExtResource( 6 )]
+[node name="RockClusertVert" type="Node2D" parent="Rocks" index="19"]
 
-position = Vector2( 1184, 394 )
+[node name="BlueRock4" parent="Rocks/RockClusertVert" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock42" parent="Rocks" index="111" instance=ExtResource( 6 )]
+[node name="BlueRock5" parent="Rocks/RockClusertVert" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1166, 446 )
+position = Vector2( -1144, -504 )
 scale = Vector2( 2, 2 )
 z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock119" parent="Rocks" index="112" instance=ExtResource( 6 )]
+[node name="BlueRock6" parent="Rocks/RockClusertVert" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -468, 412 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock120" parent="Rocks" index="113" instance=ExtResource( 6 )]
-
-position = Vector2( -798, 200 )
-scale = Vector2( 2, 2 )
-z_index = -7
-
-[node name="BlueRock121" parent="Rocks" index="114" instance=ExtResource( 6 )]
-
-position = Vector2( -580, -14 )
+position = Vector2( -1064, -448 )
 scale = Vector2( 2, 2 )
 z_index = -7
 flip_h = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="BlueRock123" parent="Rocks" index="115" instance=ExtResource( 6 )]
+[node name="RockClusertVert13" type="Node2D" parent="Rocks" index="20"]
 
-position = Vector2( 300, -262 )
+position = Vector2( 2304, 32 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert13" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
 scale = Vector2( 2, 2 )
 z_index = -7
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert13" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert13" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert2" type="Node2D" parent="Rocks" index="21"]
+
+position = Vector2( 0, 176 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert2" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert2" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert2" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert14" type="Node2D" parent="Rocks" index="22"]
+
+position = Vector2( 2304, 208 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert14" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert14" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert14" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert3" type="Node2D" parent="Rocks" index="23"]
+
+position = Vector2( 0, 352 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert3" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert3" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert3" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert9" type="Node2D" parent="Rocks" index="24"]
+
+position = Vector2( 2304, 384 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert9" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert9" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert9" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert4" type="Node2D" parent="Rocks" index="25"]
+
+position = Vector2( 0, 528 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert4" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert4" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert4" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert12" type="Node2D" parent="Rocks" index="26"]
+
+position = Vector2( 2304, 560 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert12" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert12" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert12" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert5" type="Node2D" parent="Rocks" index="27"]
+
+position = Vector2( 0, 704 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert5" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert5" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert5" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="RockClusertVert10" type="Node2D" parent="Rocks" index="28"]
+
+editor/display_folded = true
+position = Vector2( 2304, 736 )
+
+[node name="BlueRock4" parent="Rocks/RockClusertVert10" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1056, -528 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks/RockClusertVert10" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( -1144, -504 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks/RockClusertVert10" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -1064, -448 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock4" parent="Rocks" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 304, 632 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock5" parent="Rocks" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 528, 696 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock6" parent="Rocks" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 848, 672 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock7" parent="Rocks" index="32" instance=ExtResource( 6 )]
+
+position = Vector2( 1192, 696 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock8" parent="Rocks" index="33" instance=ExtResource( 6 )]
+
+position = Vector2( 1352, 560 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock9" parent="Rocks" index="34" instance=ExtResource( 6 )]
+
+position = Vector2( 1464, 368 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock10" parent="Rocks" index="35" instance=ExtResource( 6 )]
+
+position = Vector2( 1400, 240 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock11" parent="Rocks" index="36" instance=ExtResource( 6 )]
+
+position = Vector2( 1432, 64 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock12" parent="Rocks" index="37" instance=ExtResource( 6 )]
+
+position = Vector2( 1544, -112 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock13" parent="Rocks" index="38" instance=ExtResource( 6 )]
+
+position = Vector2( 1560, 216 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock14" parent="Rocks" index="39" instance=ExtResource( 6 )]
+
+position = Vector2( 1608, 416 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock15" parent="Rocks" index="40" instance=ExtResource( 6 )]
+
+position = Vector2( 1344, 280 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock16" parent="Rocks" index="41" instance=ExtResource( 6 )]
+
+position = Vector2( 1368, -128 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock17" parent="Rocks" index="42" instance=ExtResource( 6 )]
+
+position = Vector2( 1480, -328 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock18" parent="Rocks" index="43" instance=ExtResource( 6 )]
+
+position = Vector2( 1360, -432 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock19" parent="Rocks" index="44" instance=ExtResource( 6 )]
+
+position = Vector2( 968, -624 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock20" parent="Rocks" index="45" instance=ExtResource( 6 )]
+
+position = Vector2( 632, -632 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock21" parent="Rocks" index="46" instance=ExtResource( 6 )]
+
+position = Vector2( 392, -584 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock22" parent="Rocks" index="47" instance=ExtResource( 6 )]
+
+position = Vector2( -136, -632 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock23" parent="Rocks" index="48" instance=ExtResource( 6 )]
+
+position = Vector2( -480, -672 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock24" parent="Rocks" index="49" instance=ExtResource( 6 )]
+
+position = Vector2( -864, -680 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock25" parent="Rocks" index="50" instance=ExtResource( 6 )]
+
+position = Vector2( -1240, -608 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock26" parent="Rocks" index="51" instance=ExtResource( 6 )]
+
+position = Vector2( -1352, -256 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock27" parent="Rocks" index="52" instance=ExtResource( 6 )]
+
+position = Vector2( -1296, -104 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock28" parent="Rocks" index="53" instance=ExtResource( 6 )]
+
+position = Vector2( -1416, 128 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock29" parent="Rocks" index="54" instance=ExtResource( 6 )]
+
+position = Vector2( -1296, 360 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock30" parent="Rocks" index="55" instance=ExtResource( 6 )]
+
+position = Vector2( -1304, 560 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock31" parent="Rocks" index="56" instance=ExtResource( 6 )]
+
+position = Vector2( -1104, 712 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock32" parent="Rocks" index="57" instance=ExtResource( 6 )]
+
+position = Vector2( -720, 712 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock33" parent="Rocks" index="58" instance=ExtResource( 6 )]
+
+position = Vector2( -304, 704 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock34" parent="Rocks" index="59" instance=ExtResource( 6 )]
+
+position = Vector2( 0, 160 )
+scale = Vector2( 2, 2 )
+z_index = -7
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="BlueRock35" parent="Rocks" index="60" instance=ExtResource( 6 )]
+
+position = Vector2( 120, 160 )
+scale = Vector2( 2, 2 )
+z_index = -7
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="Coins" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( -8, 0 )
 
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 524, 560 )
+position = Vector2( 536, 424 )
 
 [node name="Coin2" parent="Coins" index="1" instance=ExtResource( 7 )]
 
-position = Vector2( -12, 558 )
+position = Vector2( -16, 416 )
 
 [node name="Coin3" parent="Coins" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( -406, 546 )
+position = Vector2( -400, 440 )
 
 [node name="Coin4" parent="Coins" index="3" instance=ExtResource( 7 )]
 
@@ -1326,8 +1505,6 @@ process_parent = false
 physics_process_parent = false
 
 [node name="Background" type="Node2D" parent="." index="9"]
-
-editor/display_folded = true
 
 [node name="Space" type="Node2D" parent="Background" index="0"]
 

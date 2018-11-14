@@ -1,0 +1,335 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://interface/Canvas/MenuPanel.gd" type="Script" id=1]
+[ext_resource path="res://interface/panel.png" type="Texture" id=2]
+[ext_resource path="res://interface/parchment.png" type="Texture" id=3]
+[ext_resource path="res://player/skeleton/idle1.png" type="Texture" id=4]
+[ext_resource path="res://player/skeleton/weapon/weapon.png" type="Texture" id=5]
+[ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=6]
+[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interface/play-button-filetypepng-1.png" type="Texture" id=8]
+[ext_resource path="res://interface/play-button-pressed.png" type="Texture" id=9]
+
+[node name="Panel" type="KinematicBody2D"]
+
+position = Vector2( 576, -344 )
+scale = Vector2( 4, 4 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlayerStats" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -144, -70 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Parchment" type="Sprite" parent="PlayerStats" index="0"]
+
+position = Vector2( 708, 352 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Text" type="Node2D" parent="PlayerStats" index="1"]
+
+editor/display_folded = true
+position = Vector2( 0, 4 )
+
+[node name="Phrase" type="Label" parent="PlayerStats/Text" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 464.0
+margin_top = 120.0
+margin_right = 617.0
+margin_bottom = 219.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Six Feet of Earth Makes Us All Equal"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Description" type="Label" parent="PlayerStats/Text" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 588.0
+margin_top = 240.0
+margin_right = 836.0
+margin_bottom = 444.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Unleash the power of the undead. Cold and damned, using sorcery instead of ligaments, seek out other spirits to join you in the grave."
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WeaponName" type="Label" parent="PlayerStats/Text" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 612.0
+margin_top = 256.0
+margin_right = 765.0
+margin_bottom = 355.0
+rect_scale = Vector2( 1.25, 1.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "BLOOD WAND"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="WeaponDescriptionPos" type="Label" parent="PlayerStats/Text" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 308.0
+margin_right = 780.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.153809, 0.492188, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Expands
+
+No Recoil
+"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="WeaponDescriptionNeg" type="Label" parent="PlayerStats/Text" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 308.0
+margin_right = 780.0
+margin_bottom = 692.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.660156, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "
+
+
+
+Slow
+"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="PlayerEnlarged" type="Sprite" parent="PlayerStats" index="2"]
+
+position = Vector2( 440, 412 )
+scale = Vector2( 14, 14 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -0.5 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Weapon" type="Sprite" parent="PlayerStats/PlayerEnlarged" index="0"]
+
+position = Vector2( 1.875, 4 )
+rotation = 0.323297
+texture = ExtResource( 5 )
+offset = Vector2( 0, -0.5 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Bullet" type="Sprite" parent="PlayerStats/PlayerEnlarged" index="1"]
+
+visible = false
+position = Vector2( 18, 9.71428 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Star1" parent="." index="2" instance=ExtResource( 7 )]
+
+position = Vector2( -12.375, -11.8125 )
+scale = Vector2( 0.125, 0.125 )
+z_index = 1
+
+[node name="Star2" parent="." index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 49.625, -17.8125 )
+scale = Vector2( 0.0625, 0.0625 )
+
+[node name="Star3" parent="." index="4" instance=ExtResource( 7 )]
+
+position = Vector2( -1.375, 21.1875 )
+scale = Vector2( 0.0625, 0.0625 )
+
+[node name="MenuButtonContainer" type="HBoxContainer" parent="." index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -78.0
+margin_top = 56.0
+margin_right = 546.0
+margin_bottom = 232.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="QuickMatchButton" type="TextureButton" parent="MenuButtonContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 208.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+[node name="QuickMatchButton2" type="TextureButton" parent="MenuButtonContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 208.0
+margin_right = 416.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+[node name="QuickMatchButton3" type="TextureButton" parent="MenuButtonContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 416.0
+margin_right = 624.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 96 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visibility" ]
+
+

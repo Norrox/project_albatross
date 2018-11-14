@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interface/Canvas/Panel.gd" type="Script" id=1]
+[ext_resource path="res://interface/panel.png" type="Texture" id=2]
+[ext_resource path="res://transparent_pixel.png" type="Texture" id=3]
+
+[node name="GamePanel" type="KinematicBody2D"]
+
+position = Vector2( 576, -282 )
+scale = Vector2( 4, 4 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="VictoryLabel" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "VICTORIOUS!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="PanelButton" type="TouchScreenButton" parent="." index="2"]
+
+position = Vector2( -73, -43.5 )
+scale = Vector2( 146.25, 109.75 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[connection signal="pressed" from="PanelButton" to="." method="_on_PanelButton_pressed"]
+
+

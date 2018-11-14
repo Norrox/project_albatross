@@ -33,7 +33,6 @@ var slave_hp = MAX_HP
 var frame_num = 1
 
 func _ready():
-	print(get_tree().current_scene.name)
 	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one or Settings.match_type == Settings.MATCH_TYPE.ffa_4:
 		lives = 1
 		update_ui_hearts(1)
@@ -193,7 +192,8 @@ func damage(value):
 				print(name + ' eliminated')
 				Network.out_of_lives = true
 				_die(false, false)
-		update_reliable('update_player_health')
+		else:
+			update_reliable('update_player_health')
 		_update_health_bar(health_points)
 
 func _die(skip_anim=false, respawn=true):
@@ -209,11 +209,14 @@ func _die(skip_anim=false, respawn=true):
 		lives -= 1
 		if lives < 1:
 			Network.out_of_lives = true
+			Network.google_leave_room(Network.self_data.name)
 		update_ui_hearts(lives)
 		dead = true
 		if !Network.force_local:
 			Network.self_data.lives = lives
 			update_reliable('update_player_death')
+	else:
+		Network.check_win_condition()
 	
 	if !skip_anim:		
 		play_anim('die')

@@ -10,7 +10,7 @@ func _ready():
 	hide()
 
 func _physics_process(delta):
-	if !Network.victorious and !Network.out_of_lives and !get_tree().current_scene.name == 'Menu':
+	if !Network.victorious and !Network.out_of_lives:
 		return
 	if Network.out_of_lives:
 		$VictoryLabel.text = 'DEFEAT!'
@@ -24,8 +24,12 @@ func _physics_process(delta):
 		if global_position.distance_to(ORIG_POS) > 1:
 			move_and_slide((ORIG_POS - global_position) * MOVE_SPEED)
 		else:
-			get_tree().change_scene('res://interface/Menu.tscn')
-
+			for child in get_tree().root.get_children():
+				if child.is_in_group('players'):
+					child.queue_free()
+					yield(child, 'tree_exited')
+			Network.cleanup_up_after_game()
+			Global.goto_scene('res://interface/Menu.tscn')
 
 func _on_PanelButton_pressed():
 	move_up = true

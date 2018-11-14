@@ -7,37 +7,27 @@ func _ready():
 	if OS.get_name() == 'Windows':
 		#get_tree().change_scene('res://Game.tscn')
 		#get_tree().change_scene('res://GrassLevel.tscn')
-		get_tree().change_scene('res://SpaceLevel.tscn')
+		Global.goto_scene('res://SpaceLevel.tscn')
 
 func _load_game():
 	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one:
-		get_tree().change_scene('res://GrassLevel.tscn')
+		Global.goto_scene('res://GrassLevel.tscn')
 	elif Settings.match_type == Settings.MATCH_TYPE.ffa_8:
-		get_tree().change_scene('res://Game.tscn')
+		Global.goto_scene('res://Game.tscn')
 	else:
-		get_tree().change_scene('res://SpaceLevel.tscn')
+		Global.goto_scene('res://SpaceLevel.tscn')
 
 func _on_SpinBox_value_changed(value):
 	print("~~~~~~~~~~~MIN_PLAYERS_CHANGED~~~~~~~~~" + str(value))
 	Network.MIN_PLAYERS = int(value)
 
 func _on_QuickMatchButton_pressed():
-	if !Network.is_online():
-		print('not online')
-		return
-	
-	var skip = false
-	if Network.signed_in:
-		skip = true
 	if button_busy or quick_match_started:
 		return
 	button_busy = true
-	if !skip:
+	if !Network.signed_in:
 		try_sign_in()
 		wait_till_signed_in()
-		if !Network.signed_in:
-			print('failed to sign in')
-			return
 	#connected - start quick match
 	Network.start_quick_game(Network.MIN_PLAYERS, Network.MAX_PLAYERS, 0)
 	quick_match_started = true
@@ -50,19 +40,15 @@ func _on_SignOutButton_pressed():
 		
 func try_sign_in():
 	if !Network.signing_in_busy:
-			print('Not signed in or trying to sign in.. signing in interactive')
-			Network.google_sign_in(false)
+		print('Not signed in or trying to sign in.. signing in interactive')
+		Network.google_sign_in()
 	else:
 		print('sign in already in progress.. busy')
 		
 func wait_till_signed_in():
-	var wait_time = 0.0
 	while !Network.signed_in:
-		if wait_time > Network.SIGN_IN_WAIT_TIME + 0.2:
-			print('wait time expired')
-			break
 		yield(get_tree().create_timer(0.02),'timeout')		
-		wait_time += 0.02
+
 
 func _on_SkeletonButton_pressed():
 	Settings.player_type = Settings.PLAYER_TYPE.skeleton
@@ -105,18 +91,24 @@ func _on_BanditButton_pressed():
 	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nSmall'
 
 func _on_Match1v1Button_pressed():
+	if quick_match_started:
+		return
 	Settings.match_type = Settings.MATCH_TYPE.one_verse_one
 	Network.MIN_PLAYERS = 1
-	Network.MAX_PLAYERS = 2
+	Network.MAX_PLAYERS = 1
 
 
 func _on_MatchFFAButton_pressed():
+	if quick_match_started:
+		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_8
 	Network.MIN_PLAYERS = 7
-	Network.MAX_PLAYERS = 8
+	Network.MAX_PLAYERS = 7
 
 
 func _on_MatchFFA4Button_pressed():
+	if quick_match_started:
+		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_4
 	Network.MIN_PLAYERS = 3
-	Network.MAX_PLAYERS = 4
+	Network.MAX_PLAYERS = 3
