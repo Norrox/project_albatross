@@ -28,8 +28,6 @@
 [ext_resource path="res://black.png" type="Texture" id=26]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=27]
 
-
-
 [sub_resource type="Environment" id=1]
 
 background_mode = 4
