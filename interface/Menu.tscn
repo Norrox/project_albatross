@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
 [ext_resource path="res://hard_black.png" type="Texture" id=2]
@@ -29,11 +29,14 @@
 [ext_resource path="res://player/skeleton/weapon/bullet.png" type="Texture" id=27]
 [ext_resource path="res://interface/play-button-filetypepng-1.png" type="Texture" id=28]
 [ext_resource path="res://interface/play-button-pressed.png" type="Texture" id=29]
-[ext_resource path="res://player/bandit/idle_idle_0.png" type="Texture" id=30]
+[ext_resource path="res://player/skeleton/idle1_pressed.png" type="Texture" id=30]
 [ext_resource path="res://player/human/sprites/Idle_idle_0.png" type="Texture" id=31]
-[ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=32]
-[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=33]
-[ext_resource path="res://wav/one shots/error.wav" type="AudioStream" id=34]
+[ext_resource path="res://player/human/sprites/Idle_idle_0_pressed.png" type="Texture" id=32]
+[ext_resource path="res://player/bandit/idle_idle_0.png" type="Texture" id=33]
+[ext_resource path="res://player/bandit/idle_idle_0_pressed.png" type="Texture" id=34]
+[ext_resource path="res://interface/Canvas/FX/ScanLines.shader" type="Shader" id=35]
+[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=36]
+[ext_resource path="res://wav/one shots/error.wav" type="AudioStream" id=37]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -45,7 +48,7 @@ shader_param/OCTAVES = null
 [sub_resource type="ShaderMaterial" id=2]
 
 render_priority = 0
-shader = ExtResource( 32 )
+shader = ExtResource( 35 )
 shader_param/lines_distance = null
 shader_param/pixel_size = null
 shader_param/size_screen = null
@@ -109,6 +112,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Logo" type="Sprite" parent="Title" index="1"]
 
+visible = false
 position = Vector2( 136, 104 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
@@ -286,6 +290,8 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="MatchSelect" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="MatchTypeLabel2" type="Label" parent="MatchSelect" index="0"]
 
 anchor_left = 0.0
@@ -411,6 +417,30 @@ passby_press = false
 action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Z Index" ]
+
+[node name="MatchTypeLabel" type="Label" parent="MatchSelect" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_top = 124.0
+margin_right = 139.0
+margin_bottom = 138.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0, 0.578125, 1, 1 )
+text = "Match Type"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
 
 [node name="Fog" parent="." index="4" instance=ExtResource( 12 )]
 
@@ -939,7 +969,6 @@ _sections_unfolded = [ "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Visi
 
 [node name="CharacterSelect" type="Node2D" parent="." index="8"]
 
-editor/display_folded = true
 position = Vector2( 868, 44 )
 
 [node name="SkeletonLabel" type="Label" parent="CharacterSelect" index="0"]
@@ -1017,12 +1046,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="BanditButton" type="TouchScreenButton" parent="CharacterSelect" index="3"]
+[node name="SkeletonButton" type="TouchScreenButton" parent="CharacterSelect" index="3"]
 
-position = Vector2( 156, 420 )
+position = Vector2( 160, 128 )
 scale = Vector2( 4, 4 )
-normal = ExtResource( 30 )
-pressed = ExtResource( 11 )
+normal = ExtResource( 25 )
+pressed = ExtResource( 30 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -1037,7 +1066,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 160, 272 )
 scale = Vector2( 4, 4 )
 normal = ExtResource( 31 )
-pressed = ExtResource( 11 )
+pressed = ExtResource( 32 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -1047,12 +1076,12 @@ action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
-[node name="SkeletonButton" type="TouchScreenButton" parent="CharacterSelect" index="5"]
+[node name="BanditButton" type="TouchScreenButton" parent="CharacterSelect" index="5"]
 
-position = Vector2( 160, 128 )
+position = Vector2( 156, 420 )
 scale = Vector2( 4, 4 )
-normal = ExtResource( 25 )
-pressed = ExtResource( 11 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -1139,7 +1168,7 @@ script = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 
-stream = ExtResource( 33 )
+stream = ExtResource( 36 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -1148,7 +1177,7 @@ bus = "Master"
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 34 )
+stream = ExtResource( 37 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1163,11 +1192,11 @@ bus = "Master"
 
 [connection signal="pressed" from="Panel/MenuButtonContainer/QuickMatchButton" to="." method="_on_QuickMatchButton_pressed"]
 
-[connection signal="pressed" from="CharacterSelect/BanditButton" to="." method="_on_BanditButton_pressed"]
+[connection signal="pressed" from="CharacterSelect/SkeletonButton" to="." method="_on_SkeletonButton_pressed"]
 
 [connection signal="pressed" from="CharacterSelect/HumanButton" to="." method="_on_HumanButton_pressed"]
 
-[connection signal="pressed" from="CharacterSelect/SkeletonButton" to="." method="_on_SkeletonButton_pressed"]
+[connection signal="pressed" from="CharacterSelect/BanditButton" to="." method="_on_BanditButton_pressed"]
 
 [connection signal="value_changed" from="SpinBox" to="." method="_on_SpinBox_value_changed"]
 
