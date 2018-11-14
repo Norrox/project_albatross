@@ -249,6 +249,10 @@ func send_unreliable_data_to_all(data):
 	
 func google_clear_cache():
 	gpgs.clearCache()
+	
+func google_show_waiting_room():
+	print('showing waiting room UI')
+	gpgs.rtmShowWaitingRoomUI(MAX_PLAYERS)
 
 func _on_play_game_services_sign_in_success(signInType, playerID):	
 	print("~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ GPGS Sign In Succeeded!")
@@ -274,8 +278,7 @@ func _on_play_game_services_rtm_room_status_peers_disconnected(participantIDs):
 		
 func _on_play_game_services_rtm_room_client_created(success, roomID):
 	print('~~~~~~~~~~MY_DEBUG_MESSAGE~~~~~~~~~~ Auto quick room created')
-	print('showing waiting room UI')
-	gpgs.rtmShowWaitingRoomUI(MAX_PLAYERS)
+	google_show_waiting_room()
 	
 func _on_play_game_services_rtm_waiting_room_ui_closed():
 	print('closing ui')

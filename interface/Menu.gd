@@ -23,7 +23,10 @@ func _on_SpinBox_value_changed(value):
 	Network.MIN_PLAYERS = int(value)
 
 func _on_QuickMatchButton_pressed():
-	if button_busy or quick_match_started:
+	if button_busy:
+		return
+	if quick_match_started:
+		Network.google_show_waiting_room()
 		return
 	button_busy = true
 	if !Network.signed_in:
