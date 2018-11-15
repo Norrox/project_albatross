@@ -2,10 +2,14 @@ extends Node
 
 onready var sc_canvas = $CanvasLayer/L_debug
 
+var network_ready = false
+
 func _ready():
+	while !Network.ready:
+		yield(get_tree().create_timer(0.02),'timeout')
 	if !Network.force_local:
 		var player_ID = Network.master_participant_ID
-		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(Network.players[player_ID].index + 1)).global_position
+		var spawn_pos = $'/root/Game/Spawns'.get_node('Spawn' + str(Network.self_data.index + 1)).global_position
 		var play_name = Network.get_current_player_display_name()
 		create_master_player(spawn_pos, play_name, player_ID)
 		sc_canvas.debug_print('New Player: ' + play_name)

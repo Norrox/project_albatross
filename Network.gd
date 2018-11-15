@@ -17,6 +17,7 @@ var gpgs = null
 var game_started = false
 var force_local = false
 var room_ID = 'No_Room'
+var ready = false
 
 var victorious = false
 var out_of_lives = false
@@ -99,6 +100,7 @@ func set_index():
 	for player_name in players_order:
 		players[get_ID_from_name(player_name)].index = index
 		index += 1
+	ready = true
 		
 func get_ID_from_name(player_name):
 	for id in players.keys():
