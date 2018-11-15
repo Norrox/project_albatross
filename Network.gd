@@ -1,7 +1,7 @@
 extends Node2D
 
-var MIN_PLAYERS = 1 #const
-var MAX_PLAYERS = 4 #const
+var MIN_PLAYERS = 7 #const
+var MAX_PLAYERS = 7 #const
 
 var signed_in = false
 var signing_in_busy = false

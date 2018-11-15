@@ -12,7 +12,6 @@
 [ext_resource path="res://interface/Camera.gd" type="Script" id=10]
 [ext_resource path="res://audio/one shots/DamageSound.tscn" type="PackedScene" id=11]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -405,7 +404,7 @@ tracks/5/keys = {
 z_as_relative = false
 input_pickable = false
 collision_layer = 4096
-collision_mask = 2048
+collision_mask = 6144
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
@@ -502,6 +501,8 @@ script = ExtResource( 10 )
 _sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
 
 [node name="DamageSound" parent="." index="7" instance=ExtResource( 11 )]
+
+volume_db = 5.0
 
 [connection signal="timeout" from="Pivot/Rifle/Timer" to="Pivot/Rifle" method="_on_Timer_timeout"]
 
