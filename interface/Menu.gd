@@ -6,8 +6,8 @@ var quick_match_started = false
 func _ready():
 	Settings.player_type = Settings.PLAYER_TYPE.skeleton
 	if OS.get_name() == 'Windows':
-		#Global.goto_scene('res://Game.tscn')
-		Global.goto_scene('res://GrassLevel.tscn')
+		Global.goto_scene('res://Game.tscn')
+		#Global.goto_scene('res://GrassLevel.tscn')
 		#Global.goto_scene('res://SpaceLevel.tscn')
 
 func _load_game():

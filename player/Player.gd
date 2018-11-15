@@ -36,6 +36,9 @@ func _ready():
 	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one or Settings.match_type == Settings.MATCH_TYPE.ffa_4:
 		lives = 1
 		update_ui_hearts(1)
+	else:
+		lives = 2
+		update_ui_hearts(2)
 	_update_health_bar(MAX_HP)
 
 func init(nickname, start_position, is_slave):

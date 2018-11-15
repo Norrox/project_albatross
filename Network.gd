@@ -120,7 +120,8 @@ func google_sign_out():
 
 func google_leave_room(player_name):
 	print(player_name + ' has left the room')
-	gpgs.rtmLeaveRoom()
+	if !Network.force_local:
+		gpgs.rtmLeaveRoom()
 	
 func set_peers_list():
 	print('setting peers master is ' + str(master_ID))

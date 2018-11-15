@@ -107,7 +107,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1118,8 +1118,6 @@ position = Vector2( 1952, 2576 )
 
 [node name="Fall_Zones" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="Fall_Zone1" type="Area2D" parent="Fall_Zones" index="0"]
 
 input_pickable = true
@@ -1136,7 +1134,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone1" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 220, 156, 220, 184, 292, 184, 292, 156 )
+polygon = PoolVector2Array( 216, 156, 216, 186, 296, 186, 296, 156 )
 
 [node name="Fall_Zone2" type="Area2D" parent="Fall_Zones" index="1"]
 
@@ -1155,7 +1153,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone2" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 236, 140, 236, 168, 276, 168, 276, 140 )
+polygon = PoolVector2Array( 232, 138, 232, 170, 280, 170, 280, 138 )
 
 [node name="Fall_Zone3" type="Area2D" parent="Fall_Zones" index="2"]
 
@@ -1174,7 +1172,7 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone3" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -25, -20, -25, 8, 39, 8, 39, -20 )
+polygon = PoolVector2Array( -33, -20, -33, 11, 47, 11, 47, -20 )
 
 [node name="Fall_Zone4" type="Area2D" parent="Fall_Zones" index="3"]
 
@@ -1193,7 +1191,427 @@ script = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone4" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -15, -24, -15, 4, 25, 4, 25, -24 )
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
+
+[node name="Fall_Zone5" type="Area2D" parent="Fall_Zones" index="4"]
+
+position = Vector2( 2124, 1172 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone5" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -20, -24, -20, 6, 28, 6, 28, -24 )
+
+[node name="Fall_Zone6" type="Area2D" parent="Fall_Zones" index="5"]
+
+position = Vector2( 2315, 1972 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone6" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
+
+[node name="Fall_Zone14" type="Area2D" parent="Fall_Zones" index="6"]
+
+position = Vector2( 1259, 1652 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone14" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -57, -19, 6, 29, 6, 29, -57 )
+
+[node name="Fall_Zone16" type="Area2D" parent="Fall_Zones" index="7"]
+
+position = Vector2( -533, 2068 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone16" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -57, -19, 6, 29, 6, 29, -57 )
+
+[node name="Fall_Zone17" type="Area2D" parent="Fall_Zones" index="8"]
+
+position = Vector2( 139, 1396 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone17" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -87, -19, 6, 61, 6, 61, -87 )
+
+[node name="Fall_Zone18" type="Area2D" parent="Fall_Zones" index="9"]
+
+position = Vector2( 139, 2517 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone18" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -117, -19, 6, 93, 6, 93, -117 )
+
+[node name="Fall_Zone11" type="Area2D" parent="Fall_Zones" index="10"]
+
+position = Vector2( 2539, 2517 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone11" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, 5, -19, 6, 29, 6, 29, 5 )
+
+[node name="Fall_Zone12" type="Area2D" parent="Fall_Zones" index="11"]
+
+position = Vector2( 1867, 3029 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone12" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, 5, -19, 6, 29, 6, 29, 5 )
+
+[node name="Fall_Zone13" type="Area2D" parent="Fall_Zones" index="12"]
+
+position = Vector2( 1803, 3157 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone13" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, 5, -19, 6, -3, 6, -3, 5 )
+
+[node name="Fall_Zone7" type="Area2D" parent="Fall_Zones" index="13"]
+
+position = Vector2( 1035, 1845 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone7" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
+
+[node name="Fall_Zone15" type="Area2D" parent="Fall_Zones" index="14"]
+
+position = Vector2( 747, 1652 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone15" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 61, 6, 61, -24 )
+
+[node name="Fall_Zone19" type="Area2D" parent="Fall_Zones" index="15"]
+
+position = Vector2( 1099, 2133 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone19" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 61, 6, 61, -24 )
+
+[node name="Fall_Zone22" type="Area2D" parent="Fall_Zones" index="16"]
+
+position = Vector2( 2123, 2357 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone22" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 61, 6, 61, -24 )
+
+[node name="Fall_Zone20" type="Area2D" parent="Fall_Zones" index="17"]
+
+position = Vector2( 811, 2325 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone20" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -54, -19, 6, 61, 6, 61, -54 )
+
+[node name="Fall_Zone21" type="Area2D" parent="Fall_Zones" index="18"]
+
+position = Vector2( 1035, 1141 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone21" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -56, -19, 6, 93, 6, 93, -56 )
+
+[node name="Fall_Zone24" type="Area2D" parent="Fall_Zones" index="19"]
+
+position = Vector2( 2476, 1141 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone24" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -56, -19, 6, 92, 6, 92, -56 )
+
+[node name="Fall_Zone25" type="Area2D" parent="Fall_Zones" index="20"]
+
+position = Vector2( 2508, 1525 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone25" index="0"]
+
+position = Vector2( -1, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -19, -87, -19, 6, 61, 6, 61, -87 )
+
+[node name="Fall_Zone26" type="Area2D" parent="Fall_Zones" index="21"]
+
+position = Vector2( 1548, 1493 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone26" index="0"]
+
+position = Vector2( -1, 0 )
+build_mode = 0
+polygon = PoolVector2Array( -19, -151, -19, 6, 61, 6, 61, -151 )
+
+[node name="Fall_Zone23" type="Area2D" parent="Fall_Zones" index="22"]
+
+position = Vector2( 1291, 853 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone23" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -25, -19, 6, 93, 6, 93, -25 )
+
+[node name="Fall_Zone8" type="Area2D" parent="Fall_Zones" index="23"]
+
+position = Vector2( 971, 1461 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone8" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
+
+[node name="Fall_Zone9" type="Area2D" parent="Fall_Zones" index="24"]
+
+position = Vector2( -469, 821 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone9" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
+
+[node name="Fall_Zone10" type="Area2D" parent="Fall_Zones" index="25"]
+
+position = Vector2( -117, 2389 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 1024
+collision_mask = 4096
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone10" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
 
 [node name="Destructables" type="Node2D" parent="." index="7"]
 
