@@ -9,8 +9,8 @@
 [ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://tilemap/spacecavern_basecolor.png" type="Texture" id=9]
-[ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=10]
-[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/music/16Bit_Loop_06.ogg" type="AudioStream" id=11]
 [ext_resource path="res://BGMusic.gd" type="Script" id=12]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=13]
 
@@ -110,6 +110,25 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=6]
+
+resource_name = "idle"
+length = 1.0
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=7]
 
 resource_name = "idle"
 length = 1.0
@@ -508,26 +527,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=28]
-
-resource_name = "idle"
-length = 1.0
-loop = true
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Environment" id=7]
+[sub_resource type="Environment" id=28]
 
 background_mode = 4
 background_sky_custom_fov = 0.0
@@ -606,7 +606,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -614,6 +614,7 @@ script = ExtResource( 1 )
 
 [node name="Extra" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 4, -18 )
 z_index = -9
 z_as_relative = false
@@ -783,7 +784,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 8 )
+anims/idle = SubResource( 7 )
 blend_times = [  ]
 
 [node name="Mushroom22" type="Sprite" parent="Foliage" index="6"]
@@ -805,7 +806,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 9 )
+anims/idle = SubResource( 8 )
 blend_times = [  ]
 
 [node name="Mushroom23" type="Sprite" parent="Foliage" index="7"]
@@ -827,7 +828,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 10 )
+anims/idle = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Mushroom24" type="Sprite" parent="Foliage" index="8"]
@@ -849,7 +850,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 11 )
+anims/idle = SubResource( 10 )
 blend_times = [  ]
 
 [node name="Mushroom25" type="Sprite" parent="Foliage" index="9"]
@@ -871,7 +872,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 12 )
+anims/idle = SubResource( 11 )
 blend_times = [  ]
 
 [node name="Mushroom26" type="Sprite" parent="Foliage" index="10"]
@@ -893,7 +894,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 13 )
+anims/idle = SubResource( 12 )
 blend_times = [  ]
 
 [node name="Mushroom7" type="Sprite" parent="Foliage" index="11"]
@@ -916,7 +917,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 14 )
+anims/idle = SubResource( 13 )
 blend_times = [  ]
 
 [node name="Mushroom8" type="Sprite" parent="Foliage" index="12"]
@@ -938,7 +939,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 15 )
+anims/idle = SubResource( 14 )
 blend_times = [  ]
 
 [node name="Mushroom9" type="Sprite" parent="Foliage" index="13"]
@@ -960,7 +961,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 16 )
+anims/idle = SubResource( 15 )
 blend_times = [  ]
 
 [node name="Mushroom10" type="Sprite" parent="Foliage" index="14"]
@@ -982,7 +983,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 17 )
+anims/idle = SubResource( 16 )
 blend_times = [  ]
 
 [node name="Mushroom11" type="Sprite" parent="Foliage" index="15"]
@@ -1004,7 +1005,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 18 )
+anims/idle = SubResource( 17 )
 blend_times = [  ]
 
 [node name="Mushroom12" type="Sprite" parent="Foliage" index="16"]
@@ -1026,7 +1027,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 19 )
+anims/idle = SubResource( 18 )
 blend_times = [  ]
 
 [node name="Mushroom13" type="Sprite" parent="Foliage" index="17"]
@@ -1049,7 +1050,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 20 )
+anims/idle = SubResource( 19 )
 blend_times = [  ]
 
 [node name="Mushroom14" type="Sprite" parent="Foliage" index="18"]
@@ -1071,7 +1072,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 21 )
+anims/idle = SubResource( 20 )
 blend_times = [  ]
 
 [node name="Mushroom15" type="Sprite" parent="Foliage" index="19"]
@@ -1094,7 +1095,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 22 )
+anims/idle = SubResource( 21 )
 blend_times = [  ]
 
 [node name="Mushroom16" type="Sprite" parent="Foliage" index="20"]
@@ -1117,7 +1118,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 23 )
+anims/idle = SubResource( 22 )
 blend_times = [  ]
 
 [node name="Mushroom17" type="Sprite" parent="Foliage" index="21"]
@@ -1140,7 +1141,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 24 )
+anims/idle = SubResource( 23 )
 blend_times = [  ]
 
 [node name="Mushroom18" type="Sprite" parent="Foliage" index="22"]
@@ -1163,7 +1164,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 25 )
+anims/idle = SubResource( 24 )
 blend_times = [  ]
 
 [node name="Mushroom19" type="Sprite" parent="Foliage" index="23"]
@@ -1186,7 +1187,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 26 )
+anims/idle = SubResource( 25 )
 blend_times = [  ]
 
 [node name="Mushroom20" type="Sprite" parent="Foliage" index="24"]
@@ -1209,7 +1210,7 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 27 )
+anims/idle = SubResource( 26 )
 blend_times = [  ]
 
 [node name="Mushroom21" type="Sprite" parent="Foliage" index="25"]
@@ -1232,10 +1233,12 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 28 )
+anims/idle = SubResource( 27 )
 blend_times = [  ]
 
 [node name="TileMaps" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="Bot" type="TileMap" parent="TileMaps" index="0"]
 
@@ -1469,9 +1472,9 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="ReadyOneShot" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = ExtResource( 10 )
-volume_db = 0.0
-pitch_scale = 0.7
-autoplay = false
+volume_db = -15.0
+pitch_scale = 0.95
+autoplay = true
 mix_target = 0
 bus = "Master"
 
@@ -1487,7 +1490,7 @@ script = ExtResource( 12 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="12"]
 
-environment = SubResource( 7 )
+environment = SubResource( 28 )
 script = ExtResource( 13 )
 
 

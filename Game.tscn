@@ -11,9 +11,9 @@
 [ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
 [ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=11]
-[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=12]
+[ext_resource path="res://audio/music/16Bit_Loop_07.ogg" type="AudioStream" id=12]
 [ext_resource path="res://BGMusic.gd" type="Script" id=13]
-[ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=14]
+[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=14]
 [ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=15]
 [ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=16]
 [ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=17]
@@ -2081,7 +2081,7 @@ script = ExtResource( 13 )
 stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 0.7
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 

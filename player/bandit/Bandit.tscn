@@ -10,7 +10,8 @@
 [ext_resource path="res://player/bandit/idle_idle_0-sheet.png" type="Texture" id=8]
 [ext_resource path="res://player/human/sprites/roll.png" type="Texture" id=9]
 [ext_resource path="res://interface/Camera.gd" type="Script" id=10]
-[ext_resource path="res://wav/one shots/DamageSound.tscn" type="PackedScene" id=11]
+[ext_resource path="res://audio/one shots/DamageSound.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

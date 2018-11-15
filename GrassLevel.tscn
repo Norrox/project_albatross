@@ -15,8 +15,8 @@
 [ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=13]
 [ext_resource path="res://tilemap/background color grass.png" type="Texture" id=14]
 [ext_resource path="res://tilemap/tree.png" type="Texture" id=15]
-[ext_resource path="res://wav/one shots/game_start_tone-beep-large-verb.wav" type="AudioStream" id=16]
-[ext_resource path="res://wav/music/GB_Loop_04.wav" type="AudioStream" id=17]
+[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=16]
+[ext_resource path="res://audio/music/16Bit_Loop_03.ogg" type="AudioStream" id=17]
 [ext_resource path="res://BGMusic.gd" type="Script" id=18]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=19]
 
@@ -99,7 +99,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1942,7 +1942,7 @@ _sections_unfolded = [ "Transform" ]
 stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 0.7
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 

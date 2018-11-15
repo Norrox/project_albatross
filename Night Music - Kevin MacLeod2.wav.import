@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Night Music - Kevin MacLeod2.wav-eab4dafb057f432e6ab4fc9bf2268593.sample"
+
+[deps]
+
+source_file="res://Night Music - Kevin MacLeod2.wav"
+dest_files=[ "res://.import/Night Music - Kevin MacLeod2.wav-eab4dafb057f432e6ab4fc9bf2268593.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
