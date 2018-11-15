@@ -284,7 +284,7 @@ func _on_play_game_services_rtm_room_client_created(success, roomID):
 func _on_play_game_services_rtm_waiting_room_ui_closed():
 	print('closing ui')
 		
-func _on_play_game_services_rtm_waiting_room_ui_left_room():
+func _on_play_game_services_rtm_room_client_left_room(roomID):
 	print('leaving room')
 	$'/root/Menu/'.quick_match_started = false
 	
