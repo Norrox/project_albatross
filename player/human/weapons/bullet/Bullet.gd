@@ -3,7 +3,7 @@ extends Area2D
 const HIT_DELAY = 15
 
 var SPEED = 500
-var DAMAGE = 5
+var DAMAGE = 10
 var FORWARD_AMT = 30
 
 const on_hit_particle = preload("res://player/human/weapons/bullet/Hit_Particle.tscn")

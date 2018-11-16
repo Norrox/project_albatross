@@ -3,11 +3,13 @@ extends Control
 var button_busy = false
 
 func _ready():
-	Settings.player_type = Settings.PLAYER_TYPE.skeleton
 	if OS.get_name() == 'Windows':
+		Network.ready = true
 		Global.goto_scene('res://Game.tscn')
 		#Global.goto_scene('res://GrassLevel.tscn')
 		#Global.goto_scene('res://SpaceLevel.tscn')
+	else:
+		Settings.player_type = Settings.PLAYER_TYPE.skeleton
 
 func _load_game():
 	if Settings.match_type == Settings.MATCH_TYPE.one_verse_one:

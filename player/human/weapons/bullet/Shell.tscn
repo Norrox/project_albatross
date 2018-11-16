@@ -3,9 +3,6 @@
 [ext_resource path="res://player/human/weapons/bullet/Shell.gd" type="Script" id=1]
 [ext_resource path="res://player/human/weapons/bullet/sprites/shells_Empty Shells_0-sheet.png" type="Texture" id=2]
 
-
-
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -84,5 +81,14 @@ playback_speed = 1.0
 anims/idle = SubResource( 2 )
 anims/on_ground = SubResource( 3 )
 blend_times = [  ]
+
+[node name="Lifetime" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]
 
 

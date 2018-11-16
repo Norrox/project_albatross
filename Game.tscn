@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://interface/Canvas/Canvas.tscn" type="PackedScene" id=2]
@@ -7,28 +7,67 @@
 [ext_resource path="res://tilemap/env_top.tres" type="TileSet" id=5]
 [ext_resource path="res://scriptable_objects/spikes/Spikes.gd" type="Script" id=6]
 [ext_resource path="res://scriptable_objects/spikes/Spikes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scriptable_objects/chest/Chest.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=9]
-[ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=10]
-[ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=11]
-[ext_resource path="res://audio/music/16Bit_Loop_07.ogg" type="AudioStream" id=12]
-[ext_resource path="res://BGMusic.gd" type="Script" id=13]
-[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=14]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=15]
-[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=16]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=17]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud7.png" type="Texture" id=18]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=19]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=20]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud4.png" type="Texture" id=21]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=22]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=23]
-[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud6.png" type="Texture" id=24]
-[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=25]
-[ext_resource path="res://black.png" type="Texture" id=26]
-[ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=27]
+[ext_resource path="res://scriptable_objects/shell hole/ShellHole1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scriptable_objects/shell hole/ShellHole2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scriptable_objects/shell hole/ShellHole3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scriptable_objects/shell hole/ShellHole.gd" type="Script" id=11]
+[ext_resource path="res://scriptable_objects/chest/Chest.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scriptable_objects/coin/Coin.tscn" type="PackedScene" id=13]
+[ext_resource path="res://tilemap/Fall_Zone.gd" type="Script" id=14]
+[ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=15]
+[ext_resource path="res://audio/music/16Bit_Loop_07.ogg" type="AudioStream" id=16]
+[ext_resource path="res://BGMusic.gd" type="Script" id=17]
+[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=18]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud1.png" type="Texture" id=19]
+[ext_resource path="res://scriptable_objects/sky/clouds/Clouds.gd" type="Script" id=20]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud5.png" type="Texture" id=21]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud7.png" type="Texture" id=22]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud2.png" type="Texture" id=23]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud9.png" type="Texture" id=24]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud4.png" type="Texture" id=25]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud8.png" type="Texture" id=26]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud3.png" type="Texture" id=27]
+[ext_resource path="res://scriptable_objects/sky/clouds/sprites/cloud6.png" type="Texture" id=28]
+[ext_resource path="res://scriptable_objects/sky/stars/Star.tscn" type="PackedScene" id=29]
+[ext_resource path="res://black.png" type="Texture" id=30]
+[ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=31]
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 56, 70 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 56, 104 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 72, 86 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 56, 56 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 72, 40 )
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40, 24 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 24, 24 )
+
+[sub_resource type="Environment" id=8]
 
 background_mode = 4
 background_sky_custom_fov = 0.0
@@ -114,8 +153,6 @@ script = ExtResource( 1 )
 [node name="CanvasLayer" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="TileMaps" type="Node2D" parent="." index="1"]
-
-editor/display_folded = true
 
 [node name="Ground" type="TileMap" parent="TileMaps" index="0"]
 
@@ -414,7 +451,291 @@ position = Vector2( 1008, 1296 )
 
 position = Vector2( 976, 1296 )
 
-[node name="Spawns" type="Node2D" parent="." index="3"]
+[node name="ShellHoles" type="Node2D" parent="." index="3"]
+
+[node name="ShellHole" parent="ShellHoles" index="0" instance=ExtResource( 8 )]
+
+[node name="ShellHole2" parent="ShellHoles" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 1184, 529 )
+
+[node name="ShellHole16" parent="ShellHoles" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 768, 1648 )
+
+[node name="ShellHole17" parent="ShellHoles" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 1121, 2128 )
+
+[node name="ShellHole18" parent="ShellHoles" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( -529, 2049 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="ShellHole19" parent="ShellHoles" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 1264.77, 1633.46 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="ShellHole11" parent="ShellHoles" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 2144, 2352 )
+
+[node name="ShellHole3" parent="ShellHoles" index="7" instance=ExtResource( 9 )]
+
+editor/display_folded = true
+
+[node name="ShellHole4" parent="ShellHoles" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 1680, 241 )
+
+[node name="ShellHole5" parent="ShellHoles" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 2127, 1168 )
+
+[node name="ShellHole6" parent="ShellHoles" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 2320, 1969 )
+
+[node name="ShellHole7" parent="ShellHoles" index="11" instance=ExtResource( 9 )]
+
+position = Vector2( -112, 2384 )
+
+[node name="ShellHole8" parent="ShellHoles" index="12" instance=ExtResource( 9 )]
+
+position = Vector2( -464, 816 )
+
+[node name="ShellHole9" parent="ShellHoles" index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 976, 1456 )
+
+[node name="ShellHole10" parent="ShellHoles" index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 1040, 1840 )
+
+[node name="ShellHole12" parent="ShellHoles" index="15" instance=ExtResource( 10 )]
+
+editor/display_folded = true
+position = Vector2( 2513, 1121 )
+
+[node name="ShellHole14" type="Node2D" parent="ShellHoles" index="16"]
+
+editor/display_folded = true
+position = Vector2( 2547, 1484 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole14" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole14/Area2D" index="0"]
+
+position = Vector2( -19, 6 )
+shape = SubResource( 2 )
+
+[node name="ShellHole15" type="Node2D" parent="ShellHoles" index="17"]
+
+editor/display_folded = true
+position = Vector2( 179, 1355 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole15" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole15/Area2D" index="0"]
+
+position = Vector2( -19, 6 )
+shape = SubResource( 2 )
+
+[node name="ShellHole20" type="Node2D" parent="ShellHoles" index="18"]
+
+position = Vector2( 1589, 1430 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole20" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole20/Area2D" index="0"]
+
+position = Vector2( -21, -6 )
+shape = SubResource( 3 )
+
+[node name="ShellHole21" type="Node2D" parent="ShellHoles" index="19"]
+
+position = Vector2( 197, 2474 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole21" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole21/Area2D" index="0"]
+
+position = Vector2( -21, -8 )
+shape = SubResource( 4 )
+
+[node name="ShellHole22" type="Node2D" parent="ShellHoles" index="20"]
+
+position = Vector2( 850, 2312 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole22" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole22/Area2D" index="0"]
+
+position = Vector2( -19, -8 )
+shape = SubResource( 5 )
+
+[node name="ShellHole23" type="Node2D" parent="ShellHoles" index="21"]
+
+position = Vector2( 1351, 856 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole23" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole23/Area2D" index="0"]
+
+position = Vector2( -23, -8 )
+shape = SubResource( 6 )
+
+[node name="ShellHole24" type="Node2D" parent="ShellHoles" index="22"]
+
+position = Vector2( 2566, 2535 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole24" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole24/Area2D" index="0"]
+
+position = Vector2( -22, -7 )
+shape = SubResource( 1 )
+
+[node name="ShellHole25" type="Node2D" parent="ShellHoles" index="23"]
+
+position = Vector2( 1894, 3047 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole25" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole25/Area2D" index="0"]
+
+position = Vector2( -22, -7 )
+shape = SubResource( 1 )
+
+[node name="ShellHole26" type="Node2D" parent="ShellHoles" index="24"]
+
+position = Vector2( 1813, 3174 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="ShellHoles/ShellHole26" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2048
+collision_mask = 8192
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole26/Area2D" index="0"]
+
+position = Vector2( -21, -6 )
+shape = SubResource( 7 )
+
+[node name="ShellHole13" parent="ShellHoles" index="25" instance=ExtResource( 10 )]
+
+position = Vector2( 1072, 1121 )
+
+[node name="Spawns" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Spawn1" type="Node2D" parent="Spawns" index="0"]
 
@@ -449,88 +770,88 @@ position = Vector2( -203, 2074 )
 
 position = Vector2( -312, 1120 )
 
-[node name="Chests" type="Node2D" parent="." index="4"]
+[node name="Chests" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( -16, 0 )
 
-[node name="Chest1" parent="Chests" index="0" instance=ExtResource( 8 )]
+[node name="Chest1" parent="Chests" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 128, 496 )
 
-[node name="Chest2" parent="Chests" index="1" instance=ExtResource( 8 )]
+[node name="Chest2" parent="Chests" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 1952, 112 )
 
-[node name="Chest3" parent="Chests" index="2" instance=ExtResource( 8 )]
+[node name="Chest3" parent="Chests" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 2616, 2152 )
 
-[node name="Chest4" parent="Chests" index="3" instance=ExtResource( 8 )]
+[node name="Chest4" parent="Chests" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 80, 2560 )
 
-[node name="Chest5" parent="Chests" index="4" instance=ExtResource( 8 )]
+[node name="Chest5" parent="Chests" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 1520, 2260 )
 
-[node name="Chest6" parent="Chests" index="5" instance=ExtResource( 8 )]
+[node name="Chest6" parent="Chests" index="5" instance=ExtResource( 12 )]
 
 position = Vector2( 1392, 2260 )
 
-[node name="Chest7" parent="Chests" index="6" instance=ExtResource( 8 )]
+[node name="Chest7" parent="Chests" index="6" instance=ExtResource( 12 )]
 
 position = Vector2( 1936, 1624 )
 
-[node name="Chest8" parent="Chests" index="7" instance=ExtResource( 8 )]
+[node name="Chest8" parent="Chests" index="7" instance=ExtResource( 12 )]
 
 position = Vector2( 1776, 992 )
 
-[node name="Chest9" parent="Chests" index="8" instance=ExtResource( 8 )]
+[node name="Chest9" parent="Chests" index="8" instance=ExtResource( 12 )]
 
 position = Vector2( 512, 992 )
 
-[node name="Chest10" parent="Chests" index="9" instance=ExtResource( 8 )]
+[node name="Chest10" parent="Chests" index="9" instance=ExtResource( 12 )]
 
 position = Vector2( 352, 1744 )
 
-[node name="Chest11" parent="Chests" index="10" instance=ExtResource( 8 )]
+[node name="Chest11" parent="Chests" index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 2336, 1136 )
 
-[node name="Chest12" parent="Chests" index="11" instance=ExtResource( 8 )]
+[node name="Chest12" parent="Chests" index="11" instance=ExtResource( 12 )]
 
 position = Vector2( 1936, 3152 )
 
-[node name="Chest13" parent="Chests" index="12" instance=ExtResource( 8 )]
+[node name="Chest13" parent="Chests" index="12" instance=ExtResource( 12 )]
 
 position = Vector2( 576, 2928 )
 
-[node name="Chest14" parent="Chests" index="13" instance=ExtResource( 8 )]
+[node name="Chest14" parent="Chests" index="13" instance=ExtResource( 12 )]
 
 position = Vector2( -160, 496 )
 
-[node name="Chest15" parent="Chests" index="14" instance=ExtResource( 8 )]
+[node name="Chest15" parent="Chests" index="14" instance=ExtResource( 12 )]
 
 position = Vector2( 2528, 448 )
 
-[node name="Chest16" parent="Chests" index="15" instance=ExtResource( 8 )]
+[node name="Chest16" parent="Chests" index="15" instance=ExtResource( 12 )]
 
 position = Vector2( 2320, 2928 )
 
-[node name="Chest17" parent="Chests" index="16" instance=ExtResource( 8 )]
+[node name="Chest17" parent="Chests" index="16" instance=ExtResource( 12 )]
 
 position = Vector2( -136, 2808 )
 
-[node name="Chest18" parent="Chests" index="17" instance=ExtResource( 8 )]
+[node name="Chest18" parent="Chests" index="17" instance=ExtResource( 12 )]
 
 position = Vector2( -464, 1408 )
 
-[node name="Chest19" parent="Chests" index="18" instance=ExtResource( 8 )]
+[node name="Chest19" parent="Chests" index="18" instance=ExtResource( 12 )]
 
 position = Vector2( -320, 2224 )
 
-[node name="Coins" type="Node2D" parent="." index="5"]
+[node name="Coins" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 
@@ -538,55 +859,55 @@ editor/display_folded = true
 
 editor/display_folded = true
 
-[node name="Coin1" parent="Coins/Room1" index="0" instance=ExtResource( 9 )]
+[node name="Coin1" parent="Coins/Room1" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 784, 144 )
 
-[node name="Coin2" parent="Coins/Room1" index="1" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/Room1" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 816, 144 )
 
-[node name="Coin3" parent="Coins/Room1" index="2" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/Room1" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 848, 144 )
 
-[node name="Coin10" parent="Coins/Room1" index="3" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/Room1" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 144, 592 )
 
-[node name="Coin11" parent="Coins/Room1" index="4" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/Room1" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 112, 592 )
 
-[node name="Coin12" parent="Coins/Room1" index="5" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/Room1" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 80, 592 )
 
-[node name="Coin13" parent="Coins/Room1" index="6" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/Room1" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 80, 400 )
 
-[node name="Coin14" parent="Coins/Room1" index="7" instance=ExtResource( 9 )]
+[node name="Coin14" parent="Coins/Room1" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 112, 400 )
 
-[node name="Coin15" parent="Coins/Room1" index="8" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/Room1" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 144, 400 )
 
-[node name="Coin16" parent="Coins/Room1" index="9" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/Room1" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 912, 576 )
 
-[node name="Coin19" parent="Coins/Room1" index="10" instance=ExtResource( 9 )]
+[node name="Coin19" parent="Coins/Room1" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 944, 576 )
 
-[node name="Coin17" parent="Coins/Room1" index="11" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/Room1" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 880, 576 )
 
-[node name="Coin18" parent="Coins/Room1" index="12" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/Room1" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 848, 576 )
 
@@ -594,55 +915,55 @@ position = Vector2( 848, 576 )
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins/Room2" index="0" instance=ExtResource( 9 )]
+[node name="Coin" parent="Coins/Room2" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 1296, 240 )
 
-[node name="Coin2" parent="Coins/Room2" index="1" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/Room2" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 1328, 240 )
 
-[node name="Coin3" parent="Coins/Room2" index="2" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/Room2" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 1488, 336 )
 
-[node name="Coin4" parent="Coins/Room2" index="3" instance=ExtResource( 9 )]
+[node name="Coin4" parent="Coins/Room2" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 1520, 336 )
 
-[node name="Coin5" parent="Coins/Room2" index="4" instance=ExtResource( 9 )]
+[node name="Coin5" parent="Coins/Room2" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 1872, 80 )
 
-[node name="Coin6" parent="Coins/Room2" index="5" instance=ExtResource( 9 )]
+[node name="Coin6" parent="Coins/Room2" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 1904, 80 )
 
-[node name="Coin7" parent="Coins/Room2" index="6" instance=ExtResource( 9 )]
+[node name="Coin7" parent="Coins/Room2" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 80 )
 
-[node name="Coin8" parent="Coins/Room2" index="7" instance=ExtResource( 9 )]
+[node name="Coin8" parent="Coins/Room2" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1904, 160 )
 
-[node name="Coin9" parent="Coins/Room2" index="8" instance=ExtResource( 9 )]
+[node name="Coin9" parent="Coins/Room2" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 160 )
 
-[node name="Coin10" parent="Coins/Room2" index="9" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/Room2" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 480 )
 
-[node name="Coin11" parent="Coins/Room2" index="10" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/Room2" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 512 )
 
-[node name="Coin12" parent="Coins/Room2" index="11" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/Room2" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 544 )
 
-[node name="Coin13" parent="Coins/Room2" index="12" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/Room2" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 576 )
 
@@ -650,75 +971,75 @@ position = Vector2( 1936, 576 )
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins/Room3" index="0" instance=ExtResource( 9 )]
+[node name="Coin" parent="Coins/Room3" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 2560, 1392 )
 
-[node name="Coin13" parent="Coins/Room3" index="1" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/Room3" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 2144, 1104 )
 
-[node name="Coin14" parent="Coins/Room3" index="2" instance=ExtResource( 9 )]
+[node name="Coin14" parent="Coins/Room3" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2112, 1104 )
 
-[node name="Coin15" parent="Coins/Room3" index="3" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/Room3" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 2464, 1040 )
 
-[node name="Coin16" parent="Coins/Room3" index="4" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/Room3" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 2496, 1040 )
 
-[node name="Coin17" parent="Coins/Room3" index="5" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/Room3" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 2528, 1040 )
 
-[node name="Coin18" parent="Coins/Room3" index="6" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/Room3" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 2560, 1040 )
 
-[node name="Coin2" parent="Coins/Room3" index="7" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/Room3" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 2528, 1392 )
 
-[node name="Coin3" parent="Coins/Room3" index="8" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/Room3" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 2496, 1392 )
 
-[node name="Coin4" parent="Coins/Room3" index="9" instance=ExtResource( 9 )]
+[node name="Coin4" parent="Coins/Room3" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 2464, 1392 )
 
-[node name="Coin5" parent="Coins/Room3" index="10" instance=ExtResource( 9 )]
+[node name="Coin5" parent="Coins/Room3" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 1424 )
 
-[node name="Coin6" parent="Coins/Room3" index="11" instance=ExtResource( 9 )]
+[node name="Coin6" parent="Coins/Room3" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 1456 )
 
-[node name="Coin7" parent="Coins/Room3" index="12" instance=ExtResource( 9 )]
+[node name="Coin7" parent="Coins/Room3" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 1488 )
 
-[node name="Coin8" parent="Coins/Room3" index="13" instance=ExtResource( 9 )]
+[node name="Coin8" parent="Coins/Room3" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 1520 )
 
-[node name="Coin9" parent="Coins/Room3" index="14" instance=ExtResource( 9 )]
+[node name="Coin9" parent="Coins/Room3" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 2384, 704 )
 
-[node name="Coin10" parent="Coins/Room3" index="15" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/Room3" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 2352, 704 )
 
-[node name="Coin11" parent="Coins/Room3" index="16" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/Room3" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( 2320, 704 )
 
-[node name="Coin12" parent="Coins/Room3" index="17" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/Room3" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 2288, 704 )
 
@@ -726,99 +1047,99 @@ position = Vector2( 2288, 704 )
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins/Room4" index="0" instance=ExtResource( 9 )]
+[node name="Coin" parent="Coins/Room4" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 2192, 2416 )
 
-[node name="Coin2" parent="Coins/Room4" index="1" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/Room4" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 2160, 2416 )
 
-[node name="Coin3" parent="Coins/Room4" index="2" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/Room4" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2128, 2416 )
 
-[node name="Coin4" parent="Coins/Room4" index="3" instance=ExtResource( 9 )]
+[node name="Coin4" parent="Coins/Room4" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 2512, 1904 )
 
-[node name="Coin18" parent="Coins/Room4" index="4" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/Room4" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 2576, 2024 )
 
-[node name="Coin19" parent="Coins/Room4" index="5" instance=ExtResource( 9 )]
+[node name="Coin19" parent="Coins/Room4" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 2544, 2024 )
 
-[node name="Coin20" parent="Coins/Room4" index="6" instance=ExtResource( 9 )]
+[node name="Coin20" parent="Coins/Room4" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 2512, 2024 )
 
-[node name="Coin21" parent="Coins/Room4" index="7" instance=ExtResource( 9 )]
+[node name="Coin21" parent="Coins/Room4" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 2480, 2024 )
 
-[node name="Coin22" parent="Coins/Room4" index="8" instance=ExtResource( 9 )]
+[node name="Coin22" parent="Coins/Room4" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 2024 )
 
-[node name="Coin23" parent="Coins/Room4" index="9" instance=ExtResource( 9 )]
+[node name="Coin23" parent="Coins/Room4" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 2416, 2024 )
 
-[node name="Coin24" parent="Coins/Room4" index="10" instance=ExtResource( 9 )]
+[node name="Coin24" parent="Coins/Room4" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 2384, 2024 )
 
-[node name="Coin5" parent="Coins/Room4" index="11" instance=ExtResource( 9 )]
+[node name="Coin5" parent="Coins/Room4" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 2480, 1904 )
 
-[node name="Coin6" parent="Coins/Room4" index="12" instance=ExtResource( 9 )]
+[node name="Coin6" parent="Coins/Room4" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 2448, 1904 )
 
-[node name="Coin7" parent="Coins/Room4" index="13" instance=ExtResource( 9 )]
+[node name="Coin7" parent="Coins/Room4" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 2592, 2576 )
 
-[node name="Coin8" parent="Coins/Room4" index="14" instance=ExtResource( 9 )]
+[node name="Coin8" parent="Coins/Room4" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 2560, 2576 )
 
-[node name="Coin9" parent="Coins/Room4" index="15" instance=ExtResource( 9 )]
+[node name="Coin9" parent="Coins/Room4" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 2528, 2576 )
 
-[node name="Coin10" parent="Coins/Room4" index="16" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/Room4" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( 2592, 2544 )
 
-[node name="Coin11" parent="Coins/Room4" index="17" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/Room4" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 2592, 2512 )
 
-[node name="Coin12" parent="Coins/Room4" index="18" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/Room4" index="18" instance=ExtResource( 13 )]
 
 position = Vector2( 2592, 2512 )
 
-[node name="Coin13" parent="Coins/Room4" index="19" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/Room4" index="19" instance=ExtResource( 13 )]
 
 position = Vector2( 2048, 1696 )
 
-[node name="Coin14" parent="Coins/Room4" index="20" instance=ExtResource( 9 )]
+[node name="Coin14" parent="Coins/Room4" index="20" instance=ExtResource( 13 )]
 
 position = Vector2( 2048, 1728 )
 
-[node name="Coin15" parent="Coins/Room4" index="21" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/Room4" index="21" instance=ExtResource( 13 )]
 
 position = Vector2( 2048, 1760 )
 
-[node name="Coin16" parent="Coins/Room4" index="22" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/Room4" index="22" instance=ExtResource( 13 )]
 
 position = Vector2( 2080, 1696 )
 
-[node name="Coin17" parent="Coins/Room4" index="23" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/Room4" index="23" instance=ExtResource( 13 )]
 
 position = Vector2( 2112, 1696 )
 
@@ -826,63 +1147,63 @@ position = Vector2( 2112, 1696 )
 
 editor/display_folded = true
 
-[node name="Coin15" parent="Coins/Room5" index="0" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/Room5" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 1952, 3184 )
 
-[node name="Coin21" parent="Coins/Room5" index="1" instance=ExtResource( 9 )]
+[node name="Coin21" parent="Coins/Room5" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 1496, 3152 )
 
-[node name="Coin23" parent="Coins/Room5" index="2" instance=ExtResource( 9 )]
+[node name="Coin23" parent="Coins/Room5" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 1600, 2920 )
 
-[node name="Coin24" parent="Coins/Room5" index="3" instance=ExtResource( 9 )]
+[node name="Coin24" parent="Coins/Room5" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 1600, 2888 )
 
-[node name="Coin25" parent="Coins/Room5" index="4" instance=ExtResource( 9 )]
+[node name="Coin25" parent="Coins/Room5" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 1600, 2952 )
 
-[node name="Coin26" parent="Coins/Room5" index="5" instance=ExtResource( 9 )]
+[node name="Coin26" parent="Coins/Room5" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 1496, 3184 )
 
-[node name="Coin27" parent="Coins/Room5" index="6" instance=ExtResource( 9 )]
+[node name="Coin27" parent="Coins/Room5" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 1328, 3176 )
 
-[node name="Coin28" parent="Coins/Room5" index="7" instance=ExtResource( 9 )]
+[node name="Coin28" parent="Coins/Room5" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1264, 3176 )
 
-[node name="Coin29" parent="Coins/Room5" index="8" instance=ExtResource( 9 )]
+[node name="Coin29" parent="Coins/Room5" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 1200, 3176 )
 
-[node name="Coin30" parent="Coins/Room5" index="9" instance=ExtResource( 9 )]
+[node name="Coin30" parent="Coins/Room5" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 1136, 3176 )
 
-[node name="Coin16" parent="Coins/Room5" index="10" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/Room5" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 1952, 3152 )
 
-[node name="Coin17" parent="Coins/Room5" index="11" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/Room5" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 1952, 3120 )
 
-[node name="Coin18" parent="Coins/Room5" index="12" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/Room5" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 1680, 2768 )
 
-[node name="Coin19" parent="Coins/Room5" index="13" instance=ExtResource( 9 )]
+[node name="Coin19" parent="Coins/Room5" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 1648, 2768 )
 
-[node name="Coin20" parent="Coins/Room5" index="14" instance=ExtResource( 9 )]
+[node name="Coin20" parent="Coins/Room5" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 1952, 2688 )
 
@@ -890,83 +1211,83 @@ position = Vector2( 1952, 2688 )
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins/Room6" index="0" instance=ExtResource( 9 )]
+[node name="Coin" parent="Coins/Room6" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 3176 )
 
-[node name="Coin4" parent="Coins/Room6" index="1" instance=ExtResource( 9 )]
+[node name="Coin4" parent="Coins/Room6" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 3176 )
 
-[node name="Coin9" parent="Coins/Room6" index="2" instance=ExtResource( 9 )]
+[node name="Coin9" parent="Coins/Room6" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 448, 3176 )
 
-[node name="Coin2" parent="Coins/Room6" index="3" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/Room6" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 704, 3176 )
 
-[node name="Coin6" parent="Coins/Room6" index="4" instance=ExtResource( 9 )]
+[node name="Coin6" parent="Coins/Room6" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 512, 3176 )
 
-[node name="Coin7" parent="Coins/Room6" index="5" instance=ExtResource( 9 )]
+[node name="Coin7" parent="Coins/Room6" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 3176 )
 
-[node name="Coin3" parent="Coins/Room6" index="6" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/Room6" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 3176 )
 
-[node name="Coin5" parent="Coins/Room6" index="7" instance=ExtResource( 9 )]
+[node name="Coin5" parent="Coins/Room6" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 3176 )
 
-[node name="Coin8" parent="Coins/Room6" index="8" instance=ExtResource( 9 )]
+[node name="Coin8" parent="Coins/Room6" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 2928 )
 
-[node name="Coin10" parent="Coins/Room6" index="9" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/Room6" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 512, 2928 )
 
-[node name="Coin11" parent="Coins/Room6" index="10" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/Room6" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 304, 2736 )
 
-[node name="Coin12" parent="Coins/Room6" index="11" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/Room6" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 272, 2736 )
 
-[node name="Coin13" parent="Coins/Room6" index="12" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/Room6" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 784, 2768 )
 
-[node name="Coin14" parent="Coins/Room6" index="13" instance=ExtResource( 9 )]
+[node name="Coin14" parent="Coins/Room6" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 752, 2768 )
 
-[node name="Coin15" parent="Coins/Room6" index="14" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/Room6" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 880, 3024 )
 
-[node name="Coin16" parent="Coins/Room6" index="15" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/Room6" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 848, 3024 )
 
-[node name="Coin17" parent="Coins/Room6" index="16" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/Room6" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( 128, 3120 )
 
-[node name="Coin18" parent="Coins/Room6" index="17" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/Room6" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 80, 3120 )
 
-[node name="Coin19" parent="Coins/Room6" index="18" instance=ExtResource( 9 )]
+[node name="Coin19" parent="Coins/Room6" index="18" instance=ExtResource( 13 )]
 
 position = Vector2( 80, 3168 )
 
-[node name="Coin20" parent="Coins/Room6" index="19" instance=ExtResource( 9 )]
+[node name="Coin20" parent="Coins/Room6" index="19" instance=ExtResource( 13 )]
 
 position = Vector2( 128, 3168 )
 
@@ -974,147 +1295,147 @@ position = Vector2( 128, 3168 )
 
 editor/display_folded = true
 
-[node name="Coin" parent="Coins/MainRoom" index="0" instance=ExtResource( 9 )]
+[node name="Coin" parent="Coins/MainRoom" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 624, 752 )
 
-[node name="Coin2" parent="Coins/MainRoom" index="1" instance=ExtResource( 9 )]
+[node name="Coin2" parent="Coins/MainRoom" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 656, 752 )
 
-[node name="Coin3" parent="Coins/MainRoom" index="2" instance=ExtResource( 9 )]
+[node name="Coin3" parent="Coins/MainRoom" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 688, 752 )
 
-[node name="Coin4" parent="Coins/MainRoom" index="3" instance=ExtResource( 9 )]
+[node name="Coin4" parent="Coins/MainRoom" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 1328, 1040 )
 
-[node name="Coin5" parent="Coins/MainRoom" index="4" instance=ExtResource( 9 )]
+[node name="Coin5" parent="Coins/MainRoom" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 1360, 1040 )
 
-[node name="Coin6" parent="Coins/MainRoom" index="5" instance=ExtResource( 9 )]
+[node name="Coin6" parent="Coins/MainRoom" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 1392, 1040 )
 
-[node name="Coin7" parent="Coins/MainRoom" index="6" instance=ExtResource( 9 )]
+[node name="Coin7" parent="Coins/MainRoom" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 1024 )
 
-[node name="Coin8" parent="Coins/MainRoom" index="7" instance=ExtResource( 9 )]
+[node name="Coin8" parent="Coins/MainRoom" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 976 )
 
-[node name="Coin9" parent="Coins/MainRoom" index="8" instance=ExtResource( 9 )]
+[node name="Coin9" parent="Coins/MainRoom" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 928 )
 
-[node name="Coin10" parent="Coins/MainRoom" index="9" instance=ExtResource( 9 )]
+[node name="Coin10" parent="Coins/MainRoom" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 1936, 880 )
 
-[node name="Coin11" parent="Coins/MainRoom" index="10" instance=ExtResource( 9 )]
+[node name="Coin11" parent="Coins/MainRoom" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 1888, 1792 )
 
-[node name="Coin12" parent="Coins/MainRoom" index="11" instance=ExtResource( 9 )]
+[node name="Coin12" parent="Coins/MainRoom" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 1552, 1872 )
 
-[node name="Coin13" parent="Coins/MainRoom" index="12" instance=ExtResource( 9 )]
+[node name="Coin13" parent="Coins/MainRoom" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 1584, 1872 )
 
-[node name="Coin14" parent="Coins/MainRoom" index="13" instance=ExtResource( 9 )]
+[node name="Coin14" parent="Coins/MainRoom" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 1520, 1872 )
 
-[node name="Coin15" parent="Coins/MainRoom" index="14" instance=ExtResource( 9 )]
+[node name="Coin15" parent="Coins/MainRoom" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 1456, 2240 )
 
-[node name="Coin16" parent="Coins/MainRoom" index="15" instance=ExtResource( 9 )]
+[node name="Coin16" parent="Coins/MainRoom" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 1424, 2240 )
 
-[node name="Coin17" parent="Coins/MainRoom" index="16" instance=ExtResource( 9 )]
+[node name="Coin17" parent="Coins/MainRoom" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( 1440, 2272 )
 
-[node name="Coin18" parent="Coins/MainRoom" index="17" instance=ExtResource( 9 )]
+[node name="Coin18" parent="Coins/MainRoom" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 1440, 2304 )
 
-[node name="Coin19" parent="Coins/MainRoom" index="18" instance=ExtResource( 9 )]
+[node name="Coin19" parent="Coins/MainRoom" index="18" instance=ExtResource( 13 )]
 
 position = Vector2( 592, 2352 )
 
-[node name="Coin21" parent="Coins/MainRoom" index="19" instance=ExtResource( 9 )]
+[node name="Coin21" parent="Coins/MainRoom" index="19" instance=ExtResource( 13 )]
 
 position = Vector2( 560, 2352 )
 
-[node name="Coin22" parent="Coins/MainRoom" index="20" instance=ExtResource( 9 )]
+[node name="Coin22" parent="Coins/MainRoom" index="20" instance=ExtResource( 13 )]
 
 position = Vector2( 688, 2096 )
 
-[node name="Coin23" parent="Coins/MainRoom" index="21" instance=ExtResource( 9 )]
+[node name="Coin23" parent="Coins/MainRoom" index="21" instance=ExtResource( 13 )]
 
 position = Vector2( 656, 2096 )
 
-[node name="Coin24" parent="Coins/MainRoom" index="22" instance=ExtResource( 9 )]
+[node name="Coin24" parent="Coins/MainRoom" index="22" instance=ExtResource( 13 )]
 
 position = Vector2( 624, 2096 )
 
-[node name="Coin25" parent="Coins/MainRoom" index="23" instance=ExtResource( 9 )]
+[node name="Coin25" parent="Coins/MainRoom" index="23" instance=ExtResource( 13 )]
 
 position = Vector2( 208, 1872 )
 
-[node name="Coin26" parent="Coins/MainRoom" index="24" instance=ExtResource( 9 )]
+[node name="Coin26" parent="Coins/MainRoom" index="24" instance=ExtResource( 13 )]
 
 position = Vector2( 176, 1872 )
 
-[node name="Coin27" parent="Coins/MainRoom" index="25" instance=ExtResource( 9 )]
+[node name="Coin27" parent="Coins/MainRoom" index="25" instance=ExtResource( 13 )]
 
 position = Vector2( 144, 1872 )
 
-[node name="Coin28" parent="Coins/MainRoom" index="26" instance=ExtResource( 9 )]
+[node name="Coin28" parent="Coins/MainRoom" index="26" instance=ExtResource( 13 )]
 
 position = Vector2( 336, 1488 )
 
-[node name="Coin29" parent="Coins/MainRoom" index="27" instance=ExtResource( 9 )]
+[node name="Coin29" parent="Coins/MainRoom" index="27" instance=ExtResource( 13 )]
 
 position = Vector2( 304, 1488 )
 
-[node name="Coin30" parent="Coins/MainRoom" index="28" instance=ExtResource( 9 )]
+[node name="Coin30" parent="Coins/MainRoom" index="28" instance=ExtResource( 13 )]
 
 position = Vector2( 272, 1488 )
 
-[node name="Coin31" parent="Coins/MainRoom" index="29" instance=ExtResource( 9 )]
+[node name="Coin31" parent="Coins/MainRoom" index="29" instance=ExtResource( 13 )]
 
 position = Vector2( 496, 1232 )
 
-[node name="Coin32" parent="Coins/MainRoom" index="30" instance=ExtResource( 9 )]
+[node name="Coin32" parent="Coins/MainRoom" index="30" instance=ExtResource( 13 )]
 
 position = Vector2( 464, 1232 )
 
-[node name="Coin33" parent="Coins/MainRoom" index="31" instance=ExtResource( 9 )]
+[node name="Coin33" parent="Coins/MainRoom" index="31" instance=ExtResource( 13 )]
 
 position = Vector2( 432, 1232 )
 
-[node name="Coin34" parent="Coins/MainRoom" index="32" instance=ExtResource( 9 )]
+[node name="Coin34" parent="Coins/MainRoom" index="32" instance=ExtResource( 13 )]
 
 position = Vector2( 400, 880 )
 
-[node name="Coin35" parent="Coins/MainRoom" index="33" instance=ExtResource( 9 )]
+[node name="Coin35" parent="Coins/MainRoom" index="33" instance=ExtResource( 13 )]
 
 position = Vector2( 432, 880 )
 
-[node name="Coin20" parent="Coins/MainRoom" index="34" instance=ExtResource( 9 )]
+[node name="Coin20" parent="Coins/MainRoom" index="34" instance=ExtResource( 13 )]
 
 position = Vector2( 1952, 2576 )
 
-[node name="Fall_Zones" type="Node2D" parent="." index="6"]
+[node name="Fall_Zones" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
 
@@ -1129,7 +1450,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone1" index="0"]
 
@@ -1148,7 +1469,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone2" index="0"]
 
@@ -1167,7 +1488,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone3" index="0"]
 
@@ -1186,7 +1507,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone4" index="0"]
 
@@ -1205,7 +1526,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone5" index="0"]
 
@@ -1224,7 +1545,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone6" index="0"]
 
@@ -1243,7 +1564,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone14" index="0"]
 
@@ -1262,7 +1583,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone16" index="0"]
 
@@ -1281,7 +1602,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone17" index="0"]
 
@@ -1300,7 +1621,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone18" index="0"]
 
@@ -1319,7 +1640,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone11" index="0"]
 
@@ -1338,7 +1659,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone12" index="0"]
 
@@ -1357,7 +1678,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone13" index="0"]
 
@@ -1376,7 +1697,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone7" index="0"]
 
@@ -1395,7 +1716,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone15" index="0"]
 
@@ -1414,7 +1735,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone19" index="0"]
 
@@ -1433,7 +1754,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone22" index="0"]
 
@@ -1452,7 +1773,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone20" index="0"]
 
@@ -1471,7 +1792,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone21" index="0"]
 
@@ -1490,7 +1811,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone24" index="0"]
 
@@ -1509,7 +1830,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone25" index="0"]
 
@@ -1529,7 +1850,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone26" index="0"]
 
@@ -1549,7 +1870,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone23" index="0"]
 
@@ -1568,7 +1889,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone8" index="0"]
 
@@ -1587,7 +1908,7 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone9" index="0"]
 
@@ -1606,14 +1927,14 @@ collision_layer = 1024
 collision_mask = 4096
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fall_Zones/Fall_Zone10" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -19, -24, -19, 6, 29, 6, 29, -24 )
 
-[node name="Destructables" type="Node2D" parent="." index="7"]
+[node name="Destructables" type="Node2D" parent="." index="8"]
 
 editor/display_folded = true
 
@@ -1622,103 +1943,103 @@ editor/display_folded = true
 editor/display_folded = true
 position = Vector2( 0, 32 )
 
-[node name="Crate1" parent="Destructables/Room1" index="0" instance=ExtResource( 11 )]
+[node name="Crate1" parent="Destructables/Room1" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 528, 48 )
 
-[node name="Crate2" parent="Destructables/Room1" index="1" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/Room1" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 496, 48 )
 
-[node name="Crate4" parent="Destructables/Room1" index="2" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room1" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 960, 208 )
 
-[node name="Crate8" parent="Destructables/Room1" index="3" instance=ExtResource( 11 )]
+[node name="Crate8" parent="Destructables/Room1" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 144, 240 )
 
-[node name="Crate9" parent="Destructables/Room1" index="4" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room1" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 560, 48 )
 
-[node name="Crate10" parent="Destructables/Room1" index="5" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room1" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 112, 240 )
 
-[node name="Crate11" parent="Destructables/Room1" index="6" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/Room1" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 240, 336 )
 
-[node name="Crate12" parent="Destructables/Room1" index="7" instance=ExtResource( 11 )]
+[node name="Crate12" parent="Destructables/Room1" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 240, 304 )
 
-[node name="Crate15" parent="Destructables/Room1" index="8" instance=ExtResource( 11 )]
+[node name="Crate15" parent="Destructables/Room1" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 272, 320 )
 
-[node name="Crate24" parent="Destructables/Room1" index="9" instance=ExtResource( 11 )]
+[node name="Crate24" parent="Destructables/Room1" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 16, 208 )
 
-[node name="Crate28" parent="Destructables/Room1" index="10" instance=ExtResource( 11 )]
+[node name="Crate28" parent="Destructables/Room1" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 16, 176 )
 
-[node name="Crate25" parent="Destructables/Room1" index="11" instance=ExtResource( 11 )]
+[node name="Crate25" parent="Destructables/Room1" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( -432, 624 )
 
-[node name="Crate26" parent="Destructables/Room1" index="12" instance=ExtResource( 11 )]
+[node name="Crate26" parent="Destructables/Room1" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( -464, 624 )
 
-[node name="Crate27" parent="Destructables/Room1" index="13" instance=ExtResource( 11 )]
+[node name="Crate27" parent="Destructables/Room1" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( -496, 624 )
 
-[node name="Crate14" parent="Destructables/Room1" index="14" instance=ExtResource( 11 )]
+[node name="Crate14" parent="Destructables/Room1" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 432, 560 )
 
-[node name="Crate17" parent="Destructables/Room1" index="15" instance=ExtResource( 11 )]
+[node name="Crate17" parent="Destructables/Room1" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( -208, 240 )
 
-[node name="Crate29" parent="Destructables/Room1" index="16" instance=ExtResource( 11 )]
+[node name="Crate29" parent="Destructables/Room1" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( -208, 272 )
 
-[node name="Crate18" parent="Destructables/Room1" index="17" instance=ExtResource( 11 )]
+[node name="Crate18" parent="Destructables/Room1" index="17" instance=ExtResource( 15 )]
 
 position = Vector2( -176, 240 )
 
-[node name="Crate30" parent="Destructables/Room1" index="18" instance=ExtResource( 11 )]
+[node name="Crate30" parent="Destructables/Room1" index="18" instance=ExtResource( 15 )]
 
 position = Vector2( -176, 272 )
 
-[node name="Crate19" parent="Destructables/Room1" index="19" instance=ExtResource( 11 )]
+[node name="Crate19" parent="Destructables/Room1" index="19" instance=ExtResource( 15 )]
 
 position = Vector2( -144, 240 )
 
-[node name="Crate31" parent="Destructables/Room1" index="20" instance=ExtResource( 11 )]
+[node name="Crate31" parent="Destructables/Room1" index="20" instance=ExtResource( 15 )]
 
 position = Vector2( -144, 272 )
 
-[node name="Crate20" parent="Destructables/Room1" index="21" instance=ExtResource( 11 )]
+[node name="Crate20" parent="Destructables/Room1" index="21" instance=ExtResource( 15 )]
 
 position = Vector2( -112, 560 )
 
-[node name="Crate21" parent="Destructables/Room1" index="22" instance=ExtResource( 11 )]
+[node name="Crate21" parent="Destructables/Room1" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( -144, 560 )
 
-[node name="Crate22" parent="Destructables/Room1" index="23" instance=ExtResource( 11 )]
+[node name="Crate22" parent="Destructables/Room1" index="23" instance=ExtResource( 15 )]
 
 position = Vector2( -128, 528 )
 
-[node name="Crate23" parent="Destructables/Room1" index="24" instance=ExtResource( 11 )]
+[node name="Crate23" parent="Destructables/Room1" index="24" instance=ExtResource( 15 )]
 
 position = Vector2( -192, 560 )
 
@@ -1727,43 +2048,43 @@ position = Vector2( -192, 560 )
 editor/display_folded = true
 position = Vector2( 0, 32 )
 
-[node name="Crate1" parent="Destructables/Room2" index="0" instance=ExtResource( 11 )]
+[node name="Crate1" parent="Destructables/Room2" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 496 )
 
-[node name="Crate2" parent="Destructables/Room2" index="1" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/Room2" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 528 )
 
-[node name="Crate3" parent="Destructables/Room2" index="2" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room2" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 560 )
 
-[node name="Crate4" parent="Destructables/Room2" index="3" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room2" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 592 )
 
-[node name="Crate8" parent="Destructables/Room2" index="4" instance=ExtResource( 11 )]
+[node name="Crate8" parent="Destructables/Room2" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 1968, 400 )
 
-[node name="Crate9" parent="Destructables/Room2" index="5" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room2" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 1936, 400 )
 
-[node name="Crate10" parent="Destructables/Room2" index="6" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room2" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 1904, 400 )
 
-[node name="Crate11" parent="Destructables/Room2" index="7" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/Room2" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 400 )
 
-[node name="Crate12" parent="Destructables/Room2" index="8" instance=ExtResource( 11 )]
+[node name="Crate12" parent="Destructables/Room2" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 432 )
 
-[node name="Crate13" parent="Destructables/Room2" index="9" instance=ExtResource( 11 )]
+[node name="Crate13" parent="Destructables/Room2" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 464 )
 
@@ -1771,99 +2092,99 @@ position = Vector2( 1872, 464 )
 
 editor/display_folded = true
 
-[node name="Crate53" parent="Destructables/Room3" index="0" instance=ExtResource( 11 )]
+[node name="Crate53" parent="Destructables/Room3" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 2144, 896 )
 
-[node name="Crate57" parent="Destructables/Room3" index="1" instance=ExtResource( 11 )]
+[node name="Crate57" parent="Destructables/Room3" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 2448, 896 )
 
-[node name="Crate54" parent="Destructables/Room3" index="2" instance=ExtResource( 11 )]
+[node name="Crate54" parent="Destructables/Room3" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 2192, 880 )
 
-[node name="Crate56" parent="Destructables/Room3" index="3" instance=ExtResource( 11 )]
+[node name="Crate56" parent="Destructables/Room3" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 2496, 880 )
 
-[node name="Crate55" parent="Destructables/Room3" index="4" instance=ExtResource( 11 )]
+[node name="Crate55" parent="Destructables/Room3" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 2128, 848 )
 
-[node name="Crate58" parent="Destructables/Room3" index="5" instance=ExtResource( 11 )]
+[node name="Crate58" parent="Destructables/Room3" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 2464, 848 )
 
-[node name="Crate39" parent="Destructables/Room3" index="6" instance=ExtResource( 11 )]
+[node name="Crate39" parent="Destructables/Room3" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 2352, 1184 )
 
-[node name="Crate40" parent="Destructables/Room3" index="7" instance=ExtResource( 11 )]
+[node name="Crate40" parent="Destructables/Room3" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 2384, 1184 )
 
-[node name="Crate41" parent="Destructables/Room3" index="8" instance=ExtResource( 11 )]
+[node name="Crate41" parent="Destructables/Room3" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 2384, 1152 )
 
-[node name="Crate42" parent="Destructables/Room3" index="9" instance=ExtResource( 11 )]
+[node name="Crate42" parent="Destructables/Room3" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 2384, 1120 )
 
-[node name="Crate43" parent="Destructables/Room3" index="10" instance=ExtResource( 11 )]
+[node name="Crate43" parent="Destructables/Room3" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 2384, 1088 )
 
-[node name="Crate44" parent="Destructables/Room3" index="11" instance=ExtResource( 11 )]
+[node name="Crate44" parent="Destructables/Room3" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 2352, 1088 )
 
-[node name="Crate45" parent="Destructables/Room3" index="12" instance=ExtResource( 11 )]
+[node name="Crate45" parent="Destructables/Room3" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 2320, 1088 )
 
-[node name="Crate46" parent="Destructables/Room3" index="13" instance=ExtResource( 11 )]
+[node name="Crate46" parent="Destructables/Room3" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 2288, 1088 )
 
-[node name="Crate47" parent="Destructables/Room3" index="14" instance=ExtResource( 11 )]
+[node name="Crate47" parent="Destructables/Room3" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 2256, 1088 )
 
-[node name="Crate48" parent="Destructables/Room3" index="15" instance=ExtResource( 11 )]
+[node name="Crate48" parent="Destructables/Room3" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( 2256, 1120 )
 
-[node name="Crate49" parent="Destructables/Room3" index="16" instance=ExtResource( 11 )]
+[node name="Crate49" parent="Destructables/Room3" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( 2256, 1152 )
 
-[node name="Crate50" parent="Destructables/Room3" index="17" instance=ExtResource( 11 )]
+[node name="Crate50" parent="Destructables/Room3" index="17" instance=ExtResource( 15 )]
 
 position = Vector2( 2256, 1184 )
 
-[node name="Crate51" parent="Destructables/Room3" index="18" instance=ExtResource( 11 )]
+[node name="Crate51" parent="Destructables/Room3" index="18" instance=ExtResource( 15 )]
 
 position = Vector2( 2288, 1184 )
 
-[node name="Crate52" parent="Destructables/Room3" index="19" instance=ExtResource( 11 )]
+[node name="Crate52" parent="Destructables/Room3" index="19" instance=ExtResource( 15 )]
 
 position = Vector2( 2320, 1184 )
 
-[node name="Crate18" parent="Destructables/Room3" index="20" instance=ExtResource( 11 )]
+[node name="Crate18" parent="Destructables/Room3" index="20" instance=ExtResource( 15 )]
 
 position = Vector2( 2576, 1264 )
 
-[node name="Crate19" parent="Destructables/Room3" index="21" instance=ExtResource( 11 )]
+[node name="Crate19" parent="Destructables/Room3" index="21" instance=ExtResource( 15 )]
 
 position = Vector2( 2608, 1264 )
 
-[node name="Crate21" parent="Destructables/Room3" index="22" instance=ExtResource( 11 )]
+[node name="Crate21" parent="Destructables/Room3" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( 2608, 1296 )
 
-[node name="Crate20" parent="Destructables/Room3" index="23" instance=ExtResource( 11 )]
+[node name="Crate20" parent="Destructables/Room3" index="23" instance=ExtResource( 15 )]
 
 position = Vector2( 2608, 1008 )
 
@@ -1872,43 +2193,43 @@ position = Vector2( 2608, 1008 )
 editor/display_folded = true
 position = Vector2( 16, -16 )
 
-[node name="Crate" parent="Destructables/Room4" index="0" instance=ExtResource( 11 )]
+[node name="Crate" parent="Destructables/Room4" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 2240, 1696 )
 
-[node name="Crate2" parent="Destructables/Room4" index="1" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/Room4" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 2240, 1728 )
 
-[node name="Crate3" parent="Destructables/Room4" index="2" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room4" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 2240, 1760 )
 
-[node name="Crate4" parent="Destructables/Room4" index="3" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room4" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 2272, 1760 )
 
-[node name="Crate5" parent="Destructables/Room4" index="4" instance=ExtResource( 11 )]
+[node name="Crate5" parent="Destructables/Room4" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 2304, 1760 )
 
-[node name="Crate6" parent="Destructables/Room4" index="5" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/Room4" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 2336, 1760 )
 
-[node name="Crate7" parent="Destructables/Room4" index="6" instance=ExtResource( 11 )]
+[node name="Crate7" parent="Destructables/Room4" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 2368, 1760 )
 
-[node name="Crate8" parent="Destructables/Room4" index="7" instance=ExtResource( 11 )]
+[node name="Crate8" parent="Destructables/Room4" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 2400, 1760 )
 
-[node name="Crate9" parent="Destructables/Room4" index="8" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room4" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 2400, 1728 )
 
-[node name="Crate10" parent="Destructables/Room4" index="9" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room4" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 2400, 1696 )
 
@@ -1916,95 +2237,95 @@ position = Vector2( 2400, 1696 )
 
 editor/display_folded = true
 
-[node name="Crate3" parent="Destructables/Room5" index="0" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room5" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 1936, 3088 )
 
-[node name="Crate5" parent="Destructables/Room5" index="1" instance=ExtResource( 11 )]
+[node name="Crate5" parent="Destructables/Room5" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 3120 )
 
-[node name="Crate12" parent="Destructables/Room5" index="2" instance=ExtResource( 11 )]
+[node name="Crate12" parent="Destructables/Room5" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 3152 )
 
-[node name="Crate18" parent="Destructables/Room5" index="3" instance=ExtResource( 11 )]
+[node name="Crate18" parent="Destructables/Room5" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 3184 )
 
-[node name="Crate4" parent="Destructables/Room5" index="4" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room5" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 1904, 3088 )
 
-[node name="Crate6" parent="Destructables/Room5" index="5" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/Room5" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 1872, 3088 )
 
-[node name="Crate" parent="Destructables/Room5" index="6" instance=ExtResource( 11 )]
+[node name="Crate" parent="Destructables/Room5" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 1968, 3088 )
 
-[node name="Crate9" parent="Destructables/Room5" index="7" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room5" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 1584, 3056 )
 
-[node name="Crate10" parent="Destructables/Room5" index="8" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room5" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 1584, 3088 )
 
-[node name="Crate11" parent="Destructables/Room5" index="9" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/Room5" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 1424, 2928 )
 
-[node name="Crate13" parent="Destructables/Room5" index="10" instance=ExtResource( 11 )]
+[node name="Crate13" parent="Destructables/Room5" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 1312, 2656 )
 
-[node name="Crate14" parent="Destructables/Room5" index="11" instance=ExtResource( 11 )]
+[node name="Crate14" parent="Destructables/Room5" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 1600, 2656 )
 
-[node name="Crate15" parent="Destructables/Room5" index="12" instance=ExtResource( 11 )]
+[node name="Crate15" parent="Destructables/Room5" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 1632, 2656 )
 
-[node name="Crate16" parent="Destructables/Room5" index="13" instance=ExtResource( 11 )]
+[node name="Crate16" parent="Destructables/Room5" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 1040, 2896 )
 
-[node name="Crate17" parent="Destructables/Room5" index="14" instance=ExtResource( 11 )]
+[node name="Crate17" parent="Destructables/Room5" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 1072, 2896 )
 
-[node name="Crate19" parent="Destructables/Room5" index="15" instance=ExtResource( 11 )]
+[node name="Crate19" parent="Destructables/Room5" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( 1104, 2896 )
 
-[node name="Crate20" parent="Destructables/Room5" index="16" instance=ExtResource( 11 )]
+[node name="Crate20" parent="Destructables/Room5" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( 1104, 3040 )
 
-[node name="Crate21" parent="Destructables/Room5" index="17" instance=ExtResource( 11 )]
+[node name="Crate21" parent="Destructables/Room5" index="17" instance=ExtResource( 15 )]
 
 position = Vector2( 1072, 3040 )
 
-[node name="Crate22" parent="Destructables/Room5" index="18" instance=ExtResource( 11 )]
+[node name="Crate22" parent="Destructables/Room5" index="18" instance=ExtResource( 15 )]
 
 position = Vector2( 1040, 3040 )
 
-[node name="Crate23" parent="Destructables/Room5" index="19" instance=ExtResource( 11 )]
+[node name="Crate23" parent="Destructables/Room5" index="19" instance=ExtResource( 15 )]
 
 position = Vector2( 1952, 2880 )
 
-[node name="Crate24" parent="Destructables/Room5" index="20" instance=ExtResource( 11 )]
+[node name="Crate24" parent="Destructables/Room5" index="20" instance=ExtResource( 15 )]
 
 position = Vector2( 1968, 2912 )
 
-[node name="Crate25" parent="Destructables/Room5" index="21" instance=ExtResource( 11 )]
+[node name="Crate25" parent="Destructables/Room5" index="21" instance=ExtResource( 15 )]
 
 position = Vector2( 1552, 2752 )
 
-[node name="Crate26" parent="Destructables/Room5" index="22" instance=ExtResource( 11 )]
+[node name="Crate26" parent="Destructables/Room5" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( 1456, 2752 )
 
@@ -2012,103 +2333,103 @@ position = Vector2( 1456, 2752 )
 
 editor/display_folded = true
 
-[node name="Crate" parent="Destructables/Room6" index="0" instance=ExtResource( 11 )]
+[node name="Crate" parent="Destructables/Room6" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 608, 2672 )
 
-[node name="Crate3" parent="Destructables/Room6" index="1" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room6" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 512, 2880 )
 
-[node name="Crate4" parent="Destructables/Room6" index="2" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room6" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 544, 2880 )
 
-[node name="Crate5" parent="Destructables/Room6" index="3" instance=ExtResource( 11 )]
+[node name="Crate5" parent="Destructables/Room6" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 2880 )
 
-[node name="Crate6" parent="Destructables/Room6" index="4" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/Room6" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 608, 2880 )
 
-[node name="Crate8" parent="Destructables/Room6" index="5" instance=ExtResource( 11 )]
+[node name="Crate8" parent="Destructables/Room6" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 640, 2912 )
 
-[node name="Crate9" parent="Destructables/Room6" index="6" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room6" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 640, 2880 )
 
-[node name="Crate10" parent="Destructables/Room6" index="7" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room6" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 640, 2944 )
 
-[node name="Crate11" parent="Destructables/Room6" index="8" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/Room6" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 640, 2976 )
 
-[node name="Crate13" parent="Destructables/Room6" index="9" instance=ExtResource( 11 )]
+[node name="Crate13" parent="Destructables/Room6" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 608, 2976 )
 
-[node name="Crate14" parent="Destructables/Room6" index="10" instance=ExtResource( 11 )]
+[node name="Crate14" parent="Destructables/Room6" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 2976 )
 
-[node name="Crate15" parent="Destructables/Room6" index="11" instance=ExtResource( 11 )]
+[node name="Crate15" parent="Destructables/Room6" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 544, 2976 )
 
-[node name="Crate16" parent="Destructables/Room6" index="12" instance=ExtResource( 11 )]
+[node name="Crate16" parent="Destructables/Room6" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 512, 2976 )
 
-[node name="Crate19" parent="Destructables/Room6" index="13" instance=ExtResource( 11 )]
+[node name="Crate19" parent="Destructables/Room6" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 2912 )
 
-[node name="Crate21" parent="Destructables/Room6" index="14" instance=ExtResource( 11 )]
+[node name="Crate21" parent="Destructables/Room6" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 2944 )
 
-[node name="Crate29" parent="Destructables/Room6" index="15" instance=ExtResource( 11 )]
+[node name="Crate29" parent="Destructables/Room6" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 2880 )
 
-[node name="Crate30" parent="Destructables/Room6" index="16" instance=ExtResource( 11 )]
+[node name="Crate30" parent="Destructables/Room6" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 2976 )
 
-[node name="Crate22" parent="Destructables/Room6" index="17" instance=ExtResource( 11 )]
+[node name="Crate22" parent="Destructables/Room6" index="17" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 2944 )
 
-[node name="Crate23" parent="Destructables/Room6" index="18" instance=ExtResource( 11 )]
+[node name="Crate23" parent="Destructables/Room6" index="18" instance=ExtResource( 15 )]
 
 position = Vector2( 48, 2896 )
 
-[node name="Crate24" parent="Destructables/Room6" index="19" instance=ExtResource( 11 )]
+[node name="Crate24" parent="Destructables/Room6" index="19" instance=ExtResource( 15 )]
 
 position = Vector2( 176, 3056 )
 
-[node name="Crate25" parent="Destructables/Room6" index="20" instance=ExtResource( 11 )]
+[node name="Crate25" parent="Destructables/Room6" index="20" instance=ExtResource( 15 )]
 
 position = Vector2( 144, 3056 )
 
-[node name="Crate26" parent="Destructables/Room6" index="21" instance=ExtResource( 11 )]
+[node name="Crate26" parent="Destructables/Room6" index="21" instance=ExtResource( 15 )]
 
 position = Vector2( 112, 3056 )
 
-[node name="Crate27" parent="Destructables/Room6" index="22" instance=ExtResource( 11 )]
+[node name="Crate27" parent="Destructables/Room6" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( 80, 3056 )
 
-[node name="Crate28" parent="Destructables/Room6" index="23" instance=ExtResource( 11 )]
+[node name="Crate28" parent="Destructables/Room6" index="23" instance=ExtResource( 15 )]
 
 position = Vector2( 48, 3056 )
 
-[node name="Crate31" parent="Destructables/Room6" index="24" instance=ExtResource( 11 )]
+[node name="Crate31" parent="Destructables/Room6" index="24" instance=ExtResource( 15 )]
 
 position = Vector2( 208, 3056 )
 
@@ -2116,51 +2437,51 @@ position = Vector2( 208, 3056 )
 
 editor/display_folded = true
 
-[node name="Crate2" parent="Destructables/Room7" index="0" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/Room7" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2128 )
 
-[node name="Crate3" parent="Destructables/Room7" index="1" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room7" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2160 )
 
-[node name="Crate4" parent="Destructables/Room7" index="2" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room7" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2192 )
 
-[node name="Crate5" parent="Destructables/Room7" index="3" instance=ExtResource( 11 )]
+[node name="Crate5" parent="Destructables/Room7" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2224 )
 
-[node name="Crate6" parent="Destructables/Room7" index="4" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/Room7" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2256 )
 
-[node name="Crate7" parent="Destructables/Room7" index="5" instance=ExtResource( 11 )]
+[node name="Crate7" parent="Destructables/Room7" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( -272, 2288 )
 
-[node name="Crate9" parent="Destructables/Room7" index="6" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room7" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2128 )
 
-[node name="Crate10" parent="Destructables/Room7" index="7" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room7" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2160 )
 
-[node name="Crate11" parent="Destructables/Room7" index="8" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/Room7" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2192 )
 
-[node name="Crate12" parent="Destructables/Room7" index="9" instance=ExtResource( 11 )]
+[node name="Crate12" parent="Destructables/Room7" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2224 )
 
-[node name="Crate13" parent="Destructables/Room7" index="10" instance=ExtResource( 11 )]
+[node name="Crate13" parent="Destructables/Room7" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2256 )
 
-[node name="Crate14" parent="Destructables/Room7" index="11" instance=ExtResource( 11 )]
+[node name="Crate14" parent="Destructables/Room7" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 2288 )
 
@@ -2168,39 +2489,39 @@ position = Vector2( -400, 2288 )
 
 editor/display_folded = true
 
-[node name="Crate" parent="Destructables/Room8" index="0" instance=ExtResource( 11 )]
+[node name="Crate" parent="Destructables/Room8" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( -496, 1072 )
 
-[node name="Crate4" parent="Destructables/Room8" index="1" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/Room8" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 1104 )
 
-[node name="Crate6" parent="Destructables/Room8" index="2" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/Room8" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -400, 1136 )
 
-[node name="Crate2" parent="Destructables/Room8" index="3" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/Room8" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( -464, 1072 )
 
-[node name="Crate3" parent="Destructables/Room8" index="4" instance=ExtResource( 11 )]
+[node name="Crate3" parent="Destructables/Room8" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( -432, 1072 )
 
-[node name="Crate7" parent="Destructables/Room8" index="5" instance=ExtResource( 11 )]
+[node name="Crate7" parent="Destructables/Room8" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( -432, 1328 )
 
-[node name="Crate8" parent="Destructables/Room8" index="6" instance=ExtResource( 11 )]
+[node name="Crate8" parent="Destructables/Room8" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( -464, 1328 )
 
-[node name="Crate9" parent="Destructables/Room8" index="7" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/Room8" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( -496, 1328 )
 
-[node name="Crate10" parent="Destructables/Room8" index="8" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/Room8" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( -528, 1328 )
 
@@ -2208,302 +2529,302 @@ position = Vector2( -528, 1328 )
 
 position = Vector2( -16, 0 )
 
-[node name="Crate" parent="Destructables/MainRoom" index="0" instance=ExtResource( 11 )]
+[node name="Crate" parent="Destructables/MainRoom" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 64, 2512 )
 
-[node name="Crate2" parent="Destructables/MainRoom" index="1" instance=ExtResource( 11 )]
+[node name="Crate2" parent="Destructables/MainRoom" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 96, 2512 )
 
-[node name="Crate4" parent="Destructables/MainRoom" index="2" instance=ExtResource( 11 )]
+[node name="Crate4" parent="Destructables/MainRoom" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 128, 2560 )
 
-[node name="Crate6" parent="Destructables/MainRoom" index="3" instance=ExtResource( 11 )]
+[node name="Crate6" parent="Destructables/MainRoom" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 240, 2576 )
 
-[node name="Crate7" parent="Destructables/MainRoom" index="4" instance=ExtResource( 11 )]
+[node name="Crate7" parent="Destructables/MainRoom" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 160, 2576 )
 
-[node name="Crate9" parent="Destructables/MainRoom" index="5" instance=ExtResource( 11 )]
+[node name="Crate9" parent="Destructables/MainRoom" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 64, 2240 )
 
-[node name="Crate10" parent="Destructables/MainRoom" index="6" instance=ExtResource( 11 )]
+[node name="Crate10" parent="Destructables/MainRoom" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 64, 2288 )
 
-[node name="Crate11" parent="Destructables/MainRoom" index="7" instance=ExtResource( 11 )]
+[node name="Crate11" parent="Destructables/MainRoom" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 608, 2032 )
 
-[node name="Crate12" parent="Destructables/MainRoom" index="8" instance=ExtResource( 11 )]
+[node name="Crate12" parent="Destructables/MainRoom" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 656, 2016 )
 
-[node name="Crate13" parent="Destructables/MainRoom" index="9" instance=ExtResource( 11 )]
+[node name="Crate13" parent="Destructables/MainRoom" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 688, 2016 )
 
-[node name="Crate14" parent="Destructables/MainRoom" index="10" instance=ExtResource( 11 )]
+[node name="Crate14" parent="Destructables/MainRoom" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 288, 1744 )
 
-[node name="Crate17" parent="Destructables/MainRoom" index="11" instance=ExtResource( 11 )]
+[node name="Crate17" parent="Destructables/MainRoom" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 288, 1776 )
 
-[node name="Crate53" parent="Destructables/MainRoom" index="12" instance=ExtResource( 11 )]
+[node name="Crate53" parent="Destructables/MainRoom" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 320, 1808 )
 
-[node name="Crate18" parent="Destructables/MainRoom" index="13" instance=ExtResource( 11 )]
+[node name="Crate18" parent="Destructables/MainRoom" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 352, 1808 )
 
-[node name="Crate19" parent="Destructables/MainRoom" index="14" instance=ExtResource( 11 )]
+[node name="Crate19" parent="Destructables/MainRoom" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 384, 1808 )
 
-[node name="Crate20" parent="Destructables/MainRoom" index="15" instance=ExtResource( 11 )]
+[node name="Crate20" parent="Destructables/MainRoom" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( 288, 1808 )
 
-[node name="Crate21" parent="Destructables/MainRoom" index="16" instance=ExtResource( 11 )]
+[node name="Crate21" parent="Destructables/MainRoom" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( 80, 704 )
 
-[node name="Crate22" parent="Destructables/MainRoom" index="17" instance=ExtResource( 11 )]
+[node name="Crate22" parent="Destructables/MainRoom" index="17" instance=ExtResource( 15 )]
 
 position = Vector2( 544, 912 )
 
-[node name="Crate25" parent="Destructables/MainRoom" index="18" instance=ExtResource( 11 )]
+[node name="Crate25" parent="Destructables/MainRoom" index="18" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 912 )
 
-[node name="Crate27" parent="Destructables/MainRoom" index="19" instance=ExtResource( 11 )]
+[node name="Crate27" parent="Destructables/MainRoom" index="19" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 944 )
 
-[node name="Crate29" parent="Destructables/MainRoom" index="20" instance=ExtResource( 11 )]
+[node name="Crate29" parent="Destructables/MainRoom" index="20" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 976 )
 
-[node name="Crate30" parent="Destructables/MainRoom" index="21" instance=ExtResource( 11 )]
+[node name="Crate30" parent="Destructables/MainRoom" index="21" instance=ExtResource( 15 )]
 
 position = Vector2( 576, 1008 )
 
-[node name="Crate23" parent="Destructables/MainRoom" index="22" instance=ExtResource( 11 )]
+[node name="Crate23" parent="Destructables/MainRoom" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( 480, 912 )
 
-[node name="Crate24" parent="Destructables/MainRoom" index="23" instance=ExtResource( 11 )]
+[node name="Crate24" parent="Destructables/MainRoom" index="23" instance=ExtResource( 15 )]
 
 position = Vector2( 512, 912 )
 
-[node name="Crate31" parent="Destructables/MainRoom" index="24" instance=ExtResource( 11 )]
+[node name="Crate31" parent="Destructables/MainRoom" index="24" instance=ExtResource( 15 )]
 
 position = Vector2( 864, 688 )
 
-[node name="Crate32" parent="Destructables/MainRoom" index="25" instance=ExtResource( 11 )]
+[node name="Crate32" parent="Destructables/MainRoom" index="25" instance=ExtResource( 15 )]
 
 position = Vector2( 912, 688 )
 
-[node name="Crate33" parent="Destructables/MainRoom" index="26" instance=ExtResource( 11 )]
+[node name="Crate33" parent="Destructables/MainRoom" index="26" instance=ExtResource( 15 )]
 
 position = Vector2( 1152, 688 )
 
-[node name="Crate34" parent="Destructables/MainRoom" index="27" instance=ExtResource( 11 )]
+[node name="Crate34" parent="Destructables/MainRoom" index="27" instance=ExtResource( 15 )]
 
 position = Vector2( 1232, 1232 )
 
-[node name="Crate35" parent="Destructables/MainRoom" index="28" instance=ExtResource( 11 )]
+[node name="Crate35" parent="Destructables/MainRoom" index="28" instance=ExtResource( 15 )]
 
 position = Vector2( 1200, 1232 )
 
-[node name="Crate38" parent="Destructables/MainRoom" index="29" instance=ExtResource( 11 )]
+[node name="Crate38" parent="Destructables/MainRoom" index="29" instance=ExtResource( 15 )]
 
 position = Vector2( 1504, 1456 )
 
-[node name="Crate40" parent="Destructables/MainRoom" index="30" instance=ExtResource( 11 )]
+[node name="Crate40" parent="Destructables/MainRoom" index="30" instance=ExtResource( 15 )]
 
 position = Vector2( 1504, 1520 )
 
-[node name="Crate42" parent="Destructables/MainRoom" index="31" instance=ExtResource( 11 )]
+[node name="Crate42" parent="Destructables/MainRoom" index="31" instance=ExtResource( 15 )]
 
 position = Vector2( 1648, 1536 )
 
-[node name="Crate43" parent="Destructables/MainRoom" index="32" instance=ExtResource( 11 )]
+[node name="Crate43" parent="Destructables/MainRoom" index="32" instance=ExtResource( 15 )]
 
 position = Vector2( 1680, 1536 )
 
-[node name="Crate44" parent="Destructables/MainRoom" index="33" instance=ExtResource( 11 )]
+[node name="Crate44" parent="Destructables/MainRoom" index="33" instance=ExtResource( 15 )]
 
 position = Vector2( 1920, 1968 )
 
-[node name="Crate45" parent="Destructables/MainRoom" index="34" instance=ExtResource( 11 )]
+[node name="Crate45" parent="Destructables/MainRoom" index="34" instance=ExtResource( 15 )]
 
 position = Vector2( 1952, 1968 )
 
-[node name="Crate46" parent="Destructables/MainRoom" index="35" instance=ExtResource( 11 )]
+[node name="Crate46" parent="Destructables/MainRoom" index="35" instance=ExtResource( 15 )]
 
 position = Vector2( 1984, 1968 )
 
-[node name="Crate47" parent="Destructables/MainRoom" index="36" instance=ExtResource( 11 )]
+[node name="Crate47" parent="Destructables/MainRoom" index="36" instance=ExtResource( 15 )]
 
 position = Vector2( 1920, 1520 )
 
-[node name="Crate48" parent="Destructables/MainRoom" index="37" instance=ExtResource( 11 )]
+[node name="Crate48" parent="Destructables/MainRoom" index="37" instance=ExtResource( 15 )]
 
 position = Vector2( 1952, 1520 )
 
-[node name="Crate49" parent="Destructables/MainRoom" index="38" instance=ExtResource( 11 )]
+[node name="Crate49" parent="Destructables/MainRoom" index="38" instance=ExtResource( 15 )]
 
 position = Vector2( 1984, 1520 )
 
-[node name="Crate50" parent="Destructables/MainRoom" index="39" instance=ExtResource( 11 )]
+[node name="Crate50" parent="Destructables/MainRoom" index="39" instance=ExtResource( 15 )]
 
 position = Vector2( 1792, 1040 )
 
-[node name="Crate51" parent="Destructables/MainRoom" index="40" instance=ExtResource( 11 )]
+[node name="Crate51" parent="Destructables/MainRoom" index="40" instance=ExtResource( 15 )]
 
 position = Vector2( 1760, 1040 )
 
-[node name="Crate52" parent="Destructables/MainRoom" index="41" instance=ExtResource( 11 )]
+[node name="Crate52" parent="Destructables/MainRoom" index="41" instance=ExtResource( 15 )]
 
 position = Vector2( 1728, 976 )
 
-[node name="Crate54" parent="Destructables/MainRoom" index="42" instance=ExtResource( 11 )]
+[node name="Crate54" parent="Destructables/MainRoom" index="42" instance=ExtResource( 15 )]
 
 position = Vector2( 1728, 1040 )
 
-[node name="Crate56" parent="Destructables/MainRoom" index="43" instance=ExtResource( 11 )]
+[node name="Crate56" parent="Destructables/MainRoom" index="43" instance=ExtResource( 15 )]
 
 position = Vector2( 1728, 1008 )
 
-[node name="Crate57" parent="Destructables/MainRoom" index="44" instance=ExtResource( 11 )]
+[node name="Crate57" parent="Destructables/MainRoom" index="44" instance=ExtResource( 15 )]
 
 position = Vector2( 1152, 1632 )
 
-[node name="Crate58" parent="Destructables/MainRoom" index="45" instance=ExtResource( 11 )]
+[node name="Crate58" parent="Destructables/MainRoom" index="45" instance=ExtResource( 15 )]
 
 position = Vector2( 1152, 1664 )
 
-[node name="Crate59" parent="Destructables/MainRoom" index="46" instance=ExtResource( 11 )]
+[node name="Crate59" parent="Destructables/MainRoom" index="46" instance=ExtResource( 15 )]
 
 position = Vector2( 960, 1712 )
 
-[node name="Crate60" parent="Destructables/MainRoom" index="47" instance=ExtResource( 11 )]
+[node name="Crate60" parent="Destructables/MainRoom" index="47" instance=ExtResource( 15 )]
 
 position = Vector2( 992, 1712 )
 
-[node name="Crate62" parent="Destructables/MainRoom" index="48" instance=ExtResource( 11 )]
+[node name="Crate62" parent="Destructables/MainRoom" index="48" instance=ExtResource( 15 )]
 
 position = Vector2( 944, 1936 )
 
-[node name="Crate63" parent="Destructables/MainRoom" index="49" instance=ExtResource( 11 )]
+[node name="Crate63" parent="Destructables/MainRoom" index="49" instance=ExtResource( 15 )]
 
 position = Vector2( 880, 1936 )
 
-[node name="Crate64" parent="Destructables/MainRoom" index="50" instance=ExtResource( 11 )]
+[node name="Crate64" parent="Destructables/MainRoom" index="50" instance=ExtResource( 15 )]
 
 position = Vector2( 672, 1424 )
 
-[node name="Crate65" parent="Destructables/MainRoom" index="51" instance=ExtResource( 11 )]
+[node name="Crate65" parent="Destructables/MainRoom" index="51" instance=ExtResource( 15 )]
 
 position = Vector2( 704, 1424 )
 
-[node name="Crate66" parent="Destructables/MainRoom" index="52" instance=ExtResource( 11 )]
+[node name="Crate66" parent="Destructables/MainRoom" index="52" instance=ExtResource( 15 )]
 
 position = Vector2( 736, 1424 )
 
-[node name="Crate67" parent="Destructables/MainRoom" index="53" instance=ExtResource( 11 )]
+[node name="Crate67" parent="Destructables/MainRoom" index="53" instance=ExtResource( 15 )]
 
 position = Vector2( 800, 1360 )
 
-[node name="Crate69" parent="Destructables/MainRoom" index="54" instance=ExtResource( 11 )]
+[node name="Crate69" parent="Destructables/MainRoom" index="54" instance=ExtResource( 15 )]
 
 position = Vector2( 800, 1328 )
 
-[node name="Crate70" parent="Destructables/MainRoom" index="55" instance=ExtResource( 11 )]
+[node name="Crate70" parent="Destructables/MainRoom" index="55" instance=ExtResource( 15 )]
 
 position = Vector2( 1312, 1840 )
 
-[node name="Crate71" parent="Destructables/MainRoom" index="56" instance=ExtResource( 11 )]
+[node name="Crate71" parent="Destructables/MainRoom" index="56" instance=ExtResource( 15 )]
 
 position = Vector2( 1376, 1840 )
 
-[node name="Crate72" parent="Destructables/MainRoom" index="57" instance=ExtResource( 11 )]
+[node name="Crate72" parent="Destructables/MainRoom" index="57" instance=ExtResource( 15 )]
 
 position = Vector2( 1344, 1840 )
 
-[node name="Crate73" parent="Destructables/MainRoom" index="58" instance=ExtResource( 11 )]
+[node name="Crate73" parent="Destructables/MainRoom" index="58" instance=ExtResource( 15 )]
 
 position = Vector2( 1248, 1904 )
 
-[node name="Crate74" parent="Destructables/MainRoom" index="59" instance=ExtResource( 11 )]
+[node name="Crate74" parent="Destructables/MainRoom" index="59" instance=ExtResource( 15 )]
 
 position = Vector2( 1248, 1936 )
 
-[node name="Crate75" parent="Destructables/MainRoom" index="60" instance=ExtResource( 11 )]
+[node name="Crate75" parent="Destructables/MainRoom" index="60" instance=ExtResource( 15 )]
 
 position = Vector2( 1408, 1936 )
 
-[node name="Crate76" parent="Destructables/MainRoom" index="61" instance=ExtResource( 11 )]
+[node name="Crate76" parent="Destructables/MainRoom" index="61" instance=ExtResource( 15 )]
 
 position = Vector2( 1392, 1968 )
 
-[node name="Crate77" parent="Destructables/MainRoom" index="62" instance=ExtResource( 11 )]
+[node name="Crate77" parent="Destructables/MainRoom" index="62" instance=ExtResource( 15 )]
 
 position = Vector2( 1424, 2008 )
 
-[node name="Crate78" parent="Destructables/MainRoom" index="63" instance=ExtResource( 11 )]
+[node name="Crate78" parent="Destructables/MainRoom" index="63" instance=ExtResource( 15 )]
 
 position = Vector2( 1344, 2000 )
 
-[node name="Crate79" parent="Destructables/MainRoom" index="64" instance=ExtResource( 11 )]
+[node name="Crate79" parent="Destructables/MainRoom" index="64" instance=ExtResource( 15 )]
 
 position = Vector2( 1408, 1328 )
 
-[node name="Crate81" parent="Destructables/MainRoom" index="65" instance=ExtResource( 11 )]
+[node name="Crate81" parent="Destructables/MainRoom" index="65" instance=ExtResource( 15 )]
 
 position = Vector2( 1344, 1296 )
 
-[node name="Crate82" parent="Destructables/MainRoom" index="66" instance=ExtResource( 11 )]
+[node name="Crate82" parent="Destructables/MainRoom" index="66" instance=ExtResource( 15 )]
 
 position = Vector2( 1376, 1296 )
 
-[node name="Crate83" parent="Destructables/MainRoom" index="67" instance=ExtResource( 11 )]
+[node name="Crate83" parent="Destructables/MainRoom" index="67" instance=ExtResource( 15 )]
 
 position = Vector2( 672, 1328 )
 
-[node name="Crate84" parent="Destructables/MainRoom" index="68" instance=ExtResource( 11 )]
+[node name="Crate84" parent="Destructables/MainRoom" index="68" instance=ExtResource( 15 )]
 
 position = Vector2( 704, 1296 )
 
-[node name="BGMusic" type="AudioStreamPlayer" parent="." index="8"]
+[node name="BGMusic" type="AudioStreamPlayer" parent="." index="9"]
 
-stream = ExtResource( 12 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 13 )
+script = ExtResource( 17 )
 
-[node name="ReadyOneShot" type="AudioStreamPlayer" parent="." index="9"]
+[node name="ReadyOneShot" type="AudioStreamPlayer" parent="." index="10"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 0.7
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="10"]
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="11"]
 
 visible = false
 position = Vector2( 984, 1627 )
@@ -2516,7 +2837,7 @@ pause_animated_sprites = true
 process_parent = false
 physics_process_parent = false
 
-[node name="Background" type="Node2D" parent="." index="11"]
+[node name="Background" type="Node2D" parent="." index="12"]
 
 [node name="Clouds" type="Node2D" parent="Background" index="0"]
 
@@ -2530,312 +2851,312 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 157, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud2" type="Sprite" parent="Background/Clouds" index="1"]
 
 position = Vector2( 349, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud3" type="Sprite" parent="Background/Clouds" index="2"]
 
 position = Vector2( 973, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud4" type="Sprite" parent="Background/Clouds" index="3"]
 
 position = Vector2( 45, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud22" type="Sprite" parent="Background/Clouds" index="4"]
 
 position = Vector2( 1981, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud5" type="Sprite" parent="Background/Clouds" index="5"]
 
 position = Vector2( -51, 123 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud23" type="Sprite" parent="Background/Clouds" index="6"]
 
 position = Vector2( 2029, 11 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 18 )
-script = ExtResource( 16 )
+texture = ExtResource( 22 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud24" type="Sprite" parent="Background/Clouds" index="7"]
 
 position = Vector2( 2077, 75 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 19 )
-script = ExtResource( 16 )
+texture = ExtResource( 23 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud25" type="Sprite" parent="Background/Clouds" index="8"]
 
 position = Vector2( 2061, 139 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud26" type="Sprite" parent="Background/Clouds" index="9"]
 
 position = Vector2( 2221, 219 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud28" type="Sprite" parent="Background/Clouds" index="10"]
 
 position = Vector2( 2125, 187 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud27" type="Sprite" parent="Background/Clouds" index="11"]
 
 position = Vector2( 2109, 251 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 22 )
-script = ExtResource( 16 )
+texture = ExtResource( 26 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud29" type="Sprite" parent="Background/Clouds" index="12"]
 
 position = Vector2( 2045, 443 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud30" type="Sprite" parent="Background/Clouds" index="13"]
 
 position = Vector2( 2109, 443 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud31" type="Sprite" parent="Background/Clouds" index="14"]
 
 position = Vector2( 2237, 443 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 24 )
-script = ExtResource( 16 )
+texture = ExtResource( 28 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud32" type="Sprite" parent="Background/Clouds" index="15"]
 
 position = Vector2( 2637, 603 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud33" type="Sprite" parent="Background/Clouds" index="16"]
 
 position = Vector2( 2525, 331 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud34" type="Sprite" parent="Background/Clouds" index="17"]
 
 position = Vector2( 2749, 699 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud35" type="Sprite" parent="Background/Clouds" index="18"]
 
 position = Vector2( 2797, 891 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 19 )
-script = ExtResource( 16 )
+texture = ExtResource( 23 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud37" type="Sprite" parent="Background/Clouds" index="19"]
 
 position = Vector2( 2701, 1083 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 18 )
-script = ExtResource( 16 )
+texture = ExtResource( 22 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud36" type="Sprite" parent="Background/Clouds" index="20"]
 
 position = Vector2( 2669, 971 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud0" type="Sprite" parent="Background/Clouds" index="21"]
 
 position = Vector2( -595, 347 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud7" type="Sprite" parent="Background/Clouds" index="22"]
 
 position = Vector2( -291, 107 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud19" type="Sprite" parent="Background/Clouds" index="23"]
 
 position = Vector2( 1277, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud16" type="Sprite" parent="Background/Clouds" index="24"]
 
 position = Vector2( -579, 571 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud14" type="Sprite" parent="Background/Clouds" index="25"]
 
 position = Vector2( -675, 395 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud8" type="Sprite" parent="Background/Clouds" index="26"]
 
 position = Vector2( -499, 107 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud20" type="Sprite" parent="Background/Clouds" index="27"]
 
 position = Vector2( 1629, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud13" type="Sprite" parent="Background/Clouds" index="28"]
 
 position = Vector2( 525, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud54" type="Sprite" parent="Background/Clouds" index="29"]
 
 position = Vector2( -739, 619 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud55" type="Sprite" parent="Background/Clouds" index="30"]
 
 position = Vector2( -851, 1243 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud56" type="Sprite" parent="Background/Clouds" index="31"]
 
 position = Vector2( -771, 1643 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud57" type="Sprite" parent="Background/Clouds" index="32"]
 
 position = Vector2( -435, 2763 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud58" type="Sprite" parent="Background/Clouds" index="33"]
 
 position = Vector2( -227, 3019 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud59" type="Sprite" parent="Background/Clouds" index="34"]
 
 position = Vector2( 813, 3291 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud60" type="Sprite" parent="Background/Clouds" index="35"]
 
 position = Vector2( 1437, 3259 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud61" type="Sprite" parent="Background/Clouds" index="36"]
 
 position = Vector2( 2093, 3051 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud62" type="Sprite" parent="Background/Clouds" index="37"]
 
 position = Vector2( 2381, 2715 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud84" type="Sprite" parent="Background/Clouds" index="38"]
 
 position = Vector2( 2093, 2699 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud85" type="Sprite" parent="Background/Clouds" index="39"]
@@ -2843,136 +3164,136 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 2189, 2651 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud63" type="Sprite" parent="Background/Clouds" index="40"]
 
 position = Vector2( 2829, 1867 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud64" type="Sprite" parent="Background/Clouds" index="41"]
 
 position = Vector2( 2909, 715 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud65" type="Sprite" parent="Background/Clouds" index="42"]
 
 position = Vector2( 1725, -37 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud17" type="Sprite" parent="Background/Clouds" index="43"]
 
 position = Vector2( 1101, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud15" type="Sprite" parent="Background/Clouds" index="44"]
 
 position = Vector2( -707, 267 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 24 )
-script = ExtResource( 16 )
+texture = ExtResource( 28 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud18" type="Sprite" parent="Background/Clouds" index="45"]
 
 position = Vector2( 733, -5 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 24 )
-script = ExtResource( 16 )
+texture = ExtResource( 28 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud9" type="Sprite" parent="Background/Clouds" index="46"]
 
 position = Vector2( -643, 171 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 22 )
-script = ExtResource( 16 )
+texture = ExtResource( 26 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud11" type="Sprite" parent="Background/Clouds" index="47"]
 
 position = Vector2( -579, 235 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud21" type="Sprite" parent="Background/Clouds" index="48"]
 
 position = Vector2( 1469, -21 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud38" type="Sprite" parent="Background/Clouds" index="49"]
 
 position = Vector2( 2765, 1531 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud39" type="Sprite" parent="Background/Clouds" index="50"]
 
 position = Vector2( 2781, 1643 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 22 )
-script = ExtResource( 16 )
+texture = ExtResource( 26 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud40" type="Sprite" parent="Background/Clouds" index="51"]
 
 position = Vector2( 2701, 1819 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 18 )
-script = ExtResource( 16 )
+texture = ExtResource( 22 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud41" type="Sprite" parent="Background/Clouds" index="52"]
 
 position = Vector2( 2701, 2059 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud42" type="Sprite" parent="Background/Clouds" index="53"]
 
 position = Vector2( 2733, 2379 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud43" type="Sprite" parent="Background/Clouds" index="54"]
 
 position = Vector2( 2845, 2571 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud44" type="Sprite" parent="Background/Clouds" index="55"]
 
 position = Vector2( 2221, 2843 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="cloud45" type="Sprite" parent="Background/Clouds" index="56"]
@@ -2980,8 +3301,8 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 2397, 3035 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="w" type="Sprite" parent="Background/Clouds" index="57"]
@@ -2989,8 +3310,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 2269, 3051 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud81" type="Sprite" parent="Background/Clouds" index="58"]
@@ -2998,8 +3319,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 2157, 3019 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud82" type="Sprite" parent="Background/Clouds" index="59"]
@@ -3007,8 +3328,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 2061, 3259 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud83" type="Sprite" parent="Background/Clouds" index="60"]
@@ -3016,8 +3337,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 2093, 3179 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 19 )
-script = ExtResource( 16 )
+texture = ExtResource( 23 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud46" type="Sprite" parent="Background/Clouds" index="61"]
@@ -3025,8 +3346,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 1821, 3275 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud47" type="Sprite" parent="Background/Clouds" index="62"]
@@ -3034,8 +3355,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 733, 3259 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud48" type="Sprite" parent="Background/Clouds" index="63"]
@@ -3043,16 +3364,16 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 381, 3291 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud49" type="Sprite" parent="Background/Clouds" index="64"]
 
 position = Vector2( -83, 3035 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud86" type="Sprite" parent="Background/Clouds" index="65"]
@@ -3060,8 +3381,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -163, 2843 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud87" type="Sprite" parent="Background/Clouds" index="66"]
@@ -3069,8 +3390,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -115, 3211 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud88" type="Sprite" parent="Background/Clouds" index="67"]
@@ -3078,8 +3399,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -579, 3195 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud50" type="Sprite" parent="Background/Clouds" index="68"]
@@ -3087,8 +3408,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -659, 2651 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud51" type="Sprite" parent="Background/Clouds" index="69"]
@@ -3097,8 +3418,8 @@ position = Vector2( -723, 2475 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud52" type="Sprite" parent="Background/Clouds" index="70"]
@@ -3107,8 +3428,8 @@ position = Vector2( -771, 2011 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud53" type="Sprite" parent="Background/Clouds" index="71"]
@@ -3117,8 +3438,8 @@ position = Vector2( -963, 1195 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud66" type="Sprite" parent="Background/Clouds" index="72"]
@@ -3126,8 +3447,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 2669, 2651 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud67" type="Sprite" parent="Background/Clouds" index="73"]
@@ -3136,8 +3457,8 @@ position = Vector2( 2061, 2843 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud68" type="Sprite" parent="Background/Clouds" index="74"]
@@ -3145,8 +3466,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 1949, 3259 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud69" type="Sprite" parent="Background/Clouds" index="75"]
@@ -3154,8 +3475,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 1053, 3259 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud70" type="Sprite" parent="Background/Clouds" index="76"]
@@ -3163,8 +3484,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -51, 3195 )
 scale = Vector2( 0.1, 0.1 )
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud71" type="Sprite" parent="Background/Clouds" index="77"]
@@ -3173,8 +3494,8 @@ position = Vector2( -755, 1707 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 20 )
-script = ExtResource( 16 )
+texture = ExtResource( 24 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud72" type="Sprite" parent="Background/Clouds" index="78"]
@@ -3183,8 +3504,8 @@ position = Vector2( -723, 1835 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 18 )
-script = ExtResource( 16 )
+texture = ExtResource( 22 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud73" type="Sprite" parent="Background/Clouds" index="79"]
@@ -3193,8 +3514,8 @@ position = Vector2( -883, 1867 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud74" type="Sprite" parent="Background/Clouds" index="80"]
@@ -3203,8 +3524,8 @@ position = Vector2( -803, 667 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud75" type="Sprite" parent="Background/Clouds" index="81"]
@@ -3213,8 +3534,8 @@ position = Vector2( -707, 699 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 19 )
-script = ExtResource( 16 )
+texture = ExtResource( 23 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud76" type="Sprite" parent="Background/Clouds" index="82"]
@@ -3223,8 +3544,8 @@ position = Vector2( -819, 875 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 24 )
-script = ExtResource( 16 )
+texture = ExtResource( 28 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud77" type="Sprite" parent="Background/Clouds" index="83"]
@@ -3233,8 +3554,8 @@ position = Vector2( -723, 939 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 17 )
-script = ExtResource( 16 )
+texture = ExtResource( 21 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud78" type="Sprite" parent="Background/Clouds" index="84"]
@@ -3243,8 +3564,8 @@ position = Vector2( -819, 987 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 18 )
-script = ExtResource( 16 )
+texture = ExtResource( 22 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud79" type="Sprite" parent="Background/Clouds" index="85"]
@@ -3253,186 +3574,186 @@ position = Vector2( -739, 1099 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -6
 z_as_relative = false
-texture = ExtResource( 21 )
-script = ExtResource( 16 )
+texture = ExtResource( 25 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="cloud6" type="Sprite" parent="Background/Clouds" index="86"]
 
 position = Vector2( -35, 75 )
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 23 )
-script = ExtResource( 16 )
+texture = ExtResource( 27 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Stars" type="Node2D" parent="Background" index="1"]
 
 editor/display_folded = true
 
-[node name="Star" parent="Background/Stars" index="0" instance=ExtResource( 25 )]
+[node name="Star" parent="Background/Stars" index="0" instance=ExtResource( 29 )]
 
 position = Vector2( -288, -128 )
 
-[node name="Star2" parent="Background/Stars" index="1" instance=ExtResource( 25 )]
+[node name="Star2" parent="Background/Stars" index="1" instance=ExtResource( 29 )]
 
 position = Vector2( 144, -224 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star3" parent="Background/Stars" index="2" instance=ExtResource( 25 )]
+[node name="Star3" parent="Background/Stars" index="2" instance=ExtResource( 29 )]
 
 position = Vector2( 512, -48 )
 
-[node name="Star4" parent="Background/Stars" index="3" instance=ExtResource( 25 )]
+[node name="Star4" parent="Background/Stars" index="3" instance=ExtResource( 29 )]
 
 position = Vector2( 512, -48 )
 
-[node name="Star33" parent="Background/Stars" index="4" instance=ExtResource( 25 )]
+[node name="Star33" parent="Background/Stars" index="4" instance=ExtResource( 29 )]
 
 position = Vector2( -112, -32 )
 
-[node name="Star34" parent="Background/Stars" index="5" instance=ExtResource( 25 )]
+[node name="Star34" parent="Background/Stars" index="5" instance=ExtResource( 29 )]
 
 position = Vector2( -224, 80 )
 
-[node name="Star35" parent="Background/Stars" index="6" instance=ExtResource( 25 )]
+[node name="Star35" parent="Background/Stars" index="6" instance=ExtResource( 29 )]
 
 position = Vector2( -608, 64 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star5" parent="Background/Stars" index="7" instance=ExtResource( 25 )]
+[node name="Star5" parent="Background/Stars" index="7" instance=ExtResource( 29 )]
 
 position = Vector2( 560, -240 )
 
-[node name="Star6" parent="Background/Stars" index="8" instance=ExtResource( 25 )]
+[node name="Star6" parent="Background/Stars" index="8" instance=ExtResource( 29 )]
 
 position = Vector2( 832, -160 )
 
-[node name="Star7" parent="Background/Stars" index="9" instance=ExtResource( 25 )]
+[node name="Star7" parent="Background/Stars" index="9" instance=ExtResource( 29 )]
 
 position = Vector2( 1280, -160 )
 
-[node name="Star8" parent="Background/Stars" index="10" instance=ExtResource( 25 )]
+[node name="Star8" parent="Background/Stars" index="10" instance=ExtResource( 29 )]
 
 position = Vector2( 1616, -96 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star9" parent="Background/Stars" index="11" instance=ExtResource( 25 )]
+[node name="Star9" parent="Background/Stars" index="11" instance=ExtResource( 29 )]
 
 position = Vector2( 2048, -80 )
 
-[node name="Star10" parent="Background/Stars" index="12" instance=ExtResource( 25 )]
+[node name="Star10" parent="Background/Stars" index="12" instance=ExtResource( 29 )]
 
 position = Vector2( 2352, 192 )
 
-[node name="Star11" parent="Background/Stars" index="13" instance=ExtResource( 25 )]
+[node name="Star11" parent="Background/Stars" index="13" instance=ExtResource( 29 )]
 
 position = Vector2( 2288, 416 )
 
-[node name="Star12" parent="Background/Stars" index="14" instance=ExtResource( 25 )]
+[node name="Star12" parent="Background/Stars" index="14" instance=ExtResource( 29 )]
 
 position = Vector2( 2800, 816 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star13" parent="Background/Stars" index="15" instance=ExtResource( 25 )]
+[node name="Star13" parent="Background/Stars" index="15" instance=ExtResource( 29 )]
 
 position = Vector2( 2752, 1232 )
 
-[node name="Star36" parent="Background/Stars" index="16" instance=ExtResource( 25 )]
+[node name="Star36" parent="Background/Stars" index="16" instance=ExtResource( 29 )]
 
 position = Vector2( -912, 1712 )
 
-[node name="Star37" parent="Background/Stars" index="17" instance=ExtResource( 25 )]
+[node name="Star37" parent="Background/Stars" index="17" instance=ExtResource( 29 )]
 
 position = Vector2( 1456, 3456 )
 
-[node name="Star38" parent="Background/Stars" index="18" instance=ExtResource( 25 )]
+[node name="Star38" parent="Background/Stars" index="18" instance=ExtResource( 29 )]
 
 position = Vector2( 1104, 1104 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -5
 
-[node name="Star14" parent="Background/Stars" index="19" instance=ExtResource( 25 )]
+[node name="Star14" parent="Background/Stars" index="19" instance=ExtResource( 29 )]
 
 position = Vector2( 2800, 1344 )
 
-[node name="Star15" parent="Background/Stars" index="20" instance=ExtResource( 25 )]
+[node name="Star15" parent="Background/Stars" index="20" instance=ExtResource( 29 )]
 
 position = Vector2( 2944, 1648 )
 
-[node name="Star16" parent="Background/Stars" index="21" instance=ExtResource( 25 )]
+[node name="Star16" parent="Background/Stars" index="21" instance=ExtResource( 29 )]
 
 position = Vector2( 2800, 1952 )
 
-[node name="Star17" parent="Background/Stars" index="22" instance=ExtResource( 25 )]
+[node name="Star17" parent="Background/Stars" index="22" instance=ExtResource( 29 )]
 
 position = Vector2( 2784, 2288 )
 
-[node name="Star18" parent="Background/Stars" index="23" instance=ExtResource( 25 )]
+[node name="Star18" parent="Background/Stars" index="23" instance=ExtResource( 29 )]
 
 position = Vector2( 2192, 2752 )
 
-[node name="Star19" parent="Background/Stars" index="24" instance=ExtResource( 25 )]
+[node name="Star19" parent="Background/Stars" index="24" instance=ExtResource( 29 )]
 
 position = Vector2( 2288, 3104 )
 
-[node name="Star20" parent="Background/Stars" index="25" instance=ExtResource( 25 )]
+[node name="Star20" parent="Background/Stars" index="25" instance=ExtResource( 29 )]
 
 position = Vector2( 1760, 3328 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star21" parent="Background/Stars" index="26" instance=ExtResource( 25 )]
+[node name="Star21" parent="Background/Stars" index="26" instance=ExtResource( 29 )]
 
 position = Vector2( 1136, 3312 )
 
-[node name="Star22" parent="Background/Stars" index="27" instance=ExtResource( 25 )]
+[node name="Star22" parent="Background/Stars" index="27" instance=ExtResource( 29 )]
 
 position = Vector2( 784, 3440 )
 
-[node name="Star23" parent="Background/Stars" index="28" instance=ExtResource( 25 )]
+[node name="Star23" parent="Background/Stars" index="28" instance=ExtResource( 29 )]
 
 position = Vector2( 224, 3312 )
 
-[node name="Star24" parent="Background/Stars" index="29" instance=ExtResource( 25 )]
+[node name="Star24" parent="Background/Stars" index="29" instance=ExtResource( 29 )]
 
 position = Vector2( -144, 3184 )
 
-[node name="Star25" parent="Background/Stars" index="30" instance=ExtResource( 25 )]
+[node name="Star25" parent="Background/Stars" index="30" instance=ExtResource( 29 )]
 
 position = Vector2( -112, 2912 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star26" parent="Background/Stars" index="31" instance=ExtResource( 25 )]
+[node name="Star26" parent="Background/Stars" index="31" instance=ExtResource( 29 )]
 
 position = Vector2( -448, 2928 )
 
-[node name="Star27" parent="Background/Stars" index="32" instance=ExtResource( 25 )]
+[node name="Star27" parent="Background/Stars" index="32" instance=ExtResource( 29 )]
 
 position = Vector2( -784, 2560 )
 
-[node name="Star28" parent="Background/Stars" index="33" instance=ExtResource( 25 )]
+[node name="Star28" parent="Background/Stars" index="33" instance=ExtResource( 29 )]
 
 position = Vector2( -832, 2160 )
 
-[node name="Star29" parent="Background/Stars" index="34" instance=ExtResource( 25 )]
+[node name="Star29" parent="Background/Stars" index="34" instance=ExtResource( 29 )]
 
 position = Vector2( -768, 1904 )
 
-[node name="Star30" parent="Background/Stars" index="35" instance=ExtResource( 25 )]
+[node name="Star30" parent="Background/Stars" index="35" instance=ExtResource( 29 )]
 
 position = Vector2( -768, 1472 )
 
-[node name="Star31" parent="Background/Stars" index="36" instance=ExtResource( 25 )]
+[node name="Star31" parent="Background/Stars" index="36" instance=ExtResource( 29 )]
 
 position = Vector2( -976, 960 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="Star39" parent="Background/Stars" index="37" instance=ExtResource( 25 )]
+[node name="Star39" parent="Background/Stars" index="37" instance=ExtResource( 29 )]
 
 position = Vector2( 176, 2464 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -5
 
-[node name="Star32" parent="Background/Stars" index="38" instance=ExtResource( 25 )]
+[node name="Star32" parent="Background/Stars" index="38" instance=ExtResource( 29 )]
 
 position = Vector2( -672, 496 )
 
@@ -3444,7 +3765,7 @@ position = Vector2( 1008, -168 )
 scale = Vector2( 31.5, 5.75 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor2" type="Sprite" parent="Background/Space" index="1"]
@@ -3453,7 +3774,7 @@ position = Vector2( -640, -104 )
 scale = Vector2( 20, 7.75 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor3" type="Sprite" parent="Background/Space" index="2"]
@@ -3462,7 +3783,7 @@ position = Vector2( -912, 382 )
 scale = Vector2( 11.5, 7.5625 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor9" type="Sprite" parent="Background/Space" index="3"]
@@ -3471,7 +3792,7 @@ position = Vector2( 2640, 137 )
 scale = Vector2( 20, 15.2813 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor4" type="Sprite" parent="Background/Space" index="4"]
@@ -3480,7 +3801,7 @@ position = Vector2( -976, 2168 )
 scale = Vector2( 9.5, 48.25 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor8" type="Sprite" parent="Background/Space" index="5"]
@@ -3489,7 +3810,7 @@ position = Vector2( 2968, 2160 )
 scale = Vector2( 9.75, 48.5 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor5" type="Sprite" parent="Background/Space" index="6"]
@@ -3498,7 +3819,7 @@ position = Vector2( -336, 3183.5 )
 scale = Vector2( 10.5, 16.5156 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor7" type="Sprite" parent="Background/Space" index="7"]
@@ -3507,7 +3828,7 @@ position = Vector2( 2352, 3184 )
 scale = Vector2( 10.5, 16.5156 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="PitColor6" type="Sprite" parent="Background/Space" index="8"]
@@ -3516,14 +3837,16 @@ position = Vector2( 1256, 3487.75 )
 scale = Vector2( 39.25, 7.00781 )
 z_index = -10
 z_as_relative = false
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="12"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="13"]
 
-environment = SubResource( 1 )
-script = ExtResource( 27 )
+environment = SubResource( 8 )
+script = ExtResource( 31 )
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes" method="_on_Timer_timeout"]
 
 
+[editable path="ShellHoles/ShellHole3"]
+[editable path="ShellHoles/ShellHole12"]
