@@ -1,7 +1,6 @@
 extends Control
 
 var button_busy = false
-var quick_match_started = false
 
 func _ready():
 	Settings.player_type = Settings.PLAYER_TYPE.skeleton
@@ -25,7 +24,7 @@ func _on_SpinBox_value_changed(value):
 func _on_QuickMatchButton_pressed():
 	if button_busy:
 		return
-	if quick_match_started:
+	if Network.quick_match_started:
 		Network.google_show_waiting_room()
 		return
 	button_busy = true
@@ -34,7 +33,7 @@ func _on_QuickMatchButton_pressed():
 		wait_till_signed_in()
 	#connected - start quick match
 	Network.start_quick_game(Network.MIN_PLAYERS, Network.MAX_PLAYERS, 0)
-	quick_match_started = true
+	Network.quick_match_started = true
 	button_busy = false
 
 func _on_SignOutButton_pressed():
@@ -95,7 +94,7 @@ func _on_BanditButton_pressed():
 	$Panel/PlayerStats/Text/WeaponDescriptionNeg.text = '\n\n\n\nSmall'
 
 func _on_Match1v1Button_pressed():
-	if quick_match_started:
+	if Network.quick_match_started:
 		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.one_verse_one
@@ -104,7 +103,7 @@ func _on_Match1v1Button_pressed():
 
 
 func _on_MatchFFAButton_pressed():
-	if quick_match_started:
+	if Network.quick_match_started:
 		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_8
@@ -113,7 +112,7 @@ func _on_MatchFFAButton_pressed():
 
 
 func _on_MatchFFA4Button_pressed():
-	if quick_match_started:
+	if Network.quick_match_started:
 		$ErrorSound.play()
 		return
 	Settings.match_type = Settings.MATCH_TYPE.ffa_4

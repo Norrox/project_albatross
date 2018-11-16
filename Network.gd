@@ -17,6 +17,7 @@ var gpgs = null
 var game_started = false
 var force_local = false
 var room_ID = 'No_Room'
+var quick_match_started = false
 var ready = false
 
 var victorious = false
@@ -288,7 +289,7 @@ func _on_play_game_services_rtm_waiting_room_ui_closed():
 		
 func _on_play_game_services_rtm_room_client_left_room(roomID):
 	print('leaving room')
-	$'/root/Menu/'.quick_match_started = false
+	quick_match_started = false
 	
 func _on_play_game_services_rtm_message_received(sender_ID, data, is_reliable):
 	var data_var = str2var(data)
