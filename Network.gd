@@ -89,7 +89,7 @@ func check_win_condition():
 	if get_IDs().size() == 1:
 		print(self_data.name + ' wins')
 		victorious = true
-		google_leave_room()
+		google_leave_room(self_data.name)
 
 func get_IDs():
 	return get_all_participant_IDs().split(',')
