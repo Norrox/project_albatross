@@ -5,12 +5,17 @@ const TARGET_POS = Vector2(576, 282)
 const MOVE_SPEED = 3
 
 var move_up = false
+var hold = true
 
 func _ready():
 	hide()
 
 func _physics_process(delta):
 	if !Network.victorious and !Network.out_of_lives:
+		return
+	if hold:
+		if $DELAY.is_stopped():
+			$DELAY.start()
 		return
 	if Network.out_of_lives:
 		$VictoryLabel.text = 'DEFEAT!'
@@ -33,3 +38,7 @@ func _physics_process(delta):
 
 func _on_PanelButton_pressed():
 	move_up = true
+
+
+func _on_DELAY_timeout():
+	hold = false

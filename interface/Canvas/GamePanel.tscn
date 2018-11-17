@@ -4,7 +4,7 @@
 [ext_resource path="res://interface/panel.png" type="Texture" id=2]
 [ext_resource path="res://transparent_pixel.png" type="Texture" id=3]
 
-[node name="GamePanel" type="KinematicBody2D"]
+[node name="GamePanel" type="KinematicBody2D" index="0"]
 
 position = Vector2( 576, -282 )
 scale = Vector2( 4, 4 )
@@ -42,7 +42,31 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="PanelButton" type="TouchScreenButton" parent="." index="2"]
+[node name="TapText" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = 14.0
+margin_right = 87.0
+margin_bottom = 28.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "(Tap to continue)"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="PanelButton" type="TouchScreenButton" parent="." index="3"]
 
 position = Vector2( -73, -43.5 )
 scale = Vector2( 146.25, 109.75 )
@@ -56,6 +80,15 @@ passby_press = false
 action = ""
 visibility_mode = 0
 
+[node name="DELAY" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="pressed" from="PanelButton" to="." method="_on_PanelButton_pressed"]
+
+[connection signal="timeout" from="DELAY" to="." method="_on_DELAY_timeout"]
 
 
