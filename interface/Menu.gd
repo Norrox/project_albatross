@@ -9,6 +9,7 @@ func _ready():
 		#Global.goto_scene('res://GrassLevel.tscn')
 		#Global.goto_scene('res://SpaceLevel.tscn')
 	else:
+		Network.quick_match_started = false
 		Settings.player_type = Settings.PLAYER_TYPE.skeleton
 
 func _load_game():
