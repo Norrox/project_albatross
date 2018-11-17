@@ -12,6 +12,6 @@ enum MATCH_TYPE {
 	ffa_8
 	}
 
-var player_type = PLAYER_TYPE.human
+var player_type = PLAYER_TYPE.skeleton
 var enable_ultra_graphics = false
 var match_type = MATCH_TYPE.ffa_8
