@@ -32,32 +32,32 @@
 [ext_resource path="res://black.png" type="Texture" id=30]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=31]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56, 70 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56, 104 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 72, 86 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56, 56 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 72, 40 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 40, 24 )
@@ -146,7 +146,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -542,7 +542,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole14/Area2D" index="0"]
 
 position = Vector2( -19, 6 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ShellHole15" type="Node2D" parent="ShellHoles" index="17"]
 
@@ -566,7 +566,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole15/Area2D" index="0"]
 
 position = Vector2( -19, 6 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ShellHole20" type="Node2D" parent="ShellHoles" index="18"]
 
@@ -589,7 +589,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole20/Area2D" index="0"]
 
 position = Vector2( -21, -6 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="ShellHole21" type="Node2D" parent="ShellHoles" index="19"]
 
@@ -612,7 +612,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole21/Area2D" index="0"]
 
 position = Vector2( -21, -8 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="ShellHole22" type="Node2D" parent="ShellHoles" index="20"]
 
@@ -635,7 +635,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole22/Area2D" index="0"]
 
 position = Vector2( -19, -8 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="ShellHole23" type="Node2D" parent="ShellHoles" index="21"]
 
@@ -658,7 +658,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole23/Area2D" index="0"]
 
 position = Vector2( -23, -8 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="ShellHole24" type="Node2D" parent="ShellHoles" index="22"]
 
@@ -681,7 +681,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole24/Area2D" index="0"]
 
 position = Vector2( -22, -7 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="ShellHole25" type="Node2D" parent="ShellHoles" index="23"]
 
@@ -704,7 +704,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="ShellHoles/ShellHole25/Area2D" index="0"]
 
 position = Vector2( -22, -7 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="ShellHole26" type="Node2D" parent="ShellHoles" index="24"]
 
@@ -2820,7 +2820,7 @@ script = ExtResource( 17 )
 stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 0.7
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 

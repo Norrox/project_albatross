@@ -15,8 +15,8 @@
 [ext_resource path="res://scriptable_objects/destructables/crate/DestructableCrate.tscn" type="PackedScene" id=13]
 [ext_resource path="res://tilemap/background color grass.png" type="Texture" id=14]
 [ext_resource path="res://tilemap/tree.png" type="Texture" id=15]
-[ext_resource path="res://audio/one shots/264591__vacuumfan7072__swoosh.wav" type="AudioStream" id=16]
-[ext_resource path="res://audio/music/16Bit_Loop_03.ogg" type="AudioStream" id=17]
+[ext_resource path="res://audio/one shots/heart beat.wav" type="AudioStream" id=16]
+[ext_resource path="res://audio/music/16Bit_Loop_10.ogg" type="AudioStream" id=17]
 [ext_resource path="res://BGMusic.gd" type="Script" id=18]
 [ext_resource path="res://interface/Canvas/FX/CRT.gd" type="Script" id=19]
 
@@ -1941,8 +1941,8 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 16 )
 volume_db = 0.0
-pitch_scale = 0.7
-autoplay = true
+pitch_scale = 1.0
+autoplay = false
 mix_target = 0
 bus = "Master"
 

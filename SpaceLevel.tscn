@@ -606,7 +606,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1474,7 +1474,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 stream = ExtResource( 10 )
 volume_db = -15.0
 pitch_scale = 0.95
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 
