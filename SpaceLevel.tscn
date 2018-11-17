@@ -606,7 +606,7 @@ adjustment_contrast = 2.0
 adjustment_saturation = 0.9
 _sections_unfolded = [ "Adjustments", "Background", "DOF Near Blur", "Glow" ]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -1238,13 +1238,11 @@ blend_times = [  ]
 
 [node name="TileMaps" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Bot" type="TileMap" parent="TileMaps" index="0"]
 
 position = Vector2( -312, -404 )
 scale = Vector2( 2, 2 )
-z_index = -8
+z_index = -10
 z_as_relative = false
 mode = 0
 tile_set = ExtResource( 5 )
@@ -1463,11 +1461,11 @@ physics_process_parent = false
 
 position = Vector2( -1896, -1208 )
 scale = Vector2( 4104, 2496 )
-z_index = -10
+z_index = -11
 z_as_relative = false
 texture = ExtResource( 9 )
 centered = false
-_sections_unfolded = [ "Offset", "Transform" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="ReadyOneShot" type="AudioStreamPlayer" parent="." index="10"]
 

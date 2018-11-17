@@ -5,8 +5,8 @@ var button_busy = false
 func _ready():
 	if OS.get_name() == 'Windows':
 		Network.ready = true
-		#Global.goto_scene('res://Game.tscn')
-		Global.goto_scene('res://GrassLevel.tscn')
+		Global.goto_scene('res://Game.tscn')
+		#Global.goto_scene('res://GrassLevel.tscn')
 		#Global.goto_scene('res://SpaceLevel.tscn')
 	else:
 		Settings.player_type = Settings.PLAYER_TYPE.skeleton
