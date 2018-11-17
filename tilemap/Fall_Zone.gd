@@ -5,6 +5,7 @@ func _ready():
 	
 func _on_body_entered(body):
 	if body.is_in_group('players'):
+		body.falling = true
 		body.set_physics_process(false)
 		body.set_process(false)
 		body.get_node('AnimationPlayer').play('fall')
@@ -18,3 +19,4 @@ func _on_body_entered(body):
 		while body.dead:
 			yield(get_tree().create_timer(0.02),'timeout')
 		body.set_process(true)
+		body.falling = false

@@ -19,6 +19,7 @@ var direction = Vector2()
 var rifle_rotation = 0
 var last_rifle_rotation = 0
 var start_roll = false
+var falling = false
 var rolling = false
 var can_roll = true
 var dead = false

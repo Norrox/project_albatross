@@ -13,7 +13,7 @@ func _ready():
 	player = $'../../'
 
 func _process(delta):
-	if shoot and $Timer.is_stopped() and !player.dead:
+	if shoot and $Timer.is_stopped() and !player.falling:
 		var bd = analog.stick2_vector
 		var bp = global_position
 		var br = rotation
