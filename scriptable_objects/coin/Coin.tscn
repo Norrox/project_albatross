@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 8.0
+radius = 3.0
 
 [sub_resource type="Animation" id=2]
 
@@ -119,7 +119,7 @@ tracks/3/keys = {
 "values": [ 2.5 ]
 }
 
-[node name="Coin" type="Area2D"]
+[node name="Coin" type="Area2D" index="0"]
 
 scale = Vector2( 2, 2 )
 z_index = -4
