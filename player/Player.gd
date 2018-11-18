@@ -196,7 +196,7 @@ func damage(value):
 				print(name + ' eliminated')
 				Network.out_of_lives = true
 				_die(false, false)
-		else:
+		if !Network.force_local:
 			update_reliable('update_player_health')
 		_update_health_bar(health_points)
 

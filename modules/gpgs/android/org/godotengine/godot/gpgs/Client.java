@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.games.GamesActivityResultCodes;
 
 public class Client {
 
@@ -41,6 +42,7 @@ public class Client {
 
     // Request code used to invoke sign in user interactions.
     private static final int RC_SIGN_IN = 9001;
+    private static final int RC_WAITING_ROOM = 9007;
 
     // Client used to sign in with Google APIs
     private GoogleSignInClient mGoogleSignInClient = null;
@@ -137,7 +139,35 @@ public class Client {
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(intent);
             handleSignInResult(task);
+        } else if (requestCode == RC_WAITING_ROOM) {
+
+            // we got the result from the "waiting room" UI.
+      
+            if (resultCode == Activity.RESULT_OK) {
+      
+              // ready to start playing
+      
+              Log.d(TAG, "... (waiting room returned OK).");
+      
+              //startGame(true);
+      
+            } else if (resultCode == GamesActivityResultCodes.RESULT_LEFT_ROOM) {
+      
+              // player indicated that they want to leave the room
+      
+              gpgs.rtmLeaveRoom();
+      
+            } //else if (resultCode == Activity.RESULT_CANCELED) {
+      
+              // Dialog was cancelled (user pressed back key, for instance). In our game,
+      
+              // this means leaving the room too. In more elaborate games, this could mean
+      
+              // something else (like minimizing the waiting room UI).
+      
+              //leaveRoom();
         }
+        
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {

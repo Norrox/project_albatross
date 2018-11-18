@@ -146,19 +146,21 @@ public class RealTimeMultiplayer {
 	}
 
 	public void showWaitingRoomUI(int maxPlayersToStartGame){
-		if (tempRoom != null){
-			Log.d(TAG, "Launching Waiting room UI activity");
-			ignoreWaitingRoomUIOutput = false;
-			rtmClient.getWaitingRoomIntent(tempRoom, maxPlayersToStartGame)
-					.addOnSuccessListener(new OnSuccessListener<Intent>() {
-						@Override
-						public void onSuccess(Intent intent) {
-							activity.startActivityForResult(intent, RC_WAITING_ROOM);
-						}
-					});
-		}else{
-			Log.d(TAG, "Can not start waiting room UI. A room has not been created yet");
+		Log.d(TAG, "Launching Waiting room UI activity");
+		Room room;
+		if (connectedRoom != null) {
+			room = connectedRoom;
+		}else {
+			room = tempRoom;
 		}
+		Games.getRealTimeMultiplayerClient(this.activity, signedInAccount)
+      		.getWaitingRoomIntent(room, maxPlayersToStartGame)
+      		.addOnSuccessListener(new OnSuccessListener<Intent>() {
+        @Override
+        public void onSuccess(Intent intent) {
+          activity.startActivityForResult(intent, RC_WAITING_ROOM);
+        }
+      });
 	}
 
 	public void showInvitationInbox(){
@@ -177,10 +179,18 @@ public class RealTimeMultiplayer {
 	}
 
 	public void leaveRoom(){
-		if (connectedRoom != null)
-			rtmClient.leave(currentRoomConfig, connectedRoom.getRoomId());
-		else if (tempRoom != null && currentRoomConfig != null)
-			rtmClient.leave(currentRoomConfig, tempRoom.getRoomId());
+		if (connectedRoom != null){
+			Games.getRealTimeMultiplayerClient(this.activity, signedInAccount)
+    			.leave(currentRoomConfig, connectedRoom.getRoomId());
+		}else if (tempRoom != null && currentRoomConfig != null){
+			Games.getRealTimeMultiplayerClient(this.activity, signedInAccount)
+    			.leave(currentRoomConfig, tempRoom.getRoomId());
+		}
+
+		//if (connectedRoom != null)
+		//	rtmClient.leave(currentRoomConfig, connectedRoom.getRoomId());
+		//else if (tempRoom != null && currentRoomConfig != null)
+		//	rtmClient.leave(currentRoomConfig, tempRoom.getRoomId());
 	}
 
 	public void checkForInvitation(){
@@ -512,7 +522,7 @@ public class RealTimeMultiplayer {
 	private OnRealTimeMessageReceivedListener messageReceivedListener = new OnRealTimeMessageReceivedListener() {
 		@Override
 		public void onRealTimeMessageReceived(@NonNull RealTimeMessage realTimeMessage) {
-			Log.d(TAG, "receive called");
+			//Log.d(TAG, "receive called");
 			try {
 				String senderID = realTimeMessage.getSenderParticipantId();
 				if (!senderID.equals(myParticipantId)){
